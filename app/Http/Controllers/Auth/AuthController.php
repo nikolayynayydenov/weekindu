@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\Http\Controllers\AvatarsController;
 
 class AuthController extends Controller
 {
@@ -48,12 +49,16 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
+        // TO DO the use should be able to create circle images (through front end - UI)
+        
+        
         return Validator::make($data, [
             'first_name' => 'required|max:35',
             'last_name' => 'required|max:35',
-            'name' => 'max:20|unique:users',
+            'name' => 'sometimes|max:20|unique:users',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:8|confirmed',
+            'avatar' => 'sometimes|image|max:1000'
         ]);
     }
 
@@ -65,10 +70,15 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        $avatar = AvatarsController::storeImage(isset($data['avatar']) ? $data['avatar'] : false);        
+        
         return User::create([
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'avatar' => $avatar
         ]);
     }
 }

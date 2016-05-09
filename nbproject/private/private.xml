@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/weekindu/resources/views/welcome.blade.php</file>
-            <file>file:/C:/xampp/htdocs/weekindu/app/Http/Controllers/Auth/AuthController.php</file>
+            <file>file:/C:/xampp/htdocs/weekindu/app/Http/Controllers/AvatarsController.php</file>
+            <file>file:/C:/xampp/htdocs/weekindu/app/User.php</file>
+            <file>file:/C:/xampp/htdocs/weekindu/public/js/jquery/main.js</file>
             <file>file:/C:/xampp/htdocs/weekindu/resources/views/layouts/app.blade.php</file>
-            <file>file:/C:/xampp/htdocs/weekindu/resources/views/events/index.blade.php</file>
             <file>file:/C:/xampp/htdocs/weekindu/resources/views/auth/register.blade.php</file>
-            <file>file:/C:/xampp/htdocs/weekindu/app/Http/routes.php</file>
-            <file>file:/C:/xampp/htdocs/weekindu/app/Http/Controllers/EventsController.php</file>
+            <file>file:/C:/xampp/htdocs/weekindu/public/css/style.css</file>
             <file>file:/C:/xampp/htdocs/weekindu/resources/views/home.blade.php</file>
         </group>
     </open-files>

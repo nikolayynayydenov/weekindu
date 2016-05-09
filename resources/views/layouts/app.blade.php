@@ -3,8 +3,9 @@
 <head>
     <title>Weekindu</title>
     <meta charset="utf-8"/>    
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>      
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/dropify/dropify.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body id="app-layout">
@@ -46,5 +47,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>    
     <script src="/js/jquery/main.js"></script>
+    <script src="/js/dropify/dropify.min.js"></script>
 </body>
 </html>
