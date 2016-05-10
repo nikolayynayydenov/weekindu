@@ -58,7 +58,8 @@ class AuthController extends Controller
             'name' => 'sometimes|max:20|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:8|confirmed',
-            'avatar' => 'sometimes|image|max:1000'
+            'avatar' => 'sometimes|image|max:1000',
+            'g-recaptcha-response' => 'required|captcha'
         ]);
     }
 

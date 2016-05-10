@@ -6,13 +6,14 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link rel="stylesheet" href="/css/dropify/dropify.min.css"/>
+    <link rel="stylesheet" href="/css/meterialize/palette.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body id="app-layout">
 
-    <nav>
+    <nav class="default-primary-color">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
+            <a href="#" class="brand-logo">Logo</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url('/home') }}">Home</a></li>
@@ -20,11 +21,9 @@
                     <li><a href="{{ url('/login') }}">Login</a></li>
                     <li><a href="{{ url('/register') }}">Register</a></li>
                 @else
-                    <li class="">                    
+                    <li>
+                        <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign profile-image">
                         {{ Auth::user()->name }}
-                        <ul class="dropdown-menu" role="menu">
-                            <a href="{{ url('/logout') }}">Logout</a>
-                        </ul>
                     </li>
                 @endif
             </ul>

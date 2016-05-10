@@ -4,12 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/weekindu/app/Http/Controllers/AvatarsController.php</file>
-            <file>file:/C:/xampp/htdocs/weekindu/app/User.php</file>
             <file>file:/C:/xampp/htdocs/weekindu/public/js/jquery/main.js</file>
+            <file>file:/C:/xampp/htdocs/weekindu/app/Http/Controllers/Auth/AuthController.php</file>
             <file>file:/C:/xampp/htdocs/weekindu/resources/views/layouts/app.blade.php</file>
             <file>file:/C:/xampp/htdocs/weekindu/resources/views/auth/register.blade.php</file>
             <file>file:/C:/xampp/htdocs/weekindu/public/css/style.css</file>
+            <file>file:/C:/xampp/htdocs/weekindu/public/index.php</file>
             <file>file:/C:/xampp/htdocs/weekindu/resources/views/home.blade.php</file>
+            <file>file:/C:/xampp/htdocs/weekindu/resources/views/auth/login.blade.php</file>
         </group>
     </open-files>
 </project-private>

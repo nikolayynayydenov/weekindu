@@ -10,7 +10,6 @@ class AvatarsController extends Controller
 {
     public static function storeImage($image) {
         // store the path to a validated image in the database
-        echo (bool)$image;
         if($image) {
              // if the user has uploaded an image, store it
             
