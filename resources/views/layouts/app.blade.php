@@ -22,7 +22,7 @@
                     <li><a href="{{ url('/register') }}">Register</a></li>
                 @else
                     <li>
-                        <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign profile-image">
+                        <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign profile-image" width="40" height="80">
                         {{ Auth::user()->name }}
                     </li>
                 @endif
