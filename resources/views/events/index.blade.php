@@ -1,32 +1,27 @@
 @extends('layouts.app')
-
 @section('content')
-    
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
 
+Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.
 
-<!--            <div class="row">
-                <div class="col col s4 m4 l4">
-                    <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
-                </div>
-                <div class="col col s8 m8 l8">
-                    
-                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">John Doe<i class="mdi-navigation-arrow-drop-down right"></i></a><ul id="profile-dropdown" class="dropdown-content" style="width: 127px; position: absolute; top: 57px; left: 101.25px; opacity: 1; display: none;">
-                        <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
-                        </li>
-                        <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
-                        </li>
-                        <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
-                        </li>
-                        <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <p class="user-roal">Administrator</p>
-                </div>
-            </div>-->
-            
-            
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
+
+Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
+
+Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
+
+Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
+
+Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.    
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
+
+Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.    
+
 @endsection

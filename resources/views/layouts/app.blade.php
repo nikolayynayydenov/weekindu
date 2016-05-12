@@ -10,34 +10,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body id="app-layout">
-
     <nav class="default-primary-color">
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url('/home') }}">Home</a></li>
-                @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
-                @else
-                    <li>
-                        <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign profile-image" width="40" height="80">
-                        {{ Auth::user()->name }}
-                    </li>
-                @endif
-            </ul>
+        <div class="nav-wrapper container">
+            <div class="row">
 
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
-                <li><a href="mobile.html">Mobile</a></li>
-            </ul>
+                <div class="col s12 m6 l2 center">
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>                                
+                    <a href="{{url('/')}}" class="waves-effect"><b>Weekindu</b></a>
+                </div>
+                <div class="col l6 hide-on-med-and-down">
+                    <ul>
+                        <li><a href="{{ url('/event') }}" class="waves-effect">Events</a></li>
+                    </ul>
+                </div>
+                <div class="col l4 m6 right-align hide-on-small-only">
+                    <ul class="right">                    
+                        @if (Auth::guest())
+                            <li><a href="{{ url('/login') }}">Login</a></li>
+                            <li><a href="{{ url('/register') }}">Register</a></li>
+                        @else
+                            <li class="dropdown-button waves-effect" data-activates="user-menu">
+                                <div class="container-fluid valign-wrapper">
+                                    <div class="col l6">
+                                        <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
+                                    </div>
+                                    <div>
+                                        {{ Auth::user()->name }}
+                                    </div>
+                                    
+                                    <ul id="user-menu" class="dropdown-content col l4 m8">
+                                        <li><a href="{{url('/logout')}}">Logout</a></li>
+                                    </ul>
+                                </div> 
+                            </li>
+                        @endif
+                    </ul>
+                </div>
+
+                
+            </div>
         </div>
+        
+        <ul class="side-nav primary-text-color" id="mobile-demo">
+            <li><a href="{{url('/home')}}">Home</a></li>
+            <li><a href="{{url('/event')}}">Events</a></li>
+            @if (!Auth::guest())
+                <div class="hide-on-med-and-up">
+                    <li class="divider"></li>
+                    <li>
+                        <div class="row valign-wrapper">
+                            <div class="col s4 valign">
+                                <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
+                            </div>
+                            <div class="col s8 valign">
+                                {{ Auth::user()->name }}    
+                            </div>
+                        </div>                       
+                    </li>
+                    <li><a href="{{url('/logout')}}">Logout</a></li>
+                </div>
+            @endif  
+        </ul>
     </nav>
     
     <div class="container">
+        <br>
         @yield('content')
     </div>
 

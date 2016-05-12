@@ -51,7 +51,6 @@ class AuthController extends Controller
     {
         // TO DO the use should be able to create circle images (through front end - UI)
         
-        
         return Validator::make($data, [
             'first_name' => 'required|max:35',
             'last_name' => 'required|max:35',
@@ -74,10 +73,10 @@ class AuthController extends Controller
         $avatar = AvatarsController::storeImage(isset($data['avatar']) ? $data['avatar'] : false);        
         
         return User::create([
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'first_name' => trim($data['first_name']),
+            'last_name' => trim($data['last_name']),
+            'name' => $data['name'] === '' ? null : trim($data['name']),
+            'email' => trim($data['email']),
             'password' => bcrypt($data['password']),
             'avatar' => $avatar
         ]);

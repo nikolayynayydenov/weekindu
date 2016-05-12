@@ -2,7 +2,6 @@
 
 @section('content')
 
-<br><br>
 <div class="row" style="display: table; margin: auto;">
     <div class="card-panel z-depth-4 center">
         
@@ -22,13 +21,13 @@
     
     <form action="{{url('/register')}}" method="post" enctype="multipart/form-data">
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12 l6">
                 <i class="material-icons prefix">perm_identity</i>
                 <input type="text" name="first_name" length="35" maxlength="35" required>
                 <label for="first_name" data-error="wrong" data-success="right">First name</label>
             </div>
 
-            <div class="input-field col s6">
+            <div class="input-field col s12 l6">
                 <i class="material-icons prefix">perm_identity</i>
                 <input type="text" name="last_name" maxlength="35" length="35" required>
                 <label for="last_name">Last name</label>
