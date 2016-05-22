@@ -11,7 +11,7 @@
 |
 */
 
-
+use Illuminate\Support\Facades\Input;
     
 Route::get('/', ['middleware' => 'guest', function () {
     return view('welcome');
@@ -20,6 +20,7 @@ Route::get('/', ['middleware' => 'guest', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/user/get-json', 'UsersController@getJson');
 
 Route::resource('/event', 'EventsController');
 

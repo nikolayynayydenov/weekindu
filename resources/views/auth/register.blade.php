@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="row" style="display: table; margin: auto;">
-    <div class="card-panel z-depth-4 center">
+<div class="center row">
+    <div class="card-panel z-depth-4 col s12 offset-m1 m10 offset-l3 l6">
         
     @if (count($errors->all()) > 0)
     <br><br>
@@ -66,8 +66,24 @@
             </div>
         </div>
     
-        <div class="file-field input-field">
-            <input type="file" name="avatar" accept="image/*" class="dropify" data-max-file-size="1M" data-max-width="100%">        
+        
+        
+         <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Avatar</a>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Choose Avatar</h4>
+                <p>
+                    <div class="file-field input-field">
+                        <input type="file" name="avatar" accept="image/*" class="dropify" data-max-file-size="1M" data-max-width="100%">        
+                    </div>
+                </p>
+            </div>
+            <div class="modal-footer">
+                  <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
+            </div>
         </div>
     
         {{csrf_field()}}
@@ -83,7 +99,8 @@
         </button>       
     </form>
     
-        <p class="margin center medium-small sign-up">Already have an account? <a href="{{url('login')}}">Login</a></p>
+        <p class="margin center medium-small sign-up">Already have an account? <a href="{{url('login')}}">Login</a></p>     
+
 
     </div>
 </div>

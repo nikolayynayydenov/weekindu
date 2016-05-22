@@ -17,4 +17,30 @@ $(document).ready(function (){
             alignment: 'left' // Displays dropdown with edge aligned to the left of button
         }
     );
+    
+    $('.tooltipped').tooltip({delay: 50});
+    
+    $('select').material_select();
+    
+    $("#participants").autocomplete({
+        source: "/user/get-json",
+        minLength: 1,
+        select: function (event, ui){
+        }        
+    }).data('ui-autocomplete')._renderItem = function (ul, item){
+        //console.log(item);
+        console.log(ul);
+        
+        return $('<li>').addClass('avatar')
+            .append('<img src="/images/user-avatars/' + item.avatar + '" width="40" class="circle">')
+            .append('<span class="title"> ' + item.fullName + (item.name ? ' (' + item.name + ')' : '') + '</span>')
+            .appendTo(ul);
+    };
+    
+    tinymce.init({ 
+        selector: '.textarea-tinymce',
+        plugins: 'placeholder'
+    });
+    
+    $('.modal-trigger').leanModal();
 });

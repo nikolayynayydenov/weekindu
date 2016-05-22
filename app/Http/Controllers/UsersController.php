@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
+use App\User;
+use Crypt;
 
-class EventsController extends Controller
+class UsersController extends Controller
 {
-    
-    public function __construct() {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +17,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-        return view('events.index');
+        //
     }
 
     /**
@@ -29,7 +27,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+        //
     }
 
     /**
@@ -86,5 +84,39 @@ class EventsController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    /*
+     * Get the JSON for the autocompletion in the 
+     * form for creating a new event
+     *       
+     */
+    
+    public function getJson() {        
+        $term = strtolower(Input::get('term'));
+        // the value has to be "term" otherwise it wont work
+        
+        // take some users
+        $users = User::select('id', 'first_name', 'last_name', 'name', 'avatar')
+                ->where('first_name', 'like', '%'.$term.'%')
+                ->orderBy('first_name', 'asc')
+                ->take(5)
+                ->get();        
+        
+        $return_array = [];
+        
+        foreach($users as $user) {
+            // generate the array that is going to be transformed into json
+            
+            $return_array[] = [
+                'id' => Crypt::encrypt($user->id),
+                'fullName' => $user->first_name.' '.$user->last_name,
+                'name' => isset($user->name) ? $user->name : false,
+                'avatar' => $user->avatar,
+                'value' => $user->first_name.' '.$user->last_name.' '.(isset($user->name) ? ' ('.$user->name.')' : '')
+            ];            
+        }
+        
+        return response()->json($return_array);
     }
 }
