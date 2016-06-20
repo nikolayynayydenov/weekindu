@@ -7,13 +7,13 @@
         <h4 class="center">Create a new event</h4>
 
         <div class="row">
-            <form class="col s12" method="POST" enctype="multipart/form-data">            
+            <form class="col s12" action="{{url('/event')}}" method="POST" enctype="multipart/form-data">            
 
                 {!! csrf_field() !!}
                 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="title" type="text" class="validate" placeholder="e.g. &quot;John's birthday&quot;">
+                        <input id="title" name="title" type="text" class="validate" placeholder="e.g. &quot;John's birthday&quot;">
                         <label for="title">Title</label>
                     </div>
                 </div>
@@ -46,9 +46,25 @@
                         <label for="description">Add description</label>
                     </div>
                 </div>
+                
+                <input type="submit">
             </form>
         </div>    
     </div>
-</div
+</div>
+
+<script defer>
+$("#participants").autocomplete({
+    source: "/user/get-json",
+    minLength: 1,
+    select: function (event, ui){
+    }        
+}).data('ui-autocomplete')._renderItem = function (ul, item){        
+    return $('<li>').addClass('avatar')
+        .append('<img src="/images/user-avatars/' + item.avatar + '" width="40" class="circle">')
+        .append('<span class="title"> ' + item.fullName + (item.name ? ' (' + item.name + ')' : '') + '</span>')
+        .appendTo(ul);
+};
+</script>
 
 @endsection

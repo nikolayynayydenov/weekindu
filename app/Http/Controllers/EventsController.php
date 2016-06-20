@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Event;
 use App\Http\Requests;
+use Validator;
+use App\Http\Controllers\Controller;
 
 class EventsController extends Controller
 {
@@ -39,8 +41,38 @@ class EventsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {        
+        // normalization:
+        
+        $request->all()['title'] = trim($request->all()['title']);
+        $request->all()['description'] = trim($request->all()['description']);
+        
+        // validation:
+        
+        $rules = [
+            'title' => 'required|max:80',
+            'description' => 'required'
+        ];
+        
+        $validator = Validator::make($request->all(), $rules);
+        
+        if ($validator->fails()) {
+            return redirect()
+                    ->back()
+                    ->withErrors($validator)                    
+                    ->withInput();
+        } else {
+        // store into db
+        
+        $event = new Event();
+        $event->title = $request->all()['title'];
+        $event->description = $request->all()['description'];
+        $event->save();
+        
+        // redirect to the edit form to the creation of the event can continue
+        
+        return redirect('/event/'.$event->id.'/edit');// the $event->id property holds the last inserted id
+        }
     }
 
     /**

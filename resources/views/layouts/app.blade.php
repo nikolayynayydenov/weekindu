@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+     <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Weekindu</title>
@@ -10,9 +10,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
         <link rel="stylesheet" href="/css/dropify/dropify.min.css"/>
         <link rel="stylesheet" href="/css/meterialize/palette.css"/>
-        <link rel="stylesheet" href="/css/custom/main.css"/>        
+        <link rel="stylesheet" href="/css/custom/main.css"/>   
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.js"></script>    
     </head>
     <body id="app-layout">
+        
+        
         <nav class="default-primary-color">
             <div class="nav-wrapper container">
                 <div class="row">
@@ -26,7 +31,8 @@
                                 <a href="{{ url('/event') }}" class="waves-effect tooltipped" data-position="bottom" data-delay="50" data-tooltip="View All events">Events</a>
                             </li>
                         </ul>
-                    </div>
+                    </div>                    
+                    
                     <div class="col l4 m6 right-align hide-on-small-only">
                         <ul class="right">                    
                             @if (Auth::guest())
@@ -34,15 +40,53 @@
                                 <li><a href="{{ url('/register') }}">Register</a></li>
                             @else
 
-                            <li class="dropdown-button waves-effect" data-activates="event-menu">                            
+                            <li class="waves-effect hide-on-med-and-down">                            
                                 <div class="container-fluid valign-wrapper">
-                                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Manage Events"><i class="material-icons">add</i></a>                                                     
-
-                                    <ul id="event-menu" class="dropdown-content col l4 m8">
-                                        <li><a href="{{url('/event/create')}}">New event</a></li>
-                                    </ul>
+                                    <a class="tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Create New Event" href="#new-event-modal"><i class="material-icons">add</i></a>
                                 </div> 
-                            </li>                        
+                            </li>
+                            
+                            <div id="new-event-modal" class="modal primary-text-color container-fluid left-align">
+                                <form method="POST" action="{{url('/event')}}">
+                                    <div class="modal-content flow-text container-fluid">
+                                        <h4>Create A New Event</h4>
+                                            <!-- BEGIN FORM FOR CREATING NEW EVENT -->
+
+                                        <div class="row container-fluid">
+                                            {!! csrf_field() !!}
+
+                                             <div class="col l12">
+                                                 Title
+                                                 <div class="input-field">
+                                                     <input name="title" type="text" class="validate" placeholder="e.g. &quot;John's birthday&quot;" maxlength="80" required>
+                                                 </div>
+                                             </div>
+
+                                             <div class="col l12">
+                                                 <div class="input-field">
+                                                     Description
+                                                     <textarea name="description" class="materialize-textarea" placeholder="Tell us briefly what this event is going to be about" required></textarea>
+                                                 </div>
+                                             </div>
+
+<!--                                                <div class="switch col l12">
+                                                 <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Only participants will see information about this event">Private</span>
+                                                 <label>
+                                                     <input type="checkbox" name="is_public">
+                                                     <span class="lever"></span>                  
+                                                 </label>
+                                                 <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Other people will be able to see the information about this event">Public</span>
+                                             </div>-->
+                                        </div>
+                                    </div>
+                                <div class="modal-footer">
+                                    <input type="submit" class="modal-action modal-close waves-effect waves-light btn default-primary-color left" value="Create">
+                                </div>
+                                    
+                                    <!-- END FORM FOR CREATING NEW EVENT -->
+                                    
+                                </form>
+                            </div>
 
                             <li class="dropdown-button waves-effect" data-activates="user-menu">
                                 <div class="container-fluid valign-wrapper">
@@ -90,15 +134,11 @@
             <br>
             @yield('content')
         </div>
-
-        <!-- JavaScripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.js"></script>
-        <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>        
+        
+        <!-- JavaScripts -->                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>    
-        <script src="/js/jquery/main.js"></script>
+        <script src="/js/jquery/main.js" defer></script>
         <script src="/js/dropify/dropify.min.js"></script>
-        <script src="/js/tinymce/placeholder-plugin.js"></script>
-        <script src="/js/config/main.js"></script>
+        <script src="/js/config/main.js"></script>   
     </body>
 </html>
