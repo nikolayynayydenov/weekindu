@@ -1,4 +1,4 @@
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Weekindu</title>
@@ -9,15 +9,13 @@
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
         <link rel="stylesheet" href="/css/dropify/dropify.min.css"/>
-        <link rel="stylesheet" href="/css/meterialize/palette.css"/>
+        <link rel="stylesheet" href="/css/materialize/palette.css"/>
         <link rel="stylesheet" href="/css/custom/main.css"/>   
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.js"></script>    
     </head>
     <body id="app-layout">
-        
-        
         <nav class="default-primary-color">
             <div class="nav-wrapper container">
                 <div class="row">

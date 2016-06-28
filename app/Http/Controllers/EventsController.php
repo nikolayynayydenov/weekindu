@@ -98,6 +98,8 @@ class EventsController extends Controller
         $event = Event::find($id); // the event that we want to edit 
         
         if ($event !== null) {
+            // if an event with the given id exists
+            
             return view('events.edit')->with('event', $event); // pass the event to the view so we can access it there
         } else {
             abort(404);
