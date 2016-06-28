@@ -66,6 +66,7 @@ class EventsController extends Controller
         
         $event = new Event();
         $event->title = $request->all()['title'];
+        $event->host = $request->user()->id; // $request->user()->id hold the current logged user's id. 
         $event->description = $request->all()['description'];
         $event->save();
         
@@ -94,7 +95,14 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = Event::find($id); // the event that we want to edit 
+        
+        if ($event !== null) {
+            return view('events.edit')->with('event', $event); // pass the event to the view so we can access it there
+        } else {
+            abort(404);
+        }
+        
     }
 
     /**

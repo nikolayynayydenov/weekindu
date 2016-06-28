@@ -79,9 +79,9 @@
                                              </div>-->
                                         </div>
                                     </div>
-                                <div class="modal-footer">
-                                    <input type="submit" class="modal-action modal-close waves-effect waves-light btn default-primary-color left" value="Create">
-                                </div>
+                                    <div class="modal-footer">
+                                        <input type="submit" class="waves-effect waves-light btn default-primary-color left" value="Create">
+                                    </div>
                                     
                                     <!-- END FORM FOR CREATING NEW EVENT -->
                                     
