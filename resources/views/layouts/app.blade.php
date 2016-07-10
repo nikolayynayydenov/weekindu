@@ -44,46 +44,33 @@
                                 </div> 
                             </li>
                             
-                            <div id="new-event-modal" class="modal primary-text-color container-fluid left-align">
-                                <form method="POST" action="{{url('/event')}}">
-                                    <div class="modal-content flow-text container-fluid">
+                            <div id="new-event-modal" class="modal primary-text-color left-align">                                
+                                <div class="modal-content">
+                                    <form method="POST" action="{{url('/event')}}" id="create-event-modal-form">
                                         <h4>Create A New Event</h4>
                                             <!-- BEGIN FORM FOR CREATING NEW EVENT -->
-
-                                        <div class="row container-fluid">
-                                            {!! csrf_field() !!}
-
-                                             <div class="col l12">
+                                            {!! csrf_field() !!}    
+                                        <div class="row"> 
+                                             <div class="input-field col l12 m12 s12">
                                                  Title
-                                                 <div class="input-field">
-                                                     <input name="title" type="text" class="validate" placeholder="e.g. &quot;John's birthday&quot;" maxlength="80" required>
-                                                 </div>
+                                                <input name="title" type="text" class="validate" placeholder="e.g. &quot;John's birthday&quot;" maxlength="80" required>                                                     
                                              </div>
-
-                                             <div class="col l12">
-                                                 <div class="input-field">
-                                                     Description
-                                                     <textarea name="description" class="materialize-textarea" placeholder="Tell us briefly what this event is going to be about" required></textarea>
-                                                 </div>
-                                             </div>
-
-<!--                                                <div class="switch col l12">
-                                                 <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Only participants will see information about this event">Private</span>
-                                                 <label>
-                                                     <input type="checkbox" name="is_public">
-                                                     <span class="lever"></span>                  
-                                                 </label>
-                                                 <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Other people will be able to see the information about this event">Public</span>
-                                             </div>-->
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <input type="submit" class="waves-effect waves-light btn default-primary-color left" value="Create">
-                                    </div>
-                                    
-                                    <!-- END FORM FOR CREATING NEW EVENT -->
-                                    
-                                </form>
+
+                                        <div class="row">
+                                            <div class="input-field col l12 m12 s12">
+                                                Description
+                                                <textarea name="description" class="materialize-textarea" placeholder="Tell us briefly what this event is going to be about" required></textarea>                                                     
+                                            </div>
+                                        </div>                                            
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button form="create-event-modal-form" type="submit" class="waves-effect waves-red btn-flat default-primary-color text-primary-color">Create</button>
+                                    <a href="#" class="modal-action modal-close waves-effect waves-teal btn-flat">Cancel</a>
+                                </div>
+
+                                <!-- END FORM FOR CREATING NEW EVENT -->  
                             </div>
 
                             <li class="dropdown-button waves-effect" data-activates="user-menu">
@@ -109,6 +96,7 @@
             <ul class="side-nav primary-text-color" id="mobile-demo">
                 <li><a href="{{url('/home')}}">Home</a></li>
                 <li><a href="{{url('/event')}}">Events</a></li>
+                <li><a href="{{url('/event/create')}}">Create a new Event</a></li>
                 @if (!Auth::guest())
                     <div class="hide-on-med-and-up">
                         <li class="divider"></li>

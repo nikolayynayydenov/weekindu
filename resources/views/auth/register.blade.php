@@ -35,7 +35,7 @@
         </div>
     
         <div class="row">
-            <div class="input-field">
+            <div class="input-field col s12 m12 l12">
                 <i class="material-icons prefix">person_pin</i>
                 <input type="text" name="name" maxlength="20" length="20">
                 <label for="name">Nickname (optional)</label>
@@ -43,7 +43,7 @@
         </div>
     
         <div class="row">
-            <div class="input-field">
+            <div class="input-field col s12 m12 l12">
                 <i class="material-icons prefix">email</i>
                 <input type="email" name="email" required>
                 <label for="email">E-mail</label>
@@ -51,7 +51,7 @@
         </div>
     
         <div class="row">
-            <div class="input-field">
+            <div class="input-field col s12 m12 l12">
                 <i class="material-icons prefix">lock_outline</i>
                 <input type="password" name="password" pattern=".{8,}" required>
                 <label for="password">Password (at least 8 characters)</label>
@@ -59,7 +59,7 @@
         </div>  
     
         <div class="row">
-            <div class="input-field">
+            <div class="input-field col s12 m12 l12">
                 <i class="material-icons prefix">lock_outline</i>
                 <input type="password" name="password_confirmation" pattern=".{8,}" required>
                 <label for="password_confirmation">Re-enter password</label>

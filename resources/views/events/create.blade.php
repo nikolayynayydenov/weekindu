@@ -7,7 +7,7 @@
         <h4 class="center">Create a new event</h4>
 
         <div class="row">
-            <form class="col s12" action="{{url('/event')}}" method="POST" enctype="multipart/form-data">            
+            <form class="col s12" action="{{url('/event')}}" method="POST" enctype="multipart/form-data" id="create-event-form">            
 
                 {!! csrf_field() !!}
                 
@@ -18,28 +18,6 @@
                     </div>
                 </div>
 
-                <div class="switch">
-                    <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Only participants will see information about this event">Private</span>
-                    <label>
-                      <input type="checkbox">
-                      <span class="lever"></span>                  
-                    </label>
-                    <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Other people will be able to see the information about this event">Public</span>
-                </div>
-
-                <br><br>
-
-                 <div class="row">
-                    <div class="input-field col s12 container-fluid">
-                        <input id="participants" name="participants" type="text" class="validate" placeholder="Who would you like to invite?">
-                        <label for="participants">Participants</label>
-                    </div>
-                </div>               
-
-                <div class="file-field input-field">
-                    <input type="file" name="cover_photo" accept="image/*" class="dropify" data-max-file-size="2M" data-max-width="100%">        
-                </div>
-
                 <div class="row">
                     <div class="input-field col s12">
                         <textarea id="description" name="description" class="materialize-textarea" placeholder="Tell us briefly what this event is going to be about"></textarea>
@@ -47,24 +25,15 @@
                     </div>
                 </div>
                 
-                <input type="submit">
+                <input type="submit" class="btn waves-effect hide-on-small-only">
+                <div class="fixed-action-btn hide-on-med-and-up mobile-submit-button" style="bottom: 45px; right: 24px;">
+                    <a class="btn-floating btn-large teal">
+                        <i class="material-icons">trending_flat</i>
+                    </a>
+                </div>
             </form>
         </div>    
     </div>
 </div>
-
-<script defer>
-$("#participants").autocomplete({
-    source: "/user/get-json",
-    minLength: 1,
-    select: function (event, ui){
-    }        
-}).data('ui-autocomplete')._renderItem = function (ul, item){        
-    return $('<li>').addClass('avatar')
-        .append('<img src="/images/user-avatars/' + item.avatar + '" width="40" class="circle">')
-        .append('<span class="title"> ' + item.fullName + (item.name ? ' (' + item.name + ')' : '') + '</span>')
-        .appendTo(ul);
-};
-</script>
 
 @endsection

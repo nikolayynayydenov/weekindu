@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="input-field col s12 m12 l12">
                     <i class="material-icons prefix">email</i>
-                    <input type="email" name="email" required>
+                    <input type="email" name="email" required>                    
                     <label for="email">E-mail</label>
                 </div>
             </div>

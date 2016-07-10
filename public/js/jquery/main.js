@@ -22,5 +22,14 @@ $(document).ready(function (){
     
     $('select').material_select();
     
-    $('.modal-trigger').leanModal();    
+    $('.modal-trigger').leanModal();  
+    
+    $('.mobile-submit-button').on('click', function () {
+        /*
+         * mobile-submit-button is a circular button that can't otherwise
+         * be submitted. So it has to be submitted using Javascript
+         */
+               
+        $(this).closest('form').submit();
+    });
 });
