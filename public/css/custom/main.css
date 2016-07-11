@@ -21,3 +21,16 @@
     margin: 0;
     border-bottom: 1px solid #e0e0e0;
 }
+
+.authorize-row {
+    position: absolute;
+    min-height: 100%;
+    height:100%;
+    width: 100%;
+    top: 0;
+}
+
+.authorize-col {
+    min-height:100%;
+    height: 100%;
+}

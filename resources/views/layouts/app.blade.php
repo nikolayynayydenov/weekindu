@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
         <link rel="stylesheet" href="/css/dropify/dropify.min.css"/>
         <link rel="stylesheet" href="/css/materialize/palette.css"/>
-        <link rel="stylesheet" href="/css/custom/main.css"/>   
+        <link rel="stylesheet" href="/css/custom/main.css"/>           
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.js"></script>    
@@ -48,8 +48,8 @@
                                 <div class="modal-content">
                                     <form method="POST" action="{{url('/event')}}" id="create-event-modal-form">
                                         <h4>Create A New Event</h4>
-                                            <!-- BEGIN FORM FOR CREATING NEW EVENT -->
-                                            {!! csrf_field() !!}    
+                                        <!-- BEGIN FORM FOR CREATING NEW EVENT -->
+                                        {!! csrf_field() !!}    
                                         <div class="row"> 
                                              <div class="input-field col l12 m12 s12">
                                                  Title
@@ -93,13 +93,13 @@
                 </div>
             </div>
 
-            <ul class="side-nav primary-text-color" id="mobile-demo">
+            <ul class="side-nav" id="mobile-demo">
                 <li><a href="{{url('/home')}}">Home</a></li>
                 <li><a href="{{url('/event')}}">Events</a></li>
                 <li><a href="{{url('/event/create')}}">Create a new Event</a></li>
                 @if (!Auth::guest())
                     <div class="hide-on-med-and-up">
-                        <li class="divider"></li>
+                        <li class="divider divider-color"></li>
                         <li>
                             <div class="row valign-wrapper">
                                 <div class="col s4 valign">
@@ -125,6 +125,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>    
         <script src="/js/jquery/main.js" defer></script>
         <script src="/js/dropify/dropify.min.js"></script>
-        <script src="/js/config/main.js"></script>   
+        <script src="/js/config/main.js"></script>           
     </body>
 </html>

@@ -32,4 +32,10 @@ $(document).ready(function (){
                
         $(this).closest('form').submit();
     });
+    
+    /*
+     * Init datepicker (located on /event/{event_id}/edit)
+     */
+    
+    $( "#datepicker-jquery-ui" ).datepicker(); 
 });

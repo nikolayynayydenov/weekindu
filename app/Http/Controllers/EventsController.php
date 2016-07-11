@@ -12,7 +12,14 @@ class EventsController extends Controller
 {
     
     public function __construct() {
+        
+        /*
+         * Users can only edit/dalete their own events.
+         * This is achieved using the user_is_host_of_event custom middleware
+         */
+        
         $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('user_is_host_of_event', ['except' => ['index', 'show', 'store']]);
     }
     /**
      * Display a listing of the resource.
