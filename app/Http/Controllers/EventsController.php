@@ -18,8 +18,8 @@ class EventsController extends Controller
          * This is achieved using the user_is_host_of_event custom middleware
          */
         
-        $this->middleware('auth', ['except' => ['index', 'show']]);
-        $this->middleware('user_is_host_of_event', ['except' => ['index', 'show', 'store']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);        
+        $this->middleware('user_is_host_of_event', ['only' => ['edit', 'destroy']]);
     }
     /**
      * Display a listing of the resource.
@@ -123,7 +123,10 @@ class EventsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /*
+         * TO DO: If the host of the event is not the same as the
+         * logged in user, do not update
+         */
     }
 
     /**

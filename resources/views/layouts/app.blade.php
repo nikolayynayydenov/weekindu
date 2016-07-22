@@ -121,6 +121,34 @@
             @yield('content')
         </div>
         
+        <footer class="page-footer teal"><!-- Should be default-primary-color but it\s not working-->
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Weekindu App</h5>
+                        <p class="grey-text text-lighten-4">Organise your event easily</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Navigation</h5>
+                        <ul>
+                            @if (Auth::guest())
+                                <li><a class="grey-text text-lighten-3" href="{{url('/login')}}">Login</a></li>
+                                <li><a class="grey-text text-lighten-3" href="{{url('/register')}}">Register</a></li>
+                            @else
+                                <li><a class="grey-text text-lighten-3" href="{{url('/event/create')}}">Create Event</a></li>
+                            @endif
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2016 Weekindu, All rghts reserved
+                    <a class="grey-text text-lighten-4 right" href="#!"><!-- More links --></a>
+                </div>
+            </div>
+        </footer>
+        
         <!-- JavaScripts -->                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>    
         <script src="/js/jquery/main.js" defer></script>
