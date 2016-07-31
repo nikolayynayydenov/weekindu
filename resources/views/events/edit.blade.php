@@ -30,8 +30,7 @@
                     </div>
                 </div>
 
-                <div class="switch section">
-                    Tell us if you'd like other people to see your event<br>
+                <div class="switch section">                    
                     <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Only participants will see information about this event">Private</span>
                     <label>
                       <input type="checkbox">
@@ -40,14 +39,36 @@
                     <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Other people will be able to see the information about this event">Public</span>
                 </div>
                 
-                <div class="row">
+                <div class="section">
+                    <label for="datepicker-jquery-ui">You can specify the date of the event</label>
                     <input type="text" id="datepicker-jquery-ui">                    
                 </div>                
 
                 <div class="file-field input-field section">
                     Select a background photo:
                     <input type="file" name="cover_photo" accept="image/*" class="dropify" data-max-file-size="2M" data-max-width="100%">        
-                </div>                
+                </div>
+                
+                <div class="file-field input-field section">
+                    <div class="btn purple darken-2">
+                        <span>Images</span>
+                        <input type="file" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="You can upload one or more images">
+                    </div>
+                </div>
+                
+                <div class="section">                    
+                    <ul class="collection with-header" id="add-extra-params-container">
+                        <li class="collection-header"><h4>Extra parameters:</h4></li>
+                        <li class="collection-item">
+                            <input type="text" placeholder="Type the name of new parameter">
+                        </li>
+                      </ul>
+
+                    <span class="btn waves-effect green accent-4" id="add-extra-params-btn">Add extra parameters</span>
+                </div>
                 
                 <input type="submit" class="btn waves-effect">
             </form>
