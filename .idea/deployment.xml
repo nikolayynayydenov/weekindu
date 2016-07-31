@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Apache XAMPP Web Srver">
+    <serverData>
+      <paths name="Apache XAMPP Web Srver">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="weekindu" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
