@@ -1,27 +1,41 @@
 @extends('layouts.app')
 @section('content')
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
+<div class="container">
+    @if(count($events) > 0)
+        <ul class="collection">
+            @foreach($events as $event)
+                <h3>{{ $event->title }}</h3>
+                <p>{{ $event->description }}</p>
+                <div>{{ $event->date === '' ? '' : 'Date of event: ' . $event->date }}</div>
+                <div>{{ $event->dress_code === '' ? '' : '(we can load the picture)Dress code: ' . $event->dress_code }}</div>
+                <div>{{ $event->music === '' ? '' : '(we can load the picture)Music: ' . $event->music }}</div>
 
-Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.
+                @if(is_array($event->food))
+                    <ul class="collection">
+                        <li class="collection-header"><h4>Food: </h4></li>
+                        @foreach($event->food as $food_item)
+                            <li class="collection-item">{{ $food_item }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
+                @if(is_array($event->drinks))
+                    <ul class="collection">
+                        <li class="collection-header"><h4>Drinks: </h4></li>
+                        @foreach($event->drinks as $drinks_item)
+                            <li class="collection-item">{{ $drinks_item }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
-Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
-
-Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
-
-Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.
-werwwer
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
-
-Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.    
-Lorem ipsums dolor sit amet, consectetur adipiscing elit. Nam sed velit sit amet sem consequat placerat non scelerisque neque. Vestibulum sed neque dapibus, cursus lacus sit amet, dignissim ante. Cras cursus lacus vitae ultrices rutrum. Praesent convallis lectus in sem placerat, ac vehicula dui hendrerit. Curabitur sed arcu augue. Sed vitae porta mi. Donec viverra est at sapien consequat, vel gravida sapien bibendum. Fusce id elit augue. Suspendisse pharetra non diam in lobortis. Maecenas nisl odio, sodales in tincidunt eu, sollicitudin nec ante. Nulla iaculis turpis id tincidunt porta.
-
-Donec et purus porttitor, tincidunt mauris at, sollicitudin justo. Nam sollicitudin eros dui, non vulputate diam placerat non. Vivamus ac erat vitae quam molestie egestas eu et arcu. In a mauris id ex aliquet posuere et gravida ipsum. Quisque a massa non ex eleifend posuere. Aliquam sit amet lacinia dui. Duis consequat molestie lorem ac bibendum. Praesent ut lectus commodo, vestibulum nisi quis, volutpat leo. Suspendisse lacinia, risus eget tempus condimentum, dolor massa efficitur libero, eu malesuada nibh diam a neque. Aliquam vulputate eros vulputate ante ultricies, quis feugiat augue volutpat. Nam turpis metus, ullamcorper quis libero vitae, posuere vestibulum massa. Sed porttitor rhoncus enim, ut molestie augue cursus vel. Praesent pretium justo at nibh pharetra, ac ornare nulla porttitor. Fusce porttitor luctus ipsum eu fringilla.    
+                <div>{{ $event->location === '' ? '' : 'Location: ' . $event->location_string }}</div>
+                <hr>
+                <hr>
+                <hr>
+            @endforeach
+        </ul>
+    @endif
+</div>
 
 @endsection

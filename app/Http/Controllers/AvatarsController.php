@@ -21,7 +21,8 @@ class AvatarsController extends Controller
             $avatar = uniqid().'.'.$extension;
             
             $image = Image::make($image);
-            $image->fit(self::$avatarDefaultSize)->save(public_path().DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.
+            $image->fit(self::$avatarDefaultSize)
+                ->save(public_path().DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.
                     'user-avatars'.DIRECTORY_SEPARATOR.$avatar);
             
         } else {

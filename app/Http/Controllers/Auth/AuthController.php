@@ -49,7 +49,7 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        // TO DO the use should be able to create circle images (through front end - UI)
+        // TODO the user should be able to create circle images (through front end - UI)
         
         return Validator::make($data, [
             'first_name' => 'required|max:35',

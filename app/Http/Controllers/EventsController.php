@@ -14,12 +14,13 @@ class EventsController extends Controller
     public function __construct() {
         
         /*
-         * Users can only edit/dalete their own events.
+         * Users can only edit/delete their own events.
          * This is achieved using the user_is_host_of_event custom middleware
          */
         
         $this->middleware('auth', ['except' => ['index', 'show']]);        
         $this->middleware('user_is_host_of_event', ['only' => ['edit', 'destroy']]);
+        $this->middleware('event_is_public', ['only' => ['show']]);
     }
     /**
      * Display a listing of the resource.
@@ -28,7 +29,9 @@ class EventsController extends Controller
      */
     public function index()
     {
-        return view('events.index');
+        $all_events = Event::where('is_public', true)->get();
+
+        return view('events.index')->with('events', $all_events);
     }
 
     /**
@@ -47,40 +50,53 @@ class EventsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {        
+    public function store(Requests\StoreEventRequest $request)
+    {
         // normalization:
-        
-        $request->all()['title'] = trim($request->all()['title']);
-        $request->all()['description'] = trim($request->all()['description']);
-        
-        // validation:
-        
-        $rules = [
-            'title' => 'required|max:80',
-            'description' => 'required'
-        ];
-        
-        $validator = Validator::make($request->all(), $rules);
-        
-        if ($validator->fails()) {
-            return redirect()
-                    ->back()
-                    ->withErrors($validator)                    
-                    ->withInput();
-        } else {
-        // store into db
-        
+
+        $data = $request->except('_token');
+
+        $trimData = function ($item) {
+            if (is_array($item)) {
+                $item = array_map('trim', $item);
+                return $item;
+            }
+            return trim($item);
+        };
+
+        /*
+         * Trim everything in the $data array.
+         * Using custom trimming function because
+         * some elements from $data are arrays
+         */
+        $data = array_map($trimData, $data);
+
+        /*
+         * Store into db
+         */
+
         $event = new Event();
-        $event->title = $request->all()['title'];
-        $event->host = $request->user()->id; // $request->user()->id hold the current logged user's id. 
-        $event->description = $request->all()['description'];
+        $event->title = $data['title'];
+        $event->date = $data['date'];
+        $event->description = $data['description'];
+        $event->is_public = empty($data['is_public']) ? false : true;
+        $event->type = empty($data['type']) ? '' : $data['type'];
+        $event->dress_code = empty($data['dress-code']) ? '' : $data['dress-code'];
+        $event->music = empty($data['music']) ? '' : json_encode($data['music']);
+        $event->food = empty($data['food']) ? '' : json_encode($data['food']);
+        $event->drinks = empty($data['drinks']) ? '' : json_encode($data['drinks']);
+        $event->location_string = empty($data['location_string']) ? '' : $data['location_string'];
+        $event->location_coordinates = empty($data['location_coordinates']) ? '' : $data['location_coordinates'];
+        $event->extras = empty($data['food']) ? '' : json_encode($data['extras']);
+        $event->host = $request->user()->id;
         $event->save();
-        
-        // redirect to the edit form to the creation of the event can continue
-        
-        return redirect('/event/'.$event->id.'/edit');// the $event->id property holds the last inserted id
-        }
+
+        /*
+         * Redirect to the show event action
+         */
+
+        return redirect('/event/'.$event->id);// the $event->id property holds the last inserted id
+
     }
 
     /**
@@ -91,7 +107,10 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        //
+        $event = Event::findOrFail($id);
+        $event->food = json_decode($event->food);
+        $event->drinks = json_decode($event->drinks);
+        return view('events.show')->with('event', $event);
     }
 
     /**

@@ -1,0 +1,15 @@
+.create-event-option {
+    cursor: pointer;
+}
+
+.card-active {
+    box-shadow: 0 0px 15px 0 green,0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.card-active:hover {
+    box-shadow: 0 0px 25px 0 green,0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.slider-link-item {
+    cursor: pointer;
+}

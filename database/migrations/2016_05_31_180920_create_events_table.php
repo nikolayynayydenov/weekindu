@@ -14,9 +14,18 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 80);
             $table->integer('host')->unsigned()->index();
             $table->foreign('host')->references('id')->on('users');
+            $table->string('title', 80);
+            $table->string('dress_code', 80);
+            $table->string('location_coordinates', 50);
+            $table->string('location_string');
+            $table->string('type', 80);
+            $table->string('date');
+            $table->string('music');
+            $table->string('food');
+            $table->string('drinks');
+            $table->text('extras');            
             $table->text('description');
             $table->boolean('is_public');
             $table->timestamps();

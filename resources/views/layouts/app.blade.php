@@ -40,38 +40,9 @@
 
                             <li class="waves-effect hide-on-med-and-down">                            
                                 <div class="container-fluid valign-wrapper">
-                                    <a class="tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="Create New Event" href="#new-event-modal"><i class="material-icons">add</i></a>
+                                    <a class="tooltipped" data-tooltip="Create New Event" href="{{url('/event/create')}}"><i class="material-icons">add</i></a>
                                 </div> 
                             </li>
-                            
-                            <div id="new-event-modal" class="modal primary-text-color left-align">                                
-                                <div class="modal-content">
-                                    <form method="POST" action="{{url('/event')}}" id="create-event-modal-form">
-                                        <h4>Create A New Event</h4>
-                                        <!-- BEGIN FORM FOR CREATING NEW EVENT -->
-                                        {!! csrf_field() !!}    
-                                        <div class="row"> 
-                                             <div class="input-field col l12 m12 s12">
-                                                 Title
-                                                <input name="title" type="text" class="validate" placeholder="e.g. &quot;John's birthday&quot;" maxlength="80" required>                                                     
-                                             </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col l12 m12 s12">
-                                                Description
-                                                <textarea name="description" class="materialize-textarea" placeholder="Tell us briefly what this event is going to be about" required></textarea>                                                     
-                                            </div>
-                                        </div>                                            
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button form="create-event-modal-form" type="submit" class="waves-effect waves-red btn-flat default-primary-color text-primary-color">Create</button>
-                                    <a href="#" class="modal-action modal-close waves-effect waves-teal btn-flat">Cancel</a>
-                                </div>
-
-                                <!-- END FORM FOR CREATING NEW EVENT -->  
-                            </div>
 
                             <li class="dropdown-button waves-effect" data-activates="user-menu">
                                 <div class="container-fluid valign-wrapper">
@@ -116,7 +87,7 @@
             </ul>
         </nav>
 
-        <div class="container">
+        <div class="">
             <br>
             @yield('content')
         </div>
@@ -149,9 +120,10 @@
             </div>
         </footer>
         
-        <!-- JavaScripts -->                
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>    
-        <script src="/js/jquery/main.js" defer></script>
+        <!-- JavaScripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+        <script src="/js/custom/jquery/main.js" defer></script>
+        <script src="/js/custom/jquery/slider.js"></script>
         <script src="/js/dropify/dropify.min.js"></script>
         <script src="/js/config/main.js"></script>           
     </body>
