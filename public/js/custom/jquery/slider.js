@@ -166,8 +166,8 @@ $(document).ready(function(){
         },
         {
             'cardTitle': '',
-            'cardContent': 'Other',
-            'imgLocation': 'create-event/music/other.jpg'
+            'cardContent': 'Srabsko',
+            'imgLocation': 'create-event/music/royal.jpg'
         }
     ], 'multiple');
 
