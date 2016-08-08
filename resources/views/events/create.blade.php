@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="/css/custom/slider.css">
+    <link rel="stylesheet" href="/css/custom/slider.css">
+
 
 <!-- The form that is going to be sent: -->
 
@@ -20,7 +21,7 @@
 @endif
 
 <div class="row">
-    <div class="card-panel z-depth-1">
+    <div class="card-panel z-depth-1 grey transparent">
         <div class="row">
             <div class="col l3 s12 m12">
                 <div class="collection" id="slider-links">
@@ -34,13 +35,13 @@
                     <a class="collection-item slider-link-item waves-effect" id="slider-link-extras">Extras</a>
                 </div>
 
-                <button class="btn" form="create-event-form" type="submit">Create Event!</button>
+                <button class="btn default-primary-color" form="create-event-form" type="submit">Create Event!</button>
             </div>
             <div class="col l9 s12 m12">
                 <div class="row">
                     <div class="col s12 m12 l12">
-                        <span class="btn default-primary-color waves-effect" id="slider-prev-btn">Previous</span>
-                        <span class="btn default-primary-color waves-effect" id="slider-next-btn">Next</span>
+                        <span class="btn default-primary-color waves-effect " id="slider-prev-btn">Previous</span>
+                        <span class="btn default-primary-color waves-effect " id="slider-next-btn">Next</span>
                     </div>
                 </div>
 
@@ -85,7 +86,7 @@
                                 <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Only participants will see information about this event" data-tooltip-id="072f438c-4f1e-0b98-4bbf-af0f5f2f0763">Private</span>
                                 <label>
                                     <input type="checkbox" form="create-event-form" name="is_public">
-                                    <span class="lever"></span>
+                                    <span class="lever primary-color"></span>
                                 </label>
                                 <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Other people will be able to see the information about this event" data-tooltip-id="f225007d-48b8-0916-fe0c-d242cfd80a2a">Public</span>
                             </div>

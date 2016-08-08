@@ -3,13 +3,30 @@
 }
 
 .card-active {
-    box-shadow: 0 0px 15px 0 green,0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 0px 15px 0 #3F51B5,0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .card-active:hover {
-    box-shadow: 0 0px 25px 0 green,0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 0px 25px 0 #3F51B5,0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .slider-link-item {
     cursor: pointer;
+}
+.btn:hover, .btn-large:hover{
+    background-color:#3F51B5;
+}
+.collection a.collection-item {
+    display: block;
+    transition: .25s;
+    color: #3F51B5;;
+}
+.collection .collection-item.active {
+    background-color: #3F51B5;
+    color: #FFEB3B;
+}
+body{
+    background-image: url("2.jpg");
+    background-position: center;
+
 }
