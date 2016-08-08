@@ -26,7 +26,22 @@
     color: #FFEB3B;
 }
 body{
-    background-image: url("2.jpg");
+    background-image: url("background-photo.jpg");
     background-position: center;
 
+}
+#showhide{
+
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 30px;
+    height: 300px;
+    background: #FFEB3B;
+
+
+
+}
+#slider-links{
+    display: none;
 }

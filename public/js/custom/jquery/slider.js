@@ -540,4 +540,7 @@ $(document).ready(function(){
             navigationDisabled = false;
         });
     }
+    $('#showhide').click(function(){
+        $('#slider-links').toggle("slow");
+    });
 });

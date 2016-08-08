@@ -21,6 +21,7 @@
 @endif
 
 <div class="row">
+    <div class="row accent-color z-depth-5" id="showhide" onclick="">showhide</div>
     <div class="card-panel z-depth-1 grey transparent">
         <div class="row">
             <div class="col l3 s12 m12">
@@ -35,15 +36,16 @@
                     <a class="collection-item slider-link-item waves-effect" id="slider-link-extras">Extras</a>
                 </div>
 
-                <button class="btn default-primary-color" form="create-event-form" type="submit">Create Event!</button>
+
             </div>
             <div class="col l9 s12 m12">
                 <div class="row">
                     <div class="col s12 m12 l12">
                         <span class="btn default-primary-color waves-effect " id="slider-prev-btn">Previous</span>
                         <span class="btn default-primary-color waves-effect " id="slider-next-btn">Next</span>
-                    </div>
+                        <span><button class="btn default-primary-color" form="create-event-form" type="submit">Create Event!</button></span>
                 </div>
+                    </div>
 
                 <div class="container-fluid" id="slider-container">
                     <div class="slider-item" id="basics">
