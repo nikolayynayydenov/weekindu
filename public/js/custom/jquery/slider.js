@@ -339,12 +339,19 @@ $(document).ready(function(){
             showSliderItem();
         }
     });
+    $('#slider-next-btn').on('click', function (event){
+        $("#slider-links").slideDown("slow").delay(100).slideUp("slow");
+
+    });
 
     $('#slider-prev-btn').on('click', function (event){
         currentItemIndex -= 1;
         if (!navigationDisabled) {
             showSliderItem();
         }
+    });
+    $('#slider-prev-btn').on('click', function (event){
+        $("#slider-links").slideDown("slow").delay(100).slideUp("slow");
     });
 
     // event listener for clicking a link from the side menu:
@@ -541,6 +548,6 @@ $(document).ready(function(){
         });
     }
     $('#showhide').click(function(){
-        $('#slider-links').toggle("slow");
+        $('#slider-links').slideToggle("slow");
     });
 });
