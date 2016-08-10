@@ -31,7 +31,7 @@
         <br>
         <div class="row">
             <div class="col offset-l6">
-                <h4>Masa</h4>
+                <h4>{{ $event->title }}</h4>
             </div>
         </div>
 
