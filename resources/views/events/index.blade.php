@@ -4,7 +4,7 @@
     @if(count($events) > 0)
         <ul class="collection">
             <div class="row">
-            @
+
             @foreach($events as $event)
 
                     <div class="col l2 s4 m2">
@@ -20,19 +20,19 @@
                                     <img src="images/create-event/type/conference.jpg">
                                     </a>
                                 @endif
-                                @if($event->type === 'Bachelor-party')
+                                @if($event->type === 'Bachelor Party')
                                     <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/bachelorparty.jpg">
+                                    <img src="images/create-event/type/bachelor-party.jpg">
                                     </a>
                                 @endif
-                                @if($event->type === 'Birthday-party')
+                                @if($event->type === 'Birthday Party')
                                     <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/birthdayparty.jpg">
+                                    <img src="images/create-event/type/birthday-party.jpg">
                                     </a>
                                 @endif
-                                @if($event->type === 'Buisiness-meeting')
+                                @if($event->type === 'Buisiness Meeting')
                                     <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/buisinessmeeting.jpg">
+                                    <img src="images/create-event/type/buisiness-meeting.jpg">
                                     </a>
                                 @endif
                                 @if($event->type === 'Camp')

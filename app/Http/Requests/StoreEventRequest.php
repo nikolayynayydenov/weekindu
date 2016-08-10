@@ -28,7 +28,7 @@ class StoreEventRequest extends Request
             'date' => 'max:255',
             'description' => 'required',
             'is_public' => 'in:on',
-            'type' => 'max:80|alpha_num',
+            'type' => 'max:80',
             'dress-code' => 'max:80',
             'music' => 'array',
             'music.*' => 'max:50',
