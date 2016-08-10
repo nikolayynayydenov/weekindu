@@ -41,7 +41,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+        return view('events.chooseparams');
     }
 
     /**
@@ -154,8 +154,5 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+
 }
