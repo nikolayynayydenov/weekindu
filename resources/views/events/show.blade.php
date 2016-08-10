@@ -34,45 +34,54 @@
                 <h4>{{ $event->title }}</h4>
             </div>
         </div>
-
         <div class="row z-depth-2">
             <div class="col s12">
                 <ul class="tabs">
-                    <li class="tab col s3"><a class="active" href="#test1">Attendance</a></li>
-                    <li class="tab col s3"><a href="#test2">Food statistics</a></li>
-                    <li class="tab col s3"><a href="#test4">Drinks statistics</a></li>
+                    <li class="tab col s3"><a id="active" href="#test1">Attendance</a></li>
+                    <li class="tab col s3"><a class="food" href="#test2">Food statistics</a></li>
+                    <li class="tab col s3"><a href="#test3">Drinks statistics</a></li>
                     <li class="tab col s3"><a href="#test4">Extras</a></li>
                 </ul>
             </div>
+            <div id="test1" class="col s12">
+                <table class="centered">
+                    <thead>
+                    <tr>
+                        <th data-field="id">Name</th>
+                        <th data-field="name">Attending</th>
+                        <th data-field="price">Additional info</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>Alvin Ivanov</td>
+                        <td style="color: green">Yes</td>
+                        <td>I will be late with 15 minutes</td>
+                    </tr>
+                    <tr>
+                        <td >Alan Kolev</td>
+                        <td style="color: red">No</td>
+                        <td>Sorry, I have an arrangement</td>
+                    </tr>
+                    <tr>
+                        <td>Jonathan Georgiev</td>
+                        <td style="color: orange">Pending</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="test2" class="col s12">BRATTJJFJ</div>
+            <div id="test3" class="col s12">hahsahahahashasdhdsa</div>
+            <div id="test4" class="col s12">extririririri</div>
         </div>
-
-        <table class="centered">
-            <thead>
-            <tr>
-                <th data-field="id">Name</th>
-                <th data-field="name">Attending</th>
-                <th data-field="price">Additional info</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <tr>
-                <td>Alvin Ivanov</td>
-                <td style="color: green">Yes</td>
-                <td>I will be late with 15 minutes</td>
-            </tr>
-            <tr>
-                <td >Alan Kolev</td>
-                <td style="color: red">No</td>
-                <td>Sorry, I have an arrangement</td>
-            </tr>
-            <tr>
-                <td>Jonathan Georgiev</td>
-                <td style="color: orange">Pending</td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
     </div>
 
+    <script>
+        $(document).ready(function(){
+            $('ul.tabs').tabs('select_tab', 'tab_id');
+        });
+    </script>
 @endsection
+
