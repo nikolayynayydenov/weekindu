@@ -64,12 +64,12 @@ $(document).ready(function(){
         {
             'cardTitle': 'Bachelor Party',
             'cardContent': 'Make your last party without your wife unforgettable',
-            'imgLocation': 'create-event/type/bachelor-party.jpg'
+            'imgLocation': 'create-event/type/bachelorparty.jpg'
         },
         {
             'cardTitle': 'Birthday Party',
             'cardContent': 'Lets make that birthday party the best',
-            'imgLocation': 'create-event/type/birthday-party.jpg'
+            'imgLocation': 'create-event/type/birthdayparty.jpg'
         }
     ]);
 
@@ -77,7 +77,7 @@ $(document).ready(function(){
         {
             'cardTitle': 'Buisiness Meeting',
             'cardContent': 'Buisiness Meeting',
-            'imgLocation': 'create-event/type/buisiness-meeting.jpg'
+            'imgLocation': 'create-event/type/buisinessmeeting.jpg'
         },
         {
             'cardTitle': 'Camp',

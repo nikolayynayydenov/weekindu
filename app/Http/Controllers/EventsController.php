@@ -29,7 +29,8 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $all_events = Event::where('is_public', true)->get();
+        $all_events = Event::where('is_public', false)->get();
+
 
         return view('events.index')->with('events', $all_events);
     }
@@ -41,7 +42,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        return view('events.chooseparams');
+        return view('events.create');
     }
 
     /**

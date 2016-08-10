@@ -19,7 +19,6 @@
         </ul>
     </div>
 @endif
-    <a class="grey-text text-lighten-3" href="{{url('event/chooseparams')}}">Login</a></li>
 <div class="row">
     <button class=" btn waves-effect row accent-color z-depth-5" id="showhide" onclick="">showhide</button>
     <div class="card-panel z-depth-1 grey transparent">

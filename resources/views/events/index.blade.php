@@ -3,14 +3,16 @@
     <link rel="stylesheet" href="/css/custom/showevents.css">
     @if(count($events) > 0)
         <ul class="collection">
+            <div class="row">
+            @
             @foreach($events as $event)
-                <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card hoverable">
+
+                    <div class="col l2 s4 m2">
+                        <div class="card hoverable small">
                             <div class="card-image">
                                 @if($event->type === 'Wedding')
                                     <a href="event/{{ $event->id }}">
-                                    <img class="visible-md visible-xs" src="images/create-event/type/wedding.jpg">
+                                    <img class="responsive-img" src="images/create-event/type/wedding.jpg">
                                     </a>
                                 @endif
                                 @if($event->type === 'Conference')
@@ -20,17 +22,17 @@
                                 @endif
                                 @if($event->type === 'Bachelor-party')
                                     <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/bachelor-party.jpg">
+                                    <img src="images/create-event/type/bachelorparty.jpg">
                                     </a>
                                 @endif
                                 @if($event->type === 'Birthday-party')
                                     <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/birthday-party.jpg">
+                                    <img src="images/create-event/type/birthdayparty.jpg">
                                     </a>
                                 @endif
                                 @if($event->type === 'Buisiness-meeting')
                                     <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/buisiness-meeting.jpg">
+                                    <img src="images/create-event/type/buisinessmeeting.jpg">
                                     </a>
                                 @endif
                                 @if($event->type === 'Camp')
@@ -51,8 +53,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+
             @endforeach
+            </div>
         </ul>
     @endif
 
