@@ -144,14 +144,20 @@
                             <thead>
                             <tr>
                                 <th data-field="name">Parameters</th>
+                                <th data-field="quantity">Quantity</th>
                             </tr>
                             </thead>
 
                             <tbody>
                             @foreach($values as $value)
-                                <td style="color: green">
+                                <tr>
+                                <td>
                                     {{ $value }}
                                 </td>
+                                <td>
+                                    0
+                                </td>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>
