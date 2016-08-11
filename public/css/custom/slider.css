@@ -50,3 +50,79 @@ body{
     position:fixed;
     opacity: 0.70;
 }
+.input-field .prefix.active{
+    color: #FFEB3B;
+}
+/* label color */
+.input-field label {
+    color: #FFEB3B;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #FFEB3B;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #FFEB3B;
+    box-shadow: 0 1px 0 0 #FFEB3B;
+}
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #FFEB3B;
+    box-shadow: 0 1px 0 0 #FFEB3B;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #FFEB3B;
+    box-shadow: 0 1px 0 0 #FFEB3B;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #FFEB3B;
+}
+/*.picker__box{
+    background-color: #FFEB3B;
+}*/
+.picker__date-display, .picker__weekday-display{
+    background-color: #3F51B5;
+}
+.picker__nav--prev:hover, .picker__nav--next:hover{
+    background:#3F51B5 ;
+}
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected{
+    background-color:#3F51B5 ;
+}
+.picker__day.picker__day--today{
+    color:#3F51B5 ;
+}
+.picker__close, .picker__today{
+    color:#3F51B5 ;
+
+}
+.switch label input[type=checkbox]:checked+.lever{
+    background-color:#3F51B5 ;
+}
+.switch label input[type=checkbox]:checked+.lever:after{
+    background-color:#FFEB3B ;
+
+}
+.input-field{
+    color: #FFEB3B;
+}
+.card .card-image .card-title{
+    color: #3F51B5;
+    font-weight: bold;
+
+}
+h4{
+    font: normal normal normal 80px/1.4em Enriqueta,serif;
+    color: #FFEB3B;
+}
+[type="checkbox"]:checked+label:before{
+    border-right: 2px solid #FFEB3B;
+    border-bottom: 2px solid #FFEB3B;
+}
+.collection.with-header .collection-header{
+    background-color: #3F51B5;
+}
+

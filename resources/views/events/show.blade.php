@@ -27,6 +27,8 @@
 
         <div>{{ $event->location === '' ? '' : 'Location: ' . $event->location_string }}</div>
     </div>--}}
+    <link rel="stylesheet" href="/css/custom/show.css">
+
     <div class="">
         <br>
         <div class="row">
