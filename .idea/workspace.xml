@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="579c2835-c6fd-47b8-9659-41513cc6b9fb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EventsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/events/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/events/show.blade.php" />
     </list>
     <ignored path="weekindu.iws" />
@@ -29,10 +28,12 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/events/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="144" column="38" selection-start-line="144" selection-start-column="38" selection-end-line="144" selection-end-column="38" />
+            <state relative-caret-position="2375">
+              <caret line="159" column="18" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
               <folding>
-                <element signature="e#5167#5187#0#HTML" expanded="true" />
+                <element signature="e#5353#5373#0#HTML" expanded="true" />
+                <marker date="1470942598108" expanded="true" signature="5713:5789" ph="..." />
+                <marker date="1470942598108" expanded="true" signature="5724:5788" ph="..." />
               </folding>
             </state>
           </provider>
@@ -371,12 +372,12 @@
       <workItem from="1470836960399" duration="699000" />
       <workItem from="1470838726856" duration="358000" />
       <workItem from="1470931619621" duration="1447000" />
-      <workItem from="1470937308791" duration="763000" />
+      <workItem from="1470937308791" duration="3366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133992000" />
+    <option name="totallyTimeSpent" value="136595000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -388,7 +389,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1367" height="735" extended-state="0" />
+    <frame x="-7" y="0" width="1367" height="735" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20873427" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -542,10 +543,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/events/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="144" column="38" selection-start-line="144" selection-start-column="38" selection-end-line="144" selection-end-column="38" />
+        <state relative-caret-position="2375">
+          <caret line="159" column="18" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
           <folding>
-            <element signature="e#5167#5187#0#HTML" expanded="true" />
+            <element signature="e#5353#5373#0#HTML" expanded="true" />
+            <marker date="1470942598108" expanded="true" signature="5713:5789" ph="..." />
+            <marker date="1470942598108" expanded="true" signature="5724:5788" ph="..." />
           </folding>
         </state>
       </provider>

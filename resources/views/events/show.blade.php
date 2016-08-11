@@ -40,7 +40,11 @@
                     <li class="tab col s3"><a id="active" href="#test1">Attendance</a></li>
                     <li class="tab col s3"><a class="food" href="#test2">Food statistics</a></li>
                     <li class="tab col s3"><a href="#test3">Drinks statistics</a></li>
-                    <li class="tab col s3"><a href="#test4">Extras</a></li>
+                    @if(is_object(json_decode($event->extras) ))
+                        @foreach(json_decode($event->extras) as $key=>$values)
+                            <li class="tab col s3"><a href="#{{ $key }}">{{ $key }}</a></li>
+                        @endforeach
+                    @endif
                 </ul>
             </div>
             <div id="test1" class="col s12">
@@ -130,43 +134,31 @@
                     </tbody>
                 </table>
             </div>
-            <div id="test4" class="col s12">
-                <table class="centered">
-                    <thead>
-                    <tr>
-                        <th data-field="id">Extra</th>
-                        <th data-field="name">Parameters</th>
-                    </tr>
-                    </thead>
 
-                    <tbody>
-                    <tr>
-                        <td>
-                        @if(is_array(json_decode($event->extras) ))
-                            @foreach(json_decode($event->extras) as $k=>$e)
-                                {{ $k }}
+
+
+            @if(is_object(json_decode($event->extras) ))
+                @foreach(json_decode($event->extras) as $key=>$values)
+                    <div id="{{ $key }}" class="col s12">
+                        <table class="centered">
+                            <thead>
+                            <tr>
+                                <th data-field="name">Parameters</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            @foreach($values as $value)
                                 <td style="color: green">
-                                    @foreach($e as $ee)
-                                        {{ $ee }}
-                                    @endforeach
+                                    {{ $value }}
                                 </td>
                             @endforeach
-                        @endif
+                            </tbody>
+                        </table>
+                    </div>
+                @endforeach
+            @endif
 
-                            </td>
-                    </tr>
-                    <tr>
-                        <td >Alan Kolev</td>
-                        <td style="color: red">No</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan Georgiev</td>
-                        <td style="color: orange">Pending</td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
 
