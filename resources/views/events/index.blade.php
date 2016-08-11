@@ -8,10 +8,11 @@
             @foreach($events as $event)
 
                     <div class="col l2 s4 m2">
+                        <a href="event/{{ $event->id }}">
                         <div class="card hoverable small">
                             <div class="card-image">
                                 @if($event->type === 'Wedding')
-                                    <a href="event/{{ $event->id }}">
+
                                     <img class="responsive-img" src="images/create-event/type/wedding.jpg">
                                     </a>
                                 @endif
