@@ -142,14 +142,16 @@
                     <tbody>
                     <tr>
                         <td>
-                        @foreach(json_decode($event->extras) as $k=>$e)
-                            {{ $k }}
-                            <td style="color: green">
-                                @foreach($e as $ee)
-                                    {{ $ee }}
-                                @endforeach
-                            </td>
+                        @if(is_array(json_decode($event->extras) ))
+                            @foreach(json_decode($event->extras) as $k=>$e)
+                                {{ $k }}
+                                <td style="color: green">
+                                    @foreach($e as $ee)
+                                        {{ $ee }}
+                                    @endforeach
+                                </td>
                             @endforeach
+                        @endif
 
                             </td>
                     </tr>
