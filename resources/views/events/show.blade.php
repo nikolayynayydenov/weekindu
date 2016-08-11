@@ -130,7 +130,41 @@
                     </tbody>
                 </table>
             </div>
-            <div id="test4" class="col s12">extririririri</div>
+            <div id="test4" class="col s12">
+                <table class="centered">
+                    <thead>
+                    <tr>
+                        <th data-field="id">Extra</th>
+                        <th data-field="name">Parameters</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>
+                        @foreach(json_decode($event->extras) as $k=>$e)
+                            {{ $k }}
+                            <td style="color: green">
+                                @foreach($e as $ee)
+                                    {{ $ee }}
+                                @endforeach
+                            </td>
+                            @endforeach
+
+                            </td>
+                    </tr>
+                    <tr>
+                        <td >Alan Kolev</td>
+                        <td style="color: red">No</td>
+                    </tr>
+                    <tr>
+                        <td>Jonathan Georgiev</td>
+                        <td style="color: orange">Pending</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
