@@ -72,8 +72,64 @@
                     </tbody>
                 </table>
             </div>
-            <div id="test2" class="col s12">BRATTJJFJ</div>
-            <div id="test3" class="col s12">hahsahahahashasdhdsa</div>
+            <div id="test2" class="col s12">
+                <table class="centered">
+                    <thead>
+                    <tr>
+                        <th data-field="Food">Food/Dish</th>
+                        <th data-field="Quantity">Quantity</th>
+
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+
+                        @if(is_array($event->food))
+                            @foreach($event->food as $food_item)
+                        <tr>
+
+
+                    <td>{{ $food_item }}</td>
+                            <td>0</td>
+
+                            </tr>
+                            @endforeach
+                        @endif
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="test3" class="col s12">
+                <table class="centered">
+                    <thead>
+                    <tr>
+                        <th data-field="Drink">Drink type</th>
+                        <th data-field="Quantity">Quantity</th>
+
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+
+                    @if(is_array($event->drinks))
+                        @foreach($event->drinks as $drinks_item)
+                            <tr>
+
+
+                                <td>{{ $drinks_item }}</td>
+                                <td>0</td>
+
+                            </tr>
+                        @endforeach
+                    @endif
+
+
+                    </tbody>
+                </table>
+            </div>
             <div id="test4" class="col s12">extririririri</div>
         </div>
     </div>
