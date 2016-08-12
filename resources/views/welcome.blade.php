@@ -9,40 +9,8 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
         {{--<link href="css/meterialize/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>--}}
-        <link rel="stylesheet" href="/public/css/custom/welcome.css">
-        <style type="text/css">
-            .fullscreen-bg {
-                position: fixed;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                overflow: hidden;
-                z-index: -100;
-            }
+        <link rel="stylesheet" href="/css/custom/welcome.css">
 
-            .fullscreen-bg__video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-            @media (min-aspect-ratio: 16/9) {
-                .fullscreen-bg__video {
-                    width: 100%;
-                    height: auto;
-                }
-            }
-
-            @media (max-aspect-ratio: 16/9) {
-                .fullscreen-bg__video {
-                    width: auto;
-                    height: 100%;
-                }
-            }
-
-        </style>
     </head>
     <body>
 
