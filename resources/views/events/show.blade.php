@@ -42,6 +42,7 @@
                     <li class="tab col s3"><a id="active" href="#test1">Attendance</a></li>
                     <li class="tab col s3"><a class="food" href="#test2">Food statistics</a></li>
                     <li class="tab col s3"><a href="#test3">Drinks statistics</a></li>
+                    <li class="tab col s3"><a href="#test4">Music statistics</a></li>
                     @if(is_object(json_decode($event->extras) ))
                         @foreach(json_decode($event->extras) as $key=>$values)
                             <li class="tab col s3"><a href="#{{ $key }}">{{ $key }}</a></li>
@@ -127,6 +128,35 @@
 
                                 <td>{{ $drinks_item }}</td>
                                 <td>0</td>
+
+                            </tr>
+                        @endforeach
+                    @endif
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="test4" class="col s12">
+                <table class="centered">
+                    <thead>
+                    <tr>
+                        <th data-field="Musuc">Drink type</th>
+                        <th data-field="Quantity">Percentage</th>
+
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+
+                    @if(is_array($event->music))
+                        @foreach($event->music as $music_item)
+                            <tr>
+
+
+                                <td>{{ $music_item}}</td>
+                                <td>0%</td>
 
                             </tr>
                         @endforeach

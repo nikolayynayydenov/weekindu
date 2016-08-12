@@ -111,6 +111,7 @@ class EventsController extends Controller
         $event = Event::findOrFail($id);
         $event->food = json_decode($event->food);
         $event->drinks = json_decode($event->drinks);
+        $event->music = json_decode($event->music);
         $event->extras = json_decode($event->extras);
         return view('events.show')->with('event', $event);
     }
