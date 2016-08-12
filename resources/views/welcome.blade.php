@@ -8,10 +8,45 @@
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-        <link href="css/meterialize/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        {{--<link href="css/meterialize/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>--}}
+        <link rel="stylesheet" href="/public/css/custom/welcome.css">
+        <style type="text/css">
+            .fullscreen-bg {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                overflow: hidden;
+                z-index: -100;
+            }
+
+            .fullscreen-bg__video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            @media (min-aspect-ratio: 16/9) {
+                .fullscreen-bg__video {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            @media (max-aspect-ratio: 16/9) {
+                .fullscreen-bg__video {
+                    width: auto;
+                    height: 100%;
+                }
+            }
+
+        </style>
     </head>
     <body>
-        <nav class="indigo darken-4" role="navigation">
+
+        <nav class="indigo" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="{{url('/')}}" class="brand-logo white-text">Weekindu</a>
                 <ul class="right hide-on-med-and-down">
@@ -31,99 +66,68 @@
             </div>
         </nav>
 
-        <div id="index-banner" class="parallax-container">
-            <div class="section no-pad-bot">
-                <div class="container">
-                    <br><br>
-                    <h1 class="header center blue-text text-accent-1">Weekindu</h1>
-                    <div class="row center">
-                        <h5 class="header col s12 white-text">A user-friendly event manager</h5>
-                    </div>
-                    <div class="row center">
-                        <a href="{{url('/event')}}" id="download-button" class="btn-large waves-effect waves-light indigo lighten-1">To the website!</a>
-                    </div>
-                    <br><br>
+        <div class="section no-pad-bot" id="index-banner">
+            <div class="container">
+                <br><br>
+                <h1 class="header center yellow-text">Manage your events easily</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">Try for free the most advanced event manager around the web</h5>
                 </div>
+                <div class="row center">
+                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light yellow">Get Started</a>
+                </div>
+                <br><br>
+
             </div>
-            <div class="parallax"><img src="images/background1.jpg" alt="Unsplashed background img 1"></div>
         </div>
+        <div class="fullscreen-bg">
+            <video loop muted autoplay poster="" class="fullscreen-bg__video">
+                <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
+                <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
 
-
+            </video>
+        </div>
         <div class="container">
             <div class="section">
 
-            <!--   Icon Section   -->
-            <div class="row">
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center brown-text"><i class="material-icons">schedule</i></h2>
-                        <h5 class="center">Organize your events</h5>
+                <!--   Icon Section   -->
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center indigo-text"><i class="material-icons">group</i></h2>
+                            <h5 class="center">Keep track of your guests</h5>
 
-                        <p class="light">lorem</p>
+                            <p class="light">With our platform, the non-attending guests are no longer an issue.Keep track of them in a very easy intuitive way</p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center indigo-text"><i class="material-icons">shopping_basket</i></h2>
+                            <h5 class="center">Organise meals easily</h5>
+
+                            <p class="light">Wonder no more about what to order when you make a banquet.Using your platform, you are going to be able to ask and order the drinks and meals so everything would be set</p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center indigo-text"><i class="material-icons">settings</i></h2>
+                            <h5 class="center">Many more</h5>
+
+                            <p class="light center">Register now, and explore weekindu for free</p>
+                        </div>
                     </div>
                 </div>
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">Invite Your Friends</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">view_carousel</i></h2>
-            <h5 class="center">Easy to use</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
-
             </div>
+            <br><br>
+
+
         </div>
 
 
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="images/background2.jpg" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="images/background3.jpg" alt="Unsplashed background img 3"></div>
-  </div>
-
-  <footer class="page-footer indigo lighten-1">
+        <footer class="page-footer indigo">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -158,12 +162,11 @@
       </div>
     </div>
   </footer>
-
-
-  <!--  Scripts-->
+ <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-  <script src="js/init.js"></script>
+        <script src="js/init.js"></script>
+        <{{--script src="/public/js/custom/jquery/welcome.js"></script>--}}
 
   </body>
 </html>
