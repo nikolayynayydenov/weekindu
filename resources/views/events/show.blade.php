@@ -31,10 +31,10 @@
 
     <div class="">
         <br>
-        <div class="row">
-            <div class="col offset-l6">
-                <h4>{{ $event->title }}</h4>
-            </div>
+        <div class="row center showtitle">
+
+                <h3>{{ $event->title }}</h3>
+
         </div>
         <div class="row z-depth-2">
             <div class="col s12">

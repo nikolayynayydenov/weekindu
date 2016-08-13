@@ -8,3 +8,7 @@
 .tabs .tab a:hover{
     color: #3F51B5;
 }
+.showtitle{
+    color: #3F51B5;
+     font: normal normal normal 80px/1.4em Enriqueta,serif;
+}
