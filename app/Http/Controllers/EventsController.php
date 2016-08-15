@@ -73,6 +73,12 @@ class EventsController extends Controller
         $data = array_map($trimData, $data);
 
         /*
+         * Generate the invitation code:
+         */
+
+        $invitation_code =
+
+        /*
          * Store into db
          */
 
@@ -91,6 +97,8 @@ class EventsController extends Controller
         $event->extras = empty($data['extras']) ? '' : json_encode($data['extras']);
         $event->host = $request->user()->id;
         $event->save();
+
+
 
         /*
          * Redirect to the show event action
