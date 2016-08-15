@@ -38,7 +38,7 @@
                             <div class="card-content">
                                 <p>{{ $event->description }}</p>
                             </div>
-                            <form action="{{url('/event/'.$event->id )}}" method="post" id="delete-event-form">
+                            <form action="{{url('/event/'.$event->id )}}" method="post">
                                 <input type="hidden" name="_method" value="DELETE">
                                 {{ csrf_field() }}
                                 <input type="submit" value="Delete" class="btn danger-color">

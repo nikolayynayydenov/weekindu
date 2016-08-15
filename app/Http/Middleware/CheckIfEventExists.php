@@ -17,7 +17,7 @@ class CheckIfEventExists
     public function handle($request, Closure $next)
     {
         try {
-            $eventId = intval($request->segments()[1]);
+            $eventId = is_numeric($request->segments()[1]) ? intval($request->segments()[1]) : false;
             $event = Event::findOrFail($eventId);
             return $next($request);
         } catch (ModelNotFoundException $mnfe) {

@@ -3,8 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
-
+use App\Event;
 
 class CheckIfUserIsHostOfEvent
 {
@@ -17,10 +16,10 @@ class CheckIfUserIsHostOfEvent
      */
     public function handle($request, Closure $next)
     {
-        $eventId = intval($request->segments()[1]);
+        $eventId = is_numeric($request->segments()[1]) ? intval($request->segments()[1]) : false;
         $currentLoggedUserId = $request->user()->id;
         
-        if ($event = \App\Event::find($eventId)) {
+        if ($event = Event::find($eventId)) {
             $eventHostId = $event->host;
             if ($eventHostId === $currentLoggedUserId) {
                 return $next($request);
@@ -29,12 +28,7 @@ class CheckIfUserIsHostOfEvent
             /*
              * The user is unauthorized
              */
-            abort(401);
-        } else {
-            /*
-             * An event with this id can't be found
-             */
-            abort(404);
+            abort(403);
         }
     }
 }

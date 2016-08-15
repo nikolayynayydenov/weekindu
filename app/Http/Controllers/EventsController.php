@@ -30,10 +30,9 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $all_events = Event::where('is_public', false)->get();
+        $events = Event::where('is_public', true)->get(); // all public events
 
-
-        return view('events.index')->with('events', $all_events);
+        return view('events.index')->with('events', $events);
     }
 
     /**
@@ -138,21 +137,6 @@ class EventsController extends Controller
     }
 
     /**
-     * Delete the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $event = Event::find($id);
-        $event->delete();
-
-        return redirect('/event');
-    }
-
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -173,5 +157,11 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function destroy($id)
+    {
+        $event = Event::find($id);
+        $event->delete();
 
+        return redirect('/event');
+    }
 }
