@@ -10,7 +10,6 @@ use App\Http\Controllers\Controller;
 
 class EventsController extends Controller
 {
-    
     public function __construct() {
         
         /*
@@ -76,7 +75,7 @@ class EventsController extends Controller
          * Generate the invitation code:
          */
 
-        $invitation_code =
+        $invitationCode = self::generateRandomString(18);
 
         /*
          * Store into db
@@ -96,16 +95,14 @@ class EventsController extends Controller
         $event->location_coordinates = empty($data['location_coordinates']) ? '' : $data['location_coordinates'];
         $event->extras = empty($data['extras']) ? '' : json_encode($data['extras']);
         $event->host = $request->user()->id;
+        $event->invitation_code = $invitationCode;
         $event->save();
-
-
 
         /*
          * Redirect to the show event action
          */
 
         return redirect('/event/'.$event->id);// the $event->id property holds the last inserted id
-
     }
 
     /**
@@ -141,7 +138,6 @@ class EventsController extends Controller
         } else {
             abort(404);
         }
-        
     }
 
     /**
@@ -171,5 +167,20 @@ class EventsController extends Controller
         $event->delete();
 
         return redirect('/event');
+    }
+
+    private static function generateRandomString($characterCount)
+    {
+        /*
+         * TODO: make this function a helper
+         */
+
+        $randomString = '';
+
+        for ($i = 0; $i < $characterCount; $i++) {
+            $randomString = $randomString.chr(rand(97, 122));
+        }
+
+        return $randomString;
     }
 }
