@@ -20,6 +20,7 @@ class EventsController extends Controller
         
         $this->middleware('auth', ['except' => ['index', 'show']]);        
         $this->middleware('user_is_host_of_event', ['only' => ['edit', 'destroy']]);
+        $this->middleware('event_exists', ['only' => ['show']]);
         $this->middleware('event_is_public', ['only' => ['show']]);
     }
     /**
@@ -88,7 +89,7 @@ class EventsController extends Controller
         $event->drinks = empty($data['drinks']) ? '' : json_encode($data['drinks']);
         $event->location_string = empty($data['location_string']) ? '' : $data['location_string'];
         $event->location_coordinates = empty($data['location_coordinates']) ? '' : $data['location_coordinates'];
-        $event->extras = empty($data['food']) ? '' : json_encode($data['extras']);
+        $event->extras = empty($data['extras']) ? '' : json_encode($data['extras']);
         $event->host = $request->user()->id;
         $event->save();
 
@@ -108,7 +109,7 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        $event = Event::findOrFail($id);
+        $event = Event::find($id);
         $event->food = json_decode($event->food);
         $event->drinks = json_decode($event->drinks);
         $event->music = json_decode($event->music);

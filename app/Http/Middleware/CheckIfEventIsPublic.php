@@ -17,8 +17,15 @@ class CheckIfEventIsPublic
     public function handle($request, Closure $next)
     {
         $eventId = intval($request->segments()[1]);
-        $event = Event::find($eventId);
-        if ($event->is_public || $event->host === $request->user()->id) {
+        $event = Event::find($eventId); // we are sure the event exists bacause of the CheckIfEventExists middleware
+
+        /*
+         * If a user is logged, take their id, otherwise assign false:
+         */
+
+        $loggedUserId = $request->user() ? $request->user()->id : false;
+
+        if ($event->is_public || $event->host === $loggedUserId) {
             /*
              * Show event only if the current logged user owns it or if it's public
              */

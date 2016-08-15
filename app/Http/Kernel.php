@@ -50,6 +50,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'user_is_host_of_event' => \App\Http\Middleware\CheckIfUserIsHostOfEvent::class,
-        'event_is_public' => \App\Http\Middleware\CheckIfEventIsPublic::class
+        'event_is_public' => \App\Http\Middleware\CheckIfEventIsPublic::class,
+        'event_exists' => \App\Http\Middleware\CheckIfEventExists::class
     ];
 }
