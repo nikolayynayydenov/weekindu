@@ -1,6 +1,4 @@
-THis is an awesome invitation that everybody loves :*
-
-This invitation is for this event:
+@extends('layouts.app')
 
 <div>
     id: {{ $event->id }}
