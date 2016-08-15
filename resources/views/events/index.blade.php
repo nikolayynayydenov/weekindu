@@ -8,50 +8,41 @@
             @foreach($events as $event)
 
                     <div class="col l2 s4 m2">
-                        <a href="event/{{ $event->id }}">
                         <div class="card hoverable small">
-                            <div class="card-image">
-                                @if($event->type === 'Wedding')
-
-                                    <img class="responsive-img" src="images/create-event/type/wedding.jpg">
-                                    </a>
-                                @endif
-                                @if($event->type === 'Conference')
-                                    <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/conference.jpg">
-                                    </a>
-                                @endif
-                                @if($event->type === 'Bachelor Party')
-                                    <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/bachelor-party.jpg">
-                                    </a>
-                                @endif
-                                @if($event->type === 'Birthday Party')
-                                    <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/birthday-party.jpg">
-                                    </a>
-                                @endif
-                                @if($event->type === 'Buisiness Meeting')
-                                    <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/buisiness-meeting.jpg">
-                                    </a>
-                                @endif
-                                @if($event->type === 'Camp')
-                                    <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/camp.jpg">
-                                    </a>
-                                @endif
-                                @if($event->type === 'Other')
-                                    <a href="event/{{ $event->id }}">
-                                    <img src="images/create-event/type/other.jpg">
-                                    </a>
-                                @endif
-                                <span class="card-title">{{ $event->title }}</span>
-                            </div>
-
+                            <a href="event/{{ $event->id }}">
+                                <div class="card-image">
+                                    @if($event->type === 'Wedding')
+                                        <img class="responsive-img" src="images/create-event/type/wedding.jpg">
+                                    @endif
+                                    @if($event->type === 'Conference')
+                                        <img src="images/create-event/type/conference.jpg">
+                                    @endif
+                                    @if($event->type === 'Bachelor Party')
+                                        <img src="images/create-event/type/bachelor-party.jpg">
+                                    @endif
+                                    @if($event->type === 'Birthday Party')
+                                        <img src="images/create-event/type/birthday-party.jpg">
+                                    @endif
+                                    @if($event->type === 'Buisiness Meeting')
+                                        <img src="images/create-event/type/buisiness-meeting.jpg">
+                                    @endif
+                                    @if($event->type === 'Camp')
+                                        <img src="images/create-event/type/camp.jpg">
+                                    @endif
+                                    @if($event->type === 'Other')
+                                        <img src="images/create-event/type/other.jpg">
+                                    @endif
+                                    <span class="card-title">{{ $event->title }}</span>
+                                </div>
+                            </a>
                             <div class="card-content">
                                 <p>{{ $event->description }}</p>
                             </div>
+                            <form action="{{url('/event/'.$event->id )}}" method="post" id="delete-event-form">
+                                <input type="hidden" name="_method" value="DELETE">
+                                {{ csrf_field() }}
+                                <input type="submit" value="Delete" class="btn danger-color">
+                            </form>
                         </div>
                     </div>
 

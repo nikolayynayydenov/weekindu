@@ -138,6 +138,21 @@ class EventsController extends Controller
     }
 
     /**
+     * Delete the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $event = Event::find($id);
+        $event->delete();
+
+        return redirect('/event');
+    }
+
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
