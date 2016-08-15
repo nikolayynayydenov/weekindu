@@ -23,4 +23,5 @@ Route::get('/home', 'HomeController@index');
 Route::get('/user/get-json', 'UsersController@getJson');
 
 Route::resource('/event', 'EventsController');
+Route::resource('/invitation', 'InvitationsController');
 
