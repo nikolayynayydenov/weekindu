@@ -51,13 +51,9 @@ class InvitationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($invitationCode)
     {
-        /*
-         * TODO: check if event exists:
-         */
-        
-        $event = Event::find($id);
+        $event = Event::where('invitation_code', $invitationCode)->first();
         
         return view('invitations.show')
             ->with('event', $event);

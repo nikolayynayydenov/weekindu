@@ -1,5 +1,3 @@
-@extends('layouts.app')
-
 <div>
     id: {{ $event->id }}
 </div>

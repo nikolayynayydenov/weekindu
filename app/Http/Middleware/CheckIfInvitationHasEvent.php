@@ -16,12 +16,10 @@ class CheckIfInvitationHasEvent
      */
     public function handle($request, Closure $next)
     {
-        /*
-         * TODO: decode the id of the event
-         */
+        $invitationCode = $request->segments()[1];
 
-        $eventId = is_numeric($request->segments()[1]) ? intval($request->segments()[1]) : false;
-        if($event = Event::find($eventId)) {
+        if($event = Event::where('invitation_code', $invitationCode)->first()) {
+            //dd($event->title);
             return $next($request);
         } else {
             abort(404);
