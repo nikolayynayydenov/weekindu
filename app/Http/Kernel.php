@@ -51,6 +51,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'user_is_host_of_event' => \App\Http\Middleware\CheckIfUserIsHostOfEvent::class,
         'event_is_public' => \App\Http\Middleware\CheckIfEventIsPublic::class,
-        'event_exists' => \App\Http\Middleware\CheckIfEventExists::class
+        'event_exists' => \App\Http\Middleware\CheckIfEventExists::class,
+        'invitation_has_event' => \App\Http\Middleware\CheckIfInvitationHasEvent::class
     ];
 }

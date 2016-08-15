@@ -10,9 +10,7 @@ class InvitationsController extends Controller
 {
     public function __construct()
     {
-        /*
-         * TODO: add middleware to check whether invitation with such id exists
-         */
+        $this->middleware('invitation_has_event', ['only' => ['show']]);
     }
 
 
