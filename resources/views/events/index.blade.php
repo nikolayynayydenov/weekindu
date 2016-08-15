@@ -7,7 +7,7 @@
 
             @foreach($events as $event)
 
-                    <div class="col l2 s4 m2">
+                    <div class="col sl2 m5">
                         <div class="card hoverable small">
                             <a href="event/{{ $event->id }}">
                                 <div class="card-image">
@@ -38,11 +38,13 @@
                             <div class="card-content">
                                 <p>{{ $event->description }}</p>
                             </div>
-                            <form action="{{url('/event/'.$event->id )}}" method="post">
-                                <input type="hidden" name="_method" value="DELETE">
-                                {{ csrf_field() }}
-                                <input type="submit" value="Delete" class="btn danger-color">
-                            </form>
+                            <div class="card-action">
+                                <form action="{{url('/event/'.$event->id )}}" method="post">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    {{ csrf_field() }}
+                                    <input type="submit" value="Delete" class="btn danger-color">
+                                </form>
+                            </div>
                         </div>
                     </div>
 

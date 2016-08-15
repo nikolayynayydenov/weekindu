@@ -114,7 +114,7 @@
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    © 2016 Weekindu, All rghts reserved
+                    © 2016 Weekindu, All rights reserved
                     <a class="grey-text text-lighten-4 right" href="#!"><!-- More links --></a>
                 </div>
             </div>

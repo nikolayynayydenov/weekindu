@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+
+    <a href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
     {{--<div class="container">
         <h3>{{ $event->title }}</h3>
         <p>{{ $event->description }}</p>
@@ -28,7 +30,9 @@
         <div>{{ $event->location === '' ? '' : 'Location: ' . $event->location_string }}</div>
     </div>--}}
     <link rel="stylesheet" href="/css/custom/show.css">
-
+    @php
+        $counter = 5
+    @endphp
     <div class="">
         <br>
         <div class="row center showtitle">
@@ -39,18 +43,21 @@
         <div class="row z-depth-2">
             <div class="col s12">
                 <ul class="tabs">
-                    <li class="tab col s3"><a id="active" href="#test1">Attendance</a></li>
-                    <li class="tab col s3"><a class="food" href="#test2">Food statistics</a></li>
-                    <li class="tab col s3"><a href="#test3">Drinks statistics</a></li>
-                    <li class="tab col s3"><a href="#test4">Music statistics</a></li>
+                    <li class="tab col s3"><a id="active" href="#tab1">Attendance</a></li>
+                    <li class="tab col s3"><a class="food" href="#tab2">Food statistics</a></li>
+                    <li class="tab col s3"><a href="#tab3">Drinks statistics</a></li>
+                    <li class="tab col s3"><a href="#tab4">Music statistics</a></li>
                     @if(is_object(json_decode($event->extras) ))
                         @foreach(json_decode($event->extras) as $key=>$values)
-                            <li class="tab col s3"><a href="#{{ $key }}">{{ $key }}</a></li>
+                            <li class="tab col s3"><a href="#tab{{ $counter }}">{{ $key }}</a></li>
+                            @php
+                                $counter++
+                            @endphp
                         @endforeach
                     @endif
                 </ul>
             </div>
-            <div id="test1" class="col s12">
+            <div id="tab1" class="col s12">
                 <table class="centered">
                     <thead>
                     <tr>
@@ -79,7 +86,7 @@
                     </tbody>
                 </table>
             </div>
-            <div id="test2" class="col s12">
+            <div id="tab2" class="col s12">
                 <table class="centered">
                     <thead>
                     <tr>
@@ -108,7 +115,7 @@
                     </tbody>
                 </table>
             </div>
-            <div id="test3" class="col s12">
+            <div id="tab3" class="col s12">
                 <table class="centered">
                     <thead>
                     <tr>
@@ -137,7 +144,7 @@
                     </tbody>
                 </table>
             </div>
-            <div id="test4" class="col s12">
+            <div id="tab4" class="col s12">
                 <table class="centered">
                     <thead>
                     <tr>
@@ -170,8 +177,11 @@
 
 
             @if(is_object(json_decode($event->extras) ))
+                @php
+                    $counter = 5
+                @endphp
                 @foreach(json_decode($event->extras) as $key=>$values)
-                    <div id="{{ $key }}" class="col s12">
+                    <div id="tab{{ $counter }}" class="col s12">
                         <table class="centered">
                             <thead>
                             <tr>
@@ -190,6 +200,9 @@
                                     0
                                 </td>
                                 </tr>
+                                @php
+                                    $counter++
+                                @endphp
                             @endforeach
                             </tbody>
                         </table>
