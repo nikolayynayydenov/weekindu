@@ -44,12 +44,7 @@ body{
 
 
 }
-#slider-links{
-    display: none;
-    top :80px;
-    position:fixed;
-    opacity: 0.70;
-}
+
 .input-field .prefix.active{
     color: #ff9800;
 }
@@ -130,4 +125,11 @@ h4{
 }
 h3{
     color:#3F51B5 ;
+}
+textarea.materialize-textarea:focus:not([readonly]){
+    border-bottom: 1px solid #ff9800;
+    box-shadow:0 1px 0 0 #ff9800;
+}
+textarea.materialize-textarea:focus:not([readonly])+label{
+    color:#ff9800;
 }

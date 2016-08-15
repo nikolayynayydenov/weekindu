@@ -20,15 +20,18 @@
     </div>
 @endif
 <div class="row">
-    <button class=" btn waves-effect row accent-color z-depth-5" id="showhide" onclick="">showhide</button>
+    {{--<button class=" btn waves-effect row accent-color z-depth-5" id="showhide" onclick="">showhide</button>--}}
     <div class="card-panel z-depth-1 grey transparent">
         <div class="row">
-            <div class="col l12 s12 m12">
+            <div class="col l3 s12 m3">
+
+
+
                 <div class="collection" id="slider-links">
                     <a class="collection-item slider-link-item waves-effect" id="slider-link-basics">Basics</a>
                     <a class="collection-item slider-link-item waves-effect" id="slider-link-type">Type</a>
-                    <a class="collection-item slider-link-item waves-effect" id="slider-link-dress-code">Dress Code</a>
-                    <a class="collection-item slider-link-item waves-effect" id="slider-link-music">Music</a>
+                    <a class="collection-item  slider-link-item waves-effect" id="slider-link-dress-code">Dress Code</a>
+                    <a class="collection-item  slider-link-item waves-effect" id="slider-link-music">Music</a>
                     <a class="collection-item slider-link-item waves-effect" id="slider-link-food">Food</a>
                     <a class="collection-item slider-link-item waves-effect" id="slider-link-drinks">Drinks</a>
                     <a class="collection-item slider-link-item waves-effect" id="slider-link-location">Location</a>
@@ -37,28 +40,22 @@
 
 
             </div>
-            <div class="col offset-l1 l10 s12 m12">
-                <div class="row">
-                    <div class="col s12 m12 l6">
-                        <span class="btn default-primary-color waves-effect " id="slider-prev-btn">Previous</span>
-                        <span class="btn default-primary-color waves-effect " id="slider-next-btn">Next</span>
-                        <span><button class="btn default-primary-color" form="create-event-form" type="submit">Create Event!</button></span>
-                </div>
-                    <div class="col offset-l4">
-                        <!-- Modal Trigger -->
-                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Why do I need this?</a>
-
-                        <!-- Modal Structure -->
-                        <div id="modal1" class="modal">
-                            <div class="modal-content">
-                                <h3>Why do I need to enter the title, date and the description?</h3>
-                                <p style="font-weight: 700">Because, later, when we start sending the invitation, the date and the name of the event would be important</p>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
-                            </div>
-                        </div>
+            <div class="col l9 s12 m9">
+                    <div class="row">
+                        <span class="btn default-primary-color waves-effect col l1 m1 s6" id="slider-prev-btn">Previous</span>
+                        <span class="btn default-primary-color waves-effect col l1 m1 s6" id="slider-next-btn">Next</span>
+                        <span><button class="btn default-primary-color waves-effect col l2 m2 s12" form="create-event-form" type="submit">Create Event!</button></span>
+                        <a class="waves-effect waves-light btn modal-trigger col offset-l6 offset-m6 l2 m2 s12" href="#modal1">Why do I need this?</a>
                     </div>
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h3>Why do I need to enter the title, date and the description?</h3>
+                            <p style="font-weight: 700">Because, later, when we start sending the invitation, the date and the name of the event would be important</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+                        </div>
                     </div>
 
                 <div class="container-fluid" id="slider-container">

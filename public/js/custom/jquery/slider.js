@@ -339,10 +339,7 @@ $(document).ready(function(){
             showSliderItem();
         }
     });
-    $('#slider-next-btn').on('click', function (event){
-        $("#slider-links").slideDown("slow").delay(100).slideUp("slow");
 
-    });
 
     $('#slider-prev-btn').on('click', function (event){
         currentItemIndex -= 1;
@@ -350,9 +347,7 @@ $(document).ready(function(){
             showSliderItem();
         }
     });
-    $('#slider-prev-btn').on('click', function (event){
-        $("#slider-links").slideDown("slow").delay(100).slideUp("slow");
-    });
+    
 
     // event listener for clicking a link from the side menu:
 
