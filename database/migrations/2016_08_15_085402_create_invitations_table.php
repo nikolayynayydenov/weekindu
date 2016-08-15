@@ -14,9 +14,9 @@ class CreateInvitationsTable extends Migration
     {
         Schema::create('invitations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('event_id')->unsigned();
-            $table->foreign('event_id')
-                ->references('id')
+            $table->string('invitation_code', 20)->unique();
+            $table->foreign('invitation_code')
+                ->references('invitation_code')
                 ->on('events')
                 ->onDelete('cascade');
             $table->string('guest_name', 100);

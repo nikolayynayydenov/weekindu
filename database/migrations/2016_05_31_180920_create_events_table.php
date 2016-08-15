@@ -16,6 +16,7 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->integer('host')->unsigned()->index();
             $table->foreign('host')->references('id')->on('users');
+            $table->string('invitation_code')->unique();
             $table->string('title', 80);
             $table->string('dress_code', 80);
             $table->string('location_coordinates', 50);
