@@ -1,7 +1,7 @@
 /node_modules
 /public/storage
 /nbproject
+/.idea
 Homestead.yaml
 Homestead.json
 .env
-/.idea/workspace.xml
