@@ -10,6 +10,11 @@ use Crypt;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +54,11 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        if ($user = User::find($id)) {
+            return view('users.show')->with('user', $user);
+        } else {
+            abort(404);
+        }
     }
 
     /**
@@ -60,12 +69,12 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        /*
-         * TODO: check if user exists
-         */
-        $user = User::find($id);
-
-        return view('users.edit')->with('user', $user);
+        if ($id == auth()->user()->id) {
+            $user = User::find($id);
+            return view('users.edit')->with('user', $user);
+        } else {
+            abort(401);
+        }
     }
 
     /**
