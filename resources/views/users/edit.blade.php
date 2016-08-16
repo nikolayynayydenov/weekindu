@@ -3,13 +3,49 @@
     <style>
         .change-email {
             display: none;
-            position: relative;
+            position: inherit;
+
+
         }
-        .change-password{
-            display: none;  position: relative;
+        .change-password {
+            display: none;
+            position: inherit;
+        }
 
-
-        }</style>
+        .input-field .prefix.active{
+            color: #3F51B5;
+        }
+        /* label color */
+        .input-field label {
+            color: #3F51B5;
+        }
+        /* label focus color */
+        .input-field input[type=text]:focus + label {
+            color: #3F51B5;
+        }
+        /* label underline focus color */
+        .input-field input[type=text]:focus {
+            border-bottom: 1px solid #3F51B5;
+            box-shadow: 0 1px 0 0 #3F51B5;
+        }
+        /* valid color */
+        .input-field input[type=text].valid {
+            border-bottom: 1px solid #3F51B5;
+            box-shadow: 0 1px 0 0 #3F51B5;
+        }
+        /* invalid color */
+        .input-field input[type=text].invalid {
+            border-bottom: 1px solid #3F51B5;
+            box-shadow: 0 1px 0 0 #3F51B5;
+        }
+        /* icon prefix focus color */
+        .input-field .prefix.active {
+            color: #3F51B5;
+        }
+        .btn:hover, .btn-large:hover{
+            background-color:#3F51B5;
+        }
+ </style>
     <h1>View for edit user</h1>
 
     <form action="{{url('/register')}}" method="post" enctype="multipart/form-data">
@@ -35,20 +71,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-l1 offset-m1 offset-s1 l3 m3 s3">
-                <a class="waves-effect waves-light btn email-button">Change Email</a>
+            <div class="col l4 m4 s4">
+                <a class="waves-effect waves-light btn email-button accent-color ">Change Email</a>
             </div>
             <div class="col offset-l1 offset-m1 offset-s1 l3 m3 s3">
-                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Avatar</a>
+                <a class="waves-effect waves-light btn modal-trigger accent-color " href="#modal1">Change Avatar</a>
 
             </div>
-            <div class="col offset-l1 offset-m1 offset-s1 l3 m3 s3">
-                <a class="waves-effect waves-light btn password-button">Change password</a>
+            <div class="col offset-l1 offset-m1 offset-s1 l2 m2 s2 ">
+                <a class="waves-effect waves-light btn password-button accent-color">Change password</a>
             </div>
         </div>
 
-        <div class="row change-email">
-            <div class="input-field col s4 m4 l4">
+        <div class="row center">
+            <span class="input-field col s4 m4 l4 change-email">
+
                 <input type="password" name="password" pattern=".{8,}" placeholder="Enter your password"  required>
                 <label for="password"></label>
 
@@ -59,8 +96,17 @@
 
                 <input type="email" name="email" placeholder="Enter your new e-mail again" required>
                 <label for="email"></label>
-            </div>
+            </span>
+
+            <span class="change-password input-field offset-l4 offset-m4 offset-s4 col l4 s4 m4">
+
+                <input type="password" name="password" pattern=".{8,}" placeholder="Enter your old password"  required>
+                <input type="password" name="password" pattern=".{8,}" placeholder="Enter your new password"  required>
+                <input type="password" name="password" pattern=".{8,}" placeholder="Enter your new password again"  required>
+
+            </span>
         </div>
+
 
         <div id="modal1" class="modal">
             <div class="modal-content">
@@ -76,15 +122,7 @@
             </div>
         </div>
 
-        <div class="row change-password">
-            <div class="input-field col offset-s8 offset-m8 offset-l8 s4 m4 l4">
 
-                <input type="password" name="password" pattern=".{8,}" placeholder="Enter your old password"  required>
-                <input type="password" name="password" pattern=".{8,}" placeholder="Enter your new password"  required>
-                <input type="password" name="password" pattern=".{8,}" placeholder="Enter your new password again"  required>
-
-            </div>
-        </div>
 
 
 
@@ -96,7 +134,7 @@
 
         <br><br>
 <div class="row center">
-        <button class="btn-large waves-effect waves-light" type="submit" name="action">
+        <button class="btn-large waves-effect waves-light accent-color " type="submit" name="action">
             Update
             <i class="material-icons right">send</i>
         </button>
@@ -108,7 +146,7 @@
 
         });
         $('.password-button').click(function(){
-            $('.change-password').toggle("slow");
+            $('.change-password').slideToggle("slow");
         });
 
     </script>
