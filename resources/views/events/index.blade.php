@@ -39,13 +39,15 @@
                             <div class="card-content row">
                                 <div></div>
                                 {{--<p>{{ $event->description }}</p>--}}
-                                <button class="waves-effect waves-light btn col l4 m4 s4 default-primary-color">Manage</button>
-                                <button class="waves-effect waves-light btn col l4 m4 s4 accent-color">Show invitation</button>
+                                <a href="{{ url('/event/'.$event->id) }}" class="btn default-primary-color waves-effect col l4 m4 s4 manage-button">Manage</a>
+                                <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn accent-color waves-effect col l4 m4 s4 invitation-button">Show invitation</a>
                                 <form action="{{url('/event/'.$event->id )}}" method="post">
+
                                     {{ method_field('delete') }}
                                     {{ csrf_field() }}
-                                    {{--<input type="submit" value="'<i class="material-icons col l4 m4 s4'" type="submit">delete</i>" class="btn danger-color col l4 m4 s4">--}}
-                                    <a type="submit" class="col l4 m4 s4" onclick=""><i class="material-icons">delete</i></a>
+                                    <button type="submit" class="deletebut col offset-l3 offset-m3 offset-s3 l1 m1 s1" value=>
+                                        <i class="material-icons">delete</i></button>
+
                                 </form>
                             </div>
                             {{--<div class="card-action">

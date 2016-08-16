@@ -1,3 +1,31 @@
-.btn:hover, .btn-large:hover{
-    background-color:#3F51B5;
+.manage-button:hover, .manage-button:hover, .manage-button:focus{
+    background:#3F51B5;
+}
+.invitation-button:hover, .invitation-button:hover, .invitation-button:focus{
+    background:#ff9800;
+}
+.deletebut {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.manage-button:after{
+background:#3F51B5;
+}
+.manage-button:hover{
+    background:#3F51B5;
+
+}
+
+.deletebut {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.deletebut:hover{
+    background: none;
+}
+.deletebut:focus{
+    background: none;
 }
