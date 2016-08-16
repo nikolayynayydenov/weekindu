@@ -84,7 +84,7 @@ class EventsController extends Controller
          * Generate the invitation code:
          */
 
-        $invitationCode = self::generateRandomString(18);
+        $invitationCode = str_random(16);
 
         /*
          * Store into db
@@ -176,20 +176,5 @@ class EventsController extends Controller
         $event->delete();
 
         return redirect('/event');
-    }
-
-    private static function generateRandomString($characterCount)
-    {
-        /*
-         * TODO: make this function a helper
-         */
-
-        $randomString = '';
-
-        for ($i = 0; $i < $characterCount; $i++) {
-            $randomString = $randomString.chr(rand(97, 122));
-        }
-
-        return $randomString;
     }
 }
