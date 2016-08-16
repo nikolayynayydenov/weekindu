@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use App\Event;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 
@@ -29,8 +31,15 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::where('is_public', true)->get(); // all public events
+        if(Auth::check()){
 
+            $userId = Auth::id();
+
+            $events =  Event::where('host', '=', $userId) ->orWhere('is_public', true)->get();
+        }
+        else{
+            $events =  Event::where('is_public', true)->get();
+        }
         return view('events.index')->with('events', $events);
     }
 
