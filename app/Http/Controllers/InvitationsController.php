@@ -55,6 +55,11 @@ class InvitationsController extends Controller
     {
         $event = Event::where('invitation_code', $invitationCode)->first();
         
+        $event->music = json_decode($event->music);
+        $event->food = json_decode($event->food);
+        $event->drinks = json_decode($event->drinks);
+        $event->extras = json_decode(json_decode($event->extras));
+
         return view('invitations.show')
             ->with('event', $event);
     }

@@ -20,8 +20,6 @@ $(document).ready(function (){
     
     $('.tooltipped').tooltip({delay: 50});
     
-    $('select').material_select();
-    
     $('.modal-trigger').leanModal();  
     
     $('.mobile-submit-button').on('click', function () {
@@ -37,12 +35,10 @@ $(document).ready(function (){
      * Init datepicker (located on /event/{event_id}/edit)
      */
 
-
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 30 // Creates a dropdown of 15 years to control year
     });
 
-
-
+    $('select').material_select();
 });
