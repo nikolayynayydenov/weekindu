@@ -60,7 +60,12 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        /*
+         * TODO: check if user exists
+         */
+        $user = User::find($id);
+
+        return view('users.edit')->with('user', $user);
     }
 
     /**

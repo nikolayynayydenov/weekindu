@@ -24,3 +24,4 @@ Route::get('/user/get-json', 'UsersController@getJson');
 
 Route::resource('/event', 'EventsController');
 Route::resource('/invitation', 'InvitationsController');
+Route::resource('/user', 'UsersController');
