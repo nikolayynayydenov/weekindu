@@ -46,8 +46,9 @@
             background-color:#3F51B5;
         }
  </style>
+    <div class="row center">
     <h1>View for edit user</h1>
-
+    </div>
     <form action="{{ url('/user/'.$user->id) }}" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="input-field col s12 l6">
@@ -70,20 +71,22 @@
                 <label for="name">Nickname (optional)</label>
             </div>
         </div>
-        <div class="row">
-            <div class="col l4 m4 s4">
+        <div class="row center">
+            <div class="col s4">
                 <a class="waves-effect waves-light btn email-button accent-color ">Change Email</a>
             </div>
-            <div class="col offset-l1 offset-m1 offset-s1 l3 m3 s3">
-                <a class="waves-effect waves-light btn modal-trigger accent-color " href="#modal1">Change Avatar</a>
+            <div class="col s4">
+                <a class="waves-effect waves-light btn password-button accent-color">Change password</a>
+
 
             </div>
-            <div class="col offset-l1 offset-m1 offset-s1 l2 m2 s2 ">
-                <a class="waves-effect waves-light btn password-button accent-color">Change password</a>
+            <div class="col s4">
+                <a class="waves-effect waves-light btn modal-trigger accent-color " href="#modal1">Change Avatar</a>
             </div>
         </div>
 
-        <div class="row center">
+
+        <div class="row">
             <span class="input-field col s4 m4 l4 change-email">
 
                 <input type="password" name="password_email" pattern=".{4,}" placeholder="Enter your password"  >

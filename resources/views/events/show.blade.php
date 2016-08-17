@@ -1,7 +1,37 @@
 @extends('layouts.app')
 @section('content')
 
-    <a href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
+    <link rel="stylesheet" href="/css/custom/show.css">
+    <div class="row">
+        <div class="col s12 m4 l2">
+    <a class="btn waves-effect waves-light modal-trigger" href="#modal1">Why do I need this?</a>
+        </div>
+            <div class="col s12 m4 l8 center">
+        <a class="btn invitation-button" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
+    </div>
+
+    <form action="{{url('/event/'.$event->id )}}" method="post">
+
+        {{ method_field('delete') }}
+        {{ csrf_field() }}
+        <button type="submit" class="deletebut" value=>
+            <i class="material-icons medium">delete</i></button>
+    </form>
+</div>
+
+
+
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h3>Why do I need to enter the title, date and the description?</h3>
+            <p style="font-weight: 700">Because, later, when we start sending the invitation, the date and the name of the event would be important</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+        </div>
+    </div>
     {{--<div class="container">
         <h3>{{ $event->title }}</h3>
         <p>{{ $event->description }}</p>
@@ -31,10 +61,8 @@
     @endphp
     <div class="">
         <br>
-        <div class="row">
-            <div class="col offset-l6">
-                <h4>{{ $event->title }}</h4>
-            </div>
+        <div class="row center">
+            <h4>{{ $event->title }}</h4>
         </div>
         <div class="row z-depth-2">
             <div class="col s12">

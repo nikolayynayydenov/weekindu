@@ -22,6 +22,7 @@ background:#3F51B5;
     cursor: pointer;
     background: none;
     border: none;
+    left: 0;
 }
 .deletebut:hover{
     background: none;

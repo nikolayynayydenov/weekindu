@@ -12,3 +12,27 @@
     color: #3F51B5;
      font: normal normal normal 80px/1.4em Enriqueta,serif;
 }
+.deletebut {
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: fixed;
+    right: 0;
+}
+.deletebut:hover{
+    background: none;
+}
+.deletebut:focus{
+    background: none;
+}
+.invitation-button{
+    cursor: pointer;
+    background: #3F51B5;
+
+}
+.invitation-button{
+    background: #3F51B5;
+}
+.invitation-button{
+    background: #3F51B5;
+}
