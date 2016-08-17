@@ -1,30 +1,34 @@
 @extends('layouts.app')
 @section('content')
-<<<<<<< HEAD
-    <style>
-        #names{
-            font-weight: 600;
-            font-size: 26px;
-        }
-        .event-title{
-            font-weight: bold;
-        }
-        .info{
-            margin: 0 auto;
 
-        }
-        body{
-            background-image: url("/images/background-photo.png");
-            background-position: center;
-
-        }
-    </style>
+<style>
+    #names{
+        font-weight: 600;
+        font-size: 26px;
+    }
+    .event-title{
+        font-weight: bold;
+    }
+    .info{
+        margin: 0 auto;
+    }
+    body{
+        background-image: url("/images/background-photo.png");
+        background-position: center;
+    }
+</style>
 <div class="container">
     <div class="row">
         <div class="col offset-s1 s12 m4 l3">
         <img class="materialboxed circle" width="250" src="/images/user-avatars/{{$user->avatar}}">
-    <div id="names">{{$user->first_name}} {{$user->last_name}} @if(isset($user->name)) ({{$user->name}}) @endif </div>
-           <div>{{$user->email}}</div>
+    <div id="names">
+        {{$user->first_name}}
+        {{$user->last_name}}
+        @if(isset($user->name))
+            ({{$user->name}})
+        @endif
+    </div>
+    <div>{{$user->email}}</div>
     </div>
         @if(empty($events))
     <div class="col s12 m7 l9">
@@ -61,9 +65,7 @@
 </div>
     </div>
     </div>
-=======
 
 <h2>{{ $user->first_name }}</h2>
->>>>>>> 40e23402c8494c0f1c22a51304fa366e654ecec0
 
 @endsection

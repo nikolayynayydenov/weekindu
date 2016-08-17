@@ -57,7 +57,10 @@ class UsersController extends Controller
     public function show($id)
     {
         if ($user = User::find($id)) {
-            return view('users.show')->with('user', $user);
+            $events = $user->events;
+            return view('users.show')
+                ->with('user', $user)
+                ->with('events', $events);
         } else {
             abort(404);
         }
