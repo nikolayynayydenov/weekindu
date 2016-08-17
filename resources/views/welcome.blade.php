@@ -42,7 +42,7 @@
                     <h5 class="header col s12 light">Try for free the most advanced event manager around the web</h5>
                 </div>
                 <div class="row center">
-                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+                    <a href="{{ url('/event') }}" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
                 </div>
                 <br><br>
 

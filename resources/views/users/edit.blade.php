@@ -48,17 +48,17 @@
  </style>
     <h1>View for edit user</h1>
 
-    <form action="{{url('/register')}}" method="post" enctype="multipart/form-data">
+    <form action="{{ url('/user/'.$user->id) }}" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="input-field col s12 l6">
                 <i class="material-icons prefix">perm_identity</i>
-                <input type="text" name="first_name" length="35" maxlength="35" value="{{$user->first_name}}" required>
+                <input type="text" name="first_name" length="35" maxlength="35" value="{{$user->first_name}}" >
                 <label for="first_name" data-error="wrong" data-success="right">First name</label>
             </div>
 
             <div class="input-field col s12 l6">
                 <i class="material-icons prefix">perm_identity</i>
-                <input type="text" name="last_name" maxlength="35" length="35" value="{{$user->last_name}}" required>
+                <input type="text" name="last_name" maxlength="35" length="35" value="{{$user->last_name}}" >
                 <label for="last_name">Last name</label>
             </div>
         </div>
@@ -86,23 +86,23 @@
         <div class="row center">
             <span class="input-field col s4 m4 l4 change-email">
 
-                <input type="password" name="password" pattern=".{8,}" placeholder="Enter your password"  required>
+                <input type="password" name="password_email" pattern=".{4,}" placeholder="Enter your password"  >
                 <label for="password"></label>
 
 
-                <input type="email" name="email" placeholder="Enter your new e-mail" required>
+                <input type="email" name="email" placeholder="Enter your new e-mail" >
                 <label for="email"></label>
 
 
-                <input type="email" name="email" placeholder="Enter your new e-mail again" required>
+                <input type="email" name="email_confirmation" placeholder="Enter your new e-mail again" >
                 <label for="email"></label>
             </span>
 
             <span class="change-password input-field offset-l4 offset-m4 offset-s4 col l4 s4 m4">
 
-                <input type="password" name="password" pattern=".{8,}" placeholder="Enter your old password"  required>
-                <input type="password" name="password" pattern=".{8,}" placeholder="Enter your new password"  required>
-                <input type="password" name="password" pattern=".{8,}" placeholder="Enter your new password again"  required>
+                <input type="password" name="old_password" pattern=".{4,}" placeholder="Enter your old password"  >
+                <input type="password" name="password" pattern=".{4,}" placeholder="Enter your new password"  >
+                <input type="password" name="password_confirmation" pattern=".{4,}" placeholder="Enter your new password again"  >
 
             </span>
         </div>
@@ -129,16 +129,17 @@
 
 
 
+        {{  method_field('PUT') }}
+        {{csrf_field()}}
 
-
-
-        <br><br>
-<div class="row center">
-        <button class="btn-large waves-effect waves-light accent-color " type="submit" name="action">
-            Update
-            <i class="material-icons right">send</i>
-        </button>
-</div>
+        <br>
+        <br>
+        <div class="row center">
+                <button class="btn-large waves-effect waves-light accent-color " type="submit">
+                    Update
+                    <i class="material-icons right">send</i>
+                </button>
+        </div>
     </form>
     <script>
         $('.email-button').click(function(){

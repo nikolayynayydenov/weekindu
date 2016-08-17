@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\User;
@@ -77,8 +79,57 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $first_name = $data['first_name'];
+        $last_name = $data['last_name'];
+        $name = $data['name'];
+        $password_email = $data['password_email'];
+        $email = $data['email'];
+        $password = $data['password'];
+        $old_password = $data['old_password'];
+
+        $this->validate($request,[
+            'first_name' => 'max:35',
+            'last_name' => 'max:35',
+            'name' => 'sometimes|max:20',
+            'email' => 'email|max:255|confirmed',
+            'password' => 'min:4|confirmed',
+            'avatar' => 'sometimes|image|max:1000',
+        ]);
+
+        $user = User::find($id);
+
+        if($email != null){
+            if($password_email != null &&  Hash::check($password_email, $user->password)){
+                $user->email = $email;
+                $user->save();
+            }
+        }
+
+        if($first_name != null){
+            $user->first_name = $first_name;
+            $user->save();
+        }
+        if($last_name != null){
+            $user->last_name = $last_name;
+            $user->save();
+        }
+        if($name != null){
+            $user->name = $name;
+            $user->save();
+        }
+
+        if($password != null && $old_password != null){
+            if(Hash::check($old_password, $user->password)){
+                $user->password = bcrypt($password);
+                $user->save();
+            }
+        }
+
+        return view('users.edit')->with('user', $user);
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -94,7 +145,7 @@ class UsersController extends Controller
     /*
      * Get the JSON for the autocompletion in the 
      * form for creating a new event
-     *       
+     *
      */
     
     public function getJson() {        
