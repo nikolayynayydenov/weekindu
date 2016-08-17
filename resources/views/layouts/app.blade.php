@@ -54,7 +54,8 @@
                                     </div>
 
                                     <ul id="user-menu" class="dropdown-content col l4 m8">
-                                        <li><a href="{{ url('/user/'.auth()->user()->id.'/edit') }}">Profile</a></li>
+                                        <li><a href="{{ url('/user/'.auth()->user()->id)}}">Profile</a></li>
+                                        <li><a href="{{ url('/user/'.auth()->user()->id.'/edit') }}">Edit Profile</a></li>
                                         <li><a href="{{ url('/logout') }}">Logout</a></li>
                                     </ul>
                                 </div> 

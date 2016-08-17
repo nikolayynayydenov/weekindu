@@ -49,7 +49,12 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        $events = $user->events;
+
+        return view('users.show')
+            ->with('user', $user)
+            ->with('events', $events);
     }
 
     /**

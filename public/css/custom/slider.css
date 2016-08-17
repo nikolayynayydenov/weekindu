@@ -26,7 +26,8 @@
     color: #ff9800;
 }
 body{
-    background-image: url("background-photo.png");
+    background-image: url("/images/background-photo.png");
+
     background-position: center;
 
 }
