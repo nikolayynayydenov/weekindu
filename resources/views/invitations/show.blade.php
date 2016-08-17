@@ -10,7 +10,7 @@
     <div class="container">
         <h1 class="primary-text-color">Hello, you have been invited to <strong class="secondary-text-color">{{ $event->title }}</strong></h1>
 
-        <form action="{{ url('/invitation') }}" method="post">
+        <form action="{{ url('/invitation') }}" method="post" id="invitation-form">
             {{ csrf_field() }}
 
             <div class="row">
@@ -80,8 +80,8 @@
             @if($event->extras)
                 @foreach($event->extras as $name => $extra)
                     <div class="input-field col l4 m4 s12">
-                        <select class="extras-field" multiple>
-                            <option disabled selected>{{ $name }}</option>
+                        <select class="extras-select-field" multiple>
+                            <option value="{{ $name }}" disabled selected>{{ $name }}</option>
                             @foreach($extra as $item)
                                 <option value="{{ $item }}"
                                         class="extras-option">{{ $item }}</option>
@@ -103,8 +103,26 @@
         $(document).ready(function (){
             $('select').material_select();
 
-            $('.extras-field').on('select', function (event){
-                console.log($(this).val());
+            $('.extras-select-field').on('change', function (event){
+                let selectedValuesJsonString = JSON.stringify($(event.target).val());
+                let fieldName = $(event.target)
+                        .children('option:selected:disabled')
+                        .text();
+                let invitationForm = $('#invitation-form');
+
+                // creating the hidden input field that is going to be appended to the form
+
+                console.log(selectedValuesJsonString);
+                console.log(fieldName);
+
+                let hiddenField = $('<input>')
+                        .attr('type', 'hidden')
+                        .attr('name', fieldName)
+                        .attr('value', selectedValuesJsonString);
+
+                invitationForm.append(hiddenField);
+
+                console.log(hiddenField);
             });
         });
     </script>
