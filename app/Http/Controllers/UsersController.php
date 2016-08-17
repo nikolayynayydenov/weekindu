@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\User;
@@ -10,6 +12,11 @@ use Crypt;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -49,12 +56,11 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        $events = $user->events;
-
-        return view('users.show')
-            ->with('user', $user)
-            ->with('events', $events);
+        if ($user = User::find($id)) {
+            return view('users.show')->with('user', $user);
+        } else {
+            abort(404);
+        }
     }
 
     /**
@@ -65,12 +71,12 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        /*
-         * TODO: check if user exists
-         */
-        $user = User::find($id);
-
-        return view('users.edit')->with('user', $user);
+        if ($id == auth()->user()->id) {
+            $user = User::find($id);
+            return view('users.edit')->with('user', $user);
+        } else {
+            abort(401);
+        }
     }
 
     /**
@@ -82,8 +88,57 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $first_name = $data['first_name'];
+        $last_name = $data['last_name'];
+        $name = $data['name'];
+        $password_email = $data['password_email'];
+        $email = $data['email'];
+        $password = $data['password'];
+        $old_password = $data['old_password'];
+
+        $this->validate($request,[
+            'first_name' => 'max:35',
+            'last_name' => 'max:35',
+            'name' => 'sometimes|max:20',
+            'email' => 'email|max:255|confirmed',
+            'password' => 'min:4|confirmed',
+            'avatar' => 'sometimes|image|max:1000',
+        ]);
+
+        $user = User::find($id);
+
+        if($email != null){
+            if($password_email != null &&  Hash::check($password_email, $user->password)){
+                $user->email = $email;
+                $user->save();
+            }
+        }
+
+        if($first_name != null){
+            $user->first_name = $first_name;
+            $user->save();
+        }
+        if($last_name != null){
+            $user->last_name = $last_name;
+            $user->save();
+        }
+        if($name != null){
+            $user->name = $name;
+            $user->save();
+        }
+
+        if($password != null && $old_password != null){
+            if(Hash::check($old_password, $user->password)){
+                $user->password = bcrypt($password);
+                $user->save();
+            }
+        }
+
+        return view('users.edit')->with('user', $user);
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -95,38 +150,38 @@ class UsersController extends Controller
     {
         //
     }
-    
+
     /*
-     * Get the JSON for the autocompletion in the 
+     * Get the JSON for the autocompletion in the
      * form for creating a new event
-     *       
+     *
      */
-    
-    public function getJson() {        
+
+    public function getJson() {
         $term = strtolower(Input::get('term'));
         // the value has to be "term" otherwise it wont work
-        
+
         // take some users
         $users = User::select('id', 'first_name', 'last_name', 'name', 'avatar')
-                ->where('first_name', 'like', '%'.$term.'%')
-                ->orderBy('first_name', 'asc')
-                ->take(5)
-                ->get();        
-        
+            ->where('first_name', 'like', '%'.$term.'%')
+            ->orderBy('first_name', 'asc')
+            ->take(5)
+            ->get();
+
         $return_array = [];
-        
+
         foreach($users as $user) {
             // generate the array that is going to be transformed into json
-            
+
             $return_array[] = [
                 'id' => Crypt::encrypt($user->id),
                 'fullName' => $user->first_name.' '.$user->last_name,
                 'name' => isset($user->name) ? $user->name : false,
                 'avatar' => $user->avatar,
                 'value' => $user->first_name.' '.$user->last_name.' '.(isset($user->name) ? ' ('.$user->name.')' : '')
-            ];            
+            ];
         }
-        
+
         return response()->json($return_array);
     }
 }

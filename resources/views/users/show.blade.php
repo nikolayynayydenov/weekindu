@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<<<<<<< HEAD
     <style>
         #names{
             font-weight: 600;
@@ -60,5 +61,9 @@
 </div>
     </div>
     </div>
+=======
+
+<h2>{{ $user->first_name }}</h2>
+>>>>>>> 40e23402c8494c0f1c22a51304fa366e654ecec0
 
 @endsection
