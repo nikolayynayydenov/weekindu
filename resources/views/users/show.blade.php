@@ -21,7 +21,7 @@
     .collection .collection-item{
         background: #757575;
     }
-    
+
 </style>
 <main>
 <div class="container">
@@ -43,7 +43,7 @@
 
         @if(count($events))
             <div class="col s12 m8 l9">
-                <h5 class="row center">Events</h5>
+                <h5 class="row center white-text">Events</h5>
                 <ul class="collection">
                     @foreach($events as $event)
                         <li  class="collection-item avatar center">

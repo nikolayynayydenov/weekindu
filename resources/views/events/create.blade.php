@@ -107,25 +107,23 @@
                     </div>
 
                     <div class="slider-item" id="type">
-                        <h4>Choose type</h4>
+                        <h4>Type</h4>
                     </div>
 
                     <div class="slider-item" id="dress-code">
-                        <h4>Is there a dress code?</h4>
+                        <h4>Dress Code</h4>
                     </div>
 
                     <div class="slider-item" id="music">
-                        <h4>What kind of music will there be?</h4>
+                        <h4>Music</h4>
                     </div>
 
                     <div class="slider-item" id="food">
-                        <h4>Food?</h4>
-                        <h5>(select several)</h5>
+                        <h4>Food</h4>
                     </div>
 
                     <div class="slider-item" id="drinks">
-                        <h4>And what about drinks?</h4>
-                        <h5>(select several)</h5>
+                        <h4>Drinks</h4>
                     </div>
                     <div class="slider-item" id="location">
                         <div class="row">
