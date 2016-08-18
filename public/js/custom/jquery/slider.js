@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     // functions that generate the html for the slider
-    
+
     function addRow(recieverElementId, cols, multiple) {
         // the main purpose of this function is to simplify the
         // creation of the ui, needed for creating a new event
@@ -43,15 +43,15 @@ $(document).ready(function(){
                 '<div class="card small hoverable create-event-option">' +
                 '<div class="card-image">' +
                 '<img class="responsive-img" src="/images/' + value.imgLocation + '">' +
+                '<span class="card-title">' + value.cardTitle + '</span>' +
                 '</div>' +
-                '<div class="card-content center">' +
-                '<p><strong class="orange-text">' + value.cardTitle + '</strong>' + '<br>'+ '<div class="divider"></div>' +
-                '' + value.cardContent + '</p>' +
-            '</div>' +
-            '</div>' +
-            '</div>');
+                '<div class="card-content center-align">' +
+                '<p><strong>' + value.cardContent + '</strong></p>' +
+                '</div>' +
+                '</div>' +
+                '</div>');
         });
-        
+
         $('#' + recieverElementId).append(row);
     }
 
@@ -76,17 +76,17 @@ $(document).ready(function(){
     addRow('type', [
         {
             'cardTitle': 'Buisiness Meeting',
-            'cardContent': '',
+            'cardContent': 'Buisiness Meeting',
             'imgLocation': 'create-event/type/buisiness-meeting.jpg'
         },
         {
             'cardTitle': 'Camp',
-            'cardContent': '',
+            'cardContent': 'Camp',
             'imgLocation': 'create-event/type/camp.jpg'
         },
         {
             'cardTitle': 'Conference',
-            'cardContent': '',
+            'cardContent': 'Conference',
             'imgLocation': 'create-event/type/conference.jpg'
         }
     ]);
@@ -101,216 +101,216 @@ $(document).ready(function(){
 
     addRow('dress-code', [
         {
-            'cardTitle': 'Street Wear',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Street Wear',
             'imgLocation': 'create-event/dress-code/streetwear.jpg'
         },
         {
-            'cardTitle': 'Casual',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Casual',
             'imgLocation': 'create-event/dress-code/casual.jpg'
         },
         {
-            'cardTitle': 'Buisiness Casual',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Buisiness Casual',
             'imgLocation': 'create-event/dress-code/buisinesscasual.jpg'
         }
     ]);
 
     addRow('dress-code', [
         {
-            'cardTitle': 'Smart Casual',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Smart Casual',
             'imgLocation': 'create-event/dress-code/smartcasual.jpg'
         },
         {
-            'cardTitle': 'Formal',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Formal',
             'imgLocation': 'create-event/dress-code/formal.jpg'
         },
         {
-            'cardTitle': 'Other',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Other',
             'imgLocation': 'create-event/dress-code/other.png'
         }
     ]);
 
     addRow('music', [
         {
-            'cardTitle': 'Pop',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Pop',
             'imgLocation': 'create-event/music/pop.jpg'
         },
         {
-            'cardTitle': 'Electronic',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Electronic',
             'imgLocation': 'create-event/music/electronic.jpg'
         },
         {
-            'cardTitle': 'Rock / Metal',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Rock / Metal',
             'imgLocation': 'create-event/music/rock.jpg'
         }
     ], 'multiple');
 
     addRow('music', [
         {
-            'cardTitle': 'Pop-Folk',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Pop-Folk',
             'imgLocation': 'create-event/music/pop-folk.jpg'
         },
         {
-            'cardTitle': 'Hip-Hop',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Hip-Hop',
             'imgLocation': 'create-event/music/hiphop.png'
         },
         {
-            'cardTitle': 'Srabsko',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Srabsko',
             'imgLocation': 'create-event/music/royal.jpg'
         }
     ], 'multiple');
 
     addRow('drinks', [
         {
-            'cardTitle': 'Water',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Water',
             'imgLocation': 'create-event/drinks/water.jpg'
         },
         {
-            'cardTitle': 'Milk',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Milk',
             'imgLocation': 'create-event/drinks/milk.jpg'
         },
         {
-            'cardTitle': 'Tea',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Tea',
             'imgLocation': 'create-event/drinks/tea.jpg'
         }
     ], 'multiple');
 
     addRow('drinks', [
         {
-            'cardTitle': 'Coke',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Coke',
             'imgLocation': 'create-event/drinks/coke.jpg'
         },
         {
-            'cardTitle': 'Coffee',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Coffee',
             'imgLocation': 'create-event/drinks/coffee.jpg'
         },
         {
-            'cardTitle': 'Sprite',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Sprite',
             'imgLocation': 'create-event/drinks/sprite.jpg'
         }
     ], 'multiple');
 
     addRow('drinks', [
         {
-            'cardTitle': 'Fanta',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Fanta',
             'imgLocation': 'create-event/drinks/fanta.jpg'
         },
         {
-            'cardTitle': 'Juice',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Juice',
             'imgLocation': 'create-event/drinks/juice.jpg'
         },
         {
-            'cardTitle': 'Beer',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Beer',
             'imgLocation': 'create-event/drinks/beer.jpg'
         }
     ], 'multiple');
 
     addRow('drinks', [
         {
-            'cardTitle': 'Cider',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Cider',
             'imgLocation': 'create-event/drinks/cider.jpg'
         },
         {
-            'cardTitle': 'Wine',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Wine',
             'imgLocation': 'create-event/drinks/wine.jpg'
         },
         {
-            'cardTitle': 'Whiskey',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Whiskey',
             'imgLocation': 'create-event/drinks/whiskey.jpg'
         }
     ], 'multiple');
 
     addRow('drinks', [
         {
-            'cardTitle': 'Vodka',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Vodka',
             'imgLocation': 'create-event/drinks/vodka.jpg'
         },
         {
-            'cardTitle': 'Rakia',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Rakia',
             'imgLocation': 'create-event/drinks/rakia.png'
         },
         {
-            'cardTitle': 'Other',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Other',
             'imgLocation': 'create-event/drinks/other.jpg'
         }
     ], 'multiple');
 
     addRow('food', [
         {
-            'cardTitle': 'Chicken',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Chicken',
             'imgLocation': 'create-event/food/chicken.jpg'
         },
         {
-            'cardTitle': 'Beef',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Beef',
             'imgLocation': 'create-event/food/beef.jpg'
         },
         {
-            'cardTitle': 'Fries',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Fries',
             'imgLocation': 'create-event/food/fries.jpg'
         }
     ], 'multiple');
 
     addRow('food', [
         {
-            'cardTitle': 'Lamb',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Lamb',
             'imgLocation': 'create-event/food/lamb.jpg'
         },
         {
-            'cardTitle': 'Potatoes',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Potatoes',
             'imgLocation': 'create-event/food/potatoes.jpg'
         },
         {
-            'cardTitle': 'Rice',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Rice',
             'imgLocation': 'create-event/food/rice.jpg'
         }
     ], 'multiple');
 
     addRow('food', [
         {
-            'cardTitle': 'Salad',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Salad',
             'imgLocation': 'create-event/food/salad.jpg'
         },
         {
-            'cardTitle': 'Sandwich',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Sandwich',
             'imgLocation': 'create-event/food/sandwich.jpg'
         },
         {
-            'cardTitle': 'Asparagus',
-            'cardContent': '',
+            'cardTitle': '',
+            'cardContent': 'Asparagus',
             'imgLocation': 'create-event/food/аsparagus.jpg'
         }
     ], 'multiple');
@@ -318,13 +318,13 @@ $(document).ready(function(){
     let navigationDisabled = false; // this is set to true during the animations
 
     // extract the ids of the sections
-    
-    let slidesArr = [];    
+
+    let slidesArr = [];
     let sliderContainer = $('#slider-container');
     sliderContainer.find('> div').each(function () {
         slidesArr.push(this.id);
     });
-    
+
     if(currentItemIndex === undefined) {
         // set initial value to the index
         var currentItemIndex = 0;
@@ -347,7 +347,7 @@ $(document).ready(function(){
             showSliderItem();
         }
     });
-    
+
 
     // event listener for clicking a link from the side menu:
 
@@ -358,9 +358,9 @@ $(document).ready(function(){
             showSliderItem(itemId);
         }
     });
-    
+
     // event listener for clicking on an option:
-    
+
     $('.create-event-option').on('click', function (){
         let card = $(this);
         let field = card.closest('.slider-item').attr('id');
@@ -432,7 +432,7 @@ $(document).ready(function(){
 
             if (param.length !== 0) {
                 // if the the input field is not empty
-                
+
                 let paramNameSpan = $('<span>')
                     .attr('class', 'param-name')
                     .append($('<strong>')
@@ -445,7 +445,7 @@ $(document).ready(function(){
                     .attr('type', 'text')
                     .attr('placeholder', 'Type possible values')
                     .attr('class', 'param-new-value-field');
-                
+
                 $('#extra-params-container').append($('<li>')
                     .attr('class', 'collection-item')
                     .append(paramNameSpan)
@@ -509,6 +509,13 @@ $(document).ready(function(){
         }
     });
 
+    let arr = {'basics': 'basicsbasicsbasicsbasics',
+        'type': 'typetypetypetype0',
+        'dress-code': 'dressss dresssssss',
+        'food': 'hranananan' ,
+        'music': 'muzikakaka' };
+
+
     // event listener for adding a value to a parameter
 
     function showSliderItem(itemId) {
@@ -532,8 +539,23 @@ $(document).ready(function(){
         $('#slider-links').children().removeClass('active');
         $('#slider-link-' + itemId).addClass('active');
 
+        $('#modal1').children().removeClass('active');
+
+        if(itemId == 'music'){
+            $('#info').addClass('active').text(arr['music']);
+        }
+        if(itemId == 'food'){
+            $('#info').addClass('active').text(arr['food']);
+        }
+        if(itemId == 'dress-code'){
+            $('#info').addClass('active').text(arr['dress-code']);
+        }
+        if(itemId == 'type'){
+            $('#info').addClass('active').text(arr['type']);
+        }
+
         /*
-            Set this to true so that on mulptiple clicks, there won't be any anomalies
+         Set this to true so that on mulptiple clicks, there won't be any anomalies
          */
         navigationDisabled = true;
 
@@ -542,5 +564,7 @@ $(document).ready(function(){
             navigationDisabled = false;
         });
     }
-
+    $('#showhide').click(function(){
+        $('#slider-links').slideToggle("slow");
+    });
 });
