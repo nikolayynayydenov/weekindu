@@ -50,8 +50,8 @@
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                         <div class="modal-content">
-                            <h3>Why do I need to enter the title, date and the description?</h3>
-                            <p id="info" style="font-weight: 700"></p>
+                            <h3>Why do I need to all this?</h3>
+                            <p id="content" style="font-weight: 700"></p>
                         </div>
                         <div class="modal-footer">
                             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>

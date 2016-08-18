@@ -40,7 +40,7 @@
                                 <div></div>
                                 {{--<p>{{ $event->description }}</p>--}}
                                 <a href="{{ url('/event/'.$event->id) }}" class="btn default-primary-color waves-effect col l4 m4 s4 manage-button">Manage</a>
-                                <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn accent-color waves-effect col l4 m4 s4 invitation-button">Show invitation</a>
+                                <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn accent-color waves-effect col l4 m4 s4 invitation-button">invitation</a>
                                 <form action="{{url('/event/'.$event->id )}}" method="post">
 
                                     {{ method_field('delete') }}
