@@ -100,6 +100,7 @@ class UsersController extends Controller
         $email = $data['email'];
         $password = $data['password'];
         $old_password = $data['old_password'];
+        $avatar = AvatarsController::storeImage(isset($data['avatar']) ? $data['avatar'] : false);
 
         $this->validate($request,[
             'first_name' => 'max:35',
@@ -115,29 +116,32 @@ class UsersController extends Controller
         if($email != null){
             if($password_email != null &&  Hash::check($password_email, $user->password)){
                 $user->email = $email;
-                $user->save();
             }
         }
 
         if($first_name != null){
             $user->first_name = $first_name;
-            $user->save();
         }
         if($last_name != null){
             $user->last_name = $last_name;
-            $user->save();
         }
         if($name != null){
             $user->name = $name;
-            $user->save();
         }
 
         if($password != null && $old_password != null){
             if(Hash::check($old_password, $user->password)){
                 $user->password = bcrypt($password);
-                $user->save();
             }
         }
+
+        if($avatar != 'default.png'){
+
+            $user->avatar = $avatar;
+        }
+
+
+        $user->save();
 
         return view('users.edit')->with('user', $user);
     }
