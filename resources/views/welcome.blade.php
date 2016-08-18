@@ -34,12 +34,32 @@
             </div>
         </nav>
 
+
+        <div class="fullscreen-bg">
+            <video loop muted autoplay poster="/images/video2/Snapshots/Drink-Wine.jpg" class="fullscreen-bg__video">
+                <source src="/images/video2/WEBM/Drink-Wine.webm" type="video/webm">
+                <source src="/images/video2/MP4/Drink-Wine.mp4" type="video/mp4">
+
+            </video>
+        </div>
+        {{--<div class="homepage-hero-module">
+            <div class="video-container">
+                <div class="filter"></div>
+                <video autoplay loop class="fillWidth">
+                    <source src="/images/video/MP4/Round-Table.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                    <source src="/images/video/WEBM/Round-Table.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                </video>
+                <div class="poster hidden">
+                    <img src="/images/video/Snapshots/Round-Table.jpg" alt="">
+                </div>
+            </div>
+        </div>--}}
         <div class="section no-pad-bot" id="index-banner">
             <div class="container">
                 <br><br>
                 <h1 class="header center orange-text">Manage your events easily</h1>
                 <div class="row center">
-                    <h5 class="header col s12 light">Try for free the most advanced event manager around the web</h5>
+                    <h5 class="header col s12 light white-text">Try for free the most advanced event manager around the web</h5>
                 </div>
                 <div class="row center">
                     <a href="{{ url('/event') }}" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
@@ -47,13 +67,6 @@
                 <br><br>
 
             </div>
-        </div>
-        <div class="fullscreen-bg">
-            <video loop muted autoplay poster="" class="fullscreen-bg__video">
-                <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
-                <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
-
-            </video>
         </div>
         <div class="container">
             <div class="section">
@@ -63,27 +76,27 @@
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h2 class="center indigo-text"><i class="material-icons">group</i></h2>
-                            <h5 class="center">Keep track of your guests</h5>
+                            <h5 class="center white-text">Keep track of your guests</h5>
 
-                            <p class="light">With our platform, the non-attending guests are no longer an issue.Keep track of them in a very easy intuitive way</p>
+                            <p class="light white-text">With our platform, the non-attending guests are no longer an issue.Keep track of them in a very easy intuitive way</p>
                         </div>
                     </div>
 
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h2 class="center indigo-text"><i class="material-icons">shopping_basket</i></h2>
-                            <h5 class="center">Organise meals easily</h5>
+                            <h5 class="center white-text">Organise meals easily</h5>
 
-                            <p class="light">Wonder no more about what to order when you make a banquet.Using your platform, you are going to be able to ask and order the drinks and meals so everything would be set</p>
+                            <p class="light white-text">Wonder no more about what to order when you make a banquet.Using your platform, you are going to be able to ask and order the drinks and meals so everything would be set</p>
                         </div>
                     </div>
 
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h2 class="center indigo-text"><i class="material-icons">settings</i></h2>
-                            <h5 class="center">Many more</h5>
+                            <h5 class="center white-text">Many more</h5>
 
-                            <p class="light center">Register now, and explore weekindu for free</p>
+                            <p class="light center white-text">Register now, and explore weekindu for free</p>
                         </div>
                     </div>
                 </div>
@@ -133,8 +146,9 @@
  <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-        <script src="js/init.js"></script>
-        <{{--script src="/public/js/custom/jquery/welcome.js"></script>--}}
+
+        <script src="/js/custom/jquery/welcome.js"></script>
+
 
   </body>
 </html>

@@ -14,10 +14,16 @@
         margin: 0 auto;
     }
     body{
-        background-image: url("/images/background-photo.png");
+
+        background-image: url("/images/twogirls.jpg");
         background-position: center;
     }
+    .collection .collection-item{
+        background: #757575;
+    }
+    
 </style>
+<main>
 <div class="container">
     <div class="row">
         <div class="col s12 m4 l3">
@@ -37,20 +43,20 @@
 
         @if(count($events))
             <div class="col s12 m8 l9">
-                <h5 class="center">Events</h5>
+                <h5 class="row center">Events</h5>
                 <ul class="collection">
                     @foreach($events as $event)
                         <li  class="collection-item avatar center">
                             <a href="{{url('/event/'.$event->id)}}">
                                 @if($event->is_public === 1)
-                                    <i class="medium material-icons circle green ">lock_open</i>
+                                    <i class="medium material-icons circle green">lock_open</i>
                                 @endif
                                 @if($event->is_public === 0)
                                     <i class="material-icons circle red">lock</i>
                                 @endif
-                                <span class="title event-title">{{$event->title}}</span>
+                                <span class="title event-title orange-text">{{$event->title}}</span>
 
-                                <p>{{$event->type}}<br>
+                                <p class="indigo-text">{{$event->type}}<br>
 
                                     {{$event->description}}
                                 </p>
@@ -64,7 +70,7 @@
             <div class="col s12 m8 l9">
                 <h5 class="center">Events</h5>
                 <ul class="collection">
-                    <li class="collection-item center">The user has not made any events yet</li>
+                    <li class="collection-item center orange-text">The user has not made any events yet</li>
                 </ul>
             </div>
         @endif
@@ -72,5 +78,5 @@
 
 </div>
 </div>
-
+</main>
 @endsection
