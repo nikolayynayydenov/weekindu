@@ -42,11 +42,19 @@
             </div>
             <div class="col l9 s12 m9">
                     <div class="row">
-                        <span class="btn default-primary-color waves-effect col l1 m1 s6" id="slider-prev-btn">Previous</span>
-                        <span class="btn default-primary-color waves-effect col l1 m1 s6" id="slider-next-btn">Next</span>
-                        <span><button class="btn default-primary-color waves-effect col l2 m2 s12" form="create-event-form" type="submit">Create Event!</button></span>
-                        <a class="waves-effect waves-light btn modal-trigger col offset-l6 offset-m6 l2 m2 s12" href="#modal1">Why do I need this?</a>
-                    </div>
+                        <div class="col">
+                        <span class="btn default-primary-color waves-effect" id="slider-prev-btn">Previous</span>
+
+
+                            <span class="btn default-primary-color waves-effect " id="slider-next-btn">Next</span>
+
+
+                            <span><button class="btn default-primary-color waves-effect " form="create-event-form" type="submit">Create Event!</button></span>
+                        </div>
+                        <div class="col right">
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Why do I need this?</a>
+                        </div>
+                        </div>
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                         <div class="modal-content">
@@ -95,7 +103,7 @@
                                 <label for="event-description">Description</label>
                             </div>
 
-                            <div class="switch section">
+                            <div class="switch section col">
                                 <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Only participants will see information about this event" data-tooltip-id="072f438c-4f1e-0b98-4bbf-af0f5f2f0763">Private</span>
                                 <label>
                                     <input type="checkbox" form="create-event-form" name="is_public">

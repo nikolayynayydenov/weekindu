@@ -16,8 +16,7 @@
     cursor: pointer;
     background: none;
     border: none;
-    position: fixed;
-    right: 0;
+
 }
 .deletebut:hover{
     background: none;

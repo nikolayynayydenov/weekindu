@@ -9,7 +9,7 @@
             <div class="col s12 m4 l8 center">
         <a class="btn invitation-button" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
     </div>
-
+<div class="col right">
     <form action="{{url('/event/'.$event->id )}}" method="post">
 
         {{ method_field('delete') }}
@@ -17,6 +17,7 @@
         <button type="submit" class="deletebut" value=>
             <i class="material-icons medium">delete</i></button>
     </form>
+</div>
 </div>
 
 
