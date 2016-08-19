@@ -19,6 +19,10 @@ Route::get('/', ['middleware' => 'guest', function () {
 
 Route::auth();
 
+Route::get('/about-us', function() {
+    return view('about-us');
+});
+
 Route::get('/home', 'HomeController@index');
 Route::get('/user/get-json', 'UsersController@getJson');
 

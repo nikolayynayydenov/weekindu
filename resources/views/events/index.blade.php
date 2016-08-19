@@ -3,7 +3,6 @@
     <link rel="stylesheet" href="/css/custom/showevents.css">
     <div class="container">
     @if(count($events) > 0)
-        <ul class="collection">
             <div class="row">
 
             @foreach($events as $event)
@@ -33,11 +32,12 @@
                                     @if($event->type === 'Other')
                                         <img src="images/create-event/type/other.jpg">
                                     @endif
-                                    <span class="card-title">{{ $event->title }}</span>
+
                                 </div>
                             </a>
                             <div class="card-content row">
-                                <div></div>
+                                <p class="center">
+                                    <strong class="center orange-text">{{ $event->title }}</strong><br>
                                 {{--<p>{{ $event->description }}</p>--}}
                                 <a href="{{ url('/event/'.$event->id) }}" class="btn default-primary-color waves-effect col l4 m4 s4 manage-button">Manage</a>
                                 <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn accent-color waves-effect col l4 m4 s4 invitation-button">invitation</a>
@@ -49,6 +49,7 @@
                                         <i class="material-icons">delete</i></button>
 
                                 </form>
+                                </p>
                             </div>
                             {{--<div class="card-action">
 
@@ -58,7 +59,7 @@
 
             @endforeach
             </div>
-        </ul>
+
     @endif
     </div>
 @endsection
