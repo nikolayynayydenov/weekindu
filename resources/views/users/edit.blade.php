@@ -72,15 +72,15 @@
             </div>
         </div>
         <div class="row center">
-            <div class="col s4">
-                <a class="waves-effect waves-light btn email-button accent-color ">Change Email</a>
+            <div class="col s12 m4">
+                <a class="waves-effect waves-light btn email-button accent-color">Change Email</a>
             </div>
-            <div class="col s4">
+            <div class="col s12 m4">
                 <a class="waves-effect waves-light btn password-button accent-color">Change password</a>
 
 
             </div>
-            <div class="col s4">
+            <div class="col s12 m4">
                 <a class="waves-effect waves-light btn modal-trigger accent-color " href="#modal1">Change Avatar</a>
             </div>
         </div>

@@ -565,7 +565,9 @@ $(document).ready(function(){
         else if(itemId == 'extras'){
             $('#content').addClass('active').text(modal['extras']);
         }
-
+        else if(itemId == 'basics'){
+            $('#content').addClass('active').text('basicsbasicsbasicsbasicsbasics');
+        }
         /*
          Set this to true so that on mulptiple clicks, there won't be any anomalies
          */

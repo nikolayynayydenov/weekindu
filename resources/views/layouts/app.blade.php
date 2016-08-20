@@ -107,8 +107,10 @@
                             @if (Auth::guest())
                                 <li><a class="grey-text text-lighten-3" href="{{url('/login')}}">Login</a></li>
                                 <li><a class="grey-text text-lighten-3" href="{{url('/register')}}">Register</a></li>
+                                <li><a class="grey-text text-lighten-3" href="{{url('/about-us')}}">About us</a></li>
                             @else
                                 <li><a class="grey-text text-lighten-3" href="{{url('/event/create')}}">Create Event</a></li>
+                                <li><a class="grey-text text-lighten-3" href="{{url('/about-us')}}">About us</a></li>
                             @endif
                         </ul>
                     </div>
