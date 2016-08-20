@@ -71,7 +71,7 @@
                 <label for="name">Nickname (optional)</label>
             </div>
         </div>
-        <div class="row center">
+        <div class="row center hide-on-med-and-down">
             <div class="col s12 m4">
                 <a class="waves-effect waves-light btn email-button accent-color">Change Email</a>
             </div>
@@ -84,6 +84,18 @@
                 <a class="waves-effect waves-light btn modal-trigger accent-color " href="#modal1">Change Avatar</a>
             </div>
         </div>
+                <a class="waves-effect waves-light btn modal-trigger accent-color show-on-medium-and-down s12 hide-on-med-and-up" href="#modal1">Change Avatar</a>
+
+
+
+            <a class="waves-effect waves-light btn email-button accent-color show-on-medium-and-down s12 hide-on-med-and-up">Change Email</a>
+
+
+            <a class="waves-effect waves-light btn password-button accent-color show-on-medium-and-down s12 hide-on-med-and-up">Change password</a>
+
+
+
+
 
 
         <div class="row">

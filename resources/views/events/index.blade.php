@@ -1,6 +1,20 @@
 @extends('layouts.app')
 @section('content')
     <link rel="stylesheet" href="/css/custom/showevents.css">
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger modal-trigger-desktop accent-color hide-on-med-and-down" href="#modal1">What is this?</a>
+    <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile accent-color show-on-medium-and-down s12 hide-on-med-and-up" href="#modal1">What is this?</a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>What is this?</h4>
+            <p>This is the place where all your events appear.On every event card you can see the invitation, the statistics and delete the event</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+        </div>
+    </div>
     <div class="container">
     @if(count($events) > 0)
 

@@ -509,14 +509,14 @@ $(document).ready(function(){
         }
     });
 
-    let modal = {'basics': 'basicsbasicsbasicsbasics',
-        'type': 'typetypetypetype0',
-        'dress-code': 'dressss dresssssss',
-        'food': 'fud',
-        'drinks': 'dru',
-        'music': 'kitara',
-        'location': 'map',
-        'extras': 'huhi'};
+    let modal = {'basics': '',
+        'type': 'Please choose one type.',
+        'dress-code': 'Please choose one or two as it is important for every guest to be aware of the dress code.',
+        'food': 'Choose wisely.Every food that you choose will be one of the foods availible for the guests later.Please choose only the ones you can provide.If you want to add a dish, go to the last page and enter it in the last card',
+        'drinks': 'Choose wisely.Every food that you choose will be one of the foods availible for the guests later.Please choose only the onles you can provide.If you want to add a drink, go to the last page and enter it in the last card',
+        'music': 'On this tab, you need to choose the music that you are fine with, so when you sent the invitations the users would be able to choose their favourites',
+        'location': 'Below, you are seeing a text field in which you can add the adress of your event, but we reccomend you to use the map, this way the guest will see exactly where they need to go',
+        'extras': 'If we have missed something you have now chance to add it.The extras tab work the same way as "food" and "drinks" tabs.An extra has a name and parameters.To add an extra, simply type its name in the text bar you see.When you do it, another text area will appear where you need to type the parameters.After you enter a parameter you need to click enter to add it. '};
 
 
     // event listener for adding a value to a parameter
@@ -566,7 +566,7 @@ $(document).ready(function(){
             $('#content').addClass('active').text(modal['extras']);
         }
         else if(itemId == 'basics'){
-            $('#content').addClass('active').text('basicsbasicsbasicsbasicsbasics');
+            $('#content').addClass('active').text('Because, later, when we start sending the invitation, the date and the name of the event would be important.');
         }
         /*
          Set this to true so that on mulptiple clicks, there won't be any anomalies

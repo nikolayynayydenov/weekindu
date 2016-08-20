@@ -30,3 +30,7 @@ background:#3F51B5;
 .deletebut:focus{
     background: none;
 }
+.modal-trigger-desktop{
+    left:0;
+    position:fixed;
+}

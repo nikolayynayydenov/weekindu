@@ -2,9 +2,9 @@
 @section('content')
 
     <link rel="stylesheet" href="/css/custom/show.css">
-    <div class="row">
+    <div class="row hide-on-med-and-down">
         <div class="col s12 m4 l2">
-    <a class="btn waves-effect waves-light modal-trigger" href="#modal1">Why do I need this?</a>
+    <a class="btn waves-effect waves-light modal-trigger" href="#modal1">What is this?</a>
         </div>
             <div class="col s12 m4 l8 center">
         <a class="btn invitation-button" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
@@ -19,6 +19,23 @@
     </form>
 </div>
 </div>
+
+
+            <a class="btn waves-effect waves-light modal-trigger show-on-medium-and-down hide-on-med-and-up s12" href="#modal1">What is this?</a>
+
+
+            <a class="btn invitation-button show-on-medium-and-down hide-on-med-and-up s12" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
+
+        <div class="show-on-medium-and-down hide-on-med-and-up center">
+            <form action="{{url('/event/'.$event->id )}}" method="post">
+
+                {{ method_field('delete') }}
+                {{ csrf_field() }}
+                <button type="submit" class="deletebut" value=>
+                    <i class="material-icons medium">delete</i></button>
+            </form>
+        </div>
+
 
 
 
