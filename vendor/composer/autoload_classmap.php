@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreateEventsTable' => $baseDir . '/database/migrations/2016_05_31_180920_create_events_table.php',
+    'CreateExtrasTable' => $baseDir . '/database/migrations/2016_08_17_125019_create_extras_table.php',
+    'CreateExtrasValuesTable' => $baseDir . '/database/migrations/2016_08_17_125105_create_extras_values_table.php',
     'CreateInvitationsTable' => $baseDir . '/database/migrations/2016_08_15_085402_create_invitations_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',

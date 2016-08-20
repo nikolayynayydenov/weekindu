@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Http\Request;
+use App\ExtraParam;
+use App\ExtraParamValue;
 use App\Event;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
-use App\Http\Controllers\Controller;
 
 class EventsController extends Controller
 {
@@ -61,7 +61,9 @@ class EventsController extends Controller
      */
     public function store(Requests\StoreEventRequest $request)
     {
-        // normalization:
+        /*
+         * Normalization:
+         */
 
         $data = $request->except('_token');
 
@@ -106,6 +108,27 @@ class EventsController extends Controller
         $event->host = $request->user()->id;
         $event->invitation_code = $invitationCode;
         $event->save();
+
+        /*
+         * Store extras:
+         */
+
+        $extras = json_decode($data['extras']);
+        foreach ($extras as $key => $extra) {
+            $newExtra = new ExtraParam();
+            $newExtra->event_id = $event->id;
+            $newExtra->key = $key;
+            $newExtra->save();
+
+            foreach ($extra as $val) {
+                $newValue = new ExtraParamValue();
+                $newValue->extra_params_id = $newExtra->id;
+                $newValue->value = $val;
+                $newValue->save();
+            }
+        }
+
+        exit;
 
         /*
          * Redirect to the show event action

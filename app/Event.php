@@ -12,4 +12,9 @@ class Event extends Model
     {
         return $this->belongsTo('App\User', 'host');
     }
+
+    public function extraParams ()
+    {
+        return $this->hasMany('App\ExtraParam', 'event_id');
+    }
 }
