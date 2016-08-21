@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use App\Http\Controllers\AvatarsController;
 
+use Socialite;
+use Auth;
+
 class AuthController extends Controller
 {
     /*
@@ -50,7 +53,7 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         // TODO the user should be able to create circle images (through front end - UI)
-        
+
         return Validator::make($data, [
             'first_name' => 'required|max:35',
             'last_name' => 'required|max:35',
@@ -70,8 +73,8 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        $avatar = AvatarsController::storeImage(isset($data['avatar']) ? $data['avatar'] : false);        
-        
+        $avatar = AvatarsController::storeImage(isset($data['avatar']) ? $data['avatar'] : false);
+
         return User::create([
             'first_name' => trim($data['first_name']),
             'last_name' => trim($data['last_name']),
@@ -79,6 +82,64 @@ class AuthController extends Controller
             'email' => trim($data['email']),
             'password' => bcrypt($data['password']),
             'avatar' => $avatar
+        ]);
+    }
+
+
+
+    /**
+     * Redirect the user to the Facebook authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from Facebook.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback()
+    {
+        try {
+            $user = Socialite::driver('facebook')->user();
+        } catch (Exception $e) {
+            return redirect('auth/facebook');
+        }
+
+        $authUser = $this->findOrCreateUser($user);
+
+        Auth::login($authUser, true);
+
+        //return view('events.show');
+        return view('welcome');
+    }
+
+
+    /**
+     * Return user if exists; create and return if doesn't
+     *
+     * @param $facebookUser
+     * @return User
+     */
+    private function findOrCreateUser($facebookUser)
+    {
+       // $authUser = User::find($facebookUser->id)->select('facebook_id')->first();
+
+        dd($facebookUser->id);
+       // if ($authUser){
+       //     dd('dsadsasad');
+       //     return $authUser;
+       // }
+
+        return User::create([
+            'name' => $facebookUser->name,
+            'email' => $facebookUser->email,
+            'facebook_id' => $facebookUser->id,
+            'avatar' => $facebookUser->avatar
         ]);
     }
 }
