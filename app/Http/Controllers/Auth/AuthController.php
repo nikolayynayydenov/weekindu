@@ -115,7 +115,7 @@ class AuthController extends Controller
         Auth::login($authUser, true);
 
         //return view('events.show');
-        return view('welcome');
+        return redirect($this->redirectTo);
     }
 
 
@@ -127,13 +127,11 @@ class AuthController extends Controller
      */
     private function findOrCreateUser($facebookUser)
     {
-       // $authUser = User::find($facebookUser->id)->select('facebook_id')->first();
+        $authUser = User::where('facebook_id', $facebookUser->id)->first();
 
-        dd($facebookUser->id);
-       // if ($authUser){
-       //     dd('dsadsasad');
-       //     return $authUser;
-       // }
+        if ($authUser){
+           return $authUser;
+        }
 
         return User::create([
             'name' => $facebookUser->name,
