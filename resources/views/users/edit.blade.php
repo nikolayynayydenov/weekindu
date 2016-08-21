@@ -92,13 +92,10 @@
             </div>
         </div>
                 <a class="waves-effect waves-light btn modal-trigger accent-color show-on-medium-and-down s12 hide-on-med-and-up" href="#modal1">Change Avatar</a>
-
-
-
-            <a class="waves-effect waves-light btn email-button-mobile accent-color show-on-medium-and-down s12 hide-on-med-and-up">Change Email</a>
-
-
-            <a class="waves-effect waves-light btn password-button-mobile accent-color show-on-medium-and-down s12 hide-on-med-and-up">Change password</a>
+                <br>
+                <a class="waves-effect waves-light btn email-button-mobile accent-color show-on-medium-and-down s12 hide-on-med-and-up">Change Email</a>
+                <br>
+                <a class="waves-effect waves-light btn password-button-mobile accent-color show-on-medium-and-down s12 hide-on-med-and-up">Change password</a>
 
 
 
@@ -130,7 +127,7 @@
         </div>
         <span class="input-field col s12 change-email-mobile">
 
-                <input type="password" name="password_email" pattern=".{4,}" placeholder="Enter your password"  >
+                <input type="password" name="password_email" pattern=".{4,}" placeholder="Enter your password">
                 <label for="password"></label>
 
 
@@ -189,14 +186,17 @@
 
         });
         $('.email-button-mobile').click(function(){
-            $('.change-email-mobile').toggle("slow");
+            $('.change-email-mobile').show("slow");
+            $('.change-password-mobile').hide("slow");
+
 
         });
         $('.password-button-desktop').click(function(){
             $('.change-password-desktop').slideToggle("slow");
         });
         $('.password-button-mobile').click(function(){
-            $('.change-password-mobile').slideToggle("slow");
+            $('.change-email-mobile').slideToggle("slow");
+            $('.change-password-mobile').hide("slow");
         });
 
     </script>
