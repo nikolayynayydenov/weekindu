@@ -105,7 +105,16 @@ class AuthController extends Controller
     public function handleProviderCallback()
     {
         try {
-            $user = Socialite::driver('facebook')->user();
+            $driver = Socialite::driver('facebook')
+                ->fields([
+                    'name',
+                    'first_name',
+                    'last_name',
+                    'email'
+                ]);
+
+            $user = $driver->user();
+            //$user = Socialite::driver('facebook')->user();
         } catch (Exception $e) {
             return redirect('auth/facebook');
         }
@@ -134,7 +143,8 @@ class AuthController extends Controller
         }
 
         return User::create([
-            'name' => $facebookUser->name,
+            'first_name' => $facebookUser->user['first_name'],
+            'last_name' => $facebookUser->user['last_name'],
             'email' => $facebookUser->email,
             'facebook_id' => $facebookUser->id,
             'avatar' => $facebookUser->avatar

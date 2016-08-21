@@ -47,7 +47,11 @@
                             <li class="dropdown-button waves-effect" data-activates="user-menu">
                                 <div class="container-fluid valign-wrapper">
                                     <div class="col l6">
-                                        <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
+                                        @if(Auth::user()->facebook_id != null)
+                                            <img src="{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
+                                        @else
+                                            <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
+                                        @endif
                                     </div>
                                     <div>
                                         {{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->first_name }}                                        
