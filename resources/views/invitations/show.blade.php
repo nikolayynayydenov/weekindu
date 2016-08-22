@@ -109,7 +109,7 @@
 
                 </div>
             @endif
-            <div class="">
+            <div class="extras">
             @if($event->extras)
 
                 @foreach($event->extras as $extra)
