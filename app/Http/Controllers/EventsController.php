@@ -105,7 +105,6 @@ class EventsController extends Controller
         $event->drinks = empty($data['drinks']) ? '' : json_encode($data['drinks']);
         $event->location_string = empty($data['location_string']) ? '' : $data['location_string'];
         $event->location_coordinates = empty($data['location_coordinates']) ? '' : $data['location_coordinates'];
-        $event->extras = empty($data['extras']) ? '' : json_encode($data['extras']);
         $event->host = $request->user()->id;
         $event->invitation_code = $invitationCode;
         $event->save();
@@ -150,7 +149,6 @@ class EventsController extends Controller
         $event->food = json_decode($event->food);
         $event->drinks = json_decode($event->drinks);
         $event->music = json_decode($event->music);
-        $event->extras = json_decode($event->extras);
         return view('events.show')->with('event', $event);
     }
 

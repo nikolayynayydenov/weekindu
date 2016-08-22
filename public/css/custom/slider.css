@@ -3,11 +3,15 @@
 }
 
 .card-active {
-    box-shadow: 0 0px 100px 0 #2196f3,0 2px 15px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0px 0px 39px 15px rgba(33,150,243,1);
+    -moz-box-shadow: 0px 0px 39px 15px rgba(33,150,243,1);
+    box-shadow: 0px 0px 39px 15px rgba(33,150,243,1);
 }
 
 .card-active:hover {
-    box-shadow: 0 0px 100px 0 #2196f3,0 2px 10px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0px 0px 39px 15px rgba(33,150,243,1);
+    -moz-box-shadow: 0px 0px 39px 15px rgba(33,150,243,1);
+    box-shadow: 0px 0px 39px 15px rgba(33,150,243,1);
 }
 
 .slider-link-item {

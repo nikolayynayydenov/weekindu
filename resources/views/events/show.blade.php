@@ -82,10 +82,10 @@
         <div class="row center">
             <h4>{{ $event->title }}</h4>
         </div>
-        <div class="row z-depth-2">
+        <div class="row z-depth-2 white">
             <div class="col s12">
                 <ul class="tabs">
-                    <li class="tab col s3"><a id="active" href="#test1">Attendance</a></li>
+                    <li class="tab col s3"><a id="active" href="#test1">Guests</a></li>
                     <li class="tab col s3"><a class="food" href="#test2">Food statistics</a></li>
                     <li class="tab col s3"><a href="#test3">Drinks statistics</a></li>
                     <li class="tab col s3"><a href="#tab4">Music statistics</a></li>
