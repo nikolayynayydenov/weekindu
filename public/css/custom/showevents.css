@@ -1,8 +1,8 @@
-.manage-button:hover, .manage-button:hover, .manage-button:focus{
-    background:#3F51B5;
+.manage-button, .manage-button:hover, .manage-button:hover, .manage-button:focus{
+    background:#2196f3;
 }
-.invitation-button:hover, .invitation-button:hover, .invitation-button:focus{
-    background:#ff9800;
+.invitation-button, .invitation-button:hover, .invitation-button:hover, .invitation-button:focus{
+    background:grey;
 }
 .deletebut {
     cursor: pointer;
@@ -11,10 +11,10 @@
 }
 
 .manage-button:after{
-background:#3F51B5;
+background:#2196f3;
 }
 .manage-button:hover{
-    background:#3F51B5;
+    background:#2196f3;
 
 }
 
@@ -33,4 +33,14 @@ background:#3F51B5;
 .modal-trigger-desktop{
     left:0;
     position:fixed;
+}
+.tabs .tab a{
+    color: #2196f3  ;
+}
+.tabs .indicator{
+    background-color: #2196f3  ;
+
+}
+.tabs .tab a:hover{
+    color: #2196f3;
 }

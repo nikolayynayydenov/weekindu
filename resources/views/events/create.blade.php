@@ -19,9 +19,10 @@
         </ul>
     </div>
 @endif
+    <div class="container">
 <div class="row">
     {{--<button class=" btn waves-effect row accent-color z-depth-5" id="showhide" onclick="">showhide</button>--}}
-    <div class="card-panel z-depth-1 grey transparent">
+    <div class="card-panel z-depth-1 slidee">
         <div class="row">
             <div class="col l3 s12 m3">
 
@@ -43,16 +44,16 @@
             <div class="col l9 s12 m9">
                     <div class="row">
                         <div class="col">
-                        <span class="btn default-primary-color waves-effect" id="slider-prev-btn">Previous</span>
+                        <span class="btn slider-button waves-effect" id="slider-prev-btn">Previous</span>
 
 
-                            <span class="btn default-primary-color waves-effect " id="slider-next-btn">Next</span>
+                            <span class="btn slider-button waves-effect " id="slider-next-btn">Next</span>
 
 
-                            <span><button class="btn default-primary-color waves-effect " form="create-event-form" type="submit">Create Event!</button></span>
+                            <span><button class="btn slider-button-create waves-effect " form="create-event-form" type="submit">Create Event!</button></span>
                         </div>
                         <div class="col right">
-                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Why do I need this?</a>
+                            <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1">Why do I need this?</a>
                         </div>
                         </div>
                     <!-- Modal Structure -->
@@ -171,7 +172,7 @@
         </div>
     </div>
 </div>
-
+    </div>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA6WkG6e4Zk1xRfbdo-_I-IvzGv7p5k06M"></script>
 
 @endsection

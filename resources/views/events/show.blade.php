@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/css/custom/show.css">
     <div class="row hide-on-med-and-down">
         <div class="col s12 m4 l2">
-    <a class="btn waves-effect waves-light modal-trigger" href="#modal1">What is this?</a>
+    <a class="btn waves-effect waves-light modal-trigger orange" href="#modal1">What is this?</a>
         </div>
             <div class="col s12 m4 l8 center">
         <a class="btn invitation-button" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
@@ -122,8 +122,8 @@
                     </tr>
                     <tr>
                         <td>Jonathan Georgiev</td>
-                        <td style="color: orange">Pending</td>
-                        <td></td>
+                        <td style="color: green">Yes</td>
+                        <td>Can`t wait!</td>
                     </tr>
                     </tbody>
                 </table>

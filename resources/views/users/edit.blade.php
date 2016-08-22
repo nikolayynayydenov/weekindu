@@ -19,44 +19,47 @@
         }
 
         .input-field .prefix.active{
-            color: #3F51B5;
+            color: #a3a3a3;
         }
         /* label color */
         .input-field label {
-            color: #3F51B5;
+            color: #a3a3a3;
         }
         /* label focus color */
         .input-field input[type=text]:focus + label {
-            color: #3F51B5;
+            color: #2196f3;
         }
         /* label underline focus color */
         .input-field input[type=text]:focus {
-            border-bottom: 1px solid #3F51B5;
-            box-shadow: 0 1px 0 0 #3F51B5;
+            border-bottom: 1px solid #a3a3a3;
+            box-shadow: 0 1px 0 0 #a3a3a3;
         }
         /* valid color */
         .input-field input[type=text].valid {
-            border-bottom: 1px solid #3F51B5;
-            box-shadow: 0 1px 0 0 #3F51B5;
+            border-bottom: 1px solid #a3a3a3;
+            box-shadow: 0 1px 0 0 #a3a3a3;
         }
         /* invalid color */
         .input-field input[type=text].invalid {
-            border-bottom: 1px solid #3F51B5;
-            box-shadow: 0 1px 0 0 #3F51B5;
+            border-bottom: 1px solid #a3a3a3;
+            box-shadow: 0 1px 0 0 #a3a3a3;
         }
         /* icon prefix focus color */
         .input-field .prefix.active {
-            color: #3F51B5;
+            color: #a3a3a3;
         }
         .btn:hover, .btn-large:hover{
-            background-color:#3F51B5;
+            background-color:#a3a3a3;
+        }
+        .btn, .btn-large{
+            background-color:#a3a3a3;
         }
         .divider{
             height: 3px;
         }
  </style>
     <div class="row center">
-    <h1>View for edit user</h1>
+    <h1>Edit Profile</h1>
     </div>
     <form action="{{ url('/user/'.$user->id) }}" method="post" enctype="multipart/form-data">
         <div class="row">
@@ -174,7 +177,7 @@
         <br>
         <br>
         <div class="row center">
-                <button class="btn-large waves-effect waves-light accent-color " type="submit">
+                <button class="btn-large waves-effect waves-light blue" type="submit">
                     Update
                     <i class="material-icons right">send</i>
                 </button>

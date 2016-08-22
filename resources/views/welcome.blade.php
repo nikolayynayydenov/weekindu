@@ -14,13 +14,13 @@
     </head>
     <body>
 
-        <nav class="indigo" role="navigation">
+        <nav class="white" role="navigation">
             <div class="nav-wrapper container">
-                <a id="logo-container" href="{{url('/')}}" class="brand-logo white-text">Weekindu</a>
+                <a id="logo-container" href="{{url('/')}}" class="brand-logo grey-text">Weekindu</a>
                 <ul class="right hide-on-med-and-down">
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}" class="white-text">Login</a></li>
-                        <li><a href="{{ url('/register') }}" class="white-text">Register</a></li>
+                        <li><a href="{{ url('/login') }}" class="grey-text">Login</a></li>
+                        <li><a href="{{ url('/register') }}" class="grey-text">Register</a></li>
                     @endif
                 </ul>
 
@@ -36,9 +36,9 @@
 
 
         <div class="fullscreen-bg">
-            <video loop muted autoplay poster="/images/video2/Snapshots/Drink-Wine.jpg" class="fullscreen-bg__video">
-                <source src="/images/video2/WEBM/Drink-Wine.webm" type="video/webm">
-                <source src="/images/video2/MP4/Drink-Wine.mp4" type="video/mp4">
+            <video loop muted autoplay poster="/images/video4/Snapshots/Hanging-Out.jpg" class="fullscreen-bg__video">
+                <source src="/images/video4/WEBM/Hanging-Out.webm" type="video/webm">
+                <source src="/images/video4/MP4/Hanging-Out.mp4" type="video/mp4">
 
             </video>
         </div>
@@ -57,12 +57,12 @@
         <div class="section no-pad-bot" id="index-banner">
             <div class="container">
                 <br><br>
-                <h1 class="header center orange-text">Manage your events easily</h1>
-                <div class="row center">
+                <h1 class="header center white-text">Manage your events easily</h1>
+                {{--<div class="row center">
                     <h5 class="header col s12 light white-text">Try for free the most advanced event manager around the web</h5>
-                </div>
+                </div>--}}<br>
                 <div class="row center">
-                    <a href="{{ url('/event') }}" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+                    <a href="{{ url('/event') }}" id="download-button" class="btn-large waves-effect waves-light blue">Get Started</a>
                 </div>
                 <br><br>
 
@@ -75,7 +75,7 @@
                 <div class="row">
                     <div class="col s12 m4">
                         <div class="icon-block">
-                            <h2 class="center indigo-text"><i class="material-icons">group</i></h2>
+                            <h2 class="center blue-text"><i class="material-icons">group</i></h2>
                             <h5 class="center white-text">Keep track of your guests</h5>
 
                             <p class="light white-text">With our platform, the non-attending guests are no longer an issue.Keep track of them in a very easy intuitive way</p>
@@ -84,7 +84,7 @@
 
                     <div class="col s12 m4">
                         <div class="icon-block">
-                            <h2 class="center indigo-text"><i class="material-icons">shopping_basket</i></h2>
+                            <h2 class="center blue-text"><i class="material-icons">shopping_basket</i></h2>
                             <h5 class="center white-text">Organise meals easily</h5>
 
                             <p class="light white-text">Wonder no more about what to order when you make a banquet.Using your platform, you are going to be able to ask and order the drinks and meals so everything would be set</p>
@@ -93,7 +93,7 @@
 
                     <div class="col s12 m4">
                         <div class="icon-block">
-                            <h2 class="center indigo-text"><i class="material-icons">settings</i></h2>
+                            <h2 class="center blue-text"><i class="material-icons">settings</i></h2>
                             <h5 class="center white-text">Many more</h5>
 
                             <p class="light center white-text">Register now, and explore weekindu for free</p>
@@ -107,32 +107,86 @@
 
         </div>
 
+        <div class="section white">
+            <h4 class="center">Make an event!</h4>
+            <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <img border="5" src="/images/tutorial/slider.png">
+                </div>
+                <div class="col s6">
+                    <div class="flow-text ">Create an event fast and easy.Choose from variety of parameters like food, drinks and music.You can even make your own parameters</div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="section section-2">
+            <h4 class="center">Send Invitations</h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col s6">
+                        <div class="flow-text valign">Sent invitation which is going to contain the information you filled when you created the event.The users will  be able to tell you what are they going to eat, drink etc.</div>
 
-        <footer class="page-footer indigo">
+                    </div>
+                    <div class="col s6 center">
+                        <img border="5" src="/images/tutorial/invitation.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section white">
+            <h4 class="center">Manage Guests</h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col s6">
+                        <img border="5" src="/images/tutorial/attendance.png">
+                    </div>
+                    <div class="col s6">
+                        <div class="flow-text">See who is going to come and who won`t!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-2">
+            <h4 class="center">Manage Parameters</h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col s6">
+                        <div class="flow-text valign">After your guests fill their invitations, you will be able to see the tastes of each person</div>
+
+                    </div>
+                    <div class="col s6 center">
+                        <img border="5" src="/images/tutorial/foods.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <p class="grey-text">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
 
 
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a class="grey-text" href="#!">Link 1</a></li>
+            <li><a class="grey-text" href="#!">Link 2</a></li>
+            <li><a class="grey-text" href="#!">Link 3</a></li>
+            <li><a class="grey-text" href="#!">Link 4</a></li>
           </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Connect</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a class="grey-text"  href="#!">Link 1</a></li>
+            <li><a class="grey-text"  href="#!">Link 2</a></li>
+            <li><a class="grey-text"  href="#!">Link 3</a></li>
+            <li><a class="grey-text"  href="#!">Link 4</a></li>
           </ul>
         </div>
       </div>

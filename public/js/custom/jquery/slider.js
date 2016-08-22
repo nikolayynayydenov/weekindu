@@ -45,7 +45,7 @@ $(document).ready(function(){
                 '<img class="responsive-img" src="/images/' + value.imgLocation + '">' +
                 '</div>' +
                 '<div class="card-content center">' +
-                '<p><strong class="orange-text">' + value.cardTitle + '</strong>' + '<br>'+ '<div class="divider"></div>' +
+                '<p><strong class="blue-text">' + value.cardTitle + '</strong>' + '<br>'+ '<div class="divider"></div>' +
                 '' + value.cardContent + '</p>' +
                 '</div>' +
                 '</div>' +
