@@ -28,7 +28,11 @@
 <div class="container">
     <div class="row">
         <div class="col s12 m4 l3">
-        <img class="materialboxed circle responsive-img" width="250" src="/images/user-avatars/{{$user->avatar}}">
+        @if($user->facebook_id != null)
+            <img class="materialboxed circle responsive-img" width="250" src="{{$user->avatar}}">
+        @else
+            <img class="materialboxed circle responsive-img" width="250" src="/images/user-avatars/{{$user->avatar}}">
+        @endif
 
         <span id="names">
         {{$user->first_name}}
