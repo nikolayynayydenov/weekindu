@@ -111,10 +111,10 @@
             <h4 class="center">Make an event!</h4>
             <div class="container">
             <div class="row">
-                <div class="col s6">
+                <div class="col s12 l6">
                     <img border="5" src="/images/tutorial/slider.png">
                 </div>
-                <div class="col s6">
+                <div class="col s12 l6">
                     <div class="flow-text ">Create an event fast and easy.Choose from variety of parameters like food, drinks and music.You can even make your own parameters</div>
                 </div>
             </div>
@@ -124,11 +124,11 @@
             <h4 class="center">Send Invitations</h4>
             <div class="container">
                 <div class="row">
-                    <div class="col s6">
-                        <div class="flow-text valign">Sent invitation which is going to contain the information you filled when you created the event.The users will  be able to tell you what are they going to eat, drink etc.</div>
+                    <div class="col s12 l6">
+                        <div class="flow-text">Sent invitation which is going to contain the information you filled when you created the event.The users will  be able to tell you what are they going to eat, drink etc.</div>
 
                     </div>
-                    <div class="col s6 center">
+                    <div class="col s12 l6 center">
                         <img border="5" src="/images/tutorial/invitation.png">
                     </div>
                 </div>
@@ -138,10 +138,10 @@
             <h4 class="center">Manage Guests</h4>
             <div class="container">
                 <div class="row">
-                    <div class="col s6">
+                    <div class="col s12 l6 center">
                         <img border="5" src="/images/tutorial/attendance.png">
                     </div>
-                    <div class="col s6">
+                    <div class="col s12 l6 ">
                         <div class="flow-text">See who is going to come and who won`t!</div>
                     </div>
                 </div>
@@ -151,11 +151,11 @@
             <h4 class="center">Manage Parameters</h4>
             <div class="container">
                 <div class="row">
-                    <div class="col s6">
-                        <div class="flow-text valign">After your guests fill their invitations, you will be able to see the tastes of each person</div>
+                    <div class="col s12 l6">
+                        <div class="flow-text">After your guests fill their invitations, you will be able to see the tastes of each person</div>
 
                     </div>
-                    <div class="col s6 center">
+                    <div class="col s12 l6 center">
                         <img border="5" src="/images/tutorial/foods.png">
                     </div>
                 </div>

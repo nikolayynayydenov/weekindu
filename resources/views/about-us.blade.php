@@ -3,13 +3,13 @@
     <link href="/images/icons/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
  <style>
      body {
-         background-color: #757575;
+         background-color: #ffffff;
      }
  </style>
 <body>
 <div class="container">
     <div class="row center">
-<h1 class="orange-text center-align">Meet the team</h1>
+<h1 class="blue-text center-align">Meet the team</h1>
         <div class="divider"></div>
     </div>
         <div class="row center">
