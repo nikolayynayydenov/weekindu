@@ -19,7 +19,6 @@ class CheckIfInvitationHasEvent
         $invitationCode = $request->segments()[1];
 
         if($event = Event::where('invitation_code', $invitationCode)->first()) {
-            //dd($event->title);
             return $next($request);
         } else {
             abort(404);

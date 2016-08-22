@@ -11,7 +11,7 @@ class ExtraParam extends Model
     
     public function values() 
     {
-        return $this->hasMany('App\ExtraParamsValues', 'extra_params_id');
+        return $this->hasMany('App\ExtraParamValue', 'extra_param_id');
     }
     
     public function event()

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Event;
 
 class EventsTableSeeder extends Seeder
 {
@@ -13,7 +12,7 @@ class EventsTableSeeder extends Seeder
     public function run()
     {
         for ($i = 0; $i < 10; $i++) {
-            $event = new Event();
+            $event = new App\Event();
             $event->title = 'Softuni Camp - '.$i;
             $event->date = date('d, F - Y');
             $event->description = 'An awesome camp for gurus'.$i;
@@ -25,10 +24,55 @@ class EventsTableSeeder extends Seeder
             $event->drinks = '["Water","Milk","Beer","Juice","Cider","Other"]';
             $event->location_string = 'Hisarya';
             $event->location_coordinates = '(42.70073056317599, 23.289127349853516)';
-            $event->extras = '"{\"When are you going to get up?\":[\"7:30\",\"8:00\",\"10:30\",\"11:30\",\"14:00\"],\"Do you have a car?\":[\"yes\",\"no\"],\"What make is your laptop?\":[\"Lenovo\",\"Acer\",\"Toshiba\"]}"';
             $event->host = 1;
             $event->invitation_code = str_random(16);
             $event->save();
+
+            // add some extras to this event:
+
+            // NEW EXTRA: What make is your laptop?
+
+            $extra = new App\ExtraParam();
+            $extra->event_id = $event->id;
+            $extra->key = 'What make is your laptop?';
+            $extra->save();
+
+            $value = new App\ExtraParamValue();
+            $value->extra_param_id = $extra->id;
+            $value->value = 'Lenovo';
+            $value->save();
+
+            $value = new App\ExtraParamValue();
+            $value->extra_param_id = $extra->id;
+            $value->value = 'Acer';
+            $value->save();
+
+            $value = new App\ExtraParamValue();
+            $value->extra_param_id = $extra->id;
+            $value->value = 'Toshiba';
+            $value->save();
+
+            // NEW EXTRA: What music instrument do you play?
+
+            $extra = new App\ExtraParam();
+            $extra->event_id = $event->id;
+            $extra->key = 'What music instrument do you play?';
+            $extra->save();
+
+            $value = new App\ExtraParamValue();
+            $value->extra_param_id = $extra->id;
+            $value->value = 'Guitar';
+            $value->save();
+
+            $value = new App\ExtraParamValue();
+            $value->extra_param_id = $extra->id;
+            $value->value = 'Piano';
+            $value->save();
+
+            $value = new App\ExtraParamValue();
+            $value->extra_param_id = $extra->id;
+            $value->value = 'Drums';
+            $value->save();
         }
     }
 }

@@ -5,58 +5,58 @@
             display: none;
             position: inherit;
         }
-        .change-email-mobile {
-            display: none;
-            position: inherit;
-        }
+
         .change-password-desktop {
             display: none;
             position: inherit;
         }
-        .change-password-mobile {
+        .content {
             display: none;
             position: inherit;
         }
 
         .input-field .prefix.active{
-            color: #3F51B5;
+            color: #a3a3a3;
         }
         /* label color */
         .input-field label {
-            color: #3F51B5;
+            color: #a3a3a3;
         }
         /* label focus color */
         .input-field input[type=text]:focus + label {
-            color: #3F51B5;
+            color: #2196f3;
         }
         /* label underline focus color */
         .input-field input[type=text]:focus {
-            border-bottom: 1px solid #3F51B5;
-            box-shadow: 0 1px 0 0 #3F51B5;
+            border-bottom: 1px solid #a3a3a3;
+            box-shadow: 0 1px 0 0 #a3a3a3;
         }
         /* valid color */
         .input-field input[type=text].valid {
-            border-bottom: 1px solid #3F51B5;
-            box-shadow: 0 1px 0 0 #3F51B5;
+            border-bottom: 1px solid #a3a3a3;
+            box-shadow: 0 1px 0 0 #a3a3a3;
         }
         /* invalid color */
         .input-field input[type=text].invalid {
-            border-bottom: 1px solid #3F51B5;
-            box-shadow: 0 1px 0 0 #3F51B5;
+            border-bottom: 1px solid #a3a3a3;
+            box-shadow: 0 1px 0 0 #a3a3a3;
         }
         /* icon prefix focus color */
         .input-field .prefix.active {
-            color: #3F51B5;
+            color: #a3a3a3;
         }
         .btn:hover, .btn-large:hover{
-            background-color:#3F51B5;
+            background-color:#a3a3a3;
+        }
+        .btn, .btn-large{
+            background-color:#a3a3a3;
         }
         .divider{
             height: 3px;
         }
  </style>
     <div class="row center">
-    <h1>View for edit user</h1>
+    <h1>Edit Profile</h1>
     </div>
     <form action="{{ url('/user/'.$user->id) }}" method="post" enctype="multipart/form-data">
         <div class="row">
@@ -82,7 +82,7 @@
         </div>
         <div class="row center hide-on-med-and-down">
             <div class="col s12 m4">
-                <a class="waves-effect waves-light btn email-button-desktop accent-color">Change Email</a>
+                <a class="waves-effect waves-light btn email-button-desktop accent-color ">Change Email</a>
             </div>
             <div class="col s12 m4">
                 <a class="waves-effect waves-light btn password-button-desktop accent-color">Change password</a>
@@ -91,14 +91,11 @@
                 <a class="waves-effect waves-light btn modal-trigger accent-color " href="#modal1">Change Avatar</a>
             </div>
         </div>
-                <a class="waves-effect waves-light btn modal-trigger accent-color show-on-medium-and-down s12 hide-on-med-and-up" href="#modal1">Change Avatar</a>
-
-
-
-            <a class="waves-effect waves-light btn email-button-mobile accent-color show-on-medium-and-down s12 hide-on-med-and-up">Change Email</a>
-
-
-            <a class="waves-effect waves-light btn password-button-mobile accent-color show-on-medium-and-down s12 hide-on-med-and-up">Change password</a>
+                <a class="waves-effect waves-light btn modal-trigger accent-color show-on-medium-and-down s12 hide-on-med-and-up " href="#modal1">Change Avatar</a>
+                <br>
+                <a id="but1" class="waves-effect waves-light btn  accent-color show-on-medium-and-down s12 hide-on-med-and-up mobile-buttons">Change Email</a>
+                <br>
+                <a id="but2" class="waves-effect waves-light btn  accent-color show-on-medium-and-down s12 hide-on-med-and-up mobile-buttons">Change password</a>
 
 
 
@@ -128,9 +125,9 @@
 
             </span>
         </div>
-        <span class="input-field col s12 change-email-mobile">
+        <span class="input-field col s12 content" id="but1c">
 
-                <input type="password" name="password_email" pattern=".{4,}" placeholder="Enter your password"  >
+                <input type="password" name="password_email" pattern=".{4,}" placeholder="Enter your password">
                 <label for="password"></label>
 
 
@@ -141,8 +138,8 @@
                 <input type="email" name="email_confirmation" placeholder="Enter your new e-mail again" >
                 <label for="email"></label>
             </span>
-        <div class="divider show-on-med-and-down hide-on-large-only"></div>
-        <span class="change-password-mobile input-field offset-l4 offset-m4 offset-s4 col l4 s4 m4">
+
+        <span class=" input-field offset-l4 offset-m4 offset-s4 col l4 s4 m4 content" id="but2c">
 
                 <input type="password" name="old_password" pattern=".{4,}" placeholder="Enter your old password"  >
                 <input type="password" name="password" pattern=".{4,}" placeholder="Enter your new password"  >
@@ -177,7 +174,7 @@
         <br>
         <br>
         <div class="row center">
-                <button class="btn-large waves-effect waves-light accent-color " type="submit">
+                <button class="btn-large waves-effect waves-light blue" type="submit">
                     Update
                     <i class="material-icons right">send</i>
                 </button>
@@ -185,19 +182,19 @@
     </form>
     <script>
         $('.email-button-desktop').click(function(){
-            $('.change-email-desktop').toggle("slow");
+            $('.change-email-desktop').slideToggle("slow");
 
         });
-        $('.email-button-mobile').click(function(){
-            $('.change-email-mobile').toggle("slow");
 
-        });
         $('.password-button-desktop').click(function(){
             $('.change-password-desktop').slideToggle("slow");
         });
-        $('.password-button-mobile').click(function(){
-            $('.change-password-mobile').slideToggle("slow");
-        });
+        $('.mobile-buttons').click(function() {
+            var id = this.id;
+            var idcont = id + 'c';
+            $('.content').hide('slow');
+            $('#'+idcont).show('slow');
+        })
 
     </script>
 @endsection

@@ -29,3 +29,6 @@ Route::get('/user/get-json', 'UsersController@getJson');
 Route::resource('/event', 'EventsController');
 Route::resource('/invitation', 'InvitationsController');
 Route::resource('/user', 'UsersController');
+
+Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');

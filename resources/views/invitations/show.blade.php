@@ -78,13 +78,13 @@
             @endif
 
             @if($event->extras)
-                @foreach($event->extras as $name => $extra)
+                @foreach($event->extras as $extra)
                     <div class="input-field col l4 m4 s12">
                         <select class="extras-select-field" multiple>
-                            <option value="{{ $name }}" disabled selected>{{ $name }}</option>
-                            @foreach($extra as $item)
-                                <option value="{{ $item }}"
-                                        class="extras-option">{{ $item }}</option>
+                            <option value="{{ $extra->key }}" disabled selected>{{ $extra->key }}</option>
+                            @foreach($extra->values as $value)
+                                <option value="{{ $value->value }}"
+                                        class="extras-option">{{ $value->value }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -102,28 +102,6 @@
     <script>
         $(document).ready(function (){
             $('select').material_select();
-
-            $('.extras-select-field').on('change', function (event){
-                let selectedValuesJsonString = JSON.stringify($(event.target).val());
-                let fieldName = $(event.target)
-                        .children('option:selected:disabled')
-                        .text();
-                let invitationForm = $('#invitation-form');
-
-                // creating the hidden input field that is going to be appended to the form
-
-                console.log(selectedValuesJsonString);
-                console.log(fieldName);
-
-                let hiddenField = $('<input>')
-                        .attr('type', 'hidden')
-                        .attr('name', fieldName)
-                        .attr('value', selectedValuesJsonString);
-
-                invitationForm.append(hiddenField);
-
-                console.log(hiddenField);
-            });
         });
     </script>
 </body>

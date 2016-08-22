@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
+use App\ExtraParam;
+use App\ExtraParamValue;
 use App\Event;
+use App\Http\Requests;
 use Illuminate\Http\Request;
 
 class InvitationsController extends Controller
@@ -53,12 +55,12 @@ class InvitationsController extends Controller
      */
     public function show($invitationCode)
     {
-        $event = Event::where('invitation_code', $invitationCode)->first();
-        
+        $event = Event::where('invitation_code', $invitationCode)
+            ->first();
+
         $event->music = json_decode($event->music);
         $event->food = json_decode($event->food);
         $event->drinks = json_decode($event->drinks);
-        $event->extras = json_decode(json_decode($event->extras));
 
         return view('invitations.show')
             ->with('event', $event);

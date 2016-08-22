@@ -3,34 +3,34 @@
 }
 
 .card-active {
-    box-shadow: 0 0px 100px 0 #ff9800,0 2px 15px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 0px 100px 0 #2196f3,0 2px 15px 0 rgba(0,0,0,0.12);
 }
 
 .card-active:hover {
-    box-shadow: 0 0px 100px 0 #ff9800,0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 0px 100px 0 #2196f3,0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .slider-link-item {
     cursor: pointer;
 }
 .btn:hover, .btn-large:hover{
-    background-color:#3F51B5;
+    background-color:#a3a3a3;
 }
 .collection a.collection-item {
     display: block;
     transition: .25s;
-    color: #3F51B5;
+    color: #2196f3;
 }
 .collection .collection-item.active {
-    background-color: #3F51B5;
-    color: #ff9800;
-    border-color:#3F51B5 ;
+    background-color: #2196f3;
+    color: #a3a3a3;
+    border-color:#2196f3 ;
 
 }
 body{
-    background-image: url("/images/background-photo.png");
+    background: url("/images/girlscar.jpg");
 
-    background-position: center;
+
 
 }
 #showhide{
@@ -40,8 +40,8 @@ body{
     left: -55px;
     /*width: 30px;
     height: 300px;*!*/
-    background: #ff9800;
-    color: #3F51B5;
+    background: #2196f3;
+    color: #a3a3a3;
     transform: rotate(90deg);
     cursor: pointer;
 
@@ -49,90 +49,106 @@ body{
 }
 
 .input-field .prefix.active{
-    color: #ff9800;
+    color: #2196f3;
 }
 /* label color */
 .input-field label {
-    color: #ff9800;
+    color: #2196f3;
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
-    color: #ff9800;
+    color: #2196f3;
 }
 /* label underline focus color */
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid #ff9800;
-    box-shadow: 0 1px 0 0 #ff9800;
+    border-bottom: 1px solid #2196f3;
+    box-shadow: 0 1px 0 0 #2196f3;
 }
 /* valid color */
 .input-field input[type=text].valid {
-    border-bottom: 1px solid #ff9800;
-    box-shadow: 0 1px 0 0 #ff9800;
+    border-bottom: 1px solid #2196f3;
+    box-shadow: 0 1px 0 0 #2196f3;
 }
 /* invalid color */
 .input-field input[type=text].invalid {
-    border-bottom: 1px solid #ff9800;
-    box-shadow: 0 1px 0 0 #ff9800;
+    border-bottom: 1px solid #2196f3;
+    box-shadow: 0 1px 0 0 #2196f3;
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
-    color: #ff9800;
+    color: #2196f3;
 }
 /*.picker__box{
     background-color: #FFEB3B;
 }*/
 .picker__date-display, .picker__weekday-display{
-    background-color: #3F51B5;
+    background-color: #a3a3a3;
 }
 .picker__nav--prev:hover, .picker__nav--next:hover{
-    background:#3F51B5 ;
+    background:#a3a3a3 ;
 }
 .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected{
-    background-color:#3F51B5 ;
+    background-color:#a3a3a3 ;
 }
 .picker__day.picker__day--today{
-    color:#3F51B5 ;
+    color:#a3a3a3 ;
 }
 .picker__close, .picker__today{
-    color:#3F51B5 ;
+    color:#a3a3a3 ;
 
 }
 .switch label input[type=checkbox]:checked+.lever{
-    background-color:#3F51B5 ;
+    background-color:#2196f3 ;
 }
 .switch label input[type=checkbox]:checked+.lever:after{
-    background-color:#3F51B5 ;
+    background-color:#2196f3 ;
 
 }
 .input-field{
-    color: #ff9800;
+    color: #2196f3;
 }
 .card .card-image .card-title{
-    color: #3F51B5;
+    color: #a3a3a3;
     font-weight: bold;
 
 }
 h4{
     font: normal normal normal 60px/1.4em Enriqueta,serif;
-    color: #ff9800;
+    color: #2196f3;
 }
 [type="checkbox"]:checked+label:before{
-    border-right: 2px solid #ff9800;
-    border-bottom: 2px solid #ff9800;
+    border-right: 2px solid #2196f3;
+    border-bottom: 2px solid #2196f3;
 }
 .collection.with-header .collection-header{
-    background-color: #3F51B5;
+    background-color: #a3a3a3;
 }
 .modal-trigger{
-    background-color:#ff9800 ;
+    background-color:#a3a3a3 ;
 }
 h3{
-    color:#3F51B5 ;
+    color:#a3a3a3 ;
 }
 textarea.materialize-textarea:focus:not([readonly]){
-    border-bottom: 1px solid #ff9800;
-    box-shadow:0 1px 0 0 #ff9800;
+    border-bottom: 1px solid #2196f3;
+    box-shadow:0 1px 0 0 #2196f3;
 }
 textarea.materialize-textarea:focus:not([readonly])+label{
-    color:#ff9800;
+    color:#2196f3;
+}
+.slider-button{
+    background-color:#a3a3a3 ;
+}
+.slider-button-create{
+    background-color:#2196f3 ;
+}
+.slidee{
+    background-color: rgba(255, 255,255,0.60);
+}
+
+.card-inline {
+    display: inline-block;
+}
+.card-inline .card-image img {
+    all: initial;
 }

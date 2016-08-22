@@ -20,13 +20,13 @@
             <div class="nav-wrapper container">
                 <div class="row">
                     <div class="col s12 m6 l2 center">
-                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>                                
-                        <a href="{{url('/')}}" class="waves-effect"><b>Weekindu</b></a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse grey-text"><i class="material-icons grey-text">menu</i></a>
+                        <a href="{{url('/')}}" class="waves-effect grey-text"><b>Weekindu</b></a>
                     </div>
                     <div class="col l6 hide-on-med-and-down">
                         <ul>
                             <li>
-                                <a href="{{ url('/event') }}" class="waves-effect tooltipped" data-position="bottom" data-delay="50" data-tooltip="View All events">Events</a>
+                                <a href="{{ url('/event') }}" class="waves-effect tooltipped grey-text" data-position="bottom" data-delay="50" data-tooltip="View All events">Events</a>
                             </li>
                         </ul>
                     </div>                    
@@ -34,22 +34,26 @@
                     <div class="col l4 m6 right-align hide-on-small-only">
                         <ul class="right">                    
                             @if (Auth::guest())
-                                <li><a href="{{ url('/login') }}"> Login</a></li>
-                                <li><a href="{{ url('/register') }}">Register</a></li>
+                                <li class="grey-text"><a href="{{ url('/login') }}"> Login</a></li>
+                                <li class="grey-text"><a href="{{ url('/register') }}">Register</a></li>
                             @else
 
                             <li class="waves-effect hide-on-med-and-down">                            
                                 <div class="container-fluid valign-wrapper">
-                                    <a class="tooltipped" data-tooltip="Create New Event" href="{{url('/event/create')}}"><i class="material-icons">add</i></a>
+                                    <a class="tooltipped grey-text" data-tooltip="Create New Event" href="{{url('/event/create')}}"><i class="material-icons">add</i></a>
                                 </div> 
                             </li>
 
-                            <li class="dropdown-button waves-effect" data-activates="user-menu">
+                            <li class="dropdown-button waves-effect grey-text" data-activates="user-menu">
                                 <div class="container-fluid valign-wrapper">
                                     <div class="col l6">
-                                        <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
+                                        @if(Auth::user()->facebook_id != null)
+                                            <img src="{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
+                                        @else
+                                            <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
+                                        @endif
                                     </div>
-                                    <div>
+                                    <div class="grey-text">
                                         {{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->first_name }}                                        
                                     </div>
 
@@ -94,23 +98,23 @@
             @yield('content')
         </div>
 </main>
-        <footer class="page-footer indigo"><!-- Should be default-primary-color but it\s not working-->
+        <footer class="page-footer"><!-- Should be default-primary-color but it\s not working-->
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
                         <h5 class="white-text">Weekindu App</h5>
-                        <p class="grey-text text-lighten-4">Organise your event easily</p>
+                        <p class="grey-text">Organise your event easily</p>
                     </div>
                     <div class="col l4 offset-l2 s12">
                         <h5 class="white-text">Navigation</h5>
                         <ul>
                             @if (Auth::guest())
-                                <li><a class="grey-text text-lighten-3" href="{{url('/login')}}">Login</a></li>
-                                <li><a class="grey-text text-lighten-3" href="{{url('/register')}}">Register</a></li>
-                                <li><a class="grey-text text-lighten-3" href="{{url('/about-us')}}">About us</a></li>
+                                <li><a class="grey-text" href="{{url('/login')}}">Login</a></li>
+                                <li><a class="grey-text" href="{{url('/register')}}">Register</a></li>
+                                <li><a class="grey-text" href="{{url('/about-us')}}">About us</a></li>
                             @else
-                                <li><a class="grey-text text-lighten-3" href="{{url('/event/create')}}">Create Event</a></li>
-                                <li><a class="grey-text text-lighten-3" href="{{url('/about-us')}}">About us</a></li>
+                                <li><a class="grey-text" href="{{url('/event/create')}}">Create Event</a></li>
+                                <li><a class="grey-text" href="{{url('/about-us')}}">About us</a></li>
                             @endif
                         </ul>
                     </div>

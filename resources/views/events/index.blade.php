@@ -93,10 +93,9 @@
             </div>
 
             @endif
+            </div>
+            <div id="my" class="col s12">moite</div>
+
         </div>
-        <div id="my" class="col s12">moite</div>
-
-    </div>
-
 
 @endsection

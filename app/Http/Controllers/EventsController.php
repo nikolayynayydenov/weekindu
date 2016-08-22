@@ -32,14 +32,15 @@ class EventsController extends Controller
     public function index()
     {
         if(Auth::check()){
-
+            // the user is logged
             $userId = Auth::id();
-
-            $events =  Event::where('host', '=', $userId) ->orWhere('is_public', true)->get();
+            $events =  Event::where('host', $userId) ->orWhere('is_public', true);
         }
         else{
-            $events =  Event::where('is_public', true)->get();
+            $events =  Event::where('is_public', true);
         }
+
+        $events = $events->orderBy('created_at', 'desc')->get();
         return view('events.index')->with('events', $events);
     }
 

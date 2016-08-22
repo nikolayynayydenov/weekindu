@@ -28,3 +28,12 @@
         height: 100%;
     }
 }
+footer.page-footer{
+    background-color: #444;
+}
+li{
+    color: #a3a3a3;
+}
+.section-2{
+    background: #e0e0e0;
+}

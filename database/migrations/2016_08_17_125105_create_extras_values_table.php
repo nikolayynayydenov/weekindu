@@ -14,8 +14,8 @@ class CreateExtrasValuesTable extends Migration
     {
         Schema::create('extra_params_values', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('extra_params_id')->unsigned()->index();
-            $table->foreign('extra_params_id')->references('id')->on('extra_params');
+            $table->integer('extra_param_id')->unsigned()->index();
+            $table->foreign('extra_param_id')->references('id')->on('extra_params');
             $table->string('value');
             $table->timestamps();
         });

@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+        'client_id' => '1815264038684993',
+        'client_secret' => '7cd3b72c802d01acc6a9c9dfc5598981',
+        'redirect' => 'http://weekindu.ee/auth/facebook/callback',
+    ],
+
 ];

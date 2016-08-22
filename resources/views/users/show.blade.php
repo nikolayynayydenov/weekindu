@@ -17,9 +17,10 @@
 
         background-image: url("/images/twogirls.jpg");
         background-position: center;
+
     }
     .collection .collection-item{
-        background: #757575;
+        background: rgba(163,163,163,0.80);
     }
 
 </style>
@@ -54,9 +55,9 @@
                                 @if($event->is_public === 0)
                                     <i class="material-icons circle red">lock</i>
                                 @endif
-                                <span class="title event-title orange-text">{{$event->title}}</span>
+                                <span class="title event-title blue-text">{{$event->title}}</span>
 
-                                <p class="indigo-text">{{$event->type}}<br>
+                                <p class="white-text">{{$event->type}}<br>
 
                                     {{$event->description}}
                                 </p>
