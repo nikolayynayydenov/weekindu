@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\ExtraParam;
-use App\ExtraParamValue;
 use App\Event;
-use App\Http\Requests;
+use App\Http\Requests\StoreInvitationRequest;
 use Illuminate\Http\Request;
 
 class InvitationsController extends Controller
@@ -42,7 +40,7 @@ class InvitationsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreInvitationRequest $request)
     {
         dd($request->all());
     }

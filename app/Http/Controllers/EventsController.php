@@ -13,13 +13,13 @@ use Validator;
 class EventsController extends Controller
 {
     public function __construct() {
-        
+
         /*
          * Users can only edit/delete their own events.
          * This is achieved using the user_is_host_of_event custom middleware
          */
-        
-        $this->middleware('auth', ['except' => ['index', 'show']]);        
+
+        $this->middleware('auth', ['except' => ['index', 'show']]);
         $this->middleware('user_is_host_of_event', ['only' => ['edit', 'destroy']]);
         $this->middleware('event_exists', ['only' => ['show']]);
         $this->middleware('event_is_public', ['only' => ['show']]);
@@ -163,11 +163,11 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        $event = Event::find($id); // the event that we want to edit 
-        
+        $event = Event::find($id); // the event that we want to edit
+
         if ($event !== null) {
             // if an event with the given id exists
-            
+
             return view('events.edit')->with('event', $event); // pass the event to the view so we can access it there
         } else {
             abort(404);

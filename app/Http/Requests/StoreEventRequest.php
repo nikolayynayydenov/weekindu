@@ -37,7 +37,8 @@ class StoreEventRequest extends Request
             'drinks' => 'array',
             'drinks.*' => 'max:50',
             'location_string' => 'max:80',
-            'location_coordinates' => 'max:50'
+            'location_coordinates' => 'max:50',
+            'extras' => 'json|max:1000'
         ];
     }
 }

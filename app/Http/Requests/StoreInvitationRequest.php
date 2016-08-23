@@ -13,7 +13,7 @@ class StoreInvitationRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class StoreInvitationRequest extends Request
     public function rules()
     {
         return [
-            //
+            'guest_name' => 'required|max:100|min:1',
+            'guest_email' => 'min:1|max:255|email',
+            'accepted' => 'in:on',
+            'music' => 'array',
+            'music.*' => 'max:50',
+            'food' => 'array',
+            'food.*' => 'max:50',
+            'drinks' => 'array',
+            'drinks.*' => 'max:50',
+            'extras' => 'json|max:1000'
         ];
     }
 }
