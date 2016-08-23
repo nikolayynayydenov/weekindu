@@ -4,41 +4,37 @@
     <link rel="stylesheet" href="/css/custom/show.css">
     <div class="row hide-on-med-and-down">
         <div class="col s12 m4 l2">
-    <a class="btn waves-effect waves-light modal-trigger orange" href="#modal1">What is this?</a>
+            <a class="btn waves-effect waves-light modal-trigger orange" href="#modal1">What is this?</a>
         </div>
-            <div class="col s12 m4 l8 center">
-        <a class="btn invitation-button" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
-    </div>
-<div class="col right">
-    <form action="{{url('/event/'.$event->id )}}" method="post">
 
-        {{ method_field('delete') }}
-        {{ csrf_field() }}
-        <button type="submit" class="deletebut" value=>
-            <i class="material-icons medium">delete</i></button>
-    </form>
-</div>
-</div>
+        <div class="col s12 m4 l8 center">
+            <a class="btn invitation-button" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
+        </div>
 
-
-            <a class="btn waves-effect waves-light modal-trigger show-on-medium-and-down hide-on-med-and-up s12" href="#modal1">What is this?</a>
-
-
-            <a class="btn invitation-button show-on-medium-and-down hide-on-med-and-up s12" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
-
-        <div class="show-on-medium-and-down hide-on-med-and-up center">
+        <div class="col right">
             <form action="{{url('/event/'.$event->id )}}" method="post">
-
                 {{ method_field('delete') }}
                 {{ csrf_field() }}
                 <button type="submit" class="deletebut" value=>
-                    <i class="material-icons medium">delete</i></button>
+                    <i class="material-icons medium">delete</i>
+                </button>
             </form>
         </div>
+    </div>
 
 
+    <a class="btn waves-effect waves-light modal-trigger show-on-medium-and-down hide-on-med-and-up s12" href="#modal1">What is this?</a>
+    <a class="btn invitation-button show-on-medium-and-down hide-on-med-and-up s12" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
 
-
+    <div class="show-on-medium-and-down hide-on-med-and-up center">
+        <form action="{{url('/event/'.$event->id )}}" method="post">
+            {{ method_field('delete') }}
+            {{ csrf_field() }}
+            <button type="submit" class="deletebut" value=>
+                <i class="material-icons medium">delete</i>
+            </button>
+        </form>
+    </div>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -89,8 +85,8 @@
                     <li class="tab col s3"><a class="food" href="#test2">Food statistics</a></li>
                     <li class="tab col s3"><a href="#test3">Drinks statistics</a></li>
                     <li class="tab col s3"><a href="#tab4">Music statistics</a></li>
-                        @foreach($extra_params as $key=>$value)
-                            <li class="tab col s3"><a href="#test{{ $counter }}">{{ $value->key }}</a></li>
+                        @foreach($event->extras as $extra)
+                            <li class="tab col s3"><a href="#test{{ $counter }}">{{ $extra->key }}</a></li>
                             @php
                                 $counter++
                             @endphp
@@ -220,7 +216,7 @@
             @php
                 $counter = 5
             @endphp
-            @foreach($extra_params as $key=>$value)
+            @foreach($event->extras as $extra)
                 <div id="test{{ $counter }}" class="col s12">
                     <table class="centered">
                         <thead>
@@ -231,10 +227,10 @@
                         </thead>
 
                         <tbody>
-                       @foreach($value as $valuee)
+                       @foreach($extra->values as $value)
                             <tr>
                                 <td>
-                                    {{ $valuee }}
+                                    {{ $value->value }}
                                 </td>
                                 <td>
                                     0

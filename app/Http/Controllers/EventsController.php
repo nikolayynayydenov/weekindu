@@ -113,20 +113,23 @@ class EventsController extends Controller
          * Store extras:
          */
 
-        $extras = json_decode($data['extras']);
-        foreach ($extras as $key => $extra) {
-            $newExtra = new ExtraParam();
-            $newExtra->event_id = $event->id;
-            $newExtra->key = $key;
-            $newExtra->save();
+        if(!empty($data['extras'])) {
+            $extras = json_decode($data['extras']);
+            foreach ($extras as $key => $extra) {
+                $newExtra = new ExtraParam();
+                $newExtra->event_id = $event->id;
+                $newExtra->key = $key;
+                $newExtra->save();
 
-            foreach ($extra as $val) {
-                $newValue = new ExtraParamValue();
-                $newValue->extra_param_id = $newExtra->id;
-                $newValue->value = $val;
-                $newValue->save();
+                foreach ($extra as $val) {
+                    $newValue = new ExtraParamValue();
+                    $newValue->extra_param_id = $newExtra->id;
+                    $newValue->value = $val;
+                    $newValue->save();
+                }
             }
         }
+
 
         /*
          * Redirect to the show event action
@@ -144,18 +147,12 @@ class EventsController extends Controller
     public function show($id)
     {
         $event = Event::find($id);
-        $extra_params = ExtraParam::where('event_id', $id)->get();
-        //dd($extra_params );
-        //$extra_params_values = ExtraParamValue::select('value')->where('extra_param_id', $extra_params->id)-get();
         $event->food = json_decode($event->food);
         $event->drinks = json_decode($event->drinks);
         $event->music = json_decode($event->music);
 
-        return view('events.show')->with([
-            'event' => $event,
-            'extra_params' => $extra_params,
-            //'extra_params_values' => $extra_params_values
-        ]);
+        return view('events.show')
+            ->with('event', $event);
     }
 
     /**
