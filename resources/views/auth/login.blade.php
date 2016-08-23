@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <link rel="stylesheet" href="/css/custom/facebookbutton.css">
     <div class="center row">
         <div class="z-depth-4 card-panel col s12 offset-m1 m10 offset-l3 l6">
             <h4>Login</h4>
@@ -44,9 +45,11 @@
                     <div class="input-field col s12 m6 l6 left-align">
                         <a href="{{ url('/password/reset') }}">Forgot password ?</a>
                     </div>
-                    <div class="input-field col s12 m6 l6 right-align">
-                        <a class="btn btn-info" href="{{ url('auth/facebook') }}">Facebook!</a>
-                    </div>
+                </div>
+            </form>
+            <form action="{{ url('auth/facebook') }}" method="get">
+                <div class="social-wrap a">
+                    <button id="facebook" type="submit" formaction="{{ url('auth/facebook') }}">Facebook!</button>
                 </div>
             </form>
         </div>
