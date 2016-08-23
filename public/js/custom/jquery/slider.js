@@ -49,7 +49,6 @@ $(document).ready(function(){
                 '<div class="inner-title">' +
                 '<strong class="blue-text">' + value.cardTitle + '</strong>' +
                 '</div>' +
-                '<br>'+
                 '<div class="divider"></div>' +
                 '<div class="inner-content">' + value.cardContent + '</div>' +
                 '</p>' +

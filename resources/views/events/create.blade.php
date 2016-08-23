@@ -53,7 +53,7 @@
                             <span><button class="btn slider-button-create waves-effect " form="create-event-form" type="submit">Create Event!</button></span>
                         </div>
                         <div class="col right">
-                            <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1">Why do I need this?</a>
+                            <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1">What?</a>
                         </div>
                         </div>
                     <!-- Modal Structure -->
@@ -158,7 +158,7 @@
                     </div>
 
                     <div class="slider-item" id="extras">
-                        <input type="text" placeholder="Type the name of new parameter and press enter" id="extra-params-field">
+                        <input class="extra-field" type="text" placeholder="Type the name of a new parameter and press enter" id="extra-params-field">
                         <!-- <span class="btn waves-effect green accent-4" id="extra-params-btn">Add extra parameter</span> -->
 
                         <div class="section">

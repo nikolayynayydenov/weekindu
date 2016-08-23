@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/custom/show.css">
     <div class="row hide-on-med-and-down">
         <div class="col s12 m4 l2">
-            <a class="btn waves-effect waves-light modal-trigger orange" href="#modal1">What is this?</a>
+            <a class="btn waves-effect waves-light modal-trigger orange" href="#modal1">What?</a>
         </div>
 
         <div class="col s12 m4 l8 center">

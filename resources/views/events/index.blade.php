@@ -2,8 +2,8 @@
 @section('content')
     <link rel="stylesheet" href="/css/custom/showevents.css">
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger modal-trigger-desktop orange hide-on-med-and-down" href="#modal1">What is this?</a>
-    <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile orange show-on-medium-and-down s12 hide-on-med-and-up" href="#modal1">What is this?</a>
+    <a class="waves-effect waves-light btn modal-trigger modal-trigger-desktop orange hide-on-med-and-down" href="#modal1">What?</a>
+    <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile orange show-on-medium-and-down s12 hide-on-med-and-up" href="#modal1">What?</a>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">

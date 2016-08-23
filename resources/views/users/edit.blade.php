@@ -55,6 +55,7 @@
             height: 3px;
         }
  </style>
+    <div class="container">
     <div class="row center">
     <h1>Edit Profile</h1>
     </div>
@@ -180,6 +181,7 @@
                 </button>
         </div>
     </form>
+    </div>
     <script>
         $('.email-button-desktop').click(function(){
             $('.change-email-desktop').slideToggle("slow");

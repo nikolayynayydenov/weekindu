@@ -15,8 +15,8 @@
     }
     body{
 
-        background-image: url("/images/twogirls.jpg");
-        background-position: center;
+        background-image: url("/images/people.jpg");
+
 
     }
     .collection .collection-item{
@@ -34,7 +34,7 @@
             <img class="materialboxed circle responsive-img" width="250" src="/images/user-avatars/{{$user->avatar}}">
         @endif
 
-        <span id="names">
+        <span id="names" class="white-text">
         {{$user->first_name}}
         {{$user->last_name}}<br>
         @if(isset($user->name))
@@ -73,9 +73,9 @@
 
         @else
             <div class="col s12 m8 l9">
-                <h5 class="center">Events</h5>
+                <h5 class="center white-text">Events</h5>
                 <ul class="collection">
-                    <li class="collection-item center orange-text">The user has not made any events yet</li>
+                    <li class="collection-item center blue-text" style="font-size: larger">The user has not made any events yet</li>
                 </ul>
             </div>
         @endif

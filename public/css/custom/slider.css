@@ -17,6 +17,9 @@
 .slider-link-item {
     cursor: pointer;
 }
+.slider-button-create, .slider-button-create:focus{
+    background-color:#2196f3 ;
+}
 .btn:hover, .btn-large:hover{
     background-color:#a3a3a3;
 }
@@ -155,4 +158,8 @@ textarea.materialize-textarea:focus:not([readonly])+label{
 }
 .card-inline .card-image img {
     all: initial;
+}
+
+.extra-field:active{
+    border-bottom: 1px solid #2196f3;
 }
