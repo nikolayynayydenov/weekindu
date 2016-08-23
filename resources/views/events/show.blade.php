@@ -89,14 +89,12 @@
                     <li class="tab col s3"><a class="food" href="#test2">Food statistics</a></li>
                     <li class="tab col s3"><a href="#test3">Drinks statistics</a></li>
                     <li class="tab col s3"><a href="#tab4">Music statistics</a></li>
-                    @if(is_object(json_decode($event->extras) ))
-                        @foreach(json_decode($event->extras) as $key=>$values)
-                            <li class="tab col s3"><a href="#test{{ $counter }}">{{ $key }}</a></li>
+                        @foreach($extra_params as $key=>$value)
+                            <li class="tab col s3"><a href="#test{{ $counter }}">{{ $value->key }}</a></li>
                             @php
                                 $counter++
                             @endphp
                         @endforeach
-                    @endif
                 </ul>
             </div>
             <div id="test1" class="col s12">
@@ -219,39 +217,37 @@
 
 
 
-            @if(is_object(json_decode($event->extras) ))
-                @php
-                    $counter = 5
-                @endphp
-                @foreach(json_decode($event->extras) as $key=>$values)
-                    <div id="test{{ $counter }}" class="col s12">
-                        <table class="centered">
-                            <thead>
-                            <tr>
-                                <th data-field="name">Parameters</th>
-                                <th data-field="quantity">Quantity</th>
-                            </tr>
-                            </thead>
+            @php
+                $counter = 5
+            @endphp
+            @foreach($extra_params as $key=>$value)
+                <div id="test{{ $counter }}" class="col s12">
+                    <table class="centered">
+                        <thead>
+                        <tr>
+                            <th data-field="name">Parameters</th>
+                            <th data-field="quantity">Quantity</th>
+                        </tr>
+                        </thead>
 
-                            <tbody>
-                            @foreach($values as $value)
-                                <tr>
-                                    <td>
-                                        {{ $value }}
-                                    </td>
-                                    <td>
-                                        0
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    @php
-                        $counter++
-                    @endphp
-                @endforeach
-            @endif
+                        <tbody>
+                       @foreach($value as $valuee)
+                            <tr>
+                                <td>
+                                    {{ $valuee }}
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                @php
+                    $counter++
+                @endphp
+            @endforeach
 
         </div>
     </div>

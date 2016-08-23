@@ -146,10 +146,18 @@ class EventsController extends Controller
     public function show($id)
     {
         $event = Event::find($id);
+        $extra_params = ExtraParam::where('event_id', $id)->get();
+        //dd($extra_params );
+        //$extra_params_values = ExtraParamValue::select('value')->where('extra_param_id', $extra_params->id)-get();
         $event->food = json_decode($event->food);
         $event->drinks = json_decode($event->drinks);
         $event->music = json_decode($event->music);
-        return view('events.show')->with('event', $event);
+
+        return view('events.show')->with([
+            'event' => $event,
+            'extra_params' => $extra_params,
+            //'extra_params_values' => $extra_params_values
+        ]);
     }
 
     /**

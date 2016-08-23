@@ -94,7 +94,7 @@ $(document).ready(function(){
     addRow('type', [
         {
             'cardTitle': 'Other',
-            'cardContent': 'Click here if your event is not of any of these types',
+            'cardContent': '',
             'imgLocation': 'create-event/type/other.jpg'
         }
     ]);
