@@ -45,8 +45,14 @@ $(document).ready(function(){
                 '<img class="responsive-img" src="/images/' + value.imgLocation + '">' +
                 '</div>' +
                 '<div class="card-content center">' +
-                '<p><strong class="blue-text">' + value.cardTitle + '</strong>' + '<br>'+ '<div class="divider"></div>' +
-                '' + value.cardContent + '</p>' +
+                '<p>' +
+                '<div class="inner-title">' +
+                '<strong class="blue-text">' + value.cardTitle + '</strong>' +
+                '</div>' +
+                '<br>'+
+                '<div class="divider"></div>' +
+                '<div class="inner-content">' + value.cardContent + '</div>' +
+                '</p>' +
                 '</div>' +
                 '</div>' +
                 '</div>');
@@ -364,7 +370,7 @@ $(document).ready(function(){
     $('.create-event-option').on('click', function (){
         let card = $(this);
         let field = card.closest('.slider-item').attr('id');
-        let cardImageText = $.trim(card.find('.card-image').text());
+        let cardImageText = $.trim(card.find('.inner-title').text());
         let value = cardImageText != '' ? cardImageText :
             $.trim(card.find('.card-content').text());
         let isMultiple = Boolean(card.closest('.row').attr('data-multiple'));
