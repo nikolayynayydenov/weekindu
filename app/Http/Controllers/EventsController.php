@@ -122,13 +122,11 @@ class EventsController extends Controller
 
             foreach ($extra as $val) {
                 $newValue = new ExtraParamValue();
-                $newValue->extra_params_id = $newExtra->id;
+                $newValue->extra_param_id = $newExtra->id;
                 $newValue->value = $val;
                 $newValue->save();
             }
         }
-
-        exit;
 
         /*
          * Redirect to the show event action

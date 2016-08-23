@@ -15,7 +15,10 @@ class CreateExtrasTable extends Migration
         Schema::create('extra_params', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('event_id')->unsigned()->index();
-            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreign('event_id')
+                ->references('id')
+                ->on('events')
+                ->onDelete('cascade');
             $table->string('key');
             $table->timestamps();
         });

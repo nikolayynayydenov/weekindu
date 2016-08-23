@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExtrasValuesTable extends Migration
+class CreateExtraParamsValuesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,10 @@ class CreateExtrasValuesTable extends Migration
         Schema::create('extra_params_values', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('extra_param_id')->unsigned()->index();
-            $table->foreign('extra_param_id')->references('id')->on('extra_params');
+            $table->foreign('extra_param_id')
+                ->references('id')
+                ->on('extra_params')
+                ->onDelete('cascade');
             $table->string('value');
             $table->timestamps();
         });
@@ -28,6 +31,6 @@ class CreateExtrasValuesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('extras_values');
+        Schema::drop('extra_params_values');
     }
 }
