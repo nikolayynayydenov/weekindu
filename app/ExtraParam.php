@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class ExtraParam extends Model
 {
     protected $fillable = ['key'];
-    protected $table = 'extra_params';
+    protected $table = 'extras';
     
     public function values() 
     {
-        return $this->hasMany('App\ExtraParamValue', 'extra_param_id');
+        return $this->hasMany('App\ExtraParamValue', 'extra_id');
     }
     
     public function event()

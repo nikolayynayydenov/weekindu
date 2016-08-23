@@ -1,4 +1,4 @@
-<?php
+H<?php
 
 use Illuminate\Database\Seeder;
 
@@ -38,17 +38,17 @@ class EventsTableSeeder extends Seeder
             $extra->save();
 
             $value = new App\ExtraParamValue();
-            $value->extra_param_id = $extra->id;
+            $value->extra_id = $extra->id;
             $value->value = 'Lenovo';
             $value->save();
 
             $value = new App\ExtraParamValue();
-            $value->extra_param_id = $extra->id;
+            $value->extra_id = $extra->id;
             $value->value = 'Acer';
             $value->save();
 
             $value = new App\ExtraParamValue();
-            $value->extra_param_id = $extra->id;
+            $value->extra_id = $extra->id;
             $value->value = 'Toshiba';
             $value->save();
 
@@ -60,17 +60,17 @@ class EventsTableSeeder extends Seeder
             $extra->save();
 
             $value = new App\ExtraParamValue();
-            $value->extra_param_id = $extra->id;
+            $value->extra_id = $extra->id;
             $value->value = 'Guitar';
             $value->save();
 
             $value = new App\ExtraParamValue();
-            $value->extra_param_id = $extra->id;
+            $value->extra_id = $extra->id;
             $value->value = 'Piano';
             $value->save();
 
             $value = new App\ExtraParamValue();
-            $value->extra_param_id = $extra->id;
+            $value->extra_id = $extra->id;
             $value->value = 'Drums';
             $value->save();
         }

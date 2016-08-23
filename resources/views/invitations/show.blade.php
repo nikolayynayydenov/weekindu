@@ -22,6 +22,10 @@
 
                 {{ csrf_field() }}
 
+                <input type="hidden"
+                       name="invitation_code"
+                       value="{{ $event->invitation_code }}">
+
                 <div class="row">
                     <div class="input-field col l6 m12 s12">
                         <input id="guest-name"
@@ -54,8 +58,8 @@
 
                 @if($event->music)
                     <div class="input-field col s12">
-                        <select name="music" multiple>
-                            <option value="" disabled selected>Choose music</option>
+                        <select name="music[]" multiple>
+                            <option disabled selected>Choose music</option>
                             @foreach($event->music as $music)
                                 <option value="{{ $music }}">{{ $music }}</option>
                             @endforeach
@@ -65,8 +69,8 @@
 
                 @if($event->food)
                     <div class="input-field col s12">
-                        <select name="food" multiple>
-                            <option value="" disabled selected>Choose food</option>
+                        <select name="food[]" multiple>
+                            <option disabled selected>Choose food</option>
                             @foreach($event->food as $food)
                                 <option value="{{ $food }}">{{ $food }}</option>
                             @endforeach
@@ -76,8 +80,8 @@
 
                 @if($event->drinks)
                     <div class="input-field col s12">
-                        <select name="drinks" multiple>
-                            <option value="" disabled selected>Choose drinks</option>
+                        <select name="drinks[]" multiple>
+                            <option disabled selected>Choose drinks</option>
                             @foreach($event->drinks as $drink)
                                 <option value="{{ $drink }}">{{ $drink }}</option>
                             @endforeach

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExtrasTable extends Migration
+class CreateEventsExtrasValuesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,25 @@ class CreateExtrasTable extends Migration
      */
     public function up()
     {
-        Schema::create('extra_params', function (Blueprint $table) {
+        Schema::create('events_extras_values', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('event_id')->unsigned()->index();
             $table->foreign('event_id')
                 ->references('id')
                 ->on('events')
                 ->onDelete('cascade');
-            $table->string('key');
+
+            $table->integer('extra_id')->unsigned()->index();
+            $table->foreign('extra_id')
+                ->references('id')
+                ->on('extras')
+                ->onDelete('cascade');
+
+            $table->integer('value_id')->unsigned()->index();
+            $table->foreign('value_id')
+                ->references('id')
+                ->on('values')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +42,6 @@ class CreateExtrasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('extras');
+        Schema::drop('events_extras_values');
     }
 }

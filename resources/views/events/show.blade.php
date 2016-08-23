@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
+    <h4 class="primary-text-color">{{ session('message') }}</h4>
+
     <link rel="stylesheet" href="/css/custom/show.css">
     <div class="row hide-on-med-and-down">
         <div class="col s12 m4 l2">

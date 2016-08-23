@@ -14,7 +14,7 @@ class CreateInvitationsTable extends Migration
     {
         Schema::create('invitations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('invitation_code', 20)->unique();
+            $table->string('invitation_code', 20);
             $table->foreign('invitation_code')
                 ->references('invitation_code')
                 ->on('events')
