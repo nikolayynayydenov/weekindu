@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     // functions that generate the html for the slider
 
-    function addRow(recieverElementId, cols, multiple) {
+    function addRow(recieverElementId, cols, multiple, rowIsLast) {
         // the main purpose of this function is to simplify the
         // creation of the ui, needed for creating a new event
 
@@ -57,7 +57,20 @@ $(document).ready(function(){
                 '</div>');
         });
 
-        $('#' + recieverElementId).append(row);
+        if (rowIsLast === 'last') {
+            let newValueFieldHtml = $('<div class="add-new-values">' +
+                '<div class="center flow-text">You can also enter yourself:</div>' +
+                '<div class="new-values"></div>' +
+                '<input placeholder="New value" type="text" class="validate new-value-field">' +
+                '</div>');
+
+            $('#' + recieverElementId).children('.rows')
+                .append(row)
+                .append(newValueFieldHtml);
+        } else {
+            $('#' + recieverElementId).children('.rows')
+                .append(row);
+        }
     }
 
     addRow('type', [
@@ -102,7 +115,7 @@ $(document).ready(function(){
             'cardContent': '',
             'imgLocation': 'create-event/type/other.jpg'
         }
-    ]);
+    ], false, 'last');
 
     addRow('dress-code', [
         {
@@ -138,7 +151,7 @@ $(document).ready(function(){
             'cardContent': '',
             'imgLocation': 'create-event/dress-code/other.png'
         }
-    ]);
+    ], false, 'last');
 
     addRow('music', [
         {
@@ -174,7 +187,7 @@ $(document).ready(function(){
             'cardContent': '',
             'imgLocation': 'create-event/music/royal.jpg'
         }
-    ], 'multiple');
+    ], 'multiple', 'last');
 
     addRow('drinks', [
         {
@@ -264,7 +277,7 @@ $(document).ready(function(){
             'cardContent': '',
             'imgLocation': 'create-event/drinks/other.jpg'
         }
-    ], 'multiple');
+    ], 'multiple', 'last');
 
     addRow('food', [
         {
@@ -318,7 +331,7 @@ $(document).ready(function(){
             'cardContent': '',
             'imgLocation': 'create-event/food/аsparagus.jpg'
         }
-    ], 'multiple');
+    ], 'multiple', 'last');
 
     let navigationDisabled = false; // this is set to true during the animations
 
@@ -345,14 +358,12 @@ $(document).ready(function(){
         }
     });
 
-
     $('#slider-prev-btn').on('click', function (event){
         currentItemIndex -= 1;
         if (!navigationDisabled) {
             showSliderItem();
         }
     });
-
 
     // event listener for clicking a link from the side menu:
 
@@ -369,7 +380,8 @@ $(document).ready(function(){
     $('.create-event-option').on('click', function (){
         let card = $(this);
         let field = card.closest('.slider-item').attr('id');
-        let cardImageText = $.trim(card.find('.inner-title').text());
+        let cardImageText = $.trim(card.find('.inner-title').text());       
+
         let value = cardImageText != '' ? cardImageText :
             $.trim(card.find('.card-content').text());
         let isMultiple = Boolean(card.closest('.row').attr('data-multiple'));
@@ -417,7 +429,7 @@ $(document).ready(function(){
 
                     card.removeClass('card-active');
                 } else {
-                    // if the card has not been ptrviously selected
+                    // if the card has not been previously selected
                     $('#create-event-form').append($('<input>')
                         .attr('type', 'hidden')
                         .attr('name', field + '[]')
@@ -523,8 +535,34 @@ $(document).ready(function(){
         'location': 'Below, you are seeing a text field in which you can add the adress of your event, but we reccomend you to use the map, this way the guest will see exactly where they need to go',
         'extras': 'If we have missed something you have now chance to add it.The extras tab work the same way as "food" and "drinks" tabs.An extra has a name and parameters.To add an extra, simply type its name in the text bar you see.When you do it, another text area will appear where you need to type the parameters.After you enter a parameter you need to click enter to add it. '};
 
+    // event listener for adding a new value to a parameter:
 
-    // event listener for adding a value to a parameter
+    $('.new-value-field').keyup(function (event){
+        if (event.keyCode === 13) {
+            // if enter is pressed:
+            let inputField = $(this);
+            let newValue = $.trim(inputField.val());
+            let itemId = inputField.closest('.slider-item').attr('id');
+
+            console.log(itemId);
+            if (newValue !== '') {
+                inputField.siblings('.new-values')
+                    .append($('<div>')
+                        .attr('class', 'chip')
+                        .text(newValue));
+
+                inputField.val('');
+            }
+
+            // put in the form:
+
+            $('#create-event-form')
+                .append($('<input>')
+                    .attr('type', 'hidden')
+                    .attr('name', itemId + '[]')
+                    .attr('value', newValue))
+        }
+    });
 
     function showSliderItem(itemId) {
 
@@ -573,6 +611,7 @@ $(document).ready(function(){
         else if(itemId == 'basics'){
             $('#content').addClass('active').text('Because, later, when we start sending the invitation, the date and the name of the event would be important.');
         }
+
         /*
          Set this to true so that on mulptiple clicks, there won't be any anomalies
          */
