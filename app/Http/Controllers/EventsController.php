@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Eev;
 use App\ExtraParam;
 use App\ExtraParamValue;
 use App\Event;
@@ -151,8 +152,25 @@ class EventsController extends Controller
         $event->drinks = json_decode($event->drinks);
         $event->music = json_decode($event->music);
 
+        $eev = Eev::where('event_id', $id)->get(); // what if there are no eevs for this event?
+
+        $stats = [];
+
+        foreach ($eev as $item) {
+            if (!array_key_exists($item->extra->key, $stats)) {
+                $stats[$item->extra->key] = [];
+            }
+
+            if (!array_key_exists($item->value->value, $stats[$item->extra->key])) {
+                $stats[$item->extra->key][$item->value->value] = 0;
+            }
+
+            $stats[$item->extra->key][$item->value->value] += 1;
+        }
+
         return view('events.show')
-            ->with('event', $event);
+            ->with('event', $event)
+            ->with('stats', $stats);
     }
 
     /**

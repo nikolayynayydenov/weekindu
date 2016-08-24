@@ -13,4 +13,14 @@ class Eev extends Model
     {
         return $this->belongsTo('App\Event', 'event_id');
     }
+
+    public function extra()
+    {
+        return $this->belongsTo('App\ExtraParam', 'extra_id');
+    }
+
+    public function value()
+    {
+        return $this->belongsTo('App\ExtraParamValue', 'value_id');
+    }
 }

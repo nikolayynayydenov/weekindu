@@ -200,7 +200,7 @@
             @php
                 $counter = 5
             @endphp
-            @foreach($event->extras as $extra)
+            @foreach($stats as $key => $values)
                 <div id="test{{ $counter }}" class="col s12">
                     <table class="centered">
                         <thead>
@@ -210,13 +210,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                       @foreach($extra->values as $value)
+                       @foreach($values as $value => $quantity)
                             <tr>
                                 <td>
-                                    {{ $value->value }}
+                                    {{ $value }}
                                 </td>
                                 <td>
-                                    0
+                                    {{ $quantity }}
                                 </td>
                             </tr>
                         @endforeach
