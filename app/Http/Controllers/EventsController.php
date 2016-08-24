@@ -93,7 +93,7 @@ class EventsController extends Controller
         /*
          * Store into db
          */
-        
+
         $event = new Event();
         $event->title = $data['title'];
         $event->date = $data['date'];

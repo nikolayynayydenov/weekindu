@@ -56,38 +56,38 @@
                     <label for="filled-in-box">I will come</label>
                 </div>
 
-                @if($event->music)
-                    <div class="input-field col s12">
-                        <select name="music[]" multiple>
-                            <option disabled selected>Choose music</option>
-                            @foreach($event->music as $music)
-                                <option value="{{ $music }}">{{ $music }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                @endif
+                {{--@if($event->music)--}}
+                    {{--<div class="input-field col s12">--}}
+                        {{--<select name="music[]" multiple>--}}
+                            {{--<option disabled selected>Choose music</option>--}}
+                            {{--@foreach($event->music as $music)--}}
+                                {{--<option value="{{ $music }}">{{ $music }}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--@endif--}}
 
-                @if($event->food)
-                    <div class="input-field col s12">
-                        <select name="food[]" multiple>
-                            <option disabled selected>Choose food</option>
-                            @foreach($event->food as $food)
-                                <option value="{{ $food }}">{{ $food }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                @endif
+                {{--@if($event->food)--}}
+                    {{--<div class="input-field col s12">--}}
+                        {{--<select name="food[]" multiple>--}}
+                            {{--<option disabled selected>Choose food</option>--}}
+                            {{--@foreach($event->food as $food)--}}
+                                {{--<option value="{{ $food }}">{{ $food }}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--@endif--}}
 
-                @if($event->drinks)
-                    <div class="input-field col s12">
-                        <select name="drinks[]" multiple>
-                            <option disabled selected>Choose drinks</option>
-                            @foreach($event->drinks as $drink)
-                                <option value="{{ $drink }}">{{ $drink }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                @endif
+                {{--@if($event->drinks)--}}
+                    {{--<div class="input-field col s12">--}}
+                        {{--<select name="drinks[]" multiple>--}}
+                            {{--<option disabled selected>Choose drinks</option>--}}
+                            {{--@foreach($event->drinks as $drink)--}}
+                                {{--<option value="{{ $drink }}">{{ $drink }}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--@endif--}}
 
                 @if($event->extras)
                     @foreach($event->extras as $extra)
