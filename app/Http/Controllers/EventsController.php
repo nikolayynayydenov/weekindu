@@ -93,7 +93,7 @@ class EventsController extends Controller
         /*
          * Store into db
          */
-
+        
         $event = new Event();
         $event->title = $data['title'];
         $event->date = $data['date'];
@@ -113,9 +113,31 @@ class EventsController extends Controller
         /*
          * Store extras:
          */
+        $storeParams = false;
 
-        if(!empty($data['extras'])) {
+        if (!empty($data['extras'])) {
+            $storeParams = true;
             $extras = json_decode($data['extras']);
+        } else {
+            $extras = json_decode('{}');
+        }
+
+        if (!empty($data['music'])) {
+            $storeParams = true;
+            $extras->{'music'} = $data['music'];
+        }
+
+        if (!empty($data['food'])) {
+            $storeParams = true;
+            $extras->{'food'} = $data['food'];
+        }
+
+        if (!empty($data['drinks'])) {
+            $storeParams = true;
+            $extras->{'drinks'} = $data['drinks'];
+        }
+
+        if($storeParams) {
             foreach ($extras as $key => $extra) {
                 $newExtra = new ExtraParam();
                 $newExtra->event_id = $event->id;
@@ -124,13 +146,12 @@ class EventsController extends Controller
 
                 foreach ($extra as $val) {
                     $newValue = new ExtraParamValue();
-                    $newValue->extra_param_id = $newExtra->id;
+                    $newValue->extra_id = $newExtra->id;
                     $newValue->value = $val;
                     $newValue->save();
                 }
             }
         }
-
 
         /*
          * Redirect to the show event action

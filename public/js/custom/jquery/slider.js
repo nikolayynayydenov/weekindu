@@ -433,7 +433,7 @@ $(document).ready(function(){
 
     $('#extra-params-field').keyup(function (event){
         if (event.keyCode === 13) {
-            let param = $(this).val();
+            let param = $(this).val().trim();
 
             if (param.length !== 0) {
                 // if the the input field is not empty
@@ -473,7 +473,7 @@ $(document).ready(function(){
 
                             // if enter is pressed:
 
-                            let value = $(this).val();
+                            let value = $(this).val().trim();
                             if (value.length !== 0) {
 
                                 // append a chip with the new value
