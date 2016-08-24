@@ -88,8 +88,8 @@
 
                                             </form>
                                         </div>
-                                    </div>
-                                    <div class="row">
+
+
                                         <div class="col show-on-small hide-on-med-and-up center-on-small-only">
                                             <form action="{{url('/event/'.$event->id )}}" method="post">
 
