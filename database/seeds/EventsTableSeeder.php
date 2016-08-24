@@ -23,7 +23,8 @@ class EventsTableSeeder extends Seeder
             $event->food = '["Chicken","Fries","Rice","Potatoes","Salad"]';
             $event->drinks = '["Water","Milk","Beer","Juice","Cider","Other"]';
             $event->location_string = 'Hisarya';
-            $event->location_coordinates = '(42.70073056317599, 23.289127349853516)';
+            $event->location_x = '42.70073056317599';
+            $event->location_y = '23.289127349853516';
             $event->host = 1;
             $event->invitation_code = str_random(16);
             $event->save();

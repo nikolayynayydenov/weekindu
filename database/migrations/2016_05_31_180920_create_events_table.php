@@ -19,7 +19,8 @@ class CreateEventsTable extends Migration
             $table->string('invitation_code')->unique();
             $table->string('title', 80);
             $table->string('dress_code', 80);
-            $table->string('location_coordinates', 50);
+            $table->string('location_x', 25);
+            $table->string('location_y', 25);
             $table->string('location_string');
             $table->string('type', 80);
             $table->string('date');

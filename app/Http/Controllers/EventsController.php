@@ -92,6 +92,17 @@ class EventsController extends Controller
         $invitationCode = str_random(16);
 
         /*
+         * Extract coordinates:
+         */
+
+        if (!empty($data['location_coordinates'])) {
+            $coords = preg_replace('/[\(\)]/', '', $data['location_coordinates']);
+            $coords = explode(', ', $coords);
+            $x = $coords[0];
+            $y = $coords[1];
+        }
+
+        /*
          * Store into db
          */
 
@@ -106,7 +117,8 @@ class EventsController extends Controller
         $event->food = empty($data['food']) ? '' : json_encode($data['food']);
         $event->drinks = empty($data['drinks']) ? '' : json_encode($data['drinks']);
         $event->location_string = empty($data['location_string']) ? '' : $data['location_string'];
-        $event->location_coordinates = empty($data['location_coordinates']) ? '' : $data['location_coordinates'];
+        $event->location_x = isset($x) ? $x : '';
+        $event->location_y = isset($y) ? $y : '';
         $event->host = $request->user()->id;
         $event->invitation_code = $invitationCode;
         $event->save();
