@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="/css/custom/showevents.css">
     <!-- Modal Trigger -->
     <a class="waves-effect waves-light btn modal-trigger modal-trigger-desktop orange hide-on-med-and-down" href="#modal1">What?</a>
-    <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile orange show-on-medium-and-down s12 hide-on-med-and-up" href="#modal1">What?</a>
+    <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile orange show-on-medium-and-down s12 hide-on-med-and-up container" href="#modal1">What?</a>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -66,25 +66,43 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col s10 m10 ">
-                                            <a href="{{ url('/event/'.$event->id) }}" class="btn  waves-effect manage-button white-text">Manage</a>
-                                            {{--</div>
-                                            <div class="col">--}}
-                                            <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn waves-effect invitation-button">invitation</a>
+                                        <div class="col s10 m10 hide-on-small-only">
+                                            <a href="{{ url('/event/'.$event->id) }}" class="btn  waves-effect manage-button white-text hide-on-small-only">Manage</a>
+                                            <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn waves-effect invitation-button hide-on-small-only">invitation</a>
                                         </div>
-                                        <div class="col right">
+
+                                        <div class="col s6 m6 show-on-small hide-on-med-and-up">
+                                            <a href="{{ url('/event/'.$event->id) }}" class="btn  waves-effect manage-button white-text show-on-small">Manage</a>
+                                        </div>
+                                        <div class="col s6 m6 show-on-small hide-on-med-and-up">
+                                            <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn waves-effect invitation-button show-on-small">Invitation</a>
+                                        </div>
+
+                                        <div class="col right hide-on-small-only">
                                             <form action="{{url('/event/'.$event->id )}}" method="post">
 
                                                 {{ method_field('delete') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="deletebut " value=>
+                                                <button type="submit" class="deletebut" value=>
                                                     <i class="material-icons">delete</i></button>
 
                                             </form>
                                         </div>
                                     </div>
-                                    </p>
+                                    <div class="row">
+                                        <div class="col show-on-small hide-on-med-and-up center-on-small-only">
+                                            <form action="{{url('/event/'.$event->id )}}" method="post">
 
+                                                {{ method_field('delete') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="deletebut" value=>
+                                                    <i class="material-icons">delete</i></button>
+
+                                            </form>
+                                        </div>
+
+                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
