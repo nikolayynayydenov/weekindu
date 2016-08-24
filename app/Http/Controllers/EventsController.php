@@ -178,15 +178,18 @@ class EventsController extends Controller
         $stats = [];
 
         foreach ($eev as $item) {
-            if (!array_key_exists($item->extra->key, $stats)) {
-                $stats[$item->extra->key] = [];
+            $key = $item->extra->key;
+            $value = $item->value->value;
+            
+            if (!array_key_exists($key, $stats)) {
+                $stats[$key] = [];
             }
 
-            if (!array_key_exists($item->value->value, $stats[$item->extra->key])) {
-                $stats[$item->extra->key][$item->value->value] = 0;
+            if (!array_key_exists($value, $stats[$key])) {
+                $stats[$key][$value] = 0;
             }
 
-            $stats[$item->extra->key][$item->value->value] += 1;
+            $stats[$key][$value] += 1;
         }
 
         return view('events.show')
