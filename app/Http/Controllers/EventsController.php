@@ -6,6 +6,7 @@ use App\Eev;
 use App\ExtraParam;
 use App\ExtraParamValue;
 use App\Event;
+use App\Invitation;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -192,9 +193,14 @@ class EventsController extends Controller
             $stats[$key][$value] += 1;
         }
 
+        $invitations = Invitation::where('invitation_code', $event->invitation_code)
+            ->get(['guest_name','accepted', 'created_at']);
+
+
         return view('events.show')
             ->with('event', $event)
-            ->with('stats', $stats);
+            ->with('stats', $stats)
+            ->with('guests', $invitations);
     }
 
     /**

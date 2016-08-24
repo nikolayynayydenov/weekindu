@@ -107,25 +107,21 @@
                         <tr>
                             <th data-field="id">Name</th>
                             <th data-field="name">Attending</th>
-                            <th data-field="price">Additional info</th>
+                            <th data-field="time">Send</th>
                         </tr>
                     </thead>
                     <tbody>
+                    @foreach($guests as $guest)
                         <tr>
-                            <td>Alvin Ivanov</td>
-                            <td style="color: green">Yes</td>
-                            <td>I will be late with 15 minutes</td>
+                            <td class="tooltipped" data-position="top" data-delay="500" data-tooltip="huhu" style="cursor: pointer">{{$guest->guest_name}}</td>
+                            @if($guest->accepted == true)
+                            <td class="green-text">Yes</td>
+                            @else
+                                <td class="red-text">No</td>
+                            <td>{{$guest->created_at}}</td>
+                        @endif
                         </tr>
-                        <tr>
-                            <td >Alan Kolev</td>
-                            <td style="color: red">No</td>
-                            <td>Sorry, I have an arrangement</td>
-                        </tr>
-                        <tr>
-                            <td>Jonathan Georgiev</td>
-                            <td style="color: green">Yes</td>
-                            <td>Can`t wait!</td>
-                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
