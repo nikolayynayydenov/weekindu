@@ -31,7 +31,7 @@
                     @foreach($events as $event)
 
                         <div class="col sl2 m12">
-                            <div class="card hoverable center-on-small-only">
+                            <div class="card hoverable ">
                                 <a href="event/{{ $event->id }}">
                                     <div class="card-image">
                                         @if($event->type === 'Wedding')
@@ -68,41 +68,21 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col s10 m10 hide-on-small-only">
-                                            <a href="{{ url('/statistics/'.$event->id) }}" class="btn  waves-effect manage-button white-text hide-on-small-only">Manage</a>
-                                            <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn waves-effect invitation-button hide-on-small-only">invitation</a>
+                                        <div class="col left">
+                                                <img src="/images/user-avatars/{{ $event->user->avatar }}" alt="no avatar" class="circle" width="80">
                                         </div>
-
-                                        <div class="col s6 m6 show-on-small hide-on-med-and-up">
-                                            <a href="{{ url('/statistics/'.$event->id) }}" class="btn  waves-effect manage-button white-text show-on-small">Manage</a>
+                                        <div class="col left">
+                                            <strong class="blue-text" style="font-size: larger">{{$event->type}}</strong>
+                                                <p class="grey-text">{{ $event->user->first_name.' '.$event->user->last_name}}<br>
+                                                    {{$event->date}}
+                                                </p>
+                                            </div>
+                                        {{--<p class="col">
+                                            {{$event->description}}
+                                        </p>--}}
+                                        <div class="col right">
+                                            <a href="{{ url('/event/'.$event->id) }}" class="btn blue">More</a>
                                         </div>
-                                        <div class="col s6 m6 show-on-small hide-on-med-and-up">
-                                            <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn waves-effect invitation-button show-on-small">Invitation</a>
-                                        </div>
-
-                                        <div class="col right hide-on-small-only">
-                                            <form action="{{url('/event/'.$event->id )}}" method="post">
-                                                {{ method_field('delete') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="deletebut" value=>
-                                                    <i class="material-icons">delete</i></button>
-                                            </form>
-                                        </div>
-
-
-                                        <div class="col show-on-small hide-on-med-and-up center-on-small-only">
-                                            <form action="{{url('/event/'.$event->id )}}" method="post">
-
-                                                {{ method_field('delete') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="deletebut" value=>
-                                                    <i class="material-icons">delete</i></button>
-
-                                            </form>
-                                        </div>
-
-                                    </p>
-                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -4,7 +4,40 @@
     <!-- Modal Trigger -->
     <a class="waves-effect waves-light btn modal-trigger modal-trigger-desktop orange hide-on-med-and-down" href="#modal1">What?</a>
     <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile orange show-on-medium-and-down s12 hide-on-med-and-up container" href="#modal1">What?</a>
+<style>
+    .manage-button, .manage-button:hover, .manage-button:hover, .manage-button:focus{
+        background:#2196f3;
+    }
+    .invitation-button, .invitation-button:hover, .invitation-button:hover, .invitation-button:focus{
+        background:grey;
+    }
+    .deletebut {
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
 
+    .manage-button:after{
+        background:#2196f3;
+    }
+    .manage-button:hover{
+        background:#2196f3;
+
+    }
+
+    .deletebut {
+        cursor: pointer;
+        background: none;
+        border: none;
+        left: 0;
+    }
+    .deletebut:hover{
+        background: none;
+    }
+    .deletebut:focus{
+        background: none;
+    }
+</style>
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
