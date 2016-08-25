@@ -24,9 +24,7 @@ class CreateEventsTable extends Migration
             $table->string('location_string');
             $table->string('type', 80);
             $table->string('date');
-            $table->string('music');
-            $table->string('food');
-            $table->string('drinks');          
+            $table->string('background_photo');
             $table->text('description');
             $table->boolean('is_public');
             $table->timestamps();

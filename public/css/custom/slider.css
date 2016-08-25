@@ -1,3 +1,11 @@
+body{
+    background: url("/images/girlscar.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .create-event-option {
     cursor: pointer;
 }
@@ -34,13 +42,7 @@
     border-color:#2196f3 ;
 
 }
-body{
-    background: url("/images/girlscar.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+
 #showhide{
     position: fixed;
     top: 200px;
@@ -131,8 +133,8 @@ h4{
 .modal-trigger{
     background-color:#a3a3a3 ;
 }
-h3{
-    color:#a3a3a3 ;
+h3, h6{
+    color:#2196f3 ;
 }
 textarea.materialize-textarea:focus:not([readonly]){
     border-bottom: 1px solid #2196f3;
@@ -161,3 +163,4 @@ textarea.materialize-textarea:focus:not([readonly])+label{
 .extra-field:active{
     border-bottom: 1px solid #2196f3;
 }
+

@@ -8,6 +8,7 @@ use App\ExtraParamValue;
 use App\Event;
 use App\Invitation;
 use App\Http\Requests;
+use App\Helpers\Images;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
@@ -103,6 +104,16 @@ class EventsController extends Controller
         }
 
         /*
+         * Store background photo if set:
+         */
+
+        $backgroundPhoto = Images::storeEventBackground(
+            $request->hasFile('background_photo')
+            ? $request->file('background_photo')
+            : false
+        );
+
+        /*
          * Store into db
          */
 
@@ -113,12 +124,10 @@ class EventsController extends Controller
         $event->is_public = empty($data['is_public']) ? false : true;
         $event->type = empty($data['type']) ? '' : $data['type'];
         $event->dress_code = empty($data['dress-code']) ? '' : $data['dress-code'];
-        $event->music = empty($data['music']) ? '' : json_encode($data['music']);
-        $event->food = empty($data['food']) ? '' : json_encode($data['food']);
-        $event->drinks = empty($data['drinks']) ? '' : json_encode($data['drinks']);
         $event->location_string = empty($data['location_string']) ? '' : $data['location_string'];
         $event->location_x = isset($x) ? $x : '';
         $event->location_y = isset($y) ? $y : '';
+        $event->background_photo = $backgroundPhoto;
         $event->host = $request->user()->id;
         $event->invitation_code = $invitationCode;
         $event->save();

@@ -7,7 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use App\Http\Controllers\AvatarsController;
+use App\Helpers\Images;
 
 use Socialite;
 use Auth;
@@ -73,7 +73,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        $avatar = AvatarsController::storeImage(isset($data['avatar']) ? $data['avatar'] : false);
+        $avatar = Images::storeAvatar(isset($data['avatar']) ? $data['avatar'] : false);
 
         return User::create([
             'first_name' => trim($data['first_name']),

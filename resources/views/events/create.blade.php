@@ -5,22 +5,22 @@
 
 <!-- The form that is going to be sent: -->
 
-<form action="{{url('/event')}}" method="post" id="create-event-form">
+<form action="{{url('/event')}}" method="post" id="create-event-form" enctype="multipart/form-data">
     {{csrf_field()}}
 </form>
-
-@if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
     <div class="container">
+
+        @if (count($errors->all()) > 0)
+            @foreach ($errors->all() as $error)
+                <div id="card-alert" class="card red">
+                    <div class="card-content white-text">
+                        <p><i class="mdi-alert-error"></i> ERROR : {{$error}}</p>
+                    </div>
+                </div>
+            @endforeach
+        @endif
+
         <div class="row">
-            {{--<button class=" btn waves-effect row accent-color z-depth-5" id="showhide" onclick="">showhide</button>--}}
             <div class="card-panel z-depth-1 slidee">
                 <div class="row">
                     <div class="col l3 s12 m3">
@@ -74,7 +74,7 @@
                                         <label for="event-title">Title</label>
                                     </div>
 
-                                    <div class="input-field col l12 s12 m12">
+                                    <div class="input-field col s12">
                                         <i class="material-icons prefix">schedule</i>
                                         <input type="date"
                                                class="datepicker"
@@ -85,7 +85,7 @@
                                         <label for="event-date">Date</label>
                                     </div>
 
-                                    <div class="input-field col l12 s12 m12">
+                                    <div class="input-field col s12">
                                         <i class="material-icons prefix">description</i>
                                         <textarea id="event-description"
                                                   class="materialize-textarea"
@@ -96,12 +96,23 @@
                                     </div>
 
                                     <div class="switch section col">
-                                        <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Only participants will see information about this event" data-tooltip-id="072f438c-4f1e-0b98-4bbf-af0f5f2f0763">Private</span>
+                                        <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Only participants will see information about this event" data-tooltip-id="072f438c-4f1e-0b98-4bbf-af0f5f2f0763">Private event</span>
                                         <label>
                                             <input type="checkbox" form="create-event-form" name="is_public">
                                             <span class="lever primary-color"></span>
                                         </label>
-                                        <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Other people will be able to see the information about this event" data-tooltip-id="f225007d-48b8-0916-fe0c-d242cfd80a2a">Public</span>
+                                        <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Other people will be able to see the information about this event" data-tooltip-id="f225007d-48b8-0916-fe0c-d242cfd80a2a">Public event</span>
+                                    </div>
+
+                                    <div class="col s12">
+                                        <h6>Background photo</h6>
+                                        <input type="file"
+                                               name="background_photo"
+                                               accept="image/*"
+                                               class="dropify"
+                                               form="create-event-form"
+                                               data-max-file-size="1M"
+                                               data-max-width="100%">
                                     </div>
                                 </div>
                             </div>

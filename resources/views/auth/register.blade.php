@@ -65,8 +65,6 @@
                 <label for="password_confirmation">Re-enter password</label>
             </div>
         </div>
-    
-        
         
          <!-- Modal Trigger -->
         <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Avatar</a>

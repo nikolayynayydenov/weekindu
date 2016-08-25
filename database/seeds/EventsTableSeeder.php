@@ -19,12 +19,10 @@ class EventsTableSeeder extends Seeder
             $event->is_public = rand(0, 1);
             $event->type = 'Camp';
             $event->dress_code = 'Casual';
-            $event->music = '["Electronic","Rock \/ Metal","Pop-Folk"]';
-            $event->food = '["Chicken","Fries","Rice","Potatoes","Salad"]';
-            $event->drinks = '["Water","Milk","Beer","Juice","Cider","Other"]';
             $event->location_string = 'Hisarya';
             $event->location_x = '42.70073056317599';
             $event->location_y = '23.289127349853516';
+            $event->background_photo = 'default.png';
             $event->host = 1;
             $event->invitation_code = str_random(16);
             $event->save();

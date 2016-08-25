@@ -25,20 +25,15 @@ class StoreEventRequest extends Request
     {
         return [
             'title' => 'required|max:80|unique:events',
-            'date' => 'max:255',
+            'date' => 'sometimes|max:255',
             'description' => 'required',
-            'is_public' => 'in:on',
-            'type' => 'max:80',
-            'dress-code' => 'max:80',
-            'music' => 'array',
-            'music.*' => 'max:50',
-            'food' => 'array',
-            'food.*' => 'max:50',
-            'drinks' => 'array',
-            'drinks.*' => 'max:50',
-            'location_string' => 'max:80',
-            'location_coordinates' => 'max:50',
-            'extras' => 'json|max:1000'
+            'is_public' => 'sometimes|in:on',
+            'type' => 'sometimes|max:80',
+            'dress-code' => 'sometimes|max:80',
+            'background_photo' => 'sometimes|image|max:2000',
+            'location_string' => 'sometimes|max:80',
+            'location_coordinates' => 'sometimes|max:50',
+            'extras' => 'sometimes|json|max:1000'
         ];
     }
 }
