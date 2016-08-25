@@ -114,12 +114,14 @@
                     @foreach($guests as $guest)
                         <tr>
                             <td class="tooltipped" data-position="top" data-delay="500" data-tooltip="huhu" style="cursor: pointer">{{$guest->guest_name}}</td>
-                            @if($guest->accepted == true)
-                            <td class="green-text">Yes</td>
+
+                            @if($guest->accepted)
+                                <td class="green-text">Yes</td>
                             @else
                                 <td class="red-text">No</td>
+                            @endif
+
                             <td>{{$guest->created_at}}</td>
-                        @endif
                         </tr>
                     @endforeach
                     </tbody>

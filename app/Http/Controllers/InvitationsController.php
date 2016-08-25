@@ -68,14 +68,21 @@ class InvitationsController extends Controller
          */
         $data = array_map($trimData, $data);
 
-        $invitationCode = Crypt::decrypt($request->get('invitation_code'));
+        $invitationCode = Crypt::decrypt($data['invitation_code']);
         $event = Event::where('invitation_code', $invitationCode)->first();
+
+        /*
+         * Determine if the guest is coming:
+         */
+
+        $accepted = isset($data['accepted']);
 
         if ($event != null) {
             $invitation = new Invitation();
             $invitation->invitation_code = $invitationCode;
             $invitation->guest_name = $data['guest_name'];
             $invitation->guest_email = $data['guest_email'];
+            $invitation->accepted = $accepted;
             $invitation->save();
 
             $extras = json_decode($data['extras']);
