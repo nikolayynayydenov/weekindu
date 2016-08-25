@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use App\Helpers\Images;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\User;
@@ -100,7 +99,7 @@ class UsersController extends Controller
         $email = $data['email'];
         $password = $data['password'];
         $old_password = $data['old_password'];
-        $avatar = AvatarsController::storeImage(isset($data['avatar']) ? $data['avatar'] : false);
+        $avatar = Images::storeAvatar(isset($data['avatar']) ? $data['avatar'] : false);
 
         $this->validate($request,[
             'first_name' => 'max:35',

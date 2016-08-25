@@ -54,10 +54,12 @@
                         <li  class="collection-item avatar center">
                             <a href="{{url('/event/'.$event->id)}}">
                                 @if($event->is_public === 1)
-                                    <i class="medium material-icons circle green">lock_open</i>
+                                    <i class="medium material-icons circle green tooltipped"
+                                       data-position="bottom" data-delay="50" data-tooltip="Public">lock_open</i>
                                 @endif
                                 @if($event->is_public === 0)
-                                    <i class="material-icons circle red">lock</i>
+                                    <i class="material-icons circle red tooltipped"
+                                       data-position="bottom" data-delay="50" data-tooltip="Private">lock</i>
                                 @endif
                                 <span class="title event-title blue-text">{{$event->title}}</span>
 
