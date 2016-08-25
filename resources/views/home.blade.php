@@ -145,8 +145,7 @@
 
             @endif
         </div>
-        <div id="my" class="col s12">moite</div>
-
     </div>
 
+    {{ $events->render() }}
 @endsection

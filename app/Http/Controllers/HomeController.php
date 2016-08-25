@@ -26,6 +26,7 @@ class HomeController extends Controller
     {
         $user = auth()->user();
         $events = $user->events;
+        $events = $events->orderBy('created_at', 'desc')->paginate(2);
 
         return view('home')
             ->with('user', $user)

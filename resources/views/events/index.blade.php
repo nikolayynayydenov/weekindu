@@ -17,16 +17,8 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col s12">
-                <ul class="tabs">
-                    <li class="tab col s3 blue-text"><a href="#all">Public Events</a></li>
-
-
-                </ul>
-            </div>
             <div id="all" class="col s12">
                 @if(count($events) > 0)
-
 
                     @foreach($events as $event)
 
@@ -86,14 +78,14 @@
                                 </div>
                             </div>
                         </div>
-
+                        </div>
                     @endforeach
+                @endif
+                </div>
+
+
             </div>
-
-            @endif
-            </div>
-
-
         </div>
 
+    {{ $events->render() }}
 @endsection

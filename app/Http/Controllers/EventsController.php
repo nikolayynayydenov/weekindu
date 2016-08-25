@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 
+
 class EventsController extends Controller
 {
     public function __construct() {
@@ -43,7 +44,7 @@ class EventsController extends Controller
             $events =  Event::where('is_public', true);
         }
 
-        $events = $events->orderBy('created_at', 'desc')->get();
+        $events = $events->orderBy('created_at', 'desc')->paginate(2);
         return view('events.index')->with('events', $events);
     }
 
