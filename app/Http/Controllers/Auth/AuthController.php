@@ -147,7 +147,7 @@ class AuthController extends Controller
             'last_name' => $facebookUser->user['last_name'],
             'email' => $facebookUser->email,
             'facebook_id' => $facebookUser->id,
-            'avatar' => $facebookUser->avatar
+            'avatar' => 'https://graph.facebook.com/v2.6/'.$facebookUser->id.'/picture?type=large'//$facebookUser->avatar
         ]);
     }
 }
