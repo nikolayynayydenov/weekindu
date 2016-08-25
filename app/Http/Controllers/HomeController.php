@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,8 +27,9 @@ class HomeController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $events = $user->events;
-        $events = $events->orderBy('created_at', 'desc')->paginate(2);
+        //$events = $user->events;
+
+        $events =  Auth::user()->events()->paginate(2);
 
         return view('home')
             ->with('user', $user)
