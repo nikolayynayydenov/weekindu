@@ -67,12 +67,12 @@
 
                                     <div class="row">
                                         <div class="col s10 m10 hide-on-small-only">
-                                            <a href="{{ url('/event/'.$event->id) }}" class="btn  waves-effect manage-button white-text hide-on-small-only">Manage</a>
+                                            <a href="{{ url('/statistics/'.$event->id) }}" class="btn  waves-effect manage-button white-text hide-on-small-only">Manage</a>
                                             <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn waves-effect invitation-button hide-on-small-only">invitation</a>
                                         </div>
 
                                         <div class="col s6 m6 show-on-small hide-on-med-and-up">
-                                            <a href="{{ url('/event/'.$event->id) }}" class="btn  waves-effect manage-button white-text show-on-small">Manage</a>
+                                            <a href="{{ url('/statistics/'.$event->id) }}" class="btn  waves-effect manage-button white-text show-on-small">Manage</a>
                                         </div>
                                         <div class="col s6 m6 show-on-small hide-on-med-and-up">
                                             <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn waves-effect invitation-button show-on-small">Invitation</a>
@@ -80,12 +80,10 @@
 
                                         <div class="col right hide-on-small-only">
                                             <form action="{{url('/event/'.$event->id )}}" method="post">
-
                                                 {{ method_field('delete') }}
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="deletebut" value=>
                                                     <i class="material-icons">delete</i></button>
-
                                             </form>
                                         </div>
 

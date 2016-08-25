@@ -23,7 +23,7 @@ class EventsController extends Controller
          */
 
         $this->middleware('auth', ['except' => ['index', 'show']]);
-        $this->middleware('user_is_host_of_event', ['only' => ['edit', 'destroy']]);
+        $this->middleware('user_is_host_of_event', ['only' => ['edit', 'destroy', 'showStatistics']]);
         $this->middleware('event_exists', ['only' => ['show']]);
         $this->middleware('event_is_public', ['only' => ['show']]);
     }
@@ -190,38 +190,7 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        $event = Event::find($id);
-        $event->food = json_decode($event->food);
-        $event->drinks = json_decode($event->drinks);
-        $event->music = json_decode($event->music);
 
-        $eev = Eev::where('event_id', $id)->get(); // what if there are no eevs for this event?
-
-        $stats = [];
-
-        foreach ($eev as $item) {
-            $key = $item->extra->key;
-            $value = $item->value->value;
-            
-            if (!array_key_exists($key, $stats)) {
-                $stats[$key] = [];
-            }
-
-            if (!array_key_exists($value, $stats[$key])) {
-                $stats[$key][$value] = 0;
-            }
-
-            $stats[$key][$value] += 1;
-        }
-
-        $invitations = Invitation::where('invitation_code', $event->invitation_code)
-            ->get(['guest_name','accepted', 'created_at']);
-
-
-        return view('events.show')
-            ->with('event', $event)
-            ->with('stats', $stats)
-            ->with('guests', $invitations);
     }
 
     /**
@@ -270,5 +239,36 @@ class EventsController extends Controller
         $event->delete();
 
         return redirect('/event');
+    }
+
+    public function showStatistics($id) {
+        $event = Event::find($id);
+        $eev = Eev::where('event_id', $id)->get(); // what if there are no eevs for this event?
+
+        $stats = [];
+
+        foreach ($eev as $item) {
+            $key = $item->extra->key;
+            $value = $item->value->value;
+
+            if (!array_key_exists($key, $stats)) {
+                $stats[$key] = [];
+            }
+
+            if (!array_key_exists($value, $stats[$key])) {
+                $stats[$key][$value] = 0;
+            }
+
+            $stats[$key][$value] += 1;
+        }
+
+        $invitations = Invitation::where('invitation_code', $event->invitation_code)
+            ->get(['guest_name','accepted', 'created_at']);
+
+
+        return view('events.show')
+            ->with('event', $event)
+            ->with('stats', $stats)
+            ->with('guests', $invitations);
     }
 }
