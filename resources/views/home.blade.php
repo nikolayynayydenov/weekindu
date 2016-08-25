@@ -135,7 +135,7 @@
             </div>
         </div>
         <div class="center-align ">
-            <i class="material-icons">{{ $events->render() }}</i>
+            <i>{{ $events->render() }}</i>
         </div>
     </div>
 @endsection

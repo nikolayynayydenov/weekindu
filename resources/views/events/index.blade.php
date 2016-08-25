@@ -80,8 +80,8 @@
                 @endif
             </div>
         </div>
-        <div class="center-align ">
-            <i class="material-icons">{{ $events->render() }}</i>
+        <div class="center-align">
+            <i>{{ $events->render() }}</i>
         </div>
     </div>
 @endsection
