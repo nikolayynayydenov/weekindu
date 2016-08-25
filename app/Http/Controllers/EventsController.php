@@ -113,6 +113,9 @@ class EventsController extends Controller
             : false
         );
 
+        //echo '<pre>'.print_r($request->all(), true).'</pre>';
+        //exit;
+
         /*
          * Store into db
          */
@@ -123,7 +126,7 @@ class EventsController extends Controller
         $event->description = $data['description'];
         $event->is_public = empty($data['is_public']) ? false : true;
         $event->type = empty($data['type']) ? '' : $data['type'];
-        $event->dress_code = empty($data['dress-code']) ? '' : $data['dress-code'];
+        $event->dress_code = empty($data['dress_code']) ? '' : $data['dress_code'];
         $event->location_string = empty($data['location_string']) ? '' : $data['location_string'];
         $event->location_x = isset($x) ? $x : '';
         $event->location_y = isset($y) ? $y : '';
@@ -199,6 +202,13 @@ class EventsController extends Controller
                 $extras[$extraObject->key][] = $value->value;
             }
         }
+
+        $imageName = preg_replace('/\s/',
+                '',
+                strtolower($event->dress_code)).'.jpg';
+        $event->dress_code_image_path ='/images/create-event/dress-code/'.$imageName;
+        $event->dress_code_image_full_path =
+            public_path('images\create-event\dress-code\\'.$imageName);
 
         return view('events.show')
             ->with('event', $event)
@@ -276,7 +286,6 @@ class EventsController extends Controller
 
         $invitations = Invitation::where('invitation_code', $event->invitation_code)
             ->get(['guest_name','accepted', 'created_at']);
-
 
         return view('events.show-statistics')
             ->with('event', $event)

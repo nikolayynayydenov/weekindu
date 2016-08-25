@@ -50,48 +50,102 @@
             @endif
         </p>
 
-        @if(count($extras) > 0)
+        @if(count($extras) > 0 ||
+         !empty($event->dress_code) ||
+         !empty($event->location_x))
             <hr>
 
-            <p class="flow-text event-info">
-                There will be:<br>
-                @if(array_key_exists('food', $extras))
-                    <p>
-                        Food:
-                        {{--<strong>{{ implode(', ', $extras['food']) }}</strong>--}}
-                        @foreach($extras['food'] as $food)
-                            <div class="chip blue">
-                                {{ $food }}
-                            </div>
-                        @endforeach
-                    </p>
+            <div class="row">
+                <div class="col s12 m4 l4">
+                    @if(!empty($event->dress_code))
+                        <div class="container-fluid">
+                        @if(file_exists($event->dress_code_image_full_path))
+                            <img src="{{ $event->dress_code_image_path }}"
+                        @else
+                            <img src="/images/create-event/dress-code/other.png"
+                        @endif
+                            alt="no image"
+                            class="dress-code-image">
 
-                @endif
+                            <h6 class="center">{{ $event->dress_code }}</h6>
+                        </div>
+                    @endif
+                </div>
 
-                @if(array_key_exists('drinks', $extras))
-                    <p>
-                        Drinks:
-                        {{--<strong>{{ implode(', ', $extras['drinks']) }}</strong>--}}
-                        @foreach($extras['drinks'] as $drink)
-                            <div class="chip blue">
-                                {{ $drink }}
-                            </div>
-                        @endforeach
-                    </p>
-                @endif
+                <div class="col s12 m4 l4">
+                    @if(count($extras) > 0)
+                        <p class="flow-text event-info">
+                            There will be:<br>
+                            @if(array_key_exists('food', $extras))
+                                <p>
+                                    Food:
+                                    {{--<strong>{{ implode(', ', $extras['food']) }}</strong>--}}
+                                    @foreach($extras['food'] as $food)
+                                        <div class="chip blue white-text">
+                                            {{ $food }}
+                                        </div>
+                                    @endforeach
+                                </p>
+                            @endif
 
-                @if(array_key_exists('music', $extras))
-                    <p>
-                        Music:
-                        {{--<strong>{{ implode(', ', $extras['music']) }}</strong>--}}
-                        @foreach($extras['music'] as $music)
-                            <div class="chip blue">
-                                {{ $music }}
-                            </div>
-                        @endforeach
-                    </p>
-                @endif
-            </p>
+                            @if(array_key_exists('drinks', $extras))
+                                <p>
+                                    Drinks:
+                                    {{--<strong>{{ implode(', ', $extras['drinks']) }}</strong>--}}
+                                    @foreach($extras['drinks'] as $drink)
+                                        <div class="chip blue white-text">
+                                            {{ $drink }}
+                                        </div>
+                                    @endforeach
+                                </p>
+                            @endif
+
+                            @if(array_key_exists('music', $extras))
+                                <p>
+                                    Music:
+                                    {{--<strong>{{ implode(', ', $extras['music']) }}</strong>--}}
+                                    @foreach($extras['music'] as $music)
+                                        <div class="chip blue white-text">
+                                            {{ $music }}
+                                        </div>
+                                    @endforeach
+                                </p>
+                            @endif
+                        </p>
+                    @endif
+                </div>
+                <div class="col s12 m4 l4">
+                    @if(!empty($event->location_x))
+                        <div class="container-fluid"
+                             id="google-map">
+                        </div>
+                    @endif
+                    Location:
+                    <strong>{{ $event->location_string }}</strong>
+                </div>
+            </div>
         @endif
     </div>
 @endsection
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>--}}
+
+{{--<script>--}}
+{{--$(document).ready(function (){--}}
+    {{--function initMap() {--}}
+        {{--var myLatLng = {lat: Number('{{$event->location_x}}'), lng: Number('{{$event->location_y}}')};--}}
+        {{--console.log(myLatLng);--}}
+        {{--var map = new google.maps.Map(document.getElementById('google-map'), {--}}
+            {{--zoom: 15,--}}
+            {{--center: myLatLng--}}
+        {{--});--}}
+
+        {{--var marker = new google.maps.Marker({--}}
+            {{--position: myLatLng,--}}
+            {{--map: map,--}}
+            {{--title: 'Hello World!'--}}
+        {{--});--}}
+    {{--}--}}
+{{--});--}}
+{{--</script>--}}
+
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>--}}
