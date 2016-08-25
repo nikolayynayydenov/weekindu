@@ -42,7 +42,6 @@ body{
     background-size: cover;
 }
 #showhide{
-
     position: fixed;
     top: 200px;
     left: -55px;
@@ -52,8 +51,6 @@ body{
     color: #a3a3a3;
     transform: rotate(90deg);
     cursor: pointer;
-
-
 }
 
 .input-field .prefix.active{

@@ -36,27 +36,27 @@
                         </div>
                     </div>
                     <div class="col l9 s12 m9">
-                            <div class="row">
-                                <div class="col">
-                                    <span class="btn slider-button waves-effect" id="slider-prev-btn">Previous</span>
-                                    <span class="btn slider-button waves-effect " id="slider-next-btn">Next</span>
-                                    <span><button class="btn slider-button-create waves-effect " form="create-event-form" type="submit">Create Event!</button></span>
-                                </div>
-                                <div class="col right">
-                                    <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1">Need help?</a>
-                                </div>
+                        <div class="row">
+                            <div class="col">
+                                <span class="btn slider-button waves-effect" id="slider-prev-btn">Previous</span>
+                                <span class="btn slider-button waves-effect" id="slider-next-btn">Next</span>
+                                <span><button class="btn slider-button-create waves-effect" form="create-event-form" type="submit">Create Event!</button></span>
                             </div>
+                            <div class="col right">
+                                <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1">Need help?</a>
+                            </div>
+                        </div>
 
-                            <!-- Modal Structure -->
-                            <div id="modal1" class="modal">
-                                <div class="modal-content">
-                                    <h3>What is this?</h3>
-                                    <p id="content" style="font-weight: 700"></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
-                                </div>
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h3>What is this?</h3>
+                                <p id="content" style="font-weight: 700"></p>
                             </div>
+                            <div class="modal-footer">
+                                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+                            </div>
+                        </div>
 
                         <div class="container-fluid" id="slider-container">
                             <div class="slider-item" id="basics">
@@ -118,16 +118,19 @@
 
                             <div class="slider-item" id="music">
                                 <h4>Which kinds of music can you offer?</h4>
+                                <h5>(select many)</h5>
                                 <div class="rows"></div>
                             </div>
 
                             <div class="slider-item" id="food">
                                 <h4>What food do you offer?</h4>
+                                <h5>(select many)</h5>
                                 <div class="rows"></div>
                             </div>
 
                             <div class="slider-item" id="drinks">
                                 <h4>What drinks do you offer?</h4>
+                                <h5>(select many)</h5>
                                 <div class="rows"></div>
                             </div>
                             <div class="slider-item" id="location">
@@ -148,19 +151,20 @@
 
                                 <input type="checkbox"
                                        id="create-event-map-checkbox">
-                                <label for="create-event-map-checkbox">Point on map</label>
+                                <label for="create-event-map-checkbox" class="primary-text-color">Point on map</label>
 
                                 <div class="container-fluid" id="google-map" style="height:380px; display: none;"></div>
                             </div>
 
                             <div class="slider-item" id="extras">
-                                <input class="extra-field" type="text" placeholder="Type the name of a new parameter and press enter" id="extra-params-field">
-                                <!-- <span class="btn waves-effect green accent-4" id="extra-params-btn">Add extra parameter</span> -->
+                                <h5>You want to offer something else? Type some questions for your guests as well as sample answers</h5>
+                                <input class="extra-field"
+                                       type="text"
+                                       placeholder="e.g. Can you bring your own camera?"
+                                       id="extra-params-field">
 
                                 <div class="section">
-                                    <ul class="collection with-header" id="extra-params-container">
-                                        <li class="collection-header"><h4>Extra parameters:</h4></li>
-                                    </ul>
+                                    <ul class="collection" id="extra-params-container"></ul>
                                 </div>
                             </div>
                         </div>

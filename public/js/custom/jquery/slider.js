@@ -58,10 +58,16 @@ $(document).ready(function(){
         });
 
         if (rowIsLast === 'last') {
+            if (multiple === 'multiple') {
+                var multipleAttr = 'data-multiple="true"';
+            } else {
+                var multipleAttr = '';
+            }
+
             let newValueFieldHtml = $('<div class="add-new-values">' +
                 '<div class="center flow-text">You can also enter yourself:</div>' +
                 '<div class="new-values"></div>' +
-                '<input placeholder="New value" type="text" class="validate new-value-field">' +
+                '<input placeholder="New value" type="text" ' + multipleAttr + ' class="validate new-value-field">' +
                 '</div>');
 
             $('#' + recieverElementId).children('.rows')
@@ -93,7 +99,7 @@ $(document).ready(function(){
 
     addRow('type', [
         {
-            'cardTitle': 'Buisiness Meeting',
+            'cardTitle': 'Business Meeting',
             'cardContent': '',
             'imgLocation': 'create-event/type/buisiness-meeting.jpg'
         },
@@ -129,7 +135,7 @@ $(document).ready(function(){
             'imgLocation': 'create-event/dress-code/casual.jpg'
         },
         {
-            'cardTitle': 'Buisiness Casual',
+            'cardTitle': 'Business Casual',
             'cardContent': '',
             'imgLocation': 'create-event/dress-code/buisinesscasual.jpg'
         }
@@ -460,7 +466,7 @@ $(document).ready(function(){
 
                 let paramNewValueField = $('<input>')
                     .attr('type', 'text')
-                    .attr('placeholder', 'Type possible values')
+                    .attr('placeholder', 'e.g. Yes')
                     .attr('class', 'param-new-value-field');
 
                 $('#extra-params-container').append($('<li>')
@@ -526,14 +532,15 @@ $(document).ready(function(){
         }
     });
 
-    let modal = {'basics': '',
-        'type': 'Please choose one type.',
+    let modal = {
+        'basics': 'Provide us with basic information about your event. In the description field you can type anything you think is important.',
+        'type': 'Please choose one type. Or type a custom one at the bottom of the page',
         'dress-code': 'Please choose one or two as it is important for every guest to be aware of the dress code.',
-        'food': 'Choose wisely.Every food that you choose will be one of the foods availible for the guests later.Please choose only the ones you can provide.If you want to add a dish, go to the last page and enter it in the last card',
-        'drinks': 'Choose wisely.Every food that you choose will be one of the foods availible for the guests later.Please choose only the onles you can provide.If you want to add a drink, go to the last page and enter it in the last card',
-        'music': 'On this tab, you need to choose the music that you are fine with, so when you sent the invitations the users would be able to choose their favourites',
-        'location': 'Below, you are seeing a text field in which you can add the adress of your event, but we reccomend you to use the map, this way the guest will see exactly where they need to go',
-        'extras': 'If we have missed something you have now chance to add it.The extras tab work the same way as "food" and "drinks" tabs.An extra has a name and parameters.To add an extra, simply type its name in the text bar you see.When you do it, another text area will appear where you need to type the parameters.After you enter a parameter you need to click enter to add it. '};
+        'food': 'Please choose food that you can provide. If you want to add a dish custom dish, add it at the bottom of the page',
+        'drinks': 'Please choose drinks that you can provide. If you want to add a dish custom dish, add it at the bottom of the page',
+        'music': 'Here you can choose music that you can offer or that you prefer. Your guests will later select what they want to listen among what you choose where (you can choose more than one)',
+        'location': 'You can either enter a location\'s address or point it\s location on the map',
+        'extras': 'If you want to ask your guests something additional: this is the place. Type your question and the provide sample answers, your guests can choose among'};
 
     // event listener for adding a new value to a parameter:
 
@@ -544,8 +551,42 @@ $(document).ready(function(){
             let newValue = $.trim(inputField.val());
             let itemId = inputField.closest('.slider-item').attr('id');
 
-            console.log(itemId);
             if (newValue !== '') {
+
+                let nameAttr = itemId;
+                if (inputField.attr('data-multiple') !== 'true') {
+                    // if this is not clicked on in a screen with multiple choice
+
+                    // next slide:
+                    currentItemIndex += 1;
+                    if (!navigationDisabled) {
+                        showSliderItem();
+                    }
+
+                    // delete from form if exists:
+
+                    if ($('#create-event-form input[name=\'' + nameAttr + '\']').length != 0) {
+                        $('#create-event-form input[name=\'' + nameAttr + '\']').remove();
+                    }
+
+                    // remove class card-active:
+                    console.log(inputField.val());
+                    inputField.closest('.rows')
+                        .find('.create-event-option')
+                        .removeClass('card-active');
+
+                } else {
+                    nameAttr += '[]';
+                }
+
+                // put in the form:
+
+                $('#create-event-form')
+                    .append($('<input>')
+                        .attr('type', 'hidden')
+                        .attr('name', nameAttr)
+                        .attr('value', newValue));
+
                 inputField.siblings('.new-values')
                     .append($('<div>')
                         .attr('class', 'chip')
@@ -553,14 +594,6 @@ $(document).ready(function(){
 
                 inputField.val('');
             }
-
-            // put in the form:
-
-            $('#create-event-form')
-                .append($('<input>')
-                    .attr('type', 'hidden')
-                    .attr('name', itemId + '[]')
-                    .attr('value', newValue))
         }
     });
 
@@ -609,7 +642,7 @@ $(document).ready(function(){
             $('#content').addClass('active').text(modal['extras']);
         }
         else if(itemId == 'basics'){
-            $('#content').addClass('active').text('Because, later, when we start sending the invitation, the date and the name of the event would be important.');
+            $('#content').addClass('active').text('Provide us with basic information about your event. In the description field you can type anything you think is important.');
         }
 
         /*
