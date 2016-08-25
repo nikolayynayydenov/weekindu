@@ -19,9 +19,7 @@
         <div class="row">
             <div id="all" class="col s12">
                 @if(count($events) > 0)
-
                     @foreach($events as $event)
-
                         <div class="col sl2 m12">
                             <div class="card hoverable ">
                                 <a href="event/{{ $event->id }}">
@@ -47,7 +45,6 @@
                                         @if($event->type === 'Other')
                                             <img src="images/create-event/type/other.jpg">
                                         @endif
-
                                     </div>
                                 </a>
                                 <div class="card-content">
@@ -58,10 +55,10 @@
                                             </a>
                                         <div class="divider"></div>
                                     </div>
-
                                     <div class="row">
                                         <div class="col left">
-                                                <img src="/images/user-avatars/{{ $event->user->avatar }}" alt="no avatar" class="circle" width="80">
+                                                <img src="/images/user-avatars/{{ $event->user->avatar }}"
+                                                     alt="no avatar" class="circle" width="80">
                                         </div>
                                         <div class="col left">
                                             <strong class="blue-text" style="font-size: larger">{{$event->type}}</strong>
@@ -75,17 +72,16 @@
                                         <div class="col right">
                                             <a href="{{ url('/event/'.$event->id) }}" class="btn blue">More</a>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
                     @endforeach
                 @endif
-                </div>
-
-
             </div>
         </div>
-
-    {{ $events->render() }}
+        <div class="center-align ">
+            <i class="material-icons">{{ $events->render() }}</i>
+        </div>
+    </div>
 @endsection

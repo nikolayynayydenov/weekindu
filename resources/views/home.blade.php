@@ -53,16 +53,11 @@
             <div class="col s12">
                 <ul class="tabs">
                     <li class="tab col s3 blue-text"><a href="#all">My Events</a></li>
-
-
                 </ul>
             </div>
             <div id="all" class="col s12">
                 @if(count($events) > 0)
-
-
                     @foreach($events as $event)
-
                         <div class="col sl2 m12">
                             <div class="card hoverable center-on-small-only">
                                 <a href="event/{{ $event->id }}">
@@ -88,7 +83,6 @@
                                         @if($event->type === 'Other')
                                             <img src="images/create-event/type/other.jpg">
                                         @endif
-
                                     </div>
                                 </a>
                                 <div class="card-content">
@@ -99,53 +93,49 @@
                                             </a>
                                         <div class="divider"></div>
                                     </div>
-
                                     <div class="row">
                                         <div class="col s10 m10 hide-on-small-only">
-                                            <a href="{{ url('/statistics/'.$event->id) }}" class="btn  waves-effect manage-button white-text hide-on-small-only">Manage</a>
-                                            <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn waves-effect invitation-button hide-on-small-only">invitation</a>
-                                        </div>
-
-                                        <div class="col s6 m6 show-on-small hide-on-med-and-up">
-                                            <a href="{{ url('/statistics/'.$event->id) }}" class="btn  waves-effect manage-button white-text show-on-small">Manage</a>
+                                            <a href="{{ url('/statistics/'.$event->id) }}"
+                                               class="btn  waves-effect manage-button white-text hide-on-small-only">Manage</a>
+                                            <a href="{{ url('/invitation/'.$event->invitation_code) }}"
+                                               class="btn waves-effect invitation-button hide-on-small-only">invitation</a>
                                         </div>
                                         <div class="col s6 m6 show-on-small hide-on-med-and-up">
-                                            <a href="{{ url('/invitation/'.$event->invitation_code) }}" class="btn waves-effect invitation-button show-on-small">Invitation</a>
+                                            <a href="{{ url('/statistics/'.$event->id) }}"
+                                               class="btn  waves-effect manage-button white-text show-on-small">Manage</a>
                                         </div>
-
+                                        <div class="col s6 m6 show-on-small hide-on-med-and-up">
+                                            <a href="{{ url('/invitation/'.$event->invitation_code) }}"
+                                               class="btn waves-effect invitation-button show-on-small">Invitation</a>
+                                        </div>
                                         <div class="col right hide-on-small-only">
                                             <form action="{{url('/event/'.$event->id )}}" method="post">
                                                 {{ method_field('delete') }}
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="deletebut" value=>
-                                                    <i class="material-icons">delete</i></button>
+                                                    <i class="material-icons">delete</i>
+                                                </button>
                                             </form>
                                         </div>
-
-
                                         <div class="col show-on-small hide-on-med-and-up center-on-small-only">
                                             <form action="{{url('/event/'.$event->id )}}" method="post">
-
                                                 {{ method_field('delete') }}
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="deletebut" value=>
-                                                    <i class="material-icons">delete</i></button>
-
+                                                    <i class="material-icons">delete</i>
+                                                </button>
                                             </form>
                                         </div>
-
-                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     @endforeach
+                @endif
             </div>
-
-            @endif
+        </div>
+        <div class="center-align ">
+            <i class="material-icons">{{ $events->render() }}</i>
         </div>
     </div>
-
-    {{ $events->render() }}
 @endsection
