@@ -61,7 +61,9 @@
                                 <div class="card-content">
                                     <div class="row">
                                         <p class="center">
-                                            <strong class="center blue-text">{{ $event->title }}</strong><br>
+                                            <a href="{{ url('/event/'.$event->id) }}">
+                                                <strong class="center blue-text">{{ $event->title }}</strong>
+                                            </a>
                                         <div class="divider"></div>
                                     </div>
 

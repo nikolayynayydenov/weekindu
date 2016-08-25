@@ -29,21 +29,26 @@
                                 <a href="{{ url('/event') }}" class="waves-effect tooltipped grey-text" data-position="bottom" data-delay="50" data-tooltip="View All events">Events</a>
                             </li>
                         </ul>
-                    </div>                    
-                    
+                    </div>
+
                     <div class="col l4 m6 right-align hide-on-small-only">
                         <ul class="right">                    
                             @if (Auth::guest())
-                                <li class="grey-text"><a href="{{ url('/login') }}"> Login</a></li>
-                                <li class="grey-text"><a href="{{ url('/register') }}">Register</a></li>
+                                <li class="waves-effect hide-on-med-and-down">
+                                    <div class="container-fluid valign-wrapper">
+                                        <a class="tooltipped blue-text" data-tooltip="Create New Event" href="{{url('/event/create')}}">Create Event</a>
+                                    </div>
+                                </li>
+
+                                <li><a href="{{ url('/login') }}" class="grey-text">Login</a></li>
+                                <li><a href="{{ url('/register') }}" class="grey-text">Register</a></li>
                             @else
 
-                            <li class="waves-effect hide-on-med-and-down">                            
-                                <div class="container-fluid valign-wrapper">
-                                    <a class="tooltipped grey-text" data-tooltip="Create New Event" href="{{url('/event/create')}}"><i class="material-icons">add</i></a>
-                                </div> 
-                            </li>
-
+                                <li class="waves-effect hide-on-med-and-down">
+                                    <div class="container-fluid valign-wrapper">
+                                        <a class="tooltipped blue-text" data-tooltip="Create New Event" href="{{url('/event/create')}}">Create Event</a>
+                                    </div>
+                                </li>
                             <li class="dropdown-button waves-effect grey-text" data-activates="user-menu">
                                 <div class="container-fluid valign-wrapper">
                                     <div class="col l6">

@@ -98,7 +98,7 @@
                                     <div class="switch section col">
                                         <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Only participants will see information about this event" data-tooltip-id="072f438c-4f1e-0b98-4bbf-af0f5f2f0763">Private event</span>
                                         <label>
-                                            <input type="checkbox" form="create-event-form" name="is_public">
+                                            <input type="checkbox" form="create-event-form" name="is_public" checked>
                                             <span class="lever primary-color"></span>
                                         </label>
                                         <span class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Other people will be able to see the information about this event" data-tooltip-id="f225007d-48b8-0916-fe0c-d242cfd80a2a">Public event</span>
@@ -111,7 +111,7 @@
                                                accept="image/*"
                                                class="dropify"
                                                form="create-event-form"
-                                               data-max-file-size="1M"
+                                               data-max-file-size="2M"
                                                data-max-width="100%">
                                     </div>
                                 </div>

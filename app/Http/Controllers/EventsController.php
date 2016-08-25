@@ -190,7 +190,19 @@ class EventsController extends Controller
      */
     public function show($id)
     {
+        $event = Event::find($id);
+        $extrasObjects = $event->extras;
 
+        $extras = [];
+        foreach ($extrasObjects as $extraObject) {
+            foreach ($extraObject->values as $value) {
+                $extras[$extraObject->key][] = $value->value;
+            }
+        }
+
+        return view('events.show')
+            ->with('event', $event)
+            ->with('extras', $extras);
     }
 
     /**
@@ -266,7 +278,7 @@ class EventsController extends Controller
             ->get(['guest_name','accepted', 'created_at']);
 
 
-        return view('events.show')
+        return view('events.show-statistics')
             ->with('event', $event)
             ->with('stats', $stats)
             ->with('guests', $invitations);
