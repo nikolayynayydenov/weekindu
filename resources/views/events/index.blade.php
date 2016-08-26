@@ -52,9 +52,10 @@
                                         <p class="center">
                                             <a href="{{ url('/event/'.$event->id) }}">
                                                 <strong class="center blue-text">{{ $event->title }}</strong>
+                                                <div class="divider"></div>
                                             </a>
-                                        <div class="divider"></div>
                                     </div>
+
                                     <div class="row">
                                         <div class="col left s12 show-on-small hide-on-med-and-up ">
                                                 <img src="/images/user-avatars/{{ $event->user->avatar }}"
@@ -69,6 +70,7 @@
                                         <div class="col s12 right show-on-small hide-on-med-and-up">
                                             <a href="{{ url('/event/'.$event->id) }}" class="btn blue">More</a>
                                         </div>
+
                                     </div>
                                     <div class="row">
                                         <div class="col left show-on-medium-and-up hide-on-small-only">
@@ -85,6 +87,7 @@
                                             <a href="{{ url('/event/'.$event->id) }}" class="btn blue">More</a>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

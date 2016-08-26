@@ -29,7 +29,7 @@ class HomeController extends Controller
         $user = auth()->user();
         //$events = $user->events;
 
-        $events =  Auth::user()->events()->paginate(2);
+        $events =  Auth::user()->events()->paginate(4);
 
         return view('home')
             ->with('user', $user)

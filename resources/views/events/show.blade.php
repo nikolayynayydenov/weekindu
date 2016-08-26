@@ -27,7 +27,7 @@
 
     <div class="container" id="event-container">
         <h2 class="center">{{ $event->title }}</h2>
-        <p class="flow-text" id="event-description">{{ $event->description }}</p>
+        <p class="flow-text center" id="event-description">{{ $event->description }}</p>
 
         <hr>
 
@@ -54,11 +54,34 @@
          !empty($event->dress_code) ||
          !empty($event->location_x))
             <hr>
-
             <div class="row">
                 <div class="col s12 m4 l4">
                     @if(!empty($event->dress_code))
                         <div class="container-fluid">
+                            <strong>Dress Code:</strong>
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="{{ $event->dress_code_image_path }}"
+                                    @else
+                                        <img src="/images/create-event/dress-code/other.png"
+                                             @endif
+                                             alt="no image"
+                                             class="dress-code-image">
+                                </div>
+                                <div class="card-content">
+                                    <h6 class="center"><strong>{{ $event->dress_code }}</strong></h6>
+                                    <div class="divider"></div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+
+
+            {{--<div class="row">
+                <div class="col s12 m4 l4">
+                    @if(!empty($event->dress_code))
+                        <div class="container-fluid">
+                            <strong>Dress Code:</strong>
                         @if(file_exists($event->dress_code_image_full_path))
                             <img src="{{ $event->dress_code_image_path }}"
                         @else
@@ -67,15 +90,15 @@
                             alt="no image"
                             class="dress-code-image">
 
-                            <h6 class="center"><strong>{{ $event->dress_code }}</strong> dresscode</h6>
+                            <h6 class="center"><strong>{{ $event->dress_code }}</strong></h6>
                         </div>
                     @endif
-                </div>
+                </div>--}}
 
                 <div class="col s12 m4 l4">
                     @if(count($extras) > 0)
-                        <p class="flow-text event-info">
-                            There will be:<br>
+                        <p class="flow-text event-info center">
+                            <strong>There will be:</strong><br>
                             @if(array_key_exists('food', $extras))
                                 <p>
                                     Food:

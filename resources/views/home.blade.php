@@ -41,6 +41,13 @@
         background-color: #2196f3;
         color: white;
     }
+    body {
+        background: url("/images/girlscar.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
 </style>
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -89,9 +96,10 @@
                                         <p class="center">
                                             <a href="{{ url('/event/'.$event->id) }}">
                                                 <strong class="center blue-text">{{ $event->title }}</strong>
+                                                <div class="divider"></div>
                                             </a>
-                                        <div class="divider"></div>
                                     </div>
+
                                     <div class="row">
                                         <div class="col s10 m10 hide-on-small-only">
                                             <a href="{{ url('/statistics/'.$event->id) }}"
