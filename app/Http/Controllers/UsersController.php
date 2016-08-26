@@ -7,7 +7,7 @@ use App\Helpers\Images;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\User;
-use Crypt;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
