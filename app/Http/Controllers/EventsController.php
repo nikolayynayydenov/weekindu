@@ -266,24 +266,46 @@ class EventsController extends Controller
 
     public function showStatistics($id) {
         $event = Event::find($id);
-        $eev = Eev::where('event_id', $id)->get(); // what if there are no eevs for this event?
+        $extras = $event->extras;
+        $eev = $event->chosenExtras; // what if there are no eevs for this event?
 
         $stats = [];
 
-        foreach ($eev as $item) {
-            $key = $item->extra->key;
-            $value = $item->value->value;
+        foreach ($extras as $extra) {
+            $stats[$extra->key] = [];
 
-            if (!array_key_exists($key, $stats)) {
-                $stats[$key] = [];
+            $extraValues = $extra->values;
+            $eevItems = $eev->where('extra_id', $extra->id);
+            // if this extra has been chosen at least once:
+
+            foreach ($extraValues as $value) {
+                $stats[$extra->key][$value->value] = 0;
+                $eevItemsValuesSelected = $eevItems->where('value_id', $value->id);
+                if ($eevItemsValuesSelected != null) {
+                    // if this value is set:
+                    foreach ($eevItemsValuesSelected as $eevValue) {
+                        $stats[$extra->key][$value->value]++;
+                    }
+                }
             }
-
-            if (!array_key_exists($value, $stats[$key])) {
-                $stats[$key][$value] = 0;
-            }
-
-            $stats[$key][$value] += 1;
         }
+
+
+
+//        foreach ($eev as $item) {
+//            $key = $item->extra->key;
+//            $value = $item->value->value;
+//
+//            if (!array_key_exists($key, $stats)) {
+//                $stats[$key] = [];
+//            }
+//
+//            if (!array_key_exists($value, $stats[$key])) {
+//                $stats[$key][$value] = 0;
+//            }
+//
+//            $stats[$key][$value] += 1;
+//        }
 
         $invitations = Invitation::where('invitation_code', $event->invitation_code)
             ->get(['guest_name','accepted', 'created_at']);

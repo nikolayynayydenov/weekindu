@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+<div class="container">
     <h4 class="primary-text-color">{{ session('message') }}</h4>
 
     <link rel="stylesheet" href="/css/custom/show.css">
@@ -93,8 +94,16 @@
                     {{--@if($event->music != null)--}}
                     {{--<li class="tab col s3"><a href="#tab4">Music statistics</a></li>--}}
                     {{--@endif--}}
-                    @foreach($event->extras as $extra)
-                        <li class="tab col s3"><a href="#test{{ $counter }}">{{ $extra->key }}</a></li>
+                    @foreach($stats as $key => $values)
+                        <li class="tab col s3">
+                            <a href="#test{{ $counter }}"
+                               class="tooltipped"
+                               data-position="top"
+                               data-delay="50"
+                               data-tooltip="{{ $key }}">
+                                {{ $key }}
+                            </a>
+                        </li>
                         @php
                             $counter++
                         @endphp
@@ -107,7 +116,7 @@
                     <tr>
                         <th data-field="id">Name</th>
                         <th data-field="name">Attending</th>
-                        <th data-field="time">Send</th>
+                        <th data-field="time">Sent</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -227,6 +236,7 @@
             @endforeach
         </div>
     </div>
+</div>
     <script>
         $(document).ready(function(){
             $('ul.tabs').tabs('select_tab', 'tab_id');
