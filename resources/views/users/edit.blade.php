@@ -1,19 +1,25 @@
 @extends('layouts.app')
 @section('content')
     <style>
-        .change-email-desktop {
+        .change-email {
             display: none;
             position: inherit;
         }
 
-        .change-password-desktop {
+        .change-password {
             display: none;
             position: inherit;
         }
-        .content {
+        .change-email-mobile {
             display: none;
             position: inherit;
         }
+
+        .change-password-mobile {
+            display: none;
+            position: inherit;
+        }
+
 
         .input-field .prefix.active{
             color: #a3a3a3;
@@ -83,10 +89,10 @@
         </div>
         <div class="row center hide-on-med-and-down">
             <div class="col s12 m4">
-                <a class="waves-effect waves-light btn email-button-desktop accent-color ">Change Email</a>
+                <a class="waves-effect waves-light btn email-button accent-color ">Change Email</a>
             </div>
             <div class="col s12 m4">
-                <a class="waves-effect waves-light btn password-button-desktop accent-color">Change password</a>
+                <a class="waves-effect waves-light btn password-button accent-color">Change password</a>
             </div>
             <div class="col s12 m4">
                 <a class="waves-effect waves-light btn modal-trigger accent-color " href="#modal1">Change Avatar</a>
@@ -94,17 +100,16 @@
         </div>
                 <a class="waves-effect waves-light btn modal-trigger accent-color show-on-medium-and-down s12 hide-on-med-and-up " href="#modal1">Change Avatar</a>
                 <br>
-                <a id="but1" class="waves-effect waves-light btn  accent-color show-on-medium-and-down s12 hide-on-med-and-up mobile-buttons">Change Email</a>
+                <a id="but1" class="waves-effect waves-light btn  accent-color show-on-medium-and-down s12 hide-on-med-and-up email-button-mobile">Change Email</a>
                 <br>
-                <a id="but2" class="waves-effect waves-light btn  accent-color show-on-medium-and-down s12 hide-on-med-and-up mobile-buttons">Change password</a>
-
+                <a id="but2" class="waves-effect waves-light btn  accent-color show-on-medium-and-down s12 hide-on-med-and-up password-button-mobile">Change password</a>
 
 
 
 
 
         <div class="row">
-            <span class="input-field col s4 m4 l4 change-email-desktop">
+            <span class="input-field col s12 m4 l4 change-email">
 
                 <input type="password" name="password_email" pattern=".{4,}" placeholder="Enter your password"  >
                 <label for="password"></label>
@@ -118,7 +123,7 @@
                 <label for="email"></label>
             </span>
 
-            <span class="change-password-desktop input-field offset-l4 offset-m4 offset-s4 col l4 s4 m4">
+            <span class="change-password input-field col l4 s12 m4">
 
                 <input type="password" name="old_password" pattern=".{4,}" placeholder="Enter your old password"  >
                 <input type="password" name="password" pattern=".{4,}" placeholder="Enter your new password"  >
@@ -126,7 +131,8 @@
 
             </span>
         </div>
-        <span class="input-field col s12 content" id="but1c">
+
+       {{-- <span class="input-field col s12 change-email-mobile">
 
                 <input type="password" name="password_email" pattern=".{4,}" placeholder="Enter your password">
                 <label for="password"></label>
@@ -140,13 +146,14 @@
                 <label for="email"></label>
             </span>
 
-        <span class=" input-field offset-l4 offset-m4 offset-s4 col l4 s4 m4 content" id="but2c">
+        <div class="divider show-on-small-only"></div>
+        <span class=" input-field s12 change-password-mobile">
 
                 <input type="password" name="old_password" pattern=".{4,}" placeholder="Enter your old password"  >
                 <input type="password" name="password" pattern=".{4,}" placeholder="Enter your new password"  >
                 <input type="password" name="password_confirmation" pattern=".{4,}" placeholder="Enter your new password again"  >
 
-            </span>
+            </span>--}}
 
         <div id="modal1" class="modal">
             <div class="modal-content">
@@ -183,20 +190,24 @@
     </form>
     </div>
     <script>
-        $('.email-button-desktop').click(function(){
-            $('.change-email-desktop').slideToggle("slow");
+        $('.email-button').click(function(){
+            $('.change-email').slideToggle("slow");
 
         });
 
-        $('.password-button-desktop').click(function(){
-            $('.change-password-desktop').slideToggle("slow");
+        $('.email-button-mobile').click(function(){
+            $('.change-email').slideToggle("slow");
+
         });
-        $('.mobile-buttons').click(function() {
-            var id = this.id;
-            var idcont = id + 'c';
-            $('.content').hide('slow');
-            $('#'+idcont).show('slow');
-        })
+
+        $('.password-button').click(function(){
+            $('.change-password').slideToggle("slow");
+        });
+
+        $('.password-button-mobile').click(function(){
+            $('.change-password').slideToggle("slow");
+
+        });
 
     </script>
 @endsection
