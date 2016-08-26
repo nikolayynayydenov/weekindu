@@ -17,7 +17,7 @@
     </div>
     <div class="container">
         <div class="row center">
-            <div id="all" class="col offset-s2 s8">
+            <div id="all" class="col offset-s2 s8 container-for-events">
                 @if(count($events) > 0)
                     @foreach($events as $event)
                         <div class="col sl2 m12">

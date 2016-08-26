@@ -26,7 +26,7 @@
     </div>
 
 
-    <a class="btn waves-effect waves-light modal-trigger show-on-medium-and-down hide-on-med-and-up s12" href="#modal1">What is this?</a>
+    <a class="btn waves-effect waves-light modal-trigger show-on-medium-and-down hide-on-med-and-up s12 orange" href="#modal1">What is this?</a>
     <a class="btn invitation-button show-on-medium-and-down hide-on-med-and-up s12" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
 
     <div class="show-on-medium-and-down hide-on-med-and-up center">
@@ -79,7 +79,7 @@
     <div class="">
         <br>
         <div class="row center">
-            <h4>{{ $event->title }}</h4>
+            <h4 class="white-text">{{ $event->title }}</h4>
         </div>
         <div class="row z-depth-2 white">
             <div class="col s12">

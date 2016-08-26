@@ -21,7 +21,7 @@
 
         .event-info {
             font-size: 1.1em;
-            //font-weight: bold;
+        //font-weight: bold;
         }
     </style>
 
@@ -54,88 +54,77 @@
          !empty($event->dress_code) ||
          !empty($event->location_x))
             <hr>
-            <div class="row">
-                <div class="col s12 m4 l4">
-                    @if(!empty($event->dress_code))
-                        <div class="container-fluid">
-                            <strong>Dress Code:</strong>
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="{{ $event->dress_code_image_path }}"
-                                    @else
-                                        <img src="/images/create-event/dress-code/other.png"
-                                             @endif
-                                             alt="no image"
-                                             class="dress-code-image">
-                                </div>
-                                <div class="card-content">
-                                    <h6 class="center"><strong>{{ $event->dress_code }}</strong></h6>
-                                    <div class="divider"></div>
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        @if(!empty($event->dress_code))
+                            <strong>Recommended dress code:</strong>
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="card">
+                                        <div class="card-image">
+                                            @if(file_exists($event->dress_code_image_full_path))
+                                                <img class="responsive-img" src="{{ $event->dress_code_image_path }}"
+                                            @else
+                                                <img src="/images/create-event/dress-code/other.png"
+                                                     @endif
+                                                     alt="no image"
+                                                     class="dress-code-image">
+                                        </div>
+                                        <div class="card-content center">
+                                            <div>
+                                                <strong class="center">
+                                                    {{ $event->dress_code }}
+                                                </strong>
+                                            </div>
+                                            <div class="divider"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            </div>
-                    </div>
-
-
-            {{--<div class="row">
-                <div class="col s12 m4 l4">
-                    @if(!empty($event->dress_code))
-                        <div class="container-fluid">
-                            <strong>Dress Code:</strong>
-                        @if(file_exists($event->dress_code_image_full_path))
-                            <img src="{{ $event->dress_code_image_path }}"
-                        @else
-                            <img src="/images/create-event/dress-code/other.png"
                         @endif
-                            alt="no image"
-                            class="dress-code-image">
-
-                            <h6 class="center"><strong>{{ $event->dress_code }}</strong></h6>
-                        </div>
-                    @endif
-                </div>--}}
+                    </div>
 
                 <div class="col s12 m4 l4">
                     @if(count($extras) > 0)
                         <p class="flow-text event-info center">
                             <strong>There will be:</strong><br>
-                            @if(array_key_exists('food', $extras))
-                                <p>
-                                    Food:
-                                    {{--<strong>{{ implode(', ', $extras['food']) }}</strong>--}}
-                                    @foreach($extras['food'] as $food)
-                                        <div class="chip blue white-text">
-                                            {{ $food }}
-                                        </div>
-                                    @endforeach
+                        @if(array_key_exists('food', $extras))
+                            <p>
+                                Food:
+                            {{--<strong>{{ implode(', ', $extras['food']) }}</strong>--}}
+                            @foreach($extras['food'] as $food)
+                                <div class="chip blue white-text">
+                                    {{ $food }}
+                                </div>
+                                @endforeach
                                 </p>
-                            @endif
+                                @endif
 
-                            @if(array_key_exists('drinks', $extras))
-                                <p>
-                                    Drinks:
+                                @if(array_key_exists('drinks', $extras))
+                                    <p>
+                                        Drinks:
                                     {{--<strong>{{ implode(', ', $extras['drinks']) }}</strong>--}}
                                     @foreach($extras['drinks'] as $drink)
                                         <div class="chip blue white-text">
                                             {{ $drink }}
                                         </div>
-                                    @endforeach
-                                </p>
-                            @endif
+                                        @endforeach
+                                        </p>
+                                        @endif
 
-                            @if(array_key_exists('music', $extras))
-                                <p>
-                                    Music:
-                                    {{--<strong>{{ implode(', ', $extras['music']) }}</strong>--}}
-                                    @foreach($extras['music'] as $music)
-                                        <div class="chip blue white-text">
-                                            {{ $music }}
-                                        </div>
-                                    @endforeach
-                                </p>
-                            @endif
-                        </p>
-                    @endif
+                                        @if(array_key_exists('music', $extras))
+                                            <p>
+                                                Music:
+                                            {{--<strong>{{ implode(', ', $extras['music']) }}</strong>--}}
+                                            @foreach($extras['music'] as $music)
+                                                <div class="chip blue white-text">
+                                                    {{ $music }}
+                                                </div>
+                                                @endforeach
+                                                </p>
+                                                @endif
+                                                </p>
+                                                @endif
                 </div>
                 <div class="col s12 m4 l4">
                     @if(!empty($event->location_x))

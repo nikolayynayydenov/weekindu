@@ -24,3 +24,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+.container-for-events{
+    background-color: rgba(255, 255,255,0.60);
+    border-radius: 7px;
+}

@@ -48,6 +48,10 @@
         -o-background-size: cover;
         background-size: cover;
     }
+    .container-for-events{
+        background-color: rgba(255, 255,255,0.60);
+        border-radius: 7px;
+    }
 </style>
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -61,7 +65,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div id="all" class="col offset-s2 s8">
+            <div id="all" class="col offset-s2 s8 container-for-events">
                 @if(count($events) > 0)
                     @foreach($events as $event)
                         <div class="col sl2 m12">
