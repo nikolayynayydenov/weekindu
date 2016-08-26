@@ -13,8 +13,13 @@ class Event extends Model
         return $this->belongsTo('App\User', 'host');
     }
 
-    public function extras ()
+    public function extras()
     {
         return $this->hasMany('App\ExtraParam', 'event_id');
+    }
+
+    public function chosenExtras()
+    {
+        return $this->hasMany('App\Eev', 'event_id');
     }
 }
