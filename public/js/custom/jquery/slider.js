@@ -113,15 +113,7 @@ $(document).ready(function(){
             'cardContent': '',
             'imgLocation': 'create-event/type/conference.jpg'
         }
-    ]);
-
-    addRow('type', [
-        {
-            'cardTitle': 'Other',
-            'cardContent': '',
-            'imgLocation': 'create-event/type/other.jpg'
-        }
-    ], false, 'last');
+    ],false, 'last');
 
     addRow('dress-code', [
         {
@@ -202,19 +194,6 @@ $(document).ready(function(){
             'imgLocation': 'create-event/drinks/water.jpg'
         },
         {
-            'cardTitle': 'Milk',
-            'cardContent': '',
-            'imgLocation': 'create-event/drinks/milk.jpg'
-        },
-        {
-            'cardTitle': 'Tea',
-            'cardContent': '',
-            'imgLocation': 'create-event/drinks/tea.jpg'
-        }
-    ], 'multiple');
-
-    addRow('drinks', [
-        {
             'cardTitle': 'Coke',
             'cardContent': '',
             'imgLocation': 'create-event/drinks/coke.jpg'
@@ -223,19 +202,14 @@ $(document).ready(function(){
             'cardTitle': 'Coffee',
             'cardContent': '',
             'imgLocation': 'create-event/drinks/coffee.jpg'
-        },
-        {
-            'cardTitle': 'Sprite',
-            'cardContent': '',
-            'imgLocation': 'create-event/drinks/sprite.jpg'
         }
     ], 'multiple');
 
     addRow('drinks', [
         {
-            'cardTitle': 'Fanta',
+            'cardTitle': 'Rakia',
             'cardContent': '',
-            'imgLocation': 'create-event/drinks/fanta.jpg'
+            'imgLocation': 'create-event/drinks/rakia.png'
         },
         {
             'cardTitle': 'Juice',
@@ -247,42 +221,6 @@ $(document).ready(function(){
             'cardContent': '',
             'imgLocation': 'create-event/drinks/beer.jpg'
         }
-    ], 'multiple');
-
-    addRow('drinks', [
-        {
-            'cardTitle': 'Cider',
-            'cardContent': '',
-            'imgLocation': 'create-event/drinks/cider.jpg'
-        },
-        {
-            'cardTitle': 'Wine',
-            'cardContent': '',
-            'imgLocation': 'create-event/drinks/wine.jpg'
-        },
-        {
-            'cardTitle': 'Whiskey',
-            'cardContent': '',
-            'imgLocation': 'create-event/drinks/whiskey.jpg'
-        }
-    ], 'multiple');
-
-    addRow('drinks', [
-        {
-            'cardTitle': 'Vodka',
-            'cardContent': '',
-            'imgLocation': 'create-event/drinks/vodka.jpg'
-        },
-        {
-            'cardTitle': 'Rakia',
-            'cardContent': '',
-            'imgLocation': 'create-event/drinks/rakia.png'
-        },
-        {
-            'cardTitle': 'Other',
-            'cardContent': '',
-            'imgLocation': 'create-event/drinks/other.jpg'
-        }
     ], 'multiple', 'last');
 
     addRow('food', [
@@ -292,9 +230,9 @@ $(document).ready(function(){
             'imgLocation': 'create-event/food/chicken.jpg'
         },
         {
-            'cardTitle': 'Beef',
+            'cardTitle': 'Salad',
             'cardContent': '',
-            'imgLocation': 'create-event/food/beef.jpg'
+            'imgLocation': 'create-event/food/salad.jpg'
         },
         {
             'cardTitle': 'Fries',
@@ -305,9 +243,9 @@ $(document).ready(function(){
 
     addRow('food', [
         {
-            'cardTitle': 'Lamb',
+            'cardTitle': 'Sandwich',
             'cardContent': '',
-            'imgLocation': 'create-event/food/lamb.jpg'
+            'imgLocation': 'create-event/food/sandwich.jpg'
         },
         {
             'cardTitle': 'Potatoes',
@@ -318,24 +256,6 @@ $(document).ready(function(){
             'cardTitle': 'Rice',
             'cardContent': '',
             'imgLocation': 'create-event/food/rice.jpg'
-        }
-    ], 'multiple');
-
-    addRow('food', [
-        {
-            'cardTitle': 'Salad',
-            'cardContent': '',
-            'imgLocation': 'create-event/food/salad.jpg'
-        },
-        {
-            'cardTitle': 'Sandwich',
-            'cardContent': '',
-            'imgLocation': 'create-event/food/sandwich.jpg'
-        },
-        {
-            'cardTitle': 'Asparagus',
-            'cardContent': '',
-            'imgLocation': 'create-event/food/аsparagus.jpg'
         }
     ], 'multiple', 'last');
 

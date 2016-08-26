@@ -26,23 +26,17 @@
                                     <div class="card-image">
                                         @if($event->type === 'Wedding')
                                             <img class="responsive-img" src="images/create-event/type/wedding.jpg">
-                                        @endif
-                                        @if($event->type === 'Conference')
+                                        @elseif($event->type === 'Conference')
                                             <img src="images/create-event/type/conference.jpg">
-                                        @endif
-                                        @if($event->type === 'Bachelor Party')
+                                        @elseif($event->type === 'Bachelor Party')
                                             <img src="images/create-event/type/bachelor-party.jpg">
-                                        @endif
-                                        @if($event->type === 'Birthday Party')
+                                        @elseif($event->type === 'Birthday Party')
                                             <img src="images/create-event/type/birthday-party.jpg">
-                                        @endif
-                                        @if($event->type === 'Buisiness Meeting')
+                                        @elseif($event->type === 'Buisiness Meeting')
                                             <img src="images/create-event/type/buisiness-meeting.jpg">
-                                        @endif
-                                        @if($event->type === 'Camp')
+                                        @elseif($event->type === 'Camp')
                                             <img src="images/create-event/type/camp.jpg">
-                                        @endif
-                                        @if($event->type === 'Other')
+                                        @else
                                             <img src="images/create-event/type/other.jpg">
                                         @endif
                                     </div>
