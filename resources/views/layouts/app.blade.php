@@ -5,15 +5,15 @@
         <meta charset="utf-8"/>
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
+
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
         <link rel="stylesheet" href="/css/dropify/dropify.min.css"/>
         <link rel="stylesheet" href="/css/materialize/palette.css"/>
         <link rel="stylesheet" href="/css/custom/main.css"/>
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.js"></script>    
+        <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.js"></script>
     </head>
     <body id="app-layout">
         <nav class="default-primary-color">
@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="col l4 m6 right-align hide-on-small-only">
-                        <ul class="right">                    
+                        <ul class="right">
                             @if (Auth::guest())
                                 <li class="waves-effect hide-on-med-and-down">
                                     <div class="container-fluid valign-wrapper">
@@ -59,7 +59,7 @@
                                         @endif
                                     </div>
                                     <div class="grey-text">
-                                        {{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->first_name }}                                        
+                                        {{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->first_name }}
                                     </div>
 
                                     <ul id="user-menu" class="dropdown-content col l4 m8">
@@ -67,11 +67,11 @@
                                         <li><a href="{{ url('/user/'.auth()->user()->id.'/edit') }}">Edit Profile</a></li>
                                         <li><a href="{{ url('/logout') }}">Logout</a></li>
                                     </ul>
-                                </div> 
+                                </div>
                             </li>
                             @endif
                         </ul>
-                    </div>                
+                    </div>
                 </div>
             </div>
 
@@ -88,13 +88,13 @@
                                     <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
                                 </div>
                                 <div class="col s8 valign">
-                                    {{ Auth::user()->name }}    
+                                    {{ Auth::user()->name }}
                                 </div>
-                            </div>                       
+                            </div>
                         </li>
                         <li><a href="{{url('/logout')}}">Logout</a></li>
                     </div>
-                @endif  
+                @endif
             </ul>
         </nav>
         <main>
@@ -132,12 +132,12 @@
                 </div>
             </div>
         </footer>
-        
+
         <!-- JavaScripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
         <script src="/js/custom/jquery/main.js" defer></script>
         <script src="/js/custom/jquery/slider.js"></script>
         <script src="/js/dropify/dropify.min.js"></script>
-        <script src="/js/config/main.js"></script>           
+        <script src="/js/config/main.js"></script>
     </body>
 </html>

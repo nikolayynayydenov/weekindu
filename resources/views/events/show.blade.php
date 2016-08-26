@@ -67,7 +67,7 @@
                             alt="no image"
                             class="dress-code-image">
 
-                            <h6 class="center">{{ $event->dress_code }}</h6>
+                            <h6 class="center"><strong>{{ $event->dress_code }}</strong> dresscode</h6>
                         </div>
                     @endif
                 </div>
@@ -116,36 +116,38 @@
                 </div>
                 <div class="col s12 m4 l4">
                     @if(!empty($event->location_x))
-                        <div class="container-fluid"
+                        <div class="fill"
                              id="google-map">
                         </div>
                     @endif
-                    Location:
-                    <strong>{{ $event->location_string }}</strong>
+
+                    @if(!empty($event->location_string))
+                        Location:
+                        <strong>{{ $event->location_string }}</strong>
+                    @endif
                 </div>
             </div>
         @endif
     </div>
 @endsection
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>--}}
 
-{{--<script>--}}
-{{--$(document).ready(function (){--}}
-    {{--function initMap() {--}}
-        {{--var myLatLng = {lat: Number('{{$event->location_x}}'), lng: Number('{{$event->location_y}}')};--}}
-        {{--console.log(myLatLng);--}}
-        {{--var map = new google.maps.Map(document.getElementById('google-map'), {--}}
-            {{--zoom: 15,--}}
-            {{--center: myLatLng--}}
-        {{--});--}}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDom14MVl0y2bpQYkAAShMOYnq0TBlflo0"></script>
+<script>
+    var myCenter = new google.maps.LatLng({{ $event->location_x or ''}}, {{ $event->location_y or ''}});
 
-        {{--var marker = new google.maps.Marker({--}}
-            {{--position: myLatLng,--}}
-            {{--map: map,--}}
-            {{--title: 'Hello World!'--}}
-        {{--});--}}
-    {{--}--}}
-{{--});--}}
-{{--</script>--}}
+    function initialize() {
+        var mapProp = {
+            center: myCenter,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("google-map"), mapProp);
 
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>--}}
+        var marker = new google.maps.Marker({
+            position: myCenter
+        });
+
+        marker.setMap(map);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>

@@ -127,7 +127,7 @@ class EventsController extends Controller
         $event->description = $data['description'];
         $event->is_public = empty($data['is_public']) ? false : true;
         $event->type = empty($data['type']) ? '' : $data['type'];
-        $event->dress_code = empty($data['dress_code']) ? '' : $data['dress_code'];
+        $event->dress_code = empty($data['dress-code']) ? '' : $data['dress-code'];
         $event->location_string = empty($data['location_string']) ? '' : $data['location_string'];
         $event->location_x = isset($x) ? $x : '';
         $event->location_y = isset($y) ? $y : '';

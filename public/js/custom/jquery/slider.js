@@ -553,7 +553,7 @@ $(document).ready(function(){
 
             if (newValue !== '') {
 
-                let nameAttr = itemId.replace('-', '_');
+                let nameAttr = itemId;
                 if (inputField.attr('data-multiple') !== 'true') {
                     // if this is not clicked on in a screen with multiple choice
 
