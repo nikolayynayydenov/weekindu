@@ -16,8 +16,8 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div id="all" class="col s12">
+        <div class="row center">
+            <div id="all" class="col offset-s2 s8">
                 @if(count($events) > 0)
                     @foreach($events as $event)
                         <div class="col sl2 m12">
@@ -56,20 +56,32 @@
                                         <div class="divider"></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col left">
+                                        <div class="col left s12 show-on-small hide-on-med-and-up ">
                                                 <img src="/images/user-avatars/{{ $event->user->avatar }}"
                                                      alt="no avatar" class="circle" width="80">
                                         </div>
-                                        <div class="col left">
+                                        <div class="col left s12 show-on-small hide-on-med-and-up">
                                             <strong class="blue-text" style="font-size: larger">{{$event->type}}</strong>
                                                 <p class="grey-text">{{ $event->user->first_name.' '.$event->user->last_name}}<br>
                                                     {{$event->date}}
                                                 </p>
                                             </div>
-                                        {{--<p class="col">
-                                            {{$event->description}}
-                                        </p>--}}
-                                        <div class="col right">
+                                        <div class="col s12 right show-on-small hide-on-med-and-up">
+                                            <a href="{{ url('/event/'.$event->id) }}" class="btn blue">More</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col left show-on-medium-and-up hide-on-small-only">
+                                            <img src="/images/user-avatars/{{ $event->user->avatar }}"
+                                                 alt="no avatar" class="circle" width="80">
+                                        </div>
+                                        <div class="col left show-on-medium-and-up hide-on-small-only">
+                                            <strong class="blue-text" style="font-size: larger">{{$event->type}}</strong>
+                                            <p class="grey-text">{{ $event->user->first_name.' '.$event->user->last_name}}<br>
+                                                {{$event->date}}
+                                            </p>
+                                        </div>
+                                        <div class="col right show-on-medium-and-up hide-on-small-only ">
                                             <a href="{{ url('/event/'.$event->id) }}" class="btn blue">More</a>
                                         </div>
                                     </div>

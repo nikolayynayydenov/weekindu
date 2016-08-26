@@ -37,6 +37,10 @@
     .deletebut:focus{
         background: none;
     }
+    .pagination li.active{
+        background-color: #2196f3;
+        color: white;
+    }
 </style>
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -50,12 +54,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col s12">
-                <ul class="tabs">
-                    <li class="tab col s3 blue-text"><a href="#all">My Events</a></li>
-                </ul>
-            </div>
-            <div id="all" class="col s12">
+            <div id="all" class="col offset-s2 s8">
                 @if(count($events) > 0)
                     @foreach($events as $event)
                         <div class="col sl2 m12">
@@ -134,7 +133,7 @@
                 @endif
             </div>
         </div>
-        <div class="center-align ">
+        <div class="center-align">
             <i>{{ $events->render() }}</i>
         </div>
     </div>

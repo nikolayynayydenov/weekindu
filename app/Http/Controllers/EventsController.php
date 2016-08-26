@@ -44,7 +44,7 @@ class EventsController extends Controller
             $events =  Event::where('is_public', true);
         }
 
-        $events = $events->orderBy('created_at', 'desc')->paginate(2);
+        $events = $events->orderBy('created_at', 'desc')->paginate(4);
         return view('events.index')->with('events', $events);
     }
 
