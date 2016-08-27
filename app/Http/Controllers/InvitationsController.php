@@ -123,6 +123,20 @@ class InvitationsController extends Controller
             ->with('event', $event);
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $guest = Invitation::find($id);
+        $guest->delete();
+
+        return redirect('/');
+    }
+
     public function getGuestDetails()
     {
         if(request()->ajax()) {

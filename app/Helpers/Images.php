@@ -14,8 +14,15 @@ class Images
 
     public static function storeAvatar($image) {
         // store the path to a validated image in the database
+        if(is_string($image)){
+            $avatar = uniqid().'.'.'png';
 
-        if($image && $image->isValid()) {
+            $image = Image::make($image);
+            $image->fit(self::$avatarDefaultSize)
+                ->save(public_path().DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.
+                    'user-avatars'.DIRECTORY_SEPARATOR.$avatar);
+        }
+        else if($image && $image->isValid()) {
             // if the user has uploaded an image, store it
 
             $extension = $image->getClientOriginalExtension();

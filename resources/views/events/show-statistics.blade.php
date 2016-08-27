@@ -88,6 +88,7 @@
                 <table class="centered">
                     <thead>
                     <tr>
+                        <th data-field="delete"></th>
                         <th data-field="id">Name</th>
                         <th data-field="name">Attending</th>
                         <th data-field="time">Sent</th>
@@ -96,6 +97,15 @@
                     <tbody>
                     @foreach($guests as $guest)
                         <tr>
+                            <td>
+                                <form action="{{url('/invitation/'.$guest->id )}}" method="post">
+                                    {{ method_field('delete') }}
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="deletebut" value=>
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </form>
+                            </td>
                             <td class="tooltipped"
                                 data-position="top"
                                 data-delay="500"
