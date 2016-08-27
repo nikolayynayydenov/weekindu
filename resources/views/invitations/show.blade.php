@@ -135,12 +135,114 @@
             #invitation-form{
                 display: none;
             }
+            .input-field label {
+                color: #2196f3;
+            }
+            /* label focus color */
+            .input-field input[type=text]:focus + label {
+                color: #2196f3;
+            }
+            /* label underline focus color */
+            .input-field input[type=text]:focus {
+                border-bottom: 1px solid #2196f3;
+                box-shadow: 0 1px 0 0 #2196f3;
+            }
+            /* valid color */
+            .input-field input[type=text].valid {
+                border-bottom: 1px solid #2196f3;
+                box-shadow: 0 1px 0 0 #2196f3;
+            }
+            /* invalid color */
+            .input-field input[type=text].invalid {
+                border-bottom: 1px solid #2196f3;
+                box-shadow: 0 1px 0 0 #2196f3;
+            }
+            /* icon prefix focus color */
+            .input-field .prefix.active {
+                color: #2196f3;
+            }
+            [type="checkbox"]:checked+label:before{
+                border-right: 2px solid #2196f3;
+                border-bottom: 2px solid #2196f3;
+            }
+            [type="checkbox"]:checked+label:after{
+                border-right: 2px solid #2196f3;
+                border-bottom: 2px solid #2196f3;
+            }
+            .input-field input[type=email]:focus:not([readonly]) {
+                border-bottom: 1px solid #2196f3;
+                box-shadow: 0 1px 0 0 #2196f3;
+            }
+            .input-field input[type=email]:focus + label {
+                color: #2196f3;
+            }
+            .input-field input[type=password]:focus + label {
+                color: #2196f3;
+            }
+            input[type=email]:focus:not([readonly]) + label{
+                color: #2196f3;
+            }
+            .input-field input[type=password]:focus:not([readonly]) {
+                border-bottom: 1px solid #2196f3;
+                box-shadow: 0 1px 0 0 #2196f3;
+            }
+            .dropdown-content li>a, .dropdown-content li>span{
+                color: #2196f3;
+            }
+            [type="checkbox"].filled-in:checked+label:after{
+                background-color: #2196f3;
 
+
+            }
+            [type="checkbox"]:checked+label:before{
+                border-right: 2px solid #2196f3;
+                border-bottom: 2px solid #2196f3;
+                border-right: 2px solid #2196f3;
+                border-bottom: 2px solid #2196f3;
+            }
+            [type="checkbox"].filled-in:checked+label:after{
+                border: 2px solid #2196f3;
+                background-color: #2196f3;
+            }
+            body {
+                background: url("/images/invitation.jpeg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+
+            }
+            .container{
+                background: rgba(255, 255,255,0.90);
+
+            }
+            #invitation-form{
+                border-radius: 4px;
+            }
+            .container-inv{
+                border-radius: 5px;
+            }
+            #decline{
+                
+            }
+            #extras{
+                display: none;
+            }
+            textarea.materialize-textarea:focus:not([readonly])+label{
+                color:#2196f3;
+            }
+            .switch label input[type=checkbox]:checked+.lever{
+                background-color:#2196f3 ;
+            }
+            .switch label input[type=checkbox]:checked+.lever:after{
+                background-color:#2196f3 ;
+
+            }
         </style>
     </head>
     <body>
     <nav class="default-primary-color">
-        <div class="nav-wrapper container">
+        <div class="nav-wrapper">
             <div class="row">
                 <div class="col s12 m12 l12 center">
                     <a href="{{url('/')}}" class="waves-effect grey-text center"><b class="blue-text">WeekindU</b></a>
@@ -149,7 +251,7 @@
         </div>
     </nav>
     <div id="main">
-        <h1 class="primary-text-color container center" style="font-size: x-large">Hello, {host} invites you to his {{$event->type}},
+        <h1 class="primary-text-color container center container" style="font-size: x-large">Hello, {host} invites you to his {{$event->type}},
             <strong class="">{{ $event->title }}</strong>
         </h1>
 
@@ -204,67 +306,101 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col">{host} asks you to fill some polls about your tastes.Please click the button below to start.<br>
-                            <button class="btn center" id="start-button">Start</button>
+                        <div class="col center">{host} asks you to fill some polls about your tastes.Please click the button below to start.<br>
+                            <button class="btn blue" id="start-button">Start</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div>
-        <form action="{{ url('/invitation') }}" method="post" id="invitation-form">
-            {{ csrf_field() }}
-            <input type="hidden" name="invitation_code" value="{{ $event->invitation_code }}">
-            <div class="row">
-                <div class="input-field col l6 m12 s12">
-                    <input id="guest-name"
-                           type="text"
-                           class="validate"
-                           name="guest_name"
-                           maxlength="80"
-                           required>
-                    <label for="guest-name">Your Name</label>
-                </div>
-                <div class="input-field col l6 m12 s12">
-                    <input id="guest-email"
-                           type="email"
-                           class="validate"
-                           name="guest_email"
-                           maxlength="255">
-                    <label for="guest-name">Your Email</label>
-                </div>
+
+
+    <div class="center">
+        <div class="card-panel blue">
+                      <span class="white-text">Enter your name and choose an option.Then fill all the fields.
+                      </span>
+        </div>
+    </div>
+    <div class="container container-inv center">
+    <form action="{{ url('/invitation') }}" method="post" id="invitation-form">
+        {{ csrf_field() }}
+        <input type="hidden" name="invitation_code" value="{{ $event->invitation_code }}">
+        <div class="row">
+            <div class="input-field col offset-l3 offset-m3 offset-s3 l6 m6 s6">
+                <input id="guest-name"
+                       type="text"
+                       class="validate"
+                       name="guest_name"
+                       maxlength="80"
+                       required>
+                <label for="guest-name">Your Name</label>
             </div>
-            <div class="input-field">
+
+        </div>
+        <div class="switch">
+            <label>
+                I will not attend
                 <input type="checkbox"
                        class="filled-in"
-                       id="filled-in-box"
-                       checked="checked"
-                       name="accepted" />
-                <label for="filled-in-box">I will come</label>
-            </div>
-            @if($event->extras)
-                @foreach($event->extras as $extra)
-                    <div class="input-field col s12">
-                        <select class="extras-select-field" multiple>
-                            <option disabled selected>{{ $extra->key }}</option>
-                            @foreach($extra->values as $value)
-                                <option value="{{ $value->value }}" class="extras-option">{{ $value->value }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                @endforeach
-            @endif
-            <div class="input-field">
-                <input type="submit" class="btn">
-            </div>
-        </form>
-    </div>
+                       id="accept-field"
+                       name="accepted"/>
+                <span class="lever"></span>
+                I will attend
+            </label>
+        </div>
+        <div id="extras">
+        @if($event->extras)
+            @foreach($event->extras as $extra)
+                <div class="input-field row ">
+                    <select class="extras-select-field col offset-s1 offset-m1 offset-l1 s10 m10 l10" multiple>
+                        <option disabled selected>{{ $extra->key }}</option>
+                        @foreach($extra->values as $value)
+                            <option value="{{ $value->value }}" class="extras-option">{{ $value->value }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            @endforeach
+        @endif
+</div>
+        <div id="decline">
+            <div class="card-panel blue center s12 m3 l3">
+                      <span class="white-text">Please type why you are not going to attend
+                      </span>
+                </div>
+            <label for="decline">
+                <textarea id="decline"
+                      class="materialize-textarea"
+                      name="why-decline"
+                      form="invitation-form"
+                      required></textarea>
+            </label>
+
+        </div>
+        <div class="input-field">
+            <input type="submit" class="btn blue">
+        </div>
+    </form>
+</div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     <script>
         $(document).ready(function() {
+            $('#accept-field').on('change', function (){
+                var isChecked = $(this).is(':checked');
+                if(isChecked ===false){
+                    $('#decline').show('slow');
+                    $('#extras').hide('slow');
+                }
+                else{
+                    $('#decline').hide('slow');
+                    $('#extras').show('slow');
+                }
+            });
+
             $('#start-button').click(function(){
                 $('#main').hide("fast");
                 $('#invitation-form').show("fast");
@@ -321,3 +457,12 @@
     </script>
     </body>
 </html>
+
+{{--<div class="input-field col l6 m12 s12">
+                    <input id="guest-email"
+                           type="email"
+                           class="validate"
+                           name="guest_email"
+                           maxlength="255">
+                    <label for="guest-name">Your Email</label>
+                </div>--}}
