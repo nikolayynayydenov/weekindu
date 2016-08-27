@@ -142,12 +142,17 @@ class AuthController extends Controller
            return $authUser;
         }
 
+        $avatarStr = 'https://graph.facebook.com/v2.6/'.$facebookUser->id.'/picture?type=large';
+        $avatarStr = (string)$avatarStr;
+
+        $avatarStr = Images::storeAvatar($avatarStr);
+
         return User::create([
             'first_name' => $facebookUser->user['first_name'],
             'last_name' => $facebookUser->user['last_name'],
             'email' => $facebookUser->email,
             'facebook_id' => $facebookUser->id,
-            'avatar' => 'https://graph.facebook.com/v2.6/'.$facebookUser->id.'/picture?type=large'//$facebookUser->avatar
+            'avatar' => $avatarStr //'https://graph.facebook.com/v2.6/'.$facebookUser->id.'/picture?type=large'
         ]);
     }
 }
