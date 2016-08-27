@@ -64,10 +64,10 @@ $(document).ready(function(){
                 var multipleAttr = '';
             }
 
-            let newValueFieldHtml = $('<div class="add-new-values">' +
+            let newValueFieldHtml = $('<div class="add-new-values blue-text">' +
                 '<div class="center flow-text">You can also enter yourself:</div>' +
                 '<div class="new-values"></div>' +
-                '<input placeholder="New value" type="text" ' + multipleAttr + ' class="validate new-value-field">' +
+                '<input placeholder="New value" type="text" ' + multipleAttr + ' class="validate new-value-field blue-text">' +
                 '</div>');
 
             $('#' + recieverElementId).children('.rows')
