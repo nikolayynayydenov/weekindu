@@ -1,10 +1,84 @@
 @extends('layouts.app')
-
 @section('content')
-    <link rel="stylesheet" href="/css/custom/facebookbutton.css">
-    <div class="center row">
-        <div class="z-depth-4 card-panel col s12 offset-m1 m10 offset-l3 l6">
-            <h4>Login</h4>
+    <style>
+        /* label color */
+        .input-field label {
+            color: #2196f3;
+        }
+        /* label focus color */
+        .input-field input[type=text]:focus + label {
+            color: #2196f3;
+        }
+        /* label underline focus color */
+        .input-field input[type=text]:focus {
+            border-bottom: 1px solid #2196f3;
+            box-shadow: 0 1px 0 0 #2196f3;
+        }
+        /* valid color */
+        .input-field input[type=text].valid {
+            border-bottom: 1px solid #2196f3;
+            box-shadow: 0 1px 0 0 #2196f3;
+        }
+        /* invalid color */
+        .input-field input[type=text].invalid {
+            border-bottom: 1px solid #2196f3;
+            box-shadow: 0 1px 0 0 #2196f3;
+        }
+        /* icon prefix focus color */
+        .input-field .prefix.active {
+            color: #2196f3;
+        }
+        [type="checkbox"]:checked+label:before{
+            border-right: 2px solid #2196f3;
+            border-bottom: 2px solid #2196f3;
+        }
+        [type="checkbox"]:checked+label:after{
+            border-right: 2px solid #2196f3;
+            border-bottom: 2px solid #2196f3;
+        }
+        .input-field input[type=email]:focus:not([readonly]) {
+            border-bottom: 1px solid #2196f3;
+            box-shadow: 0 1px 0 0 #2196f3;
+        }
+        .input-field input[type=email]:focus + label {
+            color: #2196f3;
+        }
+        .input-field input[type=password]:focus + label {
+            color: #2196f3;
+        }
+        input[type=email]:focus:not([readonly]) + label{
+            color: #2196f3;
+        }
+        .input-field input[type=password]:focus:not([readonly]) {
+            border-bottom: 1px solid #2196f3;
+            box-shadow: 0 1px 0 0 #2196f3;
+        }
+        body {
+            background: url("/images/girlscar.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .card-panel{
+            background: rgba(255, 255,255,0.90);
+        }
+        .divider {
+            height: 2px;
+            background-color: #a3a3a3;
+        }
+        #facebook{
+            background-color: #3b5998;
+        }
+
+        .container{
+            width: 50%;
+        }
+    </style>
+    {{--<link rel="stylesheet" href="/css/custom/slider.css">--}}
+    <div class="center row z-depth-4 container">
+        <div class="card-panel">
+            <h4>Log in</h4>
             <form class="login-form" role="form" method="POST" action="{{ url('/login') }}">
                 {!! csrf_field() !!}
 
@@ -27,29 +101,27 @@
                 <div class="row">
                     <div class="input-field col s12 m12 l12  login-text left-align">
                         <input type="checkbox" id="remember" name="remember">
-                        <label for="remember">Remember me</label>
+                        <label class="grey-text" for="remember">Remember me</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12 center">
-                        <button class="btn-large waves-effect waves-light" type="submit" name="action">
+                        <button class="btn-large waves-effect waves-light blue" type="submit" name="action">
                             Sign in
                             <i class="material-icons right">send</i>
                         </button>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12 m6 l6 right-align">
+                    <div class="center">
                         <a href="{{ url('/register') }}">Register Now!</a>
-                    </div>
-                    <div class="input-field col s12 m6 l6 left-align">
-                        <a href="{{ url('/password/reset') }}">Forgot password ?</a>
                     </div>
                 </div>
             </form>
+            <div class="blue-text">Or</div>
             <form action="{{ url('auth/facebook') }}" method="get">
-                <div class="social-wrap a">
-                    <button id="facebook" type="submit" formaction="{{ url('auth/facebook') }}">Facebook!</button>
+                <div class="social-wrap">
+                    <button class="btn-large facebook" id="facebook" type="submit" formaction="{{ url('auth/facebook') }}">Log in with<img class="material-icons right" src="/images/icons/facebook-big.png"/></button>
                 </div>
             </form>
         </div>

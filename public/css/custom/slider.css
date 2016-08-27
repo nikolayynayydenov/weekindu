@@ -190,5 +190,8 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
 .input-field .prefix.active {
     color: #2196f3;
 }
+.input-field input[type=text]:active{
+    border-bottom: 1px solid #2196f3;
+}
 
 

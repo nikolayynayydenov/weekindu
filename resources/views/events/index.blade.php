@@ -53,7 +53,7 @@
                                     <div class="row">
                                         <div class="col left s12 show-on-small hide-on-med-and-up ">
                                                 <img src="/images/user-avatars/{{ $event->user->avatar }}"
-                                                     alt="no avatar" class="circle" width="80">
+                                                     alt="/images/user-avatars/default.png" class="circle" width="80">
                                         </div>
                                         <div class="col left s12 show-on-small hide-on-med-and-up">
                                             <strong class="blue-text" style="font-size: larger">{{$event->type}}</strong>
