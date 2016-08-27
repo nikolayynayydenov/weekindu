@@ -34,11 +34,11 @@
                     <div class="col l4 m6 right-align hide-on-small-only">
                         <ul class="right">
                             @if (Auth::guest())
-                                <li class="waves-effect hide-on-med-and-down">
+                                {{--<li class="waves-effect hide-on-med-and-down">
                                     <div class="container-fluid valign-wrapper">
                                         <a class="tooltipped blue-text" data-tooltip="Create New Event" href="{{url('/event/create')}}">Create Event</a>
                                     </div>
-                                </li>
+                                </li>--}}
 
                                 <li><a href="{{ url('/login') }}" class="grey-text">Login</a></li>
                                 <li><a href="{{ url('/register') }}" class="grey-text">Register</a></li>
