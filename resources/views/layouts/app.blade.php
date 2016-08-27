@@ -139,5 +139,6 @@
         <script src="/js/custom/jquery/slider.js"></script>
         <script src="/js/dropify/dropify.min.js"></script>
         <script src="/js/config/main.js"></script>
+        <script src="/js/custom/jquery/ajax/request-guest-info.js"></script>
     </body>
 </html>

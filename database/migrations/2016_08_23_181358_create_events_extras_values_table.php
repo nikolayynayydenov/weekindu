@@ -31,6 +31,12 @@ class CreateEventsExtrasValuesTable extends Migration
                 ->references('id')
                 ->on('values')
                 ->onDelete('cascade');
+
+            $table->integer('guest_id')->unsigned()->index();
+            $table->foreign('guest_id')
+                ->references('id')
+                ->on('invitations')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

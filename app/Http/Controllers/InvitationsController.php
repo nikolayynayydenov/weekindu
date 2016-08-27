@@ -95,6 +95,7 @@ class InvitationsController extends Controller
                         $eev->event_id = $event->id;
                         $eev->extra_id = $extraId;
                         $eev->value_id = $valueId;
+                        $eev->guest_id = $invitation->id;
                         $eev->save();
                     }
                 }
@@ -116,12 +117,35 @@ class InvitationsController extends Controller
         $event = Event::where('invitation_code', $invitationCode)
             ->first();
 
-        $event->music = json_decode($event->music);
-        $event->food = json_decode($event->food);
-        $event->drinks = json_decode($event->drinks);
         $event->invitation_code = Crypt::encrypt($event->invitation_code);
 
         return view('invitations.show')
             ->with('event', $event);
+    }
+
+    public function getGuestDetails()
+    {
+        if(request()->ajax()) {
+            $guestId = intval(request()->get('guestId'));
+            $eventInvitationCode = request()->get('eventInvitationCode');
+            $guest = Invitation::find($guestId);
+            $guestName = $guest->guest_name;
+            $event = Event::where('invitation_code', $eventInvitationCode)->first();
+
+            if($guest && $event) {
+                // a guest with this id and event with this inv code exist:
+                if($guest->invitation_code == $event->invitation_code) {
+                    $guestEevs = $guest->eevs;
+                    $data = [];
+                    foreach ($guestEevs as $eev) {
+                        $data['choices'][$eev->extra->key][] = $eev->value->value;
+                    }
+
+                    $data['_guestId_'] = $guestId;
+                    $data['_guestName_'] = $guestName;
+                    return response()->json($data);
+                }
+            }
+        }
     }
 }

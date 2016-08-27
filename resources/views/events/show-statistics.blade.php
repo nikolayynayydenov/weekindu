@@ -1,6 +1,14 @@
 @extends('layouts.app')
 @section('content')
 
+{{--<form action="{{ url('/invitation/get-guest-details') }}"--}}
+      {{--method="post">--}}
+    {{--{{ csrf_field() }}--}}
+    {{--<input type="number" name="guestId">--}}
+    {{--<input type="text" name="eventInvitationCode">--}}
+    {{--<input type="submit">--}}
+{{--</form>--}}
+
 <div class="container">
     <h4 class="primary-text-color">{{ session('message') }}</h4>
 
@@ -25,7 +33,6 @@
         </div>
     </div>
 
-
     <a class="btn waves-effect waves-light modal-trigger show-on-medium-and-down hide-on-med-and-up s12 orange" href="#modal1">What is this?</a>
     <a class="btn invitation-button show-on-medium-and-down hide-on-med-and-up s12" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
 
@@ -49,30 +56,6 @@
             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>
     </div>
-    {{--<div class="container">
-        <h3>{{ $event->title }}</h3>
-        <p>{{ $event->description }}</p>
-        <div>{{ $event->date === '' ? '' : 'Date of event: ' . $event->date }}</div>
-        <div>{{ $event->dress_code === '' ? '' : '(we can load the picture)Dress code: ' . $event->dress_code }}</div>
-        <div>{{ $event->music === '' ? '' : '(we can load the picture)Music: ' . $event->music }}</div>
-        @if(is_array($event->food))
-        <ul class="collection">
-            <li class="collection-header"><h4>Food: </h4></li>
-            @foreach($event->food as $food_item)
-            <li class="collection-item">{{ $food_item }}</li>
-            @endforeach
-        </ul>
-        @endif
-        @if(is_array($event->drinks))
-        <ul class="collection">
-            <li class="collection-header"><h4>Drinks: </h4></li>
-            @foreach($event->drinks as $drinks_item)
-            <li class="collection-item">{{ $drinks_item }}</li>
-            @endforeach
-        </ul>
-        @endif
-        <div>{{ $event->location === '' ? '' : 'Location: ' . $event->location_string }}</div>
-    </div>--}}
     @php
         $counter = 5
     @endphp
@@ -85,15 +68,6 @@
             <div class="col s12">
                 <ul class="tabs">
                     <li class="tab col s3"><a id="active" href="#test1">Guests</a></li>
-                    {{--@if($event->food != null)--}}
-                    {{--<li class="tab col s3"><a class="food" href="#test2">Food statistics</a></li>--}}
-                    {{--@endif--}}
-                    {{--@if($event->drinks != null)--}}
-                    {{--<li class="tab col s3"><a href="#test3">Drinks statistics</a></li>--}}
-                    {{--@endif--}}
-                    {{--@if($event->music != null)--}}
-                    {{--<li class="tab col s3"><a href="#tab4">Music statistics</a></li>--}}
-                    {{--@endif--}}
                     @foreach($stats as $key => $values)
                         <li class="tab col s3">
                             <a href="#test{{ $counter }}"
@@ -122,7 +96,19 @@
                     <tbody>
                     @foreach($guests as $guest)
                         <tr>
-                            <td class="tooltipped" data-position="top" data-delay="500" data-tooltip="huhu" style="cursor: pointer">{{$guest->guest_name}}</td>
+                            <td class="tooltipped"
+                                data-position="top"
+                                data-delay="500"
+                                data-tooltip="Click for details"
+                                style="cursor: pointer">
+                                <span class="blue-text">
+                                    <a href="#modal-{{ $guest->id }}"
+                                       class="modal-trigger guest-name-container"
+                                       data-guest-id="{{ $guest->id }}"
+                                       data-event-invitation-code="{{ $event->invitation_code }}">{{ $guest->guest_name }}</a>
+                                    <div class="modal-container"></div>
+                                </span>
+                            </td>
 
                             @if($guest->accepted)
                                 <td class="green-text">Yes</td>
@@ -136,97 +122,31 @@
                     </tbody>
                 </table>
             </div>
-            {{--@if($event->food != null)--}}
-            {{--<div id="test2" class="col s12">--}}
-            {{--<table class="centered">--}}
-            {{--<thead>--}}
-            {{--<tr>--}}
-            {{--<th data-field="Food">Food/Dish</th>--}}
-            {{--<th data-field="Quantity">Quantity</th>--}}
-            {{--</tr>--}}
-            {{--</thead>--}}
-            {{--<tbody>--}}
-            {{--@if(is_array($event->food))--}}
-            {{--@foreach($event->food as $food_item)--}}
-            {{--<tr>--}}
-            {{--<td>{{ $food_item }}</td>--}}
-            {{--<td>0</td>--}}
-            {{--</tr>--}}
-            {{--@endforeach--}}
-            {{--@endif--}}
-            {{--</tbody>--}}
-            {{--</table>--}}
-            {{--</div>--}}
-            {{--@endif--}}
-            {{--@if($event->drinks != null)--}}
-            {{--<div id="test3" class="col s12">--}}
-            {{--<table class="centered">--}}
-            {{--<thead>--}}
-            {{--<tr>--}}
-            {{--<th data-field="Drink">Drink type</th>--}}
-            {{--<th data-field="Quantity">Quantity</th>--}}
-
-            {{--</tr>--}}
-            {{--</thead>--}}
-            {{--<tbody>--}}
-            {{--@if(is_array($event->drinks))--}}
-            {{--@foreach($event->drinks as $drinks_item)--}}
-            {{--<tr>--}}
-            {{--<td>{{ $drinks_item }}</td>--}}
-            {{--<td>0</td>--}}
-            {{--</tr>--}}
-            {{--@endforeach--}}
-            {{--@endif--}}
-            {{--</tbody>--}}
-            {{--</table>--}}
-            {{--</div>--}}
-            {{--@endif--}}
-            {{--@if($event->music != null)--}}
-            {{--<div id="tab4" class="col s12">--}}
-            {{--<table class="centered">--}}
-            {{--<thead>--}}
-            {{--<tr>--}}
-            {{--<th data-field="Musuc">Drink type</th>--}}
-            {{--<th data-field="Quantity">Percentage</th>--}}
-            {{--</tr>--}}
-            {{--</thead>--}}
-            {{--<tbody>--}}
-            {{--@if(is_array($event->music))--}}
-            {{--@foreach($event->music as $music_item)--}}
-            {{--<tr>--}}
-            {{--<td>{{ $music_item}}</td>--}}
-            {{--<td>0%</td>--}}
-            {{--</tr>--}}
-            {{--@endforeach--}}
-            {{--@endif--}}
-            {{--</tbody>--}}
-            {{--</table>--}}
-            {{--</div>--}}
-            {{--@endif--}}
 
             @php
                 $counter = 5
             @endphp
+
             @foreach($stats as $key => $values)
                 <div id="test{{ $counter }}" class="col s12">
                     <table class="centered">
                         <thead>
-                        <tr>
-                            <th data-field="name">Parameters</th>
-                            <th data-field="quantity">Quantity</th>
-                        </tr>
+                            <tr>
+                                <th data-field="name">Parameters</th>
+                                <th data-field="quantity">Quantity</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach($values as $value => $quantity)
-                            <tr>
-                                <td>
-                                    {{ $value }}
-                                </td>
-                                <td>
-                                    {{ $quantity }}
-                                </td>
-                            </tr>
-                        @endforeach
+                            @foreach($values as $value => $quantity)
+                                <tr>
+                                    <td>
+                                        {{ $value }}
+                                    </td>
+                                    <td>
+                                        {{ $quantity }}
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

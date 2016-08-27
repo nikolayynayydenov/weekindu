@@ -20,7 +20,9 @@ $(document).ready(function (){
     
     $('.tooltipped').tooltip({delay: 50});
     
-    $('.modal-trigger').leanModal();  
+    $('.modal-trigger').leanModal({
+        dismissible: true
+    });
     
     $('.mobile-submit-button').on('click', function () {
         /*

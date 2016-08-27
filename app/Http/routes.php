@@ -23,7 +23,7 @@ Route::get('/about-us', function() {
     return view('about-us');
 });
 
-//Route::get('/user/get-json', 'UsersController@getJson');
+Route::post('/invitation/get-guest-details', 'InvitationsController@getGuestDetails');
 Route::get('/home', 'HomeController@index');
 Route::get('/statistics/{id}', 'EventsController@showStatistics');
 

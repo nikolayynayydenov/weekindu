@@ -12,4 +12,9 @@ class Invitation extends Model
     {
         return $this->belongsTo('App\Event', 'invitation_code');
     }
+
+    public function eevs()
+    {
+        return $this->hasMany('App\Eev', 'guest_id');
+    }
 }

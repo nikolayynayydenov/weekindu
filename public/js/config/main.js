@@ -6,29 +6,6 @@ $.ajaxSetup({
 
 // BEGIN google maps api config
 
-// function initializeMap() {
-//     var mapProp = {
-//         center: new google.maps.LatLng(42.6977, 23.3219),
-//         zoom: 13,
-//         mapTypeId: google.maps.MapTypeId.HYBRID
-//     };
-//
-//     var map = new google.maps.Map(document.getElementById("google-map"), mapProp);
-//
-//     google.maps.event.addListener(map, 'click', function(event) {
-//         placeMarker(event.latLng);
-//     });
-//
-//     function placeMarker(location) {
-//         var marker = new google.maps.Marker({
-//             position: location,
-//             map: map
-//         });
-//
-//         marker.setMap(map);
-//     }
-// }
-
 var map;
 var markers = [];
 
@@ -62,7 +39,7 @@ function initMap() {
     });
 
     // Adds a marker at the center of the map.
-    //addMarker(haightAshbury);
+    // addMarker(haightAshbury);
 }
 
 // Adds a marker to the map and push to the array.

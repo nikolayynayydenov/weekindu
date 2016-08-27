@@ -9,6 +9,7 @@ use App\Event;
 use App\Invitation;
 use App\Http\Requests;
 use App\Helpers\Images;
+use Crypt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
@@ -198,9 +199,12 @@ class EventsController extends Controller
         $extrasObjects = $event->extras;
 
         $extras = [];
+        $allowedExtras = ['food', 'drinks', 'music'];
         foreach ($extrasObjects as $extraObject) {
             foreach ($extraObject->values as $value) {
-                $extras[$extraObject->key][] = $value->value;
+                if(in_array($extraObject->key, $allowedExtras)) {
+                    $extras[$extraObject->key][] = $value->value;
+                }
             }
         }
 
@@ -290,25 +294,8 @@ class EventsController extends Controller
             }
         }
 
-
-
-//        foreach ($eev as $item) {
-//            $key = $item->extra->key;
-//            $value = $item->value->value;
-//
-//            if (!array_key_exists($key, $stats)) {
-//                $stats[$key] = [];
-//            }
-//
-//            if (!array_key_exists($value, $stats[$key])) {
-//                $stats[$key][$value] = 0;
-//            }
-//
-//            $stats[$key][$value] += 1;
-//        }
-
         $invitations = Invitation::where('invitation_code', $event->invitation_code)
-            ->get(['guest_name','accepted', 'created_at']);
+            ->get(['id', 'guest_name','accepted', 'created_at']);
 
         return view('events.show-statistics')
             ->with('event', $event)
