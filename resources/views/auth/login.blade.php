@@ -77,6 +77,16 @@
     </style>
     {{--<link rel="stylesheet" href="/css/custom/slider.css">--}}
     <div class="center row z-depth-4 container">
+
+        @if (count($errors->all()) > 0)
+            @foreach ($errors->all() as $error)
+                <div id="card-alert" class="card red">
+                    <div class="card-content white-text">
+                        <p><i class="mdi-alert-error"></i> ERROR : {{$error}}</p>
+                    </div>
+                </div>
+            @endforeach
+        @endif
         <div class="card-panel">
             <h4>Log in</h4>
             <form class="login-form" role="form" method="POST" action="{{ url('/login') }}">
