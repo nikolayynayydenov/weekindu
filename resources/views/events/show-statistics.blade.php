@@ -1,6 +1,17 @@
 @extends('layouts.app')
 @section('content')
 
+<link rel="stylesheet" href="/css/custom/show.css">
+<style>
+    body {
+        background: url('/images/event-backgrounds/{{ $event->background_photo }}') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+
 {{--<form action="{{ url('/invitation/get-guest-details') }}"--}}
       {{--method="post">--}}
     {{--{{ csrf_field() }}--}}
@@ -9,41 +20,27 @@
     {{--<input type="submit">--}}
 {{--</form>--}}
 
-<div class="container">
+<div class="container custom-container">
     <h4 class="primary-text-color">{{ session('message') }}</h4>
+    <div>
+        <div class="row">
+            <div class="col s12 m4 l2">
+                <a class="btn waves-effect waves-light modal-trigger orange" href="#modal1">What?</a>
+            </div>
+            <div class="col s12 m4 l2 offset-l6">
+                <a class="btn invitation-button" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
+            </div>
+            <div class="col s12 m4 l2">
+                <form action="{{url('/event/'.$event->id )}}" method="post">
+                    {{ method_field('delete') }}
+                    {{ csrf_field() }}
 
-    <link rel="stylesheet" href="/css/custom/show.css">
-    <div class="row hide-on-med-and-down">
-        <div class="col s12 m4 l2">
-            <a class="btn waves-effect waves-light modal-trigger orange" href="#modal1">What?</a>
+                    <button type="submit" class="waves-effect waves-light btn">
+                        Delete event
+                    </button>
+                </form>
+            </div>
         </div>
-
-        <div class="col s12 m4 l8 center">
-            <a class="btn invitation-button" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
-        </div>
-
-        <div class="col right">
-            <form action="{{url('/event/'.$event->id )}}" method="post">
-                {{ method_field('delete') }}
-                {{ csrf_field() }}
-                <button type="submit" class="deletebut" value=>
-                    <i class="material-icons medium">delete</i>
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <a class="btn waves-effect waves-light modal-trigger show-on-medium-and-down hide-on-med-and-up s12 orange" href="#modal1">Need Help?</a>
-    <a class="btn invitation-button show-on-medium-and-down hide-on-med-and-up s12" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
-
-    <div class="show-on-medium-and-down hide-on-med-and-up center">
-        <form action="{{url('/event/'.$event->id )}}" method="post">
-            {{ method_field('delete') }}
-            {{ csrf_field() }}
-            <button type="submit" class="deletebut" value=>
-                <i class="material-icons medium">delete</i>
-            </button>
-        </form>
     </div>
 
     <!-- Modal Structure -->
@@ -62,7 +59,7 @@
     <div class="">
         <br>
         <div class="row center">
-            <h4 class="white-text">{{ $event->title }}</h4>
+            <h4>{{ $event->title }}</h4>
         </div>
         <div class="row z-depth-2 white">
             <div class="col s12">
@@ -167,9 +164,9 @@
         </div>
     </div>
 </div>
-    <script>
-        $(document).ready(function(){
-            $('ul.tabs').tabs('select_tab', 'tab_id');
-        });
-    </script>
+<script>
+    $(document).ready(function(){
+        $('ul.tabs').tabs('select_tab', 'tab_id');
+    });
+</script>
 @endsection

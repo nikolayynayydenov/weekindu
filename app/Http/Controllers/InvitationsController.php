@@ -15,6 +15,8 @@ class InvitationsController extends Controller
 {
     public function __construct()
     {
+        $this->middleware('auth', ['only' => ['getGuestDetails', 'destroy']]);
+        $this->middleware('user_is_host_of_event', ['only' => ['destroy']]);        
         $this->middleware('invitation_has_event', ['only' => ['show']]);
     }
 

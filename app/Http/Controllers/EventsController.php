@@ -26,7 +26,7 @@ class EventsController extends Controller
 
         $this->middleware('auth', ['except' => ['index', 'show']]);
         $this->middleware('user_is_host_of_event', ['only' => ['edit', 'destroy', 'showStatistics']]);
-        $this->middleware('event_exists', ['only' => ['show']]);
+        $this->middleware('event_exists', ['only' => ['show', 'showStatistics']]);
         $this->middleware('event_is_public', ['only' => ['show']]);
     }
     /**
@@ -184,7 +184,7 @@ class EventsController extends Controller
          * Redirect to the show event action
          */
 
-        return redirect('/event/'.$event->id);// the $event->id property holds the last inserted id
+        return redirect('/statistics/'.$event->id);// the $event->id property holds the last inserted id
     }
 
     /**
