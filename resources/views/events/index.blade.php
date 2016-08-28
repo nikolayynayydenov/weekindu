@@ -9,7 +9,7 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>What is this?</h4>
-            <p>This is the place where all your events appear.On every event card you can see the invitation, the statistics and delete the event</p>
+            <p>This is the place where all the public events appear.On every event card you can see the date of the event, who made it.Click on "MORE" to see all the information of the event.</p>
         </div>
         <div class="modal-footer">
             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>

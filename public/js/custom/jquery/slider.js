@@ -456,13 +456,13 @@ $(document).ready(function(){
 
     let modal = {
         'basics': 'Provide us with basic information about your event. In the description field you can type anything you think is important.',
-        'type': 'Please choose one type. Or type a custom one at the bottom of the page',
+        'type': 'Please choose one type, or type a custom one at the bottom of the page',
         'dress-code': 'Please choose one or two as it is important for every guest to be aware of the dress code.',
-        'food': 'Please choose food that you can provide. If you want to add a dish custom dish, add it at the bottom of the page',
-        'drinks': 'Please choose drinks that you can provide. If you want to add a dish custom dish, add it at the bottom of the page',
-        'music': 'Here you can choose music that you can offer or that you prefer. Your guests will later select what they want to listen among what you choose where (you can choose more than one)',
-        'location': 'You can either enter a location\'s address or point it\s location on the map',
-        'extras': 'If you want to ask your guests something additional: this is the place. Type your question and the provide sample answers, your guests can choose among'};
+        'food': 'Please choose food that you can provide. If you want to add a custom dish, add it at the bottom of the page',
+        'drinks': 'Please choose drinks that you can provide. If you want to add a custom beverage, add it at the bottom of the page',
+        'music': 'Here you can choose music that you can be played or that you prefer. Your guests will later select what they want to listen among what you choose where (you can choose more than one)',
+        'location': 'You can either enter a location`s address or point a location on the map',
+        'extras': 'If you want to ask your guests something additional: this is the place. Type your question and the provide sample answers from which your guests will be able to  choose among'};
 
     // event listener for adding a new value to a parameter:
 

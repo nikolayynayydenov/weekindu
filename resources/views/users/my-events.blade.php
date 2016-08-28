@@ -2,8 +2,8 @@
 @section('content')
     <link rel="stylesheet" href="/css/custom/showevents.css">
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger modal-trigger-desktop orange hide-on-med-and-down" href="#modal1">What?</a>
-    <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile orange show-on-medium-and-down s12 hide-on-med-and-up container" href="#modal1">What?</a>
+    <a class="waves-effect waves-light btn modal-trigger modal-trigger-desktop orange hide-on-med-and-down" href="#modal1">Need Help?</a>
+    <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile orange show-on-medium-and-down s12 hide-on-med-and-up container" href="#modal1">Need Help?</a>
     <style>
         .manage-button, .manage-button:hover, .manage-button:hover, .manage-button:focus{
             background:#2196f3;
@@ -57,7 +57,7 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>What is this?</h4>
-            <p>This is the place where all your events appear.On every event card you can see the invitation, the statistics and delete the event</p>
+            <p>This is the place where all your events appear.On every event card you can see the invitation, the statistics or delete the event</p>
         </div>
         <div class="modal-footer">
             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
