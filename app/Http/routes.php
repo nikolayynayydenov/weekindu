@@ -22,10 +22,10 @@ Route::auth();
 Route::get('/about-us', function() {
     return view('about-us');
 });
-Route::get('/my-events', function() {
+Route::get('/user/my-events', function() {
 
-    $myEvents = auth()->user()->events;
-    return view('users.my-events')->with('events', $myEvents);
+    $events =  Auth::user()->events()->paginate(4);
+    return view('users.my-events')->with('events', $events);
 
 });
 Route::post('/invitation/get-guest-details', 'InvitationsController@getGuestDetails');

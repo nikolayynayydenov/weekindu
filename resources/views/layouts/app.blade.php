@@ -28,6 +28,9 @@
                             <li>
                                 <a href="{{ url('/event') }}" class="waves-effect tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="View All events">Events</a>
                             </li>
+                            <li>
+                                <a href="{{ url('/user/my-events') }}" class="waves-effect tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="View All events">My Events</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col l4 m6 right-align hide-on-small-only">

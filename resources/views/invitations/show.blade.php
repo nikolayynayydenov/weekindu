@@ -16,89 +16,89 @@
             }
 
             .input-field label {
-                color: #2196f3;
+                color: #FF9800;
             }
 
             /* label focus color */
             .input-field input[type=text]:focus + label {
-                color: #2196f3;
+                color: #FF9800;
             }
 
             /* label underline focus color */
             .input-field input[type=text]:focus {
-                border-bottom: 1px solid #2196f3;
-                box-shadow: 0 1px 0 0 #2196f3;
+                border-bottom: 1px solid #FF9800;
+                box-shadow: 0 1px 0 0 #FF9800;
             }
 
             /* valid color */
             .input-field input[type=text].valid {
-                border-bottom: 1px solid #2196f3;
-                box-shadow: 0 1px 0 0 #2196f3;
+                border-bottom: 1px solid #FF9800;
+                box-shadow: 0 1px 0 0 #FF9800;
             }
 
             /* invalid color */
             .input-field input[type=text].invalid {
-                border-bottom: 1px solid #2196f3;
-                box-shadow: 0 1px 0 0 #2196f3;
+                border-bottom: 1px solid #FF9800;
+                box-shadow: 0 1px 0 0 #FF9800;
             }
 
             /* icon prefix focus color */
             .input-field .prefix.active {
-                color: #2196f3;
+                color: #FF9800;
             }
 
             [type="checkbox"]:checked+label:before{
-                border-right: 2px solid #2196f3;
-                border-bottom: 2px solid #2196f3;
+                border-right: 2px solid #FF9800;
+                border-bottom: 2px solid #FF9800;
             }
 
             [type="checkbox"]:checked+label:after{
-                border-right: 2px solid #2196f3;
-                border-bottom: 2px solid #2196f3;
+                border-right: 2px solid #FF9800;
+                border-bottom: 2px solid #FF9800;
             }
 
             .input-field input[type=email]:focus:not([readonly]) {
-                border-bottom: 1px solid #2196f3;
-                box-shadow: 0 1px 0 0 #2196f3;
+                border-bottom: 1px solid #FF9800;
+                box-shadow: 0 1px 0 0 #FF9800;
             }
 
             .input-field input[type=email]:focus + label {
-                color: #2196f3;
+                color: #FF9800;
             }
 
             .input-field input[type=password]:focus + label {
-                color: #2196f3;
+                color: #FF9800;
             }
 
             input[type=email]:focus:not([readonly]) + label{
-                color: #2196f3;
+                color: #FF9800;
             }
 
             .input-field input[type=password]:focus:not([readonly]) {
-                border-bottom: 1px solid #2196f3;
-                box-shadow: 0 1px 0 0 #2196f3;
+                border-bottom: 1px solid #FF9800;
+                box-shadow: 0 1px 0 0 #FF9800;
             }
 
             .dropdown-content li>a, .dropdown-content li>span{
-                color: #2196f3;
+                color: #FF9800;
             }
 
             [type="checkbox"].filled-in:checked+label:after{
-                background-color: #2196f3;
+                background-color: #FF9800;
 
 
             }
 
             [type="checkbox"]:checked+label:before{
-                border-right: 2px solid #2196f3;
-                border-bottom: 2px solid #2196f3;
-                border-right: 2px solid #2196f3;
-                border-bottom: 2px solid #2196f3;
+                border-right: 2px solid #FF9800;
+                border-bottom: 2px solid #FF9800;
+                border-right: 2px solid #FF9800;
+                border-bottom: 2px solid #FF9800;
             }
 
             [type="checkbox"].filled-in:checked+label:after{
-                border: 2px solid #2196f3;
-                background-color: #2196f3;
+                border: 2px solid #FF9800;
+                background-color: #FF9800;
             }
 
             body {
@@ -126,15 +126,15 @@
             }
 
             textarea.materialize-textarea:focus:not([readonly])+label{
-                color:#2196f3;
+                color:#FF9800;
             }
 
             .switch label input[type=checkbox]:checked+.lever{
-                background-color:#2196f3 ;
+                background-color:#FF9800 ;
             }
 
             .switch label input[type=checkbox]:checked+.lever:after{
-                background-color:#2196f3 ;
+                background-color:#FF9800 ;
             }
         </style>
     </head>
@@ -143,13 +143,13 @@
             <div class="nav-wrapper">
                 <div class="row">
                     <div class="col s12 m12 l12 center">
-                        <a href="{{url('/')}}" class="waves-effect grey-text center"><b class="blue-text">Weekindu</b></a>
+                        <a href="{{url('/')}}" class="waves-effect grey-text center"><b class="white-text">Weekindu</b></a>
                     </div>
                 </div>
             </div>
         </nav>
         <div class="container center" id="main">
-            <h5 class="primary-text-color center">
+            <h5 class="orange-text center">
                 Hello, {{ $event->user->first_name.' '.$event->user->last_name }}
                 invites you to
                 <strong>{{ $event->title }}</strong>
@@ -183,11 +183,11 @@
                 @endif
             </p>
 
-            <button class="btn blue" id="start-button">I want to come</button>
+            <button class="btn light-green" id="start-button">I want to come</button>
         </div>
 
         <div class="container center" id="invitation-form">
-            <button class="btn blue" id="show-event-button">Show event</button>
+            <button class="btn light-green" id="show-event-button">Show event</button>
 
             <form action="{{ url('/invitation') }}" method="post">
                 {{ csrf_field() }}
@@ -229,7 +229,7 @@
                     @endif
                 </div>
                 <div class="input-field">
-                    <input type="submit" class="btn blue">
+                    <input type="submit" class="btn light-green">
                 </div>
             </form>
         </div>
@@ -298,7 +298,8 @@
                     console.log(myLatLng);
                 var map = new google.maps.Map(document.getElementById('google-map'), {
                     zoom: 15,
-                    center: myLatLng
+                    center: myLatLng,
+                    scrollwheel:false
                 });
 
                 var marker = new google.maps.Marker({

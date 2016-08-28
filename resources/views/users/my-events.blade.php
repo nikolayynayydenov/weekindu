@@ -2,14 +2,14 @@
 @section('content')
     <link rel="stylesheet" href="/css/custom/showevents.css">
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger modal-trigger-desktop orange hide-on-med-and-down" href="#modal1">Need Help?</a>
-    <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile orange show-on-medium-and-down s12 hide-on-med-and-up container" href="#modal1">Need Help?</a>
+    <a class="waves-effect waves-light btn modal-trigger modal-trigger-desktop white light-green-text hide-on-med-and-down" href="#modal1">Need Help?</a>
+    <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile white light-green-text show-on-medium-and-down s12 hide-on-med-and-up container" href="#modal1">Need Help?</a>
     <style>
         .manage-button, .manage-button:hover, .manage-button:hover, .manage-button:focus{
-            background:#2196f3;
+            background:#8BC34A;
         }
         .invitation-button, .invitation-button:hover, .invitation-button:hover, .invitation-button:focus{
-            background:grey;
+            background:#FF9800;
         }
         .deletebut {
             cursor: pointer;
@@ -18,10 +18,10 @@
         }
 
         .manage-button:after{
-            background:#2196f3;
+            background:#8BC34A;
         }
         .manage-button:hover{
-            background:#2196f3;
+            background:#8BC34A;
 
         }
 
@@ -38,7 +38,7 @@
             background: none;
         }
         .pagination li.active{
-            background-color: #2196f3;
+            background-color: #FF9800;
             color: white;
         }
         body {
@@ -65,33 +65,33 @@
     </div>
     <div class="container">
         <div class="row">
-            <div id="all" class="col offset-s2 s8 container-for-events">
+            <div id="all" class="col offset-s2 s8">
                 @if(count($events) > 0)
                     @foreach($events as $event)
                         <div class="col sl2 m12">
                             <div class="card hoverable center-on-small-only">
-                                <a href="event/{{ $event->id }}">
+                                <a href="/event/{{ $event->id }}">
                                     <div class="card-image">
                                         @if($event->type === 'Wedding')
-                                            <img class="responsive-img" src="images/create-event/type/wedding.jpg">
+                                            <img class="responsive-img" src="/images/create-event/type/wedding.jpg">
                                         @endif
                                         @if($event->type === 'Conference')
-                                            <img src="images/create-event/type/conference.jpg">
+                                            <img src="/images/create-event/type/conference.jpg">
                                         @endif
                                         @if($event->type === 'Bachelor Party')
-                                            <img src="images/create-event/type/bachelor-party.jpg">
+                                            <img src="/images/create-event/type/bachelor-party.jpg">
                                         @endif
                                         @if($event->type === 'Birthday Party')
-                                            <img src="images/create-event/type/birthday-party.jpg">
+                                            <img src="/images/create-event/type/birthday-party.jpg">
                                         @endif
                                         @if($event->type === 'Buisiness Meeting')
-                                            <img src="images/create-event/type/buisiness-meeting.jpg">
+                                            <img src="/images/create-event/type/buisiness-meeting.jpg">
                                         @endif
                                         @if($event->type === 'Camp')
-                                            <img src="images/create-event/type/camp.jpg">
+                                            <img src="/images/create-event/type/camp.jpg">
                                         @endif
                                         @if($event->type === 'Other')
-                                            <img src="images/create-event/type/other.jpg">
+                                            <img src="/images/create-event/type/other.jpg">
                                         @endif
                                     </div>
                                 </a>
@@ -111,15 +111,15 @@
                                             <a href="{{ url('/invitation/'.$event->invitation_code) }}"
                                                class="btn waves-effect invitation-button hide-on-small-only">invitation</a>
                                         </div>
-                                        <div class="col s6 m6 show-on-small hide-on-med-and-up">
+                                        <div class="col s9 m9 show-on-small hide-on-med-and-up">
                                             <a href="{{ url('/statistics/'.$event->id) }}"
                                                class="btn  waves-effect manage-button white-text show-on-small">Manage</a>
                                         </div>
-                                        <div class="col s6 m6 show-on-small hide-on-med-and-up">
+                                        <div class="col s9 m9 show-on-small hide-on-med-and-up">
                                             <a href="{{ url('/invitation/'.$event->invitation_code) }}"
                                                class="btn waves-effect invitation-button show-on-small">Invitation</a>
                                         </div>
-                                        <div class="col right hide-on-small-only">
+                                        <div class="col  right hide-on-small-only">
                                             <form action="{{url('/event/'.$event->id )}}" method="post">
                                                 {{ method_field('delete') }}
                                                 {{ csrf_field() }}
