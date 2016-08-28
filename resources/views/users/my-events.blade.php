@@ -147,6 +147,7 @@
         </div>
         <div class="center-align">
             <i>{{ $events->render() }}</i>
+            <div class="divider"></div>
         </div>
     </div>
 @endsection

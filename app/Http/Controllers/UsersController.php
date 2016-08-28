@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Helpers\Images;
-use Illuminate\Support\Facades\Input;
-use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,38 +12,7 @@ class UsersController extends Controller
 {
     public function __construct()
     {
-
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        $this->middleware('auth', ['only' => ['edit', 'update', 'showMyEvents']]);
     }
 
     /**
@@ -145,49 +113,8 @@ class UsersController extends Controller
         return view('users.edit')->with('user', $user);
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    /*
-     * Get the JSON for the autocompletion in the
-     * form for creating a new event
-     *
-     */
-
-    public function getJson() {
-        $term = strtolower(Input::get('term'));
-        // the value has to be "term" otherwise it wont work
-
-        // take some users
-        $users = User::select('id', 'first_name', 'last_name', 'name', 'avatar')
-            ->where('first_name', 'like', '%'.$term.'%')
-            ->orderBy('first_name', 'asc')
-            ->take(5)
-            ->get();
-
-        $return_array = [];
-
-        foreach($users as $user) {
-            // generate the array that is going to be transformed into json
-
-            $return_array[] = [
-                'id' => Crypt::encrypt($user->id),
-                'fullName' => $user->first_name.' '.$user->last_name,
-                'name' => isset($user->name) ? $user->name : false,
-                'avatar' => $user->avatar,
-                'value' => $user->first_name.' '.$user->last_name.' '.(isset($user->name) ? ' ('.$user->name.')' : '')
-            ];
-        }
-
-        return response()->json($return_array);
+    public function showMyEvents() {
+        $events =  Auth::user()->events()->paginate(4);
+        return view('users.my-events')->with('events', $events);
     }
 }

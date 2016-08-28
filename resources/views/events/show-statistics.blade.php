@@ -11,27 +11,33 @@
         background-size: cover;
     }
 </style>
-
-{{--<form action="{{ url('/invitation/get-guest-details') }}"--}}
-      {{--method="post">--}}
-    {{--{{ csrf_field() }}--}}
-    {{--<input type="number" name="guestId">--}}
-    {{--<input type="text" name="eventInvitationCode">--}}
-    {{--<input type="submit">--}}
-{{--</form>--}}
-
 <div class="container custom-container">
     <h4 class="primary-text-color">{{ session('message') }}</h4>
+    <span class="well center">Send this link to the people you'd like to invite:
+        <a href="{{ url('/invitation/'.$event->invitation_code) }}"
+           id="inv-code">
+            {{ url('/invitation/'.$event->invitation_code) }}
+        </a>
+        <i class="material-icons tooltipped pointer pointer"
+           id="copy-to-clipboard-btn"
+           data-position="top"
+           data-delay="50"
+           data-tooltip="Copy to clipboard">input</i>
+    </span>
+    <hr>
     <div>
         <div class="row">
             <div class="col s12 m4 l2">
-                <a class="btn waves-effect waves-light modal-trigger orange" href="#modal1">What?</a>
+                <a class="btn waves-effect waves-light modal-trigger orange"
+                   href="#modal1">What?</a>
             </div>
             <div class="col s12 m4 l2 offset-l6">
-                <a class="btn invitation-button" href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
+                <a class="btn invitation-button"
+                   href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
             </div>
             <div class="col s12 m4 l2">
-                <form action="{{url('/event/'.$event->id )}}" method="post">
+                <form action="{{url('/event/'.$event->id )}}"
+                      method="post">
                     {{ method_field('delete') }}
                     {{ csrf_field() }}
 
@@ -50,21 +56,23 @@
             <p style="font-weight: 700">On this page you see all the information which your guests provided.Navigate through the tabs to see different information.You can delete a user along with all the info he/she provided </p>
         </div>
         <div class="modal-footer">
-            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+            <a class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>
     </div>
     @php
         $counter = 5
     @endphp
-    <div class="">
-        <br>
+    <div>
         <div class="row center">
             <h4>{{ $event->title }}</h4>
         </div>
+
         <div class="row z-depth-2 white">
             <div class="col s12">
                 <ul class="tabs">
-                    <li class="tab col s3"><a id="active" href="#test1">Guests</a></li>
+                    <li class="tab col s3">
+                        <a id="active" href="#test1">Guests</a>
+                    </li>
                     @foreach($stats as $key => $values)
                         <li class="tab col s3">
                             <a href="#test{{ $counter }}"
@@ -84,21 +92,23 @@
             <div id="test1" class="col s12">
                 <table class="centered">
                     <thead>
-                    <tr>
-                        <th data-field="delete"></th>
-                        <th data-field="id">Name</th>
-                        <th data-field="name">Attending</th>
-                        <th data-field="time">Sent</th>
-                    </tr>
+                        <tr>
+                            <th data-field="delete"></th>
+                            <th data-field="id">Name</th>
+                            <th data-field="name">Attending</th>
+                            <th data-field="time">Sent</th>
+                        </tr>
                     </thead>
                     <tbody>
                     @foreach($guests as $guest)
                         <tr>
                             <td>
-                                <form action="{{url('/invitation/'.$guest->id )}}" method="post">
+                                <form action="{{url('/invitation/'.$guest->id )}}"
+                                      method="post">
+
                                     {{ method_field('delete') }}
                                     {{ csrf_field() }}
-                                    <button type="submit" class="deletebut" value=>
+                                    <button type="submit" class="deletebut">
                                         <i class="material-icons">delete</i>
                                     </button>
                                 </form>
@@ -167,6 +177,15 @@
 <script>
     $(document).ready(function(){
         $('ul.tabs').tabs('select_tab', 'tab_id');
+
+        $('#copy-to-clipboard-btn').click(function () {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($('#inv-code').text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+            Materialize.toast('Coppied to clippboard', 3000, 'rounded')
+        });
     });
 </script>
 @endsection

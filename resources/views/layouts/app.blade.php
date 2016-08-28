@@ -28,19 +28,20 @@
                             <li>
                                 <a href="{{ url('/event') }}" class="waves-effect tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="View All events">Events</a>
                             </li>
-                            <li>
-                                <a href="{{ url('/user/my-events') }}" class="waves-effect tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="View All events">My Events</a>
-                            </li>
+                            @if(!Auth::guest())
+                                <li>
+                                    <a href="{{ url('/user/my-events') }}"
+                                       class="waves-effect tooltipped white-text"
+                                       data-position="bottom"
+                                       data-delay="50"
+                                       data-tooltip="View All events">My Events</a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                     <div class="col l4 m6 right-align hide-on-small-only">
                         <ul class="right">
                             @if (Auth::guest())
-                                {{--<li class="waves-effect hide-on-med-and-down">
-                                    <div class="container-fluid valign-wrapper">
-                                        <a class="tooltipped blue-text" data-tooltip="Create New Event" href="{{url('/event/create')}}">Create Event</a>
-                                    </div>
-                                </li>--}}
                                 <li><a href="{{ url('/login') }}" class="white-text">Login</a></li>
                                 <li><a href="{{ url('/register') }}" class="white-text">Register</a></li>
                             @else
