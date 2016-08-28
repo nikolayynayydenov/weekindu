@@ -104,7 +104,7 @@
                                     Food:
                                     {{--<strong>{{ implode(', ', $extras['food']) }}</strong>--}}
                                     @foreach($extras['food'] as $food)
-                                        <div class="chip blue white-text">
+                                        <div class="chip light-green white-text">
                                             {{ $food }}
                                         </div>
                                     @endforeach
@@ -116,7 +116,7 @@
                                     Drinks:
                                     {{--<strong>{{ implode(', ', $extras['drinks']) }}</strong>--}}
                                     @foreach($extras['drinks'] as $drink)
-                                        <div class="chip blue white-text">
+                                        <div class="chip light-green white-text">
                                             {{ $drink }}
                                         </div>
                                     @endforeach
@@ -128,7 +128,7 @@
                                     Music:
                                     {{--<strong>{{ implode(', ', $extras['music']) }}</strong>--}}
                                     @foreach($extras['music'] as $music)
-                                        <div class="chip blue white-text">
+                                        <div class="chip light-green white-text">
                                             {{ $music }}
                                         </div>
                                     @endforeach

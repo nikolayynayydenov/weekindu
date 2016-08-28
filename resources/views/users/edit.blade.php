@@ -22,40 +22,40 @@
 
 
         .input-field .prefix.active{
-            color: #a3a3a3;
+            color: #FF9800;
         }
         /* label color */
         .input-field label {
-            color: #a3a3a3;
+            color: #FF9800;
         }
         /* label focus color */
         .input-field input[type=text]:focus + label {
-            color: #2196f3;
+            color: #8BC34A;
         }
         /* label underline focus color */
         .input-field input[type=text]:focus {
-            border-bottom: 1px solid #a3a3a3;
-            box-shadow: 0 1px 0 0 #a3a3a3;
+            border-bottom: 1px solid #FF9800;
+            box-shadow: 0 1px 0 0 #FF9800;
         }
         /* valid color */
         .input-field input[type=text].valid {
-            border-bottom: 1px solid #a3a3a3;
-            box-shadow: 0 1px 0 0 #a3a3a3;
+            border-bottom: 1px solid #FF9800;
+            box-shadow: 0 1px 0 0 #a3a3FF9800a3;
         }
         /* invalid color */
         .input-field input[type=text].invalid {
-            border-bottom: 1px solid #a3a3a3;
-            box-shadow: 0 1px 0 0 #a3a3a3;
+            border-bottom: 1px solid #FF9800;
+            box-shadow: 0 1px 0 0 #FF9800;
         }
         /* icon prefix focus color */
         .input-field .prefix.active {
-            color: #a3a3a3;
+            color: #FF9800;
         }
         .btn:hover, .btn-large:hover{
-            background-color:#a3a3a3;
+            background-color:#8BC34A;
         }
         .btn, .btn-large{
-            background-color:#a3a3a3;
+            background-color:#8BC34A;
         }
         .divider{
             height: 3px;
@@ -109,9 +109,9 @@
 
 
         <div class="row">
-            <span class="input-field col s12 m4 l4 change-email">
+            <span class="input-field col s12 m4 l4 change-email light-green-text">
 
-                <input type="password" name="password_email" pattern=".{4,}" placeholder="Enter your password"  >
+                <input class="light-green-text" type="password" name="password_email" pattern=".{4,}" placeholder="Enter your password"  >
                 <label for="password"></label>
 
 
@@ -123,7 +123,7 @@
                 <label for="email"></label>
             </span>
 
-            <span class="change-password input-field col l4 s12 m4">
+            <span class="change-password input-field col l4 s12 m4 light-green-text">
 
                 <input type="password" name="old_password" pattern=".{4,}" placeholder="Enter your old password"  >
                 <input type="password" name="password" pattern=".{4,}" placeholder="Enter your new password"  >
@@ -182,7 +182,7 @@
         <br>
         <br>
         <div class="row center">
-                <button class="btn-large waves-effect waves-light blue" type="submit">
+                <button class="btn-large waves-effect waves-light orange" type="submit">
                     Update
                     <i class="material-icons right">send</i>
                 </button>

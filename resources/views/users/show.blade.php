@@ -57,7 +57,7 @@
                                     <i class="material-icons circle red tooltipped"
                                        data-position="bottom" data-delay="50" data-tooltip="Private">lock</i>
                                 @endif
-                                <span class="title event-title blue-text">{{$event->title}}</span>
+                                <span class="title event-title orange-text">{{$event->title}}</span>
 
                                 <p class="white-text">{{$event->type}}<br>
 
@@ -73,7 +73,7 @@
             <div class="col s12 m8 l9">
                 <h5 class="center white-text">Events</h5>
                 <ul class="collection">
-                    <li class="collection-item center blue-text" style="font-size: larger">The user has not made any events yet</li>
+                    <li class="collection-item center light-green-text" style="font-size: larger">The user has not made any events yet</li>
                 </ul>
             </div>
         @endif

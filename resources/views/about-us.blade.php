@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <div class="row center">
-<h1 class="blue-text center-align">Meet the team</h1>
+<h1 class="orange-text center-align">Meet the team</h1>
         <div class="divider"></div>
     </div>
         <div class="row center">
