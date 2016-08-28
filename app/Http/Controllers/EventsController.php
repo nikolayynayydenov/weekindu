@@ -265,7 +265,7 @@ class EventsController extends Controller
         $event = Event::find($id);
         $event->delete();
 
-        return back();
+        return redirect('/user/my-events');
     }
 
     public function showStatistics($id) {

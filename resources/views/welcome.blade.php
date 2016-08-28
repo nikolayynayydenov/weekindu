@@ -83,13 +83,13 @@
             <h4 class="center light-green-text">Make an event!</h4>
             <div class="container">
                 <div class="row">
-                    <div class="col s12 l6">
+                    <div class="col s12 l4 center">
                         <img border="5" src="/images/tutorial/slider.png">
                     </div>
-                    <div class="col s12 l6">
+                    <div class="col s12 l8">
                         <div class="flow-text black-text">
                             Create an event fast and easy.
-                            Choose from variety of parameters like food, drinks and music.
+                            Choose from a variety of parameters like food, drinks and music.
                             You can even make your own parameters
                         </div>
                     </div>
@@ -102,8 +102,8 @@
                 <div class="row">
                     <div class="col s12 l6">
                         <div class="flow-text white-text">
-                            Sent invitation which is going to contain the information you filled
-                            when you created the event.The users will  be able to tell you
+                            Send an invitation which is going to contain the information you filled
+                            when you created the event. The users will  be able to tell you
                             what are they going to eat, drink etc.
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                     <div class="col s12 l6">
                         <div class="flow-text white-text">
                             After your guests fill their invitations,
-                            you will be able to see the tastes of each person
+                            you will be able to see what each person wants
                         </div>
                     </div>
                     <div class="col s12 l6 center">
@@ -148,29 +148,23 @@
             <div class="container">
                  <div class="row">
                      <div class="col l6 s12">
-                         <h5 class="white-text">Company Bio</h5>
+                         <h5 class="white-text">Summary</h5>
                          <p class="white-text">
-                             We are a team of college students working on this project
-                             like it's our full time job. Any amount would help support
-                             and continue development on this project and is greatly appreciated.
+                             We are a team of softuni students
                          </p>
                      </div>
                      <div class="col l3 s12">
-                          <h5 class="white-text">Settings</h5>
+                          <h5 class="white-text">Menu</h5>
                           <ul>
-                              <li><a class="grey-text" href="#!">Link 1</a></li>
-                              <li><a class="grey-text" href="#!">Link 2</a></li>
-                              <li><a class="grey-text" href="#!">Link 3</a></li>
-                              <li><a class="grey-text" href="#!">Link 4</a></li>
+                              <li><a class="grey-text" href="{{ url('/event') }}">View Events</a></li>
+                              <li><a class="grey-text" href="{{ url('/about-us') }}">About Us</a></li>
                           </ul>
                      </div>
                      <div class="col l3 s12">
-                          <h5 class="white-text">Connect</h5>
+                          <h5 class="white-text">User</h5>
                           <ul>
-                              <li><a class="grey-text"  href="#!">Link 1</a></li>
-                              <li><a class="grey-text"  href="#!">Link 2</a></li>
-                              <li><a class="grey-text"  href="#!">Link 3</a></li>
-                              <li><a class="grey-text"  href="#!">Link 4</a></li>
+                              <li><a class="grey-text" href="{{ url('/login') }}">Login</a></li>
+                              <li><a class="grey-text" href="{{ url('/register') }}">Register</a></li>
                           </ul>
                      </div>
                  </div>

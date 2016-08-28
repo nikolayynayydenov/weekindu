@@ -8,3 +8,35 @@
 .primary-text-color    { color: #212121; }
 .secondary-text-color  { color: #757575; }
 .divider-color         { border-color: #BDBDBD; }
+
+/* Contextual colors: */
+
+.default-color {
+    background: #090909;
+    border-color: #040404;
+}
+
+.primary-color {
+    background: #1967be;
+    border-color: #1862b5;
+}
+
+.success-color {
+    background: #2f8912;
+    border-color: #2c8011;
+}
+
+.info-color {
+    background: #7e3f9d;
+    border-color: #783c96;
+}
+
+.warning-color {
+    background: #e45c00;
+    border-color: #da5800;
+}
+
+.danger-color {
+    background: #ff0039;
+    border-color: #ff0039;
+}

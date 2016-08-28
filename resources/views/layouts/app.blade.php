@@ -111,11 +111,14 @@
                             @if (Auth::guest())
                                 <li><a class="grey-text" href="{{url('/login')}}">Login</a></li>
                                 <li><a class="grey-text" href="{{url('/register')}}">Register</a></li>
-                                <li><a class="grey-text" href="{{url('/about-us')}}">About us</a></li>
                             @else
                                 <li><a class="grey-text" href="{{url('/event/create')}}">Create Event</a></li>
-                                <li><a class="grey-text" href="{{url('/about-us')}}">About us</a></li>
+                                <li><a class="grey-text" href="{{url('/user/create')}}">Create Event</a></li>
+                                <li><a class="grey-text" href="{{ url('/user/'.auth()->user()->id)}}">Profile</a></li>
+                                <li><a class="grey-text" href="{{ url('/user/'.auth()->user()->id.'/edit') }}">Edit Profile</a></li>
                             @endif
+                            <li><a class="grey-text" href="{{url('/event')}}">View All Events</a></li>
+                            <li><a class="grey-text" href="{{url('/about-us')}}">About us</a></li>
                         </ul>
                     </div>
                 </div>

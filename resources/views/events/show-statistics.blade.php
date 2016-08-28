@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col s12 m4 l2">
                 <a class="btn waves-effect waves-light modal-trigger orange"
-                   href="#modal1">What?</a>
+                   href="#modal1">Help?</a>
             </div>
             <div class="col s12 m4 l2 offset-l6">
                 <a class="btn invitation-button"
@@ -52,8 +52,8 @@
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
-            <h3>Why do I need to enter the title, date and the description?</h3>
-            <p style="font-weight: 700">On this page you see all the information which your guests provided.Navigate through the tabs to see different information.You can delete a user along with all the info he/she provided </p>
+            <h3>What is displayed on this page?</h3>
+            <p style="font-weight: 700">On this page you see all the information which your guests provided. Navigate through the tabs to see different information. You can delete a user along with all the info he/she provided </p>
         </div>
         <div class="modal-footer">
             <a class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
