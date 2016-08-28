@@ -52,15 +52,15 @@
 
                                     <div class="row">
                                         <div class="col left s12 show-on-small hide-on-med-and-up ">
-                                                <img src="/images/user-avatars/{{ $event->user->avatar }}"
-                                                     alt="/images/user-avatars/default.png" class="circle" width="80">
+                                            <img src="/images/user-avatars/{{ $event->user->avatar }}"
+                                                 alt="/images/user-avatars/default.png" class="circle" width="80">
                                         </div>
                                         <div class="col left s12 show-on-small hide-on-med-and-up">
                                             <strong class="blue-text" style="font-size: larger">{{$event->type}}</strong>
-                                                <p class="grey-text">{{ $event->user->first_name.' '.$event->user->last_name}}<br>
-                                                    {{$event->date}}
-                                                </p>
-                                            </div>
+                                            <p class="grey-text">{{ $event->user->first_name.' '.$event->user->last_name}}<br>
+                                                {{$event->date}}
+                                            </p>
+                                        </div>
                                         <div class="col s12 right show-on-small hide-on-med-and-up">
                                             <a href="{{ url('/event/'.$event->id) }}" class="btn blue">More</a>
                                         </div>

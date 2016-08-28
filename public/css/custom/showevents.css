@@ -17,6 +17,10 @@
     background-color: #2196f3;
     color: white;
 }
+
+.pagination li a {
+    color: black;
+}
 body {
     background: url("/images/girlscar.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -24,7 +28,16 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-.container-for-events{
+main > div > .container{
     background-color: rgba(255, 255,255,0.60);
     border-radius: 7px;
+
+
+}
+.events .card:first-of-type{
+    margin-top:0;
+}
+
+.container > .center {
+    margin-bottom: 0;
 }

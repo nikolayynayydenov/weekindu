@@ -22,7 +22,12 @@ Route::auth();
 Route::get('/about-us', function() {
     return view('about-us');
 });
+Route::get('/my-events', function() {
 
+    $myEvents = auth()->user()->events;
+    return view('users.my-events')->with('events', $myEvents);
+
+});
 Route::post('/invitation/get-guest-details', 'InvitationsController@getGuestDetails');
 Route::get('/home', 'HomeController@index');
 Route::get('/statistics/{id}', 'EventsController@showStatistics');
