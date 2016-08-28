@@ -169,7 +169,8 @@
 
                             <div class="slider-item" id="extras">
                                 <h5>You want to offer something else? Type some questions for your guests as well as sample answers</h5>
-                                <input class="extra-field"
+                                <input  style="border-bottom: 1px solid #2196f3;"
+                                        class="extra-field"
                                        type="text"
                                        placeholder="e.g. Can you bring your own camera?"
                                        id="extra-params-field">

@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 
     // functions that generate the html for the slider
@@ -67,7 +68,7 @@ $(document).ready(function(){
             let newValueFieldHtml = $('<div class="add-new-values blue-text">' +
                 '<div class="center flow-text">You can also enter yourself:</div>' +
                 '<div class="new-values"></div>' +
-                '<input placeholder="New value" type="text" ' + multipleAttr + ' class="validate new-value-field blue-text">' +
+                '<input style="border-bottom: 1px solid #2196f3;" placeholder="New value" type="text" ' + multipleAttr + ' class="validate new-value-field blue-text">' +
                 '</div>');
 
             $('#' + recieverElementId).children('.rows')
@@ -384,10 +385,11 @@ $(document).ready(function(){
                 let paramValuesSpan = $('<span>')
                     .attr('class', 'param-values');
 
-                let paramNewValueField = $('<input>')
+                let paramNewValueField = $('<input  style="border-bottom: 1px solid #2196f3">')
                     .attr('type', 'text')
                     .attr('placeholder', 'e.g. Yes')
                     .attr('class', 'param-new-value-field');
+
 
                 $('#extra-params-container').append($('<li>')
                     .attr('class', 'collection-item')

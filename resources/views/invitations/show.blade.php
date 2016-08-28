@@ -279,7 +279,7 @@
                 <div class="col">
                     <h5 class="blue-text">Reccommended dress code:</h5>
                     <div class="row">
-                        <div class="col s12 m5">
+                        <div class="col s12 m6">
                             <div class="card hoverable center-on-small-only">
                                 <div class="card-image">
                                     @if($event->dress_code === 'Street Wear')
@@ -306,7 +306,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col center">{host} asks you to fill some polls about your tastes.Please click the button below to start.<br>
+                        <div class="col s12 m6 center">{host} asks you to fill some polls about your tastes.Please click the button below to start.<br>
                             <button class="btn blue" id="start-button">Start</button>
                         </div>
                     </div>
@@ -369,7 +369,9 @@
                       </span>
                 </div>
             <label for="decline">
-                <textarea id="decline"
+                <textarea style="border-bottom: 1px solid #2196f3"
+                      placeholder="E.g I have a meeting"
+                      id="decline"
                       class="materialize-textarea"
                       name="why-decline"
                       form="invitation-form"
