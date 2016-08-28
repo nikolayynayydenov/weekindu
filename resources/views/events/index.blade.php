@@ -2,8 +2,8 @@
 @section('content')
     <link rel="stylesheet" href="/css/custom/showevents.css">
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger modal-trigger-desktop orange hide-on-med-and-down" href="#modal1">What?</a>
-    <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile orange show-on-medium-and-down s12 hide-on-med-and-up container" href="#modal1">What?</a>
+    <a class="waves-effect waves-light btn modal-trigger modal-trigger-desktop white light-green-text hide-on-med-and-down" href="#modal1">Need help?</a>
+    <a class="waves-effect waves-light btn modal-trigger modal-trigger-mobile white light-green-text show-on-medium-and-down s12 hide-on-med-and-up container" href="#modal1">Need Help??</a>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -45,7 +45,7 @@
                                     <div class="row">
                                         <p class="center">
                                             <a href="{{ url('/event/'.$event->id) }}">
-                                                <strong class="center blue-text">{{ $event->title }}</strong>
+                                                <strong class="center light-green-text">{{ $event->title }}</strong>
                                                 <div class="divider"></div>
                                             </a>
                                     </div>
@@ -56,13 +56,13 @@
                                                  alt="/images/user-avatars/default.png" class="circle" width="80">
                                         </div>
                                         <div class="col left s12 show-on-small hide-on-med-and-up">
-                                            <strong class="blue-text" style="font-size: larger">{{$event->type}}</strong>
+                                            <strong class="type-color" style="font-size: larger">{{$event->type}}</strong>
                                             <p class="grey-text">{{ $event->user->first_name.' '.$event->user->last_name}}<br>
                                                 {{$event->date}}
                                             </p>
                                         </div>
                                         <div class="col s12 right show-on-small hide-on-med-and-up">
-                                            <a href="{{ url('/event/'.$event->id) }}" class="btn blue">More</a>
+                                            <a href="{{ url('/event/'.$event->id) }}" class="btn orange">More</a>
                                         </div>
 
                                     </div>
@@ -72,13 +72,13 @@
                                                  alt="no avatar" class="circle" width="80">
                                         </div>
                                         <div class="col left show-on-medium-and-up hide-on-small-only">
-                                            <strong class="blue-text" style="font-size: larger">{{$event->type}}</strong>
+                                            <strong class="light-green-text" style="font-size: larger">{{$event->type}}</strong>
                                             <p class="grey-text">{{ $event->user->first_name.' '.$event->user->last_name}}<br>
                                                 {{$event->date}}
                                             </p>
                                         </div>
                                         <div class="col right show-on-medium-and-up hide-on-small-only ">
-                                            <a href="{{ url('/event/'.$event->id) }}" class="btn blue">More</a>
+                                            <a href="{{ url('/event/'.$event->id) }}" class="btn orange">More</a>
                                         </div>
                                     </div>
 

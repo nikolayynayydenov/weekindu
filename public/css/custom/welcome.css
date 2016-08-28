@@ -32,8 +32,13 @@ footer.page-footer{
     background-color: #444;
 }
 li{
-    color: #a3a3a3;
+    color: white;
 }
 .section-2{
-    background: #e0e0e0;
+    background:#689F38;
+
+}
+.section-1{
+    background: #ececec;
+
 }

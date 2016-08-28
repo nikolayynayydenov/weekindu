@@ -48,7 +48,7 @@ $(document).ready(function(){
                 '<div class="card-content center">' +
                 '<p>' +
                 '<div class="inner-title">' +
-                '<strong class="blue-text">' + value.cardTitle + '</strong>' +
+                '<strong class="light-green-text">' + value.cardTitle + '</strong>' +
                 '</div>' +
                 '<div class="divider"></div>' +
                 '<div class="inner-content">' + value.cardContent + '</div>' +
@@ -65,10 +65,10 @@ $(document).ready(function(){
                 var multipleAttr = '';
             }
 
-            let newValueFieldHtml = $('<div class="add-new-values blue-text">' +
+            let newValueFieldHtml = $('<div class="add-new-values light-green-text">' +
                 '<div class="center flow-text">You can also enter yourself:</div>' +
                 '<div class="new-values"></div>' +
-                '<input style="border-bottom: 1px solid #2196f3;" placeholder="New value" type="text" ' + multipleAttr + ' class="validate new-value-field blue-text">' +
+                '<input style="border-bottom: 1px solid #8BC34A;" placeholder="New value" type="text" ' + multipleAttr + ' class="validate new-value-field light-green-text">' +
                 '</div>');
 
             $('#' + recieverElementId).children('.rows')
@@ -385,7 +385,7 @@ $(document).ready(function(){
                 let paramValuesSpan = $('<span>')
                     .attr('class', 'param-values');
 
-                let paramNewValueField = $('<input  style="border-bottom: 1px solid #2196f3">')
+                let paramNewValueField = $('<input  style="border-bottom: 1px solid #8BC34A">')
                     .attr('type', 'text')
                     .attr('placeholder', 'e.g. Yes')
                     .attr('class', 'param-new-value-field');

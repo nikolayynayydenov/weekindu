@@ -17,30 +17,30 @@
     .create-btn, .create-btn:focus, .create-btn:hover{
         width: 100%;
         height: 100px;
-        background: #1976D2;
+        background: #689F38;
 
     }
     .events-btn, .events-btn:focus, .events-btn:hover{
         width: 100%;
         height: 100px;
-        background: #2196F3;
+        background: #8BC34A;
     }
     .myprofile-btn, .myprofile-btn:focus, .myprofile-btn:hover{
         width: 100%;
         height: 100px;
-        background: #BBDEFB;
-        color:#1976D2;
+        background:#DCEDC8;
+        color:#689F38;
     }
     .editprofile-btn, .editprofile-btn:focus, .editprofile-btn:hover{
         width: 100%;
         height: 100px;
-        background: #ffffff;
-        color: #2196F3;
+        background: #8BC34A;
+        color: white;
     }
     .meettheteam-btn, .meettheteam-btn:focus, .meettheteam-btn:hover{
         width: 100%;
         height: 100px;
-        background: #607D8B;
+        background: #689F38;
 
     }
 

@@ -4,55 +4,55 @@
     <style>
         /* label color */
         .input-field label {
-            color: #2196f3;
+            color: #FF9800;
         }
         /* label focus color */
         .input-field input[type=text]:focus + label {
-            color: #2196f3;
+            color: #FF9800;
         }
         /* label underline focus color */
         .input-field input[type=text]:focus {
-            border-bottom: 1px solid #2196f3;
-            box-shadow: 0 1px 0 0 #2196f3;
+            border-bottom: 1px solid #FF9800;
+            box-shadow: 0 1px 0 0 #FF9800;
         }
         /* valid color */
         .input-field input[type=text].valid {
-            border-bottom: 1px solid #2196f3;
-            box-shadow: 0 1px 0 0 #2196f3;
+            border-bottom: 1px solid #FF9800;
+            box-shadow: 0 1px 0 0 #FF9800;
         }
         /* invalid color */
         .input-field input[type=text].invalid {
-            border-bottom: 1px solid #2196f3;
-            box-shadow: 0 1px 0 0 #2196f3;
+            border-bottom: 1px solid #FF9800;
+            box-shadow: 0 1px 0 0 #FF9800;
         }
         /* icon prefix focus color */
         .input-field .prefix.active {
-            color: #2196f3;
+            color: #FF9800;
         }
         [type="checkbox"]:checked+label:before{
-            border-right: 2px solid #2196f3;
-            border-bottom: 2px solid #2196f3;
+            border-right: 2px solid #FF9800;
+            border-bottom: 2px solid #FF9800;
         }
         [type="checkbox"]:checked+label:after{
-            border-right: 2px solid #2196f3;
-            border-bottom: 2px solid #2196f3;
+            border-right: 2px solid #FF9800;
+            border-bottom: 2px solid #FF9800;
         }
         .input-field input[type=email]:focus:not([readonly]) {
-            border-bottom: 1px solid #2196f3;
-            box-shadow: 0 1px 0 0 #2196f3;
+            border-bottom: 1px solid #FF9800;
+            box-shadow: 0 1px 0 0 #FF9800;
         }
         .input-field input[type=email]:focus + label {
-            color: #2196f3;
+            color: #FF9800;
         }
         .input-field input[type=password]:focus + label {
-            color: #2196f3;
+            color: #FF9800;
         }
         input[type=email]:focus:not([readonly]) + label{
-            color: #2196f3;
+            color: #FF9800;
         }
         .input-field input[type=password]:focus:not([readonly]) {
-            border-bottom: 1px solid #2196f3;
-            box-shadow: 0 1px 0 0 #2196f3;
+            border-bottom: 1px solid #FF9800;
+            box-shadow: 0 1px 0 0 #FF9800;
         }
         body {
             background: url("/images/girlscar.jpg") no-repeat center center fixed;
@@ -87,8 +87,8 @@
         @endforeach
     @endif
     
-    <h4>Register</h4>
-    <p>Join the most advanced event manager for free!</p>
+    <h4 class="light-green-text">Register</h4>
+    <p class="black-text">Join the most advanced event manager for free!</p>
     
     <form action="{{url('/register')}}" method="post" enctype="multipart/form-data">
         <div class="row">
@@ -138,7 +138,7 @@
         </div>
         
          <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger blue" href="#modal1">Avatar</a>
+        <a class="waves-effect waves-light btn modal-trigger light-green" href="#modal1">Avatar</a>
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
@@ -151,7 +151,7 @@
                 </p>
             </div>
             <div class="modal-footer">
-                  <a href="#" class=" modal-action modal-close waves-effect waves-blue btn-flat">Okay</a>
+                  <a href="#" class=" modal-action modal-close waves-effect waves-light-green btn-flat">Okay</a>
             </div>
         </div>
     
@@ -162,7 +162,7 @@
 
         <br><br>
     
-        <button class="btn-large waves-effect waves-light blue" type="submit" name="action">
+        <button class="btn-large waves-effect waves-light light-green" type="submit" name="action">
             Sign me up!
             <i class="material-icons right">send</i>
         </button>       

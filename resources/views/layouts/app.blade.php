@@ -16,17 +16,17 @@
         <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.js"></script>
     </head>
     <body id="app-layout">
-        <nav class="default-primary-color">
+        <nav class="dark-primary-color">
             <div class="nav-wrapper container">
                 <div class="row">
                     <div class="col s12 m6 l2 center">
                         <a href="#" data-activates="mobile-demo" class="button-collapse grey-text"><i class="material-icons grey-text">menu</i></a>
-                        <a href="{{url('/')}}" class="waves-effect grey-text"><b>Weekindu</b></a>
+                        <a href="{{url('/')}}" class="waves-effect white-text"><b>Weekindu</b></a>
                     </div>
                     <div class="col l6 hide-on-med-and-down">
                         <ul>
                             <li>
-                                <a href="{{ url('/event') }}" class="waves-effect tooltipped grey-text" data-position="bottom" data-delay="50" data-tooltip="View All events">Events</a>
+                                <a href="{{ url('/event') }}" class="waves-effect tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="View All events">Events</a>
                             </li>
                         </ul>
                     </div>
@@ -38,20 +38,20 @@
                                         <a class="tooltipped blue-text" data-tooltip="Create New Event" href="{{url('/event/create')}}">Create Event</a>
                                     </div>
                                 </li>--}}
-                                <li><a href="{{ url('/login') }}" class="grey-text">Login</a></li>
-                                <li><a href="{{ url('/register') }}" class="grey-text">Register</a></li>
+                                <li><a href="{{ url('/login') }}" class="white-text">Login</a></li>
+                                <li><a href="{{ url('/register') }}" class="white-text">Register</a></li>
                             @else
                             <li class="waves-effect hide-on-med-and-down">
                                 <div class="container-fluid valign-wrapper">
-                                    <a class="tooltipped blue-text" data-tooltip="Create New Event" href="{{url('/event/create')}}">Create Event</a>
+                                    <a class="tooltipped orange-text" data-tooltip="Create New Event" href="{{url('/event/create')}}">Create Event</a>
                                 </div>
                             </li>
-                            <li class="dropdown-button waves-effect grey-text" data-activates="user-menu">
+                            <li class="dropdown-button waves-effect light-green-text" data-activates="user-menu">
                                 <div class="container-fluid valign-wrapper">
                                     <div class="col l6">
                                         <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
                                     </div>
-                                    <div class="grey-text">
+                                    <div class="white-text">
                                         {{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->first_name }}
                                     </div>
                                     <ul id="user-menu" class="dropdown-content col l4 m8">

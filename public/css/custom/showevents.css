@@ -14,7 +14,7 @@
     color: #2196f3;
 }
 .pagination li.active{
-    background-color: #2196f3;
+    background-color: #8BC34A;
     color: white;
 }
 
@@ -40,4 +40,7 @@ main > div > .container{
 
 .container > .center {
     margin-bottom: 0;
+}
+.type-color{
+    color: #8BC34A
 }

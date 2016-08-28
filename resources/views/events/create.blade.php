@@ -43,7 +43,7 @@
                                 <span><button class="btn slider-button-create waves-effect" form="create-event-form" type="submit">Create Event!</button></span>
                             </div>
                             <div class="col right">
-                                <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1">Need help?</a>
+                                <a class="waves-effect waves-light btn modal-trigger white light-green-text" href="#modal1">Need help?</a>
                             </div>
                         </div>
 
@@ -169,7 +169,7 @@
 
                             <div class="slider-item" id="extras">
                                 <h5>You want to offer something else? Type some questions for your guests as well as sample answers</h5>
-                                <input  style="border-bottom: 1px solid #2196f3;"
+                                <input  style="border-bottom: 1px solid #8BC34A;"
                                         class="extra-field"
                                        type="text"
                                        placeholder="e.g. Can you bring your own camera?"
