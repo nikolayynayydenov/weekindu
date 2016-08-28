@@ -22,4 +22,9 @@ class Event extends Model
     {
         return $this->hasMany('App\Eev', 'event_id');
     }
+
+    public function guests()
+    {
+        return $this->hasMany('App\Invitation', 'invitation_code');
+    }
 }

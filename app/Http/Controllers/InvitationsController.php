@@ -60,11 +60,10 @@ class InvitationsController extends Controller
             $invitation = new Invitation();
             $invitation->invitation_code = $invitationCode;
             $invitation->guest_name = $data['guest_name'];
-            $invitation->guest_email = $data['guest_email'];
             $invitation->accepted = $accepted;
             $invitation->save();
 
-            $extras = json_decode($data['extras']);
+            $extras = json_decode(empty($data['extras']) ? '' : $data['extras']);
 
             if (!empty((array)$extras)) {
                 foreach ($extras as $key => $values) {
@@ -134,7 +133,7 @@ class InvitationsController extends Controller
         $guest = Invitation::find($id);
         $guest->delete();
 
-        return redirect('/');
+       // return redirect('/statistics/'.$eventId);
     }
 
     public function getGuestDetails()
