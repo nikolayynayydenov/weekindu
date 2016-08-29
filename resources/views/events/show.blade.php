@@ -24,7 +24,11 @@
         }
     </style>
 
-    <div class="container card-panel" id="event-container">
+<<<<<<< HEAD
+    <div class="container " id="event-container">
+=======
+    <div class="container" id="event-container">
+>>>>>>> 35acd7ead9e038044f9b70b4a11bb06604a21716
         <h4 class="well success-color white-text">{{ session()->get('message') }}</h4>
         <h2 class="center">{{ $event->title }}</h2>
         <p class="flow-text center" id="event-description">{{ $event->description }}</p>
