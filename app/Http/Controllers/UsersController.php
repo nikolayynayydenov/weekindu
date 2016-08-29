@@ -7,6 +7,7 @@ use App\Helpers\Images;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use Validator;
 
 class UsersController extends Controller
 {
@@ -69,10 +70,19 @@ class UsersController extends Controller
         $old_password = $data['old_password'];
         $avatar = Images::storeAvatar(isset($data['avatar']) ? $data['avatar'] : false);
 
-        $this->validate($request,[
+        /* $this->validate($request,[
+             'first_name' => 'max:35',
+             'last_name' => 'max:35',
+             'name' => 'sometimes|max:20',
+             'email' => 'email|max:255|confirmed',
+             'password' => 'min:4|confirmed',
+             'avatar' => 'sometimes|image|max:1000',
+         ]);*/
+
+        $validator = Validator::make($data, [
             'first_name' => 'max:35',
             'last_name' => 'max:35',
-            'name' => 'sometimes|max:20',
+            'name' => 'sometimes|max:20|unique:users,name',
             'email' => 'email|max:255|confirmed',
             'password' => 'min:4|confirmed',
             'avatar' => 'sometimes|image|max:1000',
@@ -80,9 +90,24 @@ class UsersController extends Controller
 
         $user = User::find($id);
 
-        if($email != null){
-            if($password_email != null &&  Hash::check($password_email, $user->password)){
+        if ($validator->fails()) {
+            if ($user->name == $name) {
+
+            } else {
+                return redirect('user/' . $id . '/edit')
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+        }
+
+        if($email != null) {
+            if ($password_email != null && Hash::check($password_email, $user->password)) {
                 $user->email = $email;
+
+            } else {
+                return redirect('user/' . $id . '/edit')
+                    ->withErrors('The password is not valid.')
+                    ->withInput();
             }
         }
 
@@ -99,6 +124,10 @@ class UsersController extends Controller
         if($password != null && $old_password != null){
             if(Hash::check($old_password, $user->password)){
                 $user->password = bcrypt($password);
+            } else {
+                return redirect('user/' . $id . '/edit')
+                    ->withErrors('The password is not valid.')
+                    ->withInput();
             }
         }
 
