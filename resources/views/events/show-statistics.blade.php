@@ -11,6 +11,15 @@
         background-size: cover;
     }
 </style>
+
+{{--<form action="{{ url('/invitation/get-guest-details') }}"--}}
+      {{--method="post">--}}
+    {{--{{ csrf_field() }}--}}
+    {{--<input type="number" name="guestId">--}}
+    {{--<input type="text" name="eventInvitationCode">--}}
+    {{--<input type="submit">--}}
+{{--</form>--}}
+
 <div class="container custom-container">
     <h4 class="primary-text-color">{{ session('message') }}</h4>
     <span class="well center orange-text">Send this link to the people you'd like to invite:

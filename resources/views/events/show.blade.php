@@ -56,25 +56,25 @@
             <hr>
             <div class="row">
                 <div class="col s12 m4 l4">
-                    @if(!empty($event->dress_code))
-                        <div class="container-fluid">
-                            <strong>Dress Code:</strong>
-                            <div class="card">
-                                <div class="card-image">
+                    <div class="container-fluid">
+                        <strong>Dress Code:</strong>
+                        <div class="card">
+                            <div class="card-image">
+                                @if(!empty($event->dress_code))
                                     <img src="{{ $event->dress_code_image_path }}"
-                                    @else
-                                        <img src="/images/create-event/dress-code/other.png"
-                                             @endif
-                                             alt="no image"
-                                             class="dress-code-image">
-                                </div>
-                                <div class="card-content">
-                                    <h6 class="center"><strong>{{ $event->dress_code }}</strong></h6>
-                                    <div class="divider"></div>
-                                </div>
+                                @else
+                                    <img src="/images/create-event/dress-code/other.png"
+                                 @endif
+                                         alt="no image"
+                                         class="dress-code-image">
+                            </div>
+                            <div class="card-content">
+                                <h6 class="center"><strong>{{ $event->dress_code }}</strong></h6>
+                                <div class="divider"></div>
                             </div>
                         </div>
                     </div>
+                </div>
 
                 <div class="col s12 m4 l4">
                     @if(count($extras) > 0)
