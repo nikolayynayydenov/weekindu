@@ -18,7 +18,7 @@ $(document).ready(function(){
                 break;
 
             case 2:
-                colClass = 'col offset-l2 offset-s2 offset-m2 s4 m4 l4';
+                colClass = 'col s12 m6 l6 center';
                 break;
 
             case 3:
@@ -41,7 +41,7 @@ $(document).ready(function(){
 
         $.each(cols, function (index, value){
             row.append('<div class="' + colClass + '">' +
-                '<div class="card small hoverable create-event-option">' +
+                '<div class="card center-on hoverable create-event-option">' +
                 '<div class="card-image">' +
                 '<img class="responsive-img" src="/images/' + value.imgLocation + '">' +
                 '</div>' +
@@ -82,55 +82,123 @@ $(document).ready(function(){
 
     addRow('type', [
         {
-            'cardTitle': 'Wedding',
-            'cardContent': 'Make your wedding unforgettable with us',
-            'imgLocation': 'create-event/type/wedding.jpg'
+            'cardTitle': 'Awards Ceremony',
+            'cardContent': '',
+            'imgLocation': 'create-event/type/awards-ceremony.jpg'
+        },
+        {
+            'cardTitle': 'Bachelorette Party',
+            'cardContent': '',
+            'imgLocation': 'create-event/type/bachelorette-party.jpg'
         },
         {
             'cardTitle': 'Bachelor Party',
-            'cardContent': 'Make your last party without your wife unforgettable',
+            'cardContent': '',
             'imgLocation': 'create-event/type/bachelor-party.jpg'
-        },
-        {
-            'cardTitle': 'Birthday Party',
-            'cardContent': 'Lets make that birthday party the best',
-            'imgLocation': 'create-event/type/birthday-party.jpg'
         }
     ]);
-
     addRow('type', [
         {
-            'cardTitle': 'Business Meeting',
+            'cardTitle': 'Birthday Party',
             'cardContent': '',
-            'imgLocation': 'create-event/type/buisiness-meeting.jpg'
+            'imgLocation': 'create-event/type/birthday-party.jpg'
         },
         {
-            'cardTitle': 'Camp',
+            'cardTitle': 'Board Meeting',
             'cardContent': '',
-            'imgLocation': 'create-event/type/camp.jpg'
+            'imgLocation': 'create-event/type/board-meeting.jpg'
         },
         {
             'cardTitle': 'Conference',
             'cardContent': '',
             'imgLocation': 'create-event/type/conference.jpg'
         }
+    ]);
+    addRow('type', [
+        {
+            'cardTitle': 'Masks Party',
+            'cardContent': '',
+            'imgLocation': 'create-event/type/masks-party.jpg'
+        },
+        {
+            'cardTitle': 'Meeting',
+            'cardContent': '',
+            'imgLocation': 'create-event/type/meeting.jpg'
+        },
+        {
+            'cardTitle': 'Opening Ceremony',
+            'cardContent': '',
+            'imgLocation': 'create-event/type/opening-ceremony.jpg'
+        }
+    ]);
+    addRow('type', [
+        {
+            'cardTitle': 'Press Conference',
+            'cardContent': '',
+            'imgLocation': 'create-event/type/press-conference.jpg'
+        },
+        {
+            'cardTitle': 'Product Launch',
+            'cardContent': '',
+            'imgLocation': 'create-event/type/product-launch.jpg'
+        },
+        {
+            'cardTitle': 'Sport Event',
+            'cardContent': '',
+            'imgLocation': 'create-event/type/sport-event.jpg'
+        }
+    ]);
+
+    addRow('type', [
+        {
+            'cardTitle': 'Team Building',
+            'cardContent': '',
+            'imgLocation': 'create-event/type/team-building.jpg'
+        },
+        {
+            'cardTitle': 'Wedding',
+            'cardContent': '',
+            'imgLocation': 'create-event/type/wedding.jpg'
+        },
+        {
+            'cardTitle': 'Aniversary',
+            'cardContent': '',
+            'imgLocation': 'create-event/type/aniversary.jpg'
+        }
     ],false, 'last');
 
     addRow('dress-code', [
         {
-            'cardTitle': 'Street Wear',
+            'cardTitle': 'Business Casual',
             'cardContent': '',
-            'imgLocation': 'create-event/dress-code/streetwear.jpg'
+            'imgLocation': 'create-event/dress-code/business-casual.jpg'
+        },
+        {
+            'cardTitle': 'Business Formal',
+            'cardContent': '',
+            'imgLocation': 'create-event/dress-code/business-formal.jpg'
         },
         {
             'cardTitle': 'Casual',
             'cardContent': '',
             'imgLocation': 'create-event/dress-code/casual.jpg'
+        }
+    ]);
+    addRow('dress-code', [
+        {
+            'cardTitle': 'Cocktail Attire',
+            'cardContent': '',
+            'imgLocation': 'create-event/dress-code/cocktail-attire.jpg'
         },
         {
-            'cardTitle': 'Business Casual',
+            'cardTitle': 'Festive',
             'cardContent': '',
-            'imgLocation': 'create-event/dress-code/buisinesscasual.jpg'
+            'imgLocation': 'create-event/dress-code/festive.jpg'
+        },
+        {
+            'cardTitle': 'Formal',
+            'cardContent': '',
+            'imgLocation': 'create-event/dress-code/formal.jpg'
         }
     ]);
 
@@ -138,18 +206,14 @@ $(document).ready(function(){
         {
             'cardTitle': 'Smart Casual',
             'cardContent': '',
-            'imgLocation': 'create-event/dress-code/smartcasual.jpg'
+            'imgLocation': 'create-event/dress-code/smart-casual.jpg'
         },
         {
-            'cardTitle': 'Formal',
+            'cardTitle': 'Street Wear',
             'cardContent': '',
-            'imgLocation': 'create-event/dress-code/formal.jpg'
-        },
-        {
-            'cardTitle': 'Other',
-            'cardContent': '',
-            'imgLocation': 'create-event/dress-code/other.png'
+            'imgLocation': 'create-event/dress-code/street-wear.jpg'
         }
+
     ], false, 'last');
 
     addRow('music', [
@@ -179,7 +243,7 @@ $(document).ready(function(){
         {
             'cardTitle': 'Hip-Hop',
             'cardContent': '',
-            'imgLocation': 'create-event/music/hiphop.png'
+            'imgLocation': 'create-event/music/hiphop.jpg'
         },
         {
             'cardTitle': 'Srabsko',
@@ -190,37 +254,73 @@ $(document).ready(function(){
 
     addRow('drinks', [
         {
-            'cardTitle': 'Water',
+            'cardTitle': 'Beer',
             'cardContent': '',
-            'imgLocation': 'create-event/drinks/water.jpg'
-        },
-        {
-            'cardTitle': 'Coke',
-            'cardContent': '',
-            'imgLocation': 'create-event/drinks/coke.jpg'
+            'imgLocation': 'create-event/drinks/beer.jpg'
         },
         {
             'cardTitle': 'Coffee',
             'cardContent': '',
             'imgLocation': 'create-event/drinks/coffee.jpg'
+        },
+        {
+            'cardTitle': 'Coke',
+            'cardContent': '',
+            'imgLocation': 'create-event/drinks/coke.jpg'
         }
     ], 'multiple');
 
     addRow('drinks', [
-        {
-            'cardTitle': 'Rakia',
-            'cardContent': '',
-            'imgLocation': 'create-event/drinks/rakia.png'
-        },
         {
             'cardTitle': 'Juice',
             'cardContent': '',
             'imgLocation': 'create-event/drinks/juice.jpg'
         },
         {
-            'cardTitle': 'Beer',
+            'cardTitle': 'Milk',
             'cardContent': '',
-            'imgLocation': 'create-event/drinks/beer.jpg'
+            'imgLocation': 'create-event/drinks/milk.jpg'
+        },
+        {
+            'cardTitle': 'Rakia',
+            'cardContent': '',
+            'imgLocation': 'create-event/drinks/rakia.jpg'
+        }
+    ], 'multiple');
+
+    addRow('drinks', [
+        {
+            'cardTitle': 'Sprite',
+            'cardContent': '',
+            'imgLocation': 'create-event/drinks/sprite.jpg'
+        },
+        {
+            'cardTitle': 'Tea',
+            'cardContent': '',
+            'imgLocation': 'create-event/drinks/tea.jpg'
+        },
+        {
+            'cardTitle': 'Vodka',
+            'cardContent': '',
+            'imgLocation': 'create-event/drinks/vodka.jpg'
+        }
+    ], 'multiple');
+
+    addRow('drinks', [
+        {
+            'cardTitle': 'Water',
+            'cardContent': '',
+            'imgLocation': 'create-event/drinks/water.jpg'
+        },
+        {
+            'cardTitle': 'Whiskey',
+            'cardContent': '',
+            'imgLocation': 'create-event/drinks/whiskey.jpg'
+        },
+        {
+            'cardTitle': 'Wine',
+            'cardContent': '',
+            'imgLocation': 'create-event/drinks/wine.jpg'
         }
     ], 'multiple', 'last');
 
