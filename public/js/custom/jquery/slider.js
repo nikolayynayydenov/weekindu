@@ -12,7 +12,7 @@ $(document).ready(function(){
         // define which grid classes to use(depending on the number of cols)
         let colClass = '';
 
-        switch(cols.length) {
+/*        switch(cols.length) {
             case 1:
                 colClass = 'col offset-l4 offset-s4 offset-m4 s4 m4 l4';
                 break;
@@ -28,7 +28,7 @@ $(document).ready(function(){
             default:
                 alert('You must use 1, 2 or 3 cols for each row!');
                 break;
-        }
+        }*/
 
         let row = $('<div>').addClass('row');
 
@@ -40,8 +40,8 @@ $(document).ready(function(){
         }
 
         $.each(cols, function (index, value){
-            row.append('<div class="' + colClass + '">' +
-                '<div class="card small hoverable create-event-option">' +
+            row.append(
+                '<div class="card center-on hoverable create-event-option">' +
                 '<div class="card-image">' +
                 '<img class="responsive-img" src="/images/' + value.imgLocation + '">' +
                 '</div>' +
@@ -54,8 +54,8 @@ $(document).ready(function(){
                 '<div class="inner-content">' + value.cardContent + '</div>' +
                 '</p>' +
                 '</div>' +
-                '</div>' +
-                '</div>');
+                '</div>'
+                );
         });
 
         if (rowIsLast === 'last') {
@@ -95,10 +95,8 @@ $(document).ready(function(){
             'cardTitle': 'Birthday Party',
             'cardContent': 'Lets make that birthday party the best',
             'imgLocation': 'create-event/type/birthday-party.jpg'
-        }
-    ]);
+        },
 
-    addRow('type', [
         {
             'cardTitle': 'Business Meeting',
             'cardContent': '',
@@ -131,10 +129,7 @@ $(document).ready(function(){
             'cardTitle': 'Business Casual',
             'cardContent': '',
             'imgLocation': 'create-event/dress-code/buisinesscasual.jpg'
-        }
-    ]);
-
-    addRow('dress-code', [
+        },
         {
             'cardTitle': 'Smart Casual',
             'cardContent': '',
@@ -167,10 +162,8 @@ $(document).ready(function(){
             'cardTitle': 'Rock / Metal',
             'cardContent': '',
             'imgLocation': 'create-event/music/rock.jpg'
-        }
-    ], 'multiple');
+        },
 
-    addRow('music', [
         {
             'cardTitle': 'Pop-Folk',
             'cardContent': '',
@@ -203,10 +196,8 @@ $(document).ready(function(){
             'cardTitle': 'Coffee',
             'cardContent': '',
             'imgLocation': 'create-event/drinks/coffee.jpg'
-        }
-    ], 'multiple');
+        },
 
-    addRow('drinks', [
         {
             'cardTitle': 'Rakia',
             'cardContent': '',
@@ -239,10 +230,8 @@ $(document).ready(function(){
             'cardTitle': 'Fries',
             'cardContent': '',
             'imgLocation': 'create-event/food/fries.jpg'
-        }
-    ], 'multiple');
+        },
 
-    addRow('food', [
         {
             'cardTitle': 'Sandwich',
             'cardContent': '',

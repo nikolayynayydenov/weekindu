@@ -47,8 +47,9 @@ body {
 main {
     flex: 1 0 auto;
 }
-footer.page-footer{
+body footer.page-footer{
     background-color: #444;
+
 }
 li{
     color: #a3a3a3;
@@ -94,4 +95,11 @@ li{
 
 .pointer {
     cursor: pointer;
+}
+footer.page-footer{
+    margin-top: 0;
+}
+.row.center{
+
+    margin-bottom: 0;
 }

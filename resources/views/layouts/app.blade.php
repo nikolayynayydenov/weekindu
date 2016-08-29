@@ -94,10 +94,7 @@
             </ul>
         </nav>
         <main>
-
-                <br>
-                @yield('content')
-
+            @yield('content')
         </main>
         <footer class="page-footer"><!-- Should be default-primary-color but it\s not working-->
             <div class="container">

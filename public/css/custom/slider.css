@@ -189,5 +189,19 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
 #extra-params-field{
     border-bottom: 1px solid #8BC34A;
 }
+/*.rows .row{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 1000px;
+    max-width: 900px;
+    border: 1px solid ;
+}
 
-
+.rows .row .card {
+    box-sizing: border-box;
+    width: 30%;
+    border: 1px solid ;
+    margin: 1%;
+}*/

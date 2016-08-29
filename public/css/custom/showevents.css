@@ -28,19 +28,14 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-main > div > .container{
+.container-for-events{
     background-color: rgba(255, 255,255,0.60);
-    border-radius: 7px;
 
-
-}
-.events .card:first-of-type{
-    margin-top:0;
-}
-
-.container > .center {
-    margin-bottom: 0;
 }
 .type-color{
     color: #8BC34A
 }
+footer.page-footer{
+    margin-top: 0;
+}
+
