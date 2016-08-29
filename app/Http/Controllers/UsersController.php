@@ -91,9 +91,7 @@ class UsersController extends Controller
         $user = User::find($id);
 
         if ($validator->fails()) {
-            if ($user->name == $name) {
-
-            } else {
+            if ($user->name != $name) {
                 return redirect('user/' . $id . '/edit')
                     ->withErrors($validator)
                     ->withInput();
@@ -103,7 +101,6 @@ class UsersController extends Controller
         if($email != null) {
             if ($password_email != null && Hash::check($password_email, $user->password)) {
                 $user->email = $email;
-
             } else {
                 return redirect('user/' . $id . '/edit')
                     ->withErrors('The password is not valid.')
@@ -114,9 +111,11 @@ class UsersController extends Controller
         if($first_name != null){
             $user->first_name = $first_name;
         }
+
         if($last_name != null){
             $user->last_name = $last_name;
         }
+
         if($name != null){
             $user->name = $name;
         }
@@ -135,11 +134,10 @@ class UsersController extends Controller
 
             $user->avatar = $avatar;
         }
-
-
         $user->save();
 
-        return view('users.edit')->with('user', $user);
+        return redirect('/user/'.$id.'/edit')
+            ->with('message', 'Successfully changed');
     }
 
     public function showMyEvents() {
