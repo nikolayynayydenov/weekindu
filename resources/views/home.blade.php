@@ -15,15 +15,16 @@
     }
 
     .create-btn, .create-btn:focus, .create-btn:hover{
-        width: 100%;
+        width: 50%;
         height: 100px;
         background: #689F38;
-
+        display: inline-block;
     }
     .events-btn, .events-btn:focus, .events-btn:hover{
-        width: 100%;
+        width: 50%;
         height: 100px;
         background: #8BC34A;
+        display: inline-block;
     }
     .myprofile-btn, .myprofile-btn:focus, .myprofile-btn:hover{
         width: 100%;
@@ -48,19 +49,18 @@
 
 </style>
     <div class="container">
-        <button onclick="location.href='event/create'" class="btn create-btn hoverable waves-effect valign">Create Event</button>
-        <br>
-        <br>
-        <button onclick="location.href='event'" class="btn events-btn hoverable waves-effect">Events</button>
-        <br>
-        <br>
-        <button onclick="location.href='user/{{$user->id}}'" class="btn myprofile-btn hoverable waves-effect">My profile</button>
+        <a onclick="location.href='event/create'" class="btn create-btn hoverable waves-effect">Create Event</a>
+
+        <a onclick="location.href='event'" class="btn events-btn hoverable waves-effect">Events</a>
+        {{--<br>
+        <br>--}}
+       {{-- <button onclick="location.href='user/{{$user->id}}'" class="btn myprofile-btn hoverable waves-effect">My profile</button>
         <br>
         <br>
         <button onclick="location.href='user/{{$user->id}}/edit'" class="btn editprofile-btn hoverable waves-effect">Edit profile</button>
         <br>
         <br>
-        <button onclick="location.href='about-us'" class="btn meettheteam-btn hoverable waves-effect">Meet the team</button>
+        <button onclick="location.href='about-us'" class="btn meettheteam-btn hoverable waves-effect">Meet the team</button>--}}
 
     </div>
 @endsection

@@ -99,7 +99,7 @@
                                     <div class="row">
                                         <p class="center">
                                             <a href="{{ url('/event/'.$event->id) }}">
-                                                <strong class="center blue-text">{{ $event->title }}</strong>
+                                                <strong class="center light-green-text">{{ $event->title }}</strong>
                                                 <div class="divider"></div>
                                             </a>
                                     </div>

@@ -47,6 +47,7 @@
                             @else
                             <li class="waves-effect hide-on-med-and-down">
                                 <div class="container-fluid valign-wrapper">
+                                    <a class="white-text" href="{{url('/about-us')}}">About us</a>
                                     <a class="tooltipped orange-text" data-tooltip="Create New Event" href="{{url('/event/create')}}">Create Event</a>
                                 </div>
                             </li>
@@ -76,7 +77,7 @@
                 <li><a href="{{url('/event/create')}}">Create a new Event</a></li>
                 @if (!Auth::guest())
                     <div class="hide-on-med-and-up">
-                        <li class="divider divider-color"></li>
+                        {{--<li class="divider divider-color"></li>--}}
                         <li>
                             <div class="row valign-wrapper">
                                 <div class="col s4 valign">
@@ -111,14 +112,15 @@
                             @if (Auth::guest())
                                 <li><a class="grey-text" href="{{url('/login')}}">Login</a></li>
                                 <li><a class="grey-text" href="{{url('/register')}}">Register</a></li>
+                                <li><a class="grey-text" href="{{url('/about-us')}}">About us</a></li>
                             @else
                                 <li><a class="grey-text" href="{{url('/event/create')}}">Create Event</a></li>
-                                <li><a class="grey-text" href="{{url('/user/create')}}">Create Event</a></li>
                                 <li><a class="grey-text" href="{{ url('/user/'.auth()->user()->id)}}">Profile</a></li>
                                 <li><a class="grey-text" href="{{ url('/user/'.auth()->user()->id.'/edit') }}">Edit Profile</a></li>
+                                <li><a class="grey-text" href="{{url('/about-us')}}">About us</a></li>
                             @endif
                             <li><a class="grey-text" href="{{url('/event')}}">View All Events</a></li>
-                            <li><a class="grey-text" href="{{url('/about-us')}}">About us</a></li>
+
                         </ul>
                     </div>
                 </div>

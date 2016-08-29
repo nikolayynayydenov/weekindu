@@ -150,7 +150,7 @@
         </nav>
         <div class="container center" id="main">
             <h5 class="orange-text center">
-                Hello, {{ $event->user->first_name.' '.$event->user->last_name }}
+                Hello, <span class="light-green-text">{{ $event->user->first_name.' '.$event->user->last_name }}</span>
                 invites you to
                 <strong>{{ $event->title }}</strong>
             </h5>
@@ -161,14 +161,14 @@
                 <p class="center">
                     A
                     @if(!empty($event->type))
-                        <strong>{{ $event->type }}</strong>
+                        <strong class="light-green-text">{{ $event->type }}</strong>
                     @else
                         <strong>{{ $event->title }}</strong>
                     @endif
 
                     @if(!empty($event->date))
                         that takes place on
-                        <strong>{{ $event->date }}</strong>
+                        <strong class="light-green-text">{{ $event->date }}</strong>
                     @endif
 
                     @if(!empty($event->location_string))

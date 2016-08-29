@@ -1,12 +1,12 @@
 .tabs .tab a{
-    color: #a3a3a3  ;
+    color: #689F38  ;
 }
 .tabs .indicator{
-    background-color: #2196f3  ;
+    background-color: #FF9800  ;
 
 }
 .tabs .tab a:hover{
-     color: #2196f3;
+     color: #FF9800;
  }
 
 .deletebut {
@@ -23,15 +23,15 @@
 }
 .invitation-button{
     cursor: pointer;
-    background: #2196f3;
+    background: #FF9800;
 
 }
 .invitation-button{
-    background: #2196f3;
+    background: #FF9800;
 }
 .invitation-button:focus{
-    background: #2196f3;
+    background: #FF9800;
 }
 .invitation-button:hover{
-    background: #2196f3;
+    background: #FF9800;
 }

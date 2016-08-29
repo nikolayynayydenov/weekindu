@@ -13,7 +13,7 @@
 </style>
 <div class="container custom-container">
     <h4 class="primary-text-color">{{ session('message') }}</h4>
-    <span class="well center">Send this link to the people you'd like to invite:
+    <span class="well center orange-text">Send this link to the people you'd like to invite:
         <a href="{{ url('/invitation/'.$event->invitation_code) }}"
            id="inv-code">
             {{ url('/invitation/'.$event->invitation_code) }}
@@ -26,24 +26,22 @@
     </span>
     <hr>
     <div>
-        <div class="row">
-            <div class="col s12 m4 l2">
-                <a class="btn waves-effect waves-light modal-trigger orange"
-                   href="#modal1">Help?</a>
+        <div class="row center">
+            <div class="col s12 l4 m4  left">
+                <a class="btn waves-effect waves-light modal-trigger white light-green-text"
+                   href="#modal1">Need Help?</a>
             </div>
-            <div class="col s12 m4 l2 offset-l6">
+            <div class="col s12 l4 m4  center">
                 <a class="btn invitation-button"
                    href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
             </div>
-            <div class="col s12 m4 l2">
+            <div class="col s12 l4 m4 right">
                 <form action="{{url('/event/'.$event->id )}}"
                       method="post">
                     {{ method_field('delete') }}
                     {{ csrf_field() }}
 
-                    <button type="submit" class="waves-effect waves-light btn">
-                        Delete event
-                    </button>
+                    <a type="submit" class="waves-effect waves-light red btn"><i class="material-icons right">delete</i>Delete Event</a>
                 </form>
             </div>
         </div>
