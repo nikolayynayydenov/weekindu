@@ -20,8 +20,7 @@
             <div id="all" class="col offset-s2 s8 container-for-events">
                 @if(count($events) > 0)
                     @foreach($events as $event)
-                        <div class="col sl2 m12">
-                            <div class="card hoverable ">
+                            <div class="card center-on hoverable ">
                                 <a href="event/{{ $event->id }}">
                                     <div class="card-image">
                                         @if($event->type === 'Wedding')
@@ -84,13 +83,13 @@
 
                                 </div>
                             </div>
-                        </div>
                     @endforeach
                 @endif
+                    <div class="center-align">
+                        <i>{{ $events->render() }}</i>
+                    </div>
             </div>
         </div>
-        <div class="center-align">
-            <i>{{ $events->render() }}</i>
-        </div>
+
     </div>
 @endsection

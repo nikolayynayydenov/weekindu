@@ -50,8 +50,16 @@
         }
         .container-for-events{
             background-color: rgba(255, 255,255,0.60);
-            border-radius: 7px;
+
         }
+        footer.page-footer{
+            margin-top: 0;
+        }
+        .row.center{
+
+            margin-bottom: 0;
+        }
+
     </style>
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -65,7 +73,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div id="all" class="col offset-s2 s8">
+            <div id="all" class="col offset-s2 s8 container-for-events">
                 @if(count($events) > 0)
                     @foreach($events as $event)
                         <div class="col sl2 m12">
@@ -147,7 +155,6 @@
         </div>
         <div class="center-align">
             <i>{{ $events->render() }}</i>
-            <div class="divider"></div>
         </div>
         @else
             <h2 class="center">You have not created any events yet!</h2>

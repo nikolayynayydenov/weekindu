@@ -37,6 +37,9 @@
                                        data-tooltip="View All events">My Events</a>
                                 </li>
                             @endif
+                            <li>
+                                <a class="white-text" href="{{url('/about-us')}}">About us</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col l4 m6 right-align hide-on-small-only">
@@ -47,7 +50,6 @@
                             @else
                             <li class="waves-effect hide-on-med-and-down">
                                 <div class="container-fluid valign-wrapper">
-                                    <a class="white-text" href="{{url('/about-us')}}">About us</a>
                                     <a class="tooltipped orange-text" data-tooltip="Create New Event" href="{{url('/event/create')}}">Create Event</a>
                                 </div>
                             </li>
@@ -94,10 +96,7 @@
             </ul>
         </nav>
         <main>
-
-                <br>
-                @yield('content')
-
+            @yield('content')
         </main>
         <footer class="page-footer"><!-- Should be default-primary-color but it\s not working-->
             <div class="container">
