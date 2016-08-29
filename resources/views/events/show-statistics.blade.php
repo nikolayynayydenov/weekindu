@@ -45,7 +45,7 @@
                    href="{{ url('/invitation/'.$event->invitation_code) }}">Invitation</a>
             </div>
             <div class="col s12 l4 m4 right">
-                <form action="{{url('/event/'.$event->id )}}"
+                <form action="{{ url('/event/'.$event->id) }}"
                       method="post">
                     {{ method_field('delete') }}
                     {{ csrf_field() }}
@@ -71,7 +71,11 @@
     @endphp
     <div>
         <div class="row center">
-            <h4>{{ $event->title }}</h4>
+            <h4>
+                <a href="{{url('/event/'.$event->id )}}">
+                    {{ $event->title }}
+                </a>
+            </h4>
         </div>
 
         <div class="row z-depth-2 white">

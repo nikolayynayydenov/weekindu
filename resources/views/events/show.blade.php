@@ -11,7 +11,7 @@
 
         #event-container {
             background-color: rgba(255, 255,255,0.90);
-            
+            padding: 10px 25px 10px;
         }
 
         #event-description {
@@ -23,10 +23,7 @@
             //font-weight: bold;
         }
     </style>
-
-
     <div class="container" id="event-container">
-
         <h4 class="well success-color white-text">{{ session()->get('message') }}</h4>
         <h2 class="center">{{ $event->title }}</h2>
         <p class="flow-text center" id="event-description">{{ $event->description }}</p>
@@ -58,24 +55,22 @@
             <hr>
             <div class="row">
                 <div class="col s12 m4 l4">
-                    <div class="container-fluid">
-                        <strong>Dress Code:</strong>
-                        <div class="card">
-                            <div class="card-image">
-                                @if(!empty($event->dress_code))
-                                    <img src="{{ $event->dress_code_image_path }}"
-                                @else
-                                    <img src="/images/create-event/dress-code/other.png"
-                                 @endif
-                                         alt="no image"
-                                         class="dress-code-image">
-                            </div>
-                            <div class="card-content">
-                                <h6 class="center"><strong>{{ $event->dress_code }}</strong></h6>
-                                <div class="divider"></div>
+                    @if(!empty($event->dress_code))
+                        <div class="container-fluid">
+                            <strong>Dress Code:</strong>
+                            <div class="card">
+                                <div class="card-image">
+                                        <img src="{{ $event->dress_code_image_path }}"
+                                             alt="no image"
+                                             class="dress-code-image">
+                                </div>
+                                <div class="card-content">
+                                    <h6 class="center"><strong>{{ $event->dress_code }}</strong></h6>
+                                    <div class="divider"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
 
                 <div class="col s12 m4 l4">

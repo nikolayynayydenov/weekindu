@@ -26,7 +26,11 @@
                     <div class="col l6 hide-on-med-and-down">
                         <ul>
                             <li>
-                                <a href="{{ url('/event') }}" class="waves-effect tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="View All events">Events</a>
+                                <a href="{{ url('/event') }}"
+                                   class="waves-effect tooltipped white-text"
+                                   data-position="bottom"
+                                   data-delay="50"
+                                   data-tooltip="View All events">All Events</a>
                             </li>
                             @if(!Auth::guest())
                                 <li>
@@ -34,7 +38,7 @@
                                        class="waves-effect tooltipped white-text"
                                        data-position="bottom"
                                        data-delay="50"
-                                       data-tooltip="View All events">My Events</a>
+                                       data-tooltip="View My Events">My Events</a>
                                 </li>
                             @endif
                             <li><a class="white-text" href="{{url('/about-us')}}">About us</a></li>

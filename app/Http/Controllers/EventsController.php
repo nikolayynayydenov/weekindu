@@ -115,9 +115,18 @@ class EventsController extends Controller
             : false
         );
 
-        //echo '<pre>'.print_r($request->all(), true).'</pre>';
-        //exit;
+        /*
+         * Check if images exist:
+         */
+        if(!empty($data['type'])) {
+            $typeImg = StringModifier::convertToImagePath($data['type']);
+            $typeImgExists = file_exists(public_path('images\create-event\type\\'.$typeImg));
+        }
 
+        if(!empty($data['dress-code'])) {
+            $dressCodeImg = StringModifier::convertToImagePath($data['dress-code']);
+            $dressCodeImgExists = file_exists(public_path('images\create-event\type\\' . $dressCodeImg));
+        }
         /*
          * Store into db
          */
@@ -128,9 +137,9 @@ class EventsController extends Controller
         $event->description = $data['description'];
         $event->is_public = empty($data['is_public']) ? false : true;
         $event->type = empty($data['type']) ? '' : $data['type'];
-        $event->type_image = empty($data['type']) ? '' : StringModifier::convertToImagePath($data['type']);
+        $event->type_image = empty($data['type']) || !$typeImgExists ? 'other.jpg' : $typeImg;
         $event->dress_code = empty($data['dress-code']) ? '' : $data['dress-code'];
-        $event->dress_code_image = empty($data['dress-code']) ? '' : StringModifier::convertToImagePath($data['dress-code']);
+        $event->dress_code_image = empty($data['dress-code']) || !$dressCodeImgExists ? 'other.jpg' : $dressCodeImg;
         $event->location_string = empty($data['location_string']) ? '' : $data['location_string'];
         $event->location_x = isset($x) ? $x : '';
         $event->location_y = isset($y) ? $y : '';
@@ -210,10 +219,9 @@ class EventsController extends Controller
             }
         }
 
-        $imageName = StringModifier::convertToImagePath($event->dress_code);
-        $event->dress_code_image_path ='/images/create-event/dress-code/'.$imageName;
+        $event->dress_code_image_path ='/images/create-event/dress-code/'.$event->dress_code_image;
         $event->dress_code_image_full_path =
-            public_path('images\create-event\dress-code\\'.$imageName);
+            public_path('images\create-event\dress-code\\'.$event->dress_code_image);
 
         //dd($event->dress_code_image_full_path);
 
