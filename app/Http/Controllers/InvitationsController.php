@@ -15,8 +15,8 @@ class InvitationsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['getGuestDetails', 'destroy']]);
-        $this->middleware('user_is_host_of_event', ['only' => ['destroy']]);        
+        //$this->middleware('auth', ['only' => ['getGuestDetails', 'destroy']]);
+        //$this->middleware('user_is_host_of_event', ['only' => ['destroy']]);
         $this->middleware('invitation_has_event', ['only' => ['show']]);
     }
 
@@ -135,7 +135,7 @@ class InvitationsController extends Controller
         $guest = Invitation::find($id);
         $guest->delete();
 
-       // return redirect('/statistics/'.$eventId);
+        return back();
     }
 
     public function getGuestDetails()

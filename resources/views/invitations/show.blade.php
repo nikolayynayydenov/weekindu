@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{{$event->title}}</title>
+        <title>{{ $event->title }}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
         <link rel="stylesheet" href="/css/materialize/palette.css">
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -11,8 +11,9 @@
                 margin-top: 20px;
             }
 
-            #invitation-form{
+            #invitation-form-container{
                 display: none;
+                border-radius: 4px;
             }
 
             .input-field label {
@@ -117,10 +118,6 @@
                 border-radius: 3px;
             }
 
-            #invitation-form{
-                border-radius: 4px;
-            }
-
             #extras{
                 display: none;
             }
@@ -186,10 +183,10 @@
             <button class="btn light-green" id="start-button">I want to come</button>
         </div>
 
-        <div class="container center" id="invitation-form">
+        <div class="container center" id="invitation-form-container">
             <button class="btn light-green" id="show-event-button">Show event</button>
 
-            <form action="{{ url('/invitation') }}" method="post">
+            <form action="{{ url('/invitation') }}" method="post" id="invitation-form">
                 {{ csrf_field() }}
                 <input type="hidden" name="invitation_code" value="{{ $event->invitation_code }}">
                 <div class="row">
@@ -252,11 +249,11 @@
 
                 $('#start-button').click(function(){
                     $('#main').hide("fast");
-                    $('#invitation-form').show("fast");
+                    $('#invitation-form-container').show("fast");
                 });
 
                 $('#show-event-button').click(function(){
-                    $('#invitation-form').hide("fast");
+                    $('#invitation-form-container').hide("fast");
                     $('#main').show("fast");
                 });
 
