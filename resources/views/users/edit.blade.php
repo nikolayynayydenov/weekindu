@@ -73,7 +73,7 @@
                 <div class="error-message">{{ $message }}</div>
             @endforeach
         @else
-            <div class="success-message" >Successfully changed</div>
+            <div class="success-message">{{ session()->get('message') }}</div>
         @endif
         <div class="row center">
             <h1>Edit Profile</h1>
