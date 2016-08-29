@@ -11,8 +11,7 @@
 
         #event-container {
             background-color: rgba(255, 255,255,0.90);
-            padding: 15px 25px 20px;
-            border-radius: 8px;
+            
         }
 
         #event-description {
@@ -25,7 +24,7 @@
         }
     </style>
 
-    <div class="container" id="event-container">
+    <div class="container card-panel" id="event-container">
         <h4 class="well success-color white-text">{{ session()->get('message') }}</h4>
         <h2 class="center">{{ $event->title }}</h2>
         <p class="flow-text center" id="event-description">{{ $event->description }}</p>

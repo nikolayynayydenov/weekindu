@@ -44,23 +44,56 @@
         background: #689F38;
 
     }
+.main-row{
+    background-color: rgba(117, 117,117,0.65);
 
+}
 
 
 </style>
-    <div class="container">
-        <a onclick="location.href='event/create'" class="btn create-btn hoverable waves-effect">Create Event</a>
-
-        <a onclick="location.href='event'" class="btn events-btn hoverable waves-effect">Events</a>
-        {{--<br>
-        <br>--}}
-       {{-- <button onclick="location.href='user/{{$user->id}}'" class="btn myprofile-btn hoverable waves-effect">My profile</button>
-        <br>
-        <br>
-        <button onclick="location.href='user/{{$user->id}}/edit'" class="btn editprofile-btn hoverable waves-effect">Edit profile</button>
-        <br>
-        <br>
-        <button onclick="location.href='about-us'" class="btn meettheteam-btn hoverable waves-effect">Meet the team</button>--}}
-
+    <div class="row  main-row">
+    <div class="container ">
+        <div class="col s12 m3">
+                <div class="card lime darken-1">
+                    <div class="card-content white-text center">
+                        <img src="/images/icons/plus.png">
+                    </div>
+                    <div class="card-action center">
+                        <a class="white-text" href="/event/create">Create Event</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card red">
+                    <div class="card-content white-text center">
+                        <img src="/images/icons/laptop.png">
+                    </div>
+                    <div class="card-action white-text center">
+                        <a href="/user/my-events">My events</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card purple">
+                    <div class="card-content white-text center">
+                        <img src="/images/icons/rss.png">
+                    </div>
+                    <div class="card-action white-text center">
+                        <a href="/event">All events</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text center">
+                        <img src="/images/icons/emoticon.png">
+                    </div>
+                    <div class="card-action center">
+                        <a href="/user/{{$user->id}}">My profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 @endsection

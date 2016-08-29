@@ -142,12 +142,15 @@
                             </div>
                         </div>
                     @endforeach
-                @endif
+
             </div>
         </div>
         <div class="center-align">
             <i>{{ $events->render() }}</i>
             <div class="divider"></div>
         </div>
+        @else
+            <h2 class="center">You have not created any events yet!</h2>
+        @endif
     </div>
 @endsection
