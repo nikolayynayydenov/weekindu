@@ -24,21 +24,7 @@
                             <div class="card hoverable ">
                                 <a href="event/{{ $event->id }}">
                                     <div class="card-image">
-                                        @if($event->type === 'Wedding')
-                                            <img class="responsive-img" src="images/create-event/type/wedding.jpg">
-                                        @elseif($event->type === 'Conference')
-                                            <img src="images/create-event/type/conference.jpg">
-                                        @elseif($event->type === 'Bachelor Party')
-                                            <img src="images/create-event/type/bachelor-party.jpg">
-                                        @elseif($event->type === 'Birthday Party')
-                                            <img src="images/create-event/type/birthday-party.jpg">
-                                        @elseif($event->type === 'Buisiness Meeting')
-                                            <img src="images/create-event/type/buisiness-meeting.jpg">
-                                        @elseif($event->type === 'Camp')
-                                            <img src="images/create-event/type/camp.jpg">
-                                        @else
-                                            <img src="images/create-event/type/other.jpg">
-                                        @endif
+                                        <img src="images/create-event/type/{{ $event->type_image }}">
                                     </div>
                                 </a>
                                 <div class="card-content">

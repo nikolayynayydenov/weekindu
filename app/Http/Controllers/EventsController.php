@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Eev;
 use App\ExtraParam;
 use App\ExtraParamValue;
 use App\Event;
 use App\Invitation;
 use App\Http\Requests;
 use App\Helpers\Images;
+use App\Helpers\StringModifier;
 use Crypt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -128,7 +128,9 @@ class EventsController extends Controller
         $event->description = $data['description'];
         $event->is_public = empty($data['is_public']) ? false : true;
         $event->type = empty($data['type']) ? '' : $data['type'];
+        $event->type_image = empty($data['type']) ? '' : StringModifier::convertToImagePath($data['type']);
         $event->dress_code = empty($data['dress-code']) ? '' : $data['dress-code'];
+        $event->dress_code_image = empty($data['dress-code']) ? '' : StringModifier::convertToImagePath($data['dress-code']);
         $event->location_string = empty($data['location_string']) ? '' : $data['location_string'];
         $event->location_x = isset($x) ? $x : '';
         $event->location_y = isset($y) ? $y : '';
@@ -208,9 +210,7 @@ class EventsController extends Controller
             }
         }
 
-        $imageName = preg_replace('/\s/',
-                '',
-                strtolower($event->dress_code)).'.jpg';
+        $imageName = StringModifier::convertToImagePath($event->dress_code);
         $event->dress_code_image_path ='/images/create-event/dress-code/'.$imageName;
         $event->dress_code_image_full_path =
             public_path('images\create-event\dress-code\\'.$imageName);

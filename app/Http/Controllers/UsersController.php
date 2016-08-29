@@ -141,7 +141,7 @@ class UsersController extends Controller
     }
 
     public function showMyEvents() {
-        $events =  Auth::user()->events()->paginate(4);
+        $events =  Auth::user()->events()->orderBy('created_at', 'desc')->paginate(4);
         return view('users.my-events')->with('events', $events);
     }
 }

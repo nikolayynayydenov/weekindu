@@ -18,7 +18,9 @@ class EventsTableSeeder extends Seeder
             $event->description = 'An awesome camp for gurus'.$i;
             $event->is_public = rand(0, 1);
             $event->type = 'Camp';
+            $event->type_image = 'camp.jpg';
             $event->dress_code = 'Casual';
+            $event->dress_code_image = 'casual.jpg';
             $event->location_string = 'Hisarya';
             $event->location_x = '42.70073056317599';
             $event->location_y = '23.289127349853516';

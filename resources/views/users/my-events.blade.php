@@ -72,27 +72,7 @@
                             <div class="card hoverable center-on-small-only">
                                 <a href="/event/{{ $event->id }}">
                                     <div class="card-image">
-                                        @if($event->type === 'Wedding')
-                                            <img class="responsive-img" src="/images/create-event/type/wedding.jpg">
-                                        @endif
-                                        @if($event->type === 'Conference')
-                                            <img src="/images/create-event/type/conference.jpg">
-                                        @endif
-                                        @if($event->type === 'Bachelor Party')
-                                            <img src="/images/create-event/type/bachelor-party.jpg">
-                                        @endif
-                                        @if($event->type === 'Birthday Party')
-                                            <img src="/images/create-event/type/birthday-party.jpg">
-                                        @endif
-                                        @if($event->type === 'Buisiness Meeting')
-                                            <img src="/images/create-event/type/buisiness-meeting.jpg">
-                                        @endif
-                                        @if($event->type === 'Camp')
-                                            <img src="/images/create-event/type/camp.jpg">
-                                        @endif
-                                        @if($event->type === 'Other')
-                                            <img src="/images/create-event/type/other.jpg">
-                                        @endif
+                                        <img src="/images/create-event/type/{{ $event->type_image }}">
                                     </div>
                                 </a>
                                 <div class="card-content">
