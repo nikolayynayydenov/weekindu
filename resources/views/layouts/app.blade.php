@@ -99,23 +99,25 @@
                 <li><a href="{{url('/event')}}">Events</a></li>
                 <li><a href="{{url('/event/create')}}">Create a new Event</a></li>
                 @if (!Auth::guest())
-                    <div class="hide-on-med-and-up">
-                        {{--<li class="divider divider-color"></li>--}}
-                        <li>
-                            <div class="row valign-wrapper">
-                                <div class="col s4 valign">
-                                    <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
-                                </div>
-                                <div class="col s8 valign">
-                                    {{ Auth::user()->name }}
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="{{ url('/user/my-events') }}">Show My Events</a></li>
-                        <li><a href="{{ url('/user/'.auth()->user()->id)}}">Profile</a></li>
-                        <li><a href="{{ url('/user/'.auth()->user()->id.'/edit') }}">Edit Profile</a></li>
-                        <li><a href="{{ url('/logout') }}">Logout</a></li>
+                {{--<li class="divider divider-color"></li>--}}
+                <li>
+                    <div class="row valign-wrapper">
+                        <div class="col s4 valign">
+                            <img src="/images/user-avatars/{{Auth::user()->avatar}}" class="circle responsive-img valign" width="40">
+                        </div>
+                        <div class="col s8 valign">
+                            {{ Auth::user()->name }}
+                        </div>
                     </div>
+                </li>
+                <li><a href="{{ url('/user/my-events') }}">Show My Events</a></li>
+                <li><a href="{{ url('/user/'.auth()->user()->id)}}">Profile</a></li>
+                <li><a href="{{ url('/user/'.auth()->user()->id.'/edit') }}">Edit Profile</a></li>
+                <li><a href="{{ url('/logout') }}">Logout</a></li>
+
+                @else
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
                 @endif
             </ul>
         </nav>
