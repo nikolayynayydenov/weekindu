@@ -43,3 +43,7 @@ li{
     background: #ececec;
 
 }
+
+.pointer {
+    cursor: pointer;
+}

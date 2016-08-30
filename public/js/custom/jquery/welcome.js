@@ -14,6 +14,7 @@ $( document ).ready(function() {
         scaleBannerVideoSize('.video-container video');
     });
 
+    $(".button-collapse").sideNav();
 });
 
 function scaleVideoContainer() {

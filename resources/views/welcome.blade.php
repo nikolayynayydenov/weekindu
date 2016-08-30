@@ -22,7 +22,7 @@
                     @endif
                 </ul>
                 <a data-activates="nav-mobile"
-                   class="button-collapse white-text">
+                   class="button-collapse white-text pointer">
                     <i class="material-icons">menu</i>
                 </a>
             </div>
