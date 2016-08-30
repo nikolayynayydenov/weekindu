@@ -134,8 +134,9 @@ class EventsController extends Controller
         $event = new Event();
         $event->title = $data['title'];
         $event->date = $data['date'];
+        $event->time = $data['time'];
         $event->description = $data['description'];
-        $event->is_public = empty($data['is_public']) ? false : true;
+        $event->is_public = !empty($data['is_public']);
         $event->type = empty($data['type']) ? '' : $data['type'];
         $event->type_image = empty($data['type']) || !$typeImgExists ? 'other.jpg' : $typeImg;
         $event->dress_code = empty($data['dress-code']) ? '' : $data['dress-code'];

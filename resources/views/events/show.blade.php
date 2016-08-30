@@ -43,6 +43,11 @@
                 <strong>{{ $event->date }}</strong>
             @endif
 
+            @if(!empty($event->time))
+                at
+                <strong>{{ $event->time }}</strong>
+            @endif
+
             @if(!empty($event->location_string))
                 at
                 <strong>{{ $event->location_string }}</strong>

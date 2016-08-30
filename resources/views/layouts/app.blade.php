@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="/css/dropify/dropify.min.css"/>
         <link rel="stylesheet" href="/css/materialize/palette.css"/>
         <link rel="stylesheet" href="/css/custom/main.css"/>
+        <link rel="stylesheet" href="/css/wickedpicker/wickedpicker.min.css"/>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.js"></script>
@@ -136,10 +137,12 @@
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="/js/wickedpicker/wickedpicker.min.js"></script>
     <script src="/js/custom/jquery/main.js" defer></script>
     <script src="/js/custom/jquery/slider.js"></script>
     <script src="/js/dropify/dropify.min.js"></script>
     <script src="/js/config/main.js"></script>
     <script src="/js/custom/jquery/ajax/request-guest-info.js"></script>
+
     </body>
 </html>

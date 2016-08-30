@@ -60,6 +60,7 @@
                                             <strong class="light-green-text" style="font-size: larger">{{$event->type}}</strong>
                                             <p class="grey-text">{{ $event->user->first_name.' '.$event->user->last_name}}<br>
                                                 {{$event->date}}
+                                                {{ $event->time }}
                                             </p>
                                         </div>
                                         <div class="col right show-on-medium-and-up hide-on-small-only ">

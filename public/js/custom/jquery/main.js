@@ -43,4 +43,6 @@ $(document).ready(function (){
     });
 
     $('select').material_select();
+
+    $('.timepicker').wickedpicker();
 });

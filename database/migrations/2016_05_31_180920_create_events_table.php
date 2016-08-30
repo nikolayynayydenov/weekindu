@@ -26,6 +26,7 @@ class CreateEventsTable extends Migration
             $table->string('type', 80);
             $table->string('type_image', 80);
             $table->string('date');
+            $table->string('time');
             $table->string('background_photo');
             $table->text('description');
             $table->boolean('is_public');

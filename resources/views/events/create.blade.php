@@ -8,8 +8,8 @@
 <form action="{{url('/event')}}" method="post" id="create-event-form" enctype="multipart/form-data">
     {{csrf_field()}}
 </form>
-    <div class="container">
 
+    <div class="container">
         @if (count($errors->all()) > 0)
             @foreach ($errors->all() as $error)
                 <div id="card-alert" class="card red">
@@ -83,6 +83,17 @@
                                                placeholder="Click to pick a date"
                                                form="create-event-form">
                                         <label for="event-date">Date</label>
+                                    </div>
+
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">schedule</i>
+                                        <input type="text"
+                                               class="timepicker"
+                                               name="time"
+                                               placeholder="Click to add time"
+                                               form="create-event-form"
+                                               id="event-time">
+                                        <label for="event-time">Time</label>
                                     </div>
 
                                     <div class="input-field col s12">

@@ -116,9 +116,9 @@ $(document).ready(function(){
     ]);
     addRow('type', [
         {
-            'cardTitle': 'Masks Party',
+            'cardTitle': 'Camp',
             'cardContent': '',
-            'imgLocation': 'create-event/type/masks-party.jpg'
+            'imgLocation': 'create-event/type/camp.jpg'
         },
         {
             'cardTitle': 'Meeting',
@@ -213,7 +213,6 @@ $(document).ready(function(){
             'cardContent': '',
             'imgLocation': 'create-event/dress-code/street-wear.jpg'
         }
-
     ], false, 'last');
 
     addRow('music', [
