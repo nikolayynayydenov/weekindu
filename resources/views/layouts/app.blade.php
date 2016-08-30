@@ -21,11 +21,24 @@
             <div class="nav-wrapper container">
                 <div class="row">
                     <div class="col s12 m6 l2 center">
-                        <a href="#" data-activates="mobile-demo" class="button-collapse grey-text"><i class="material-icons grey-text">menu</i></a>
-                        <a href="{{url('/')}}" class="waves-effect white-text"><b>Weekindu</b></a>
+                        <a data-activates="nav-mobile"
+                           class="button-collapse white-text">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <a href="{{url('/')}}"
+                           class="waves-effect white-text">
+                            <b>Weekindu</b>
+                        </a>
                     </div>
                     <div class="col l6 hide-on-med-and-down">
                         <ul>
+                            <li>
+                                <a href="{{ url('/home') }}"
+                                   class="waves-effect tooltipped white-text"
+                                   data-position="bottom"
+                                   data-delay="50"
+                                   data-tooltip="Return to home page">Home</a>
+                            </li>
                             <li>
                                 <a href="{{ url('/event') }}"
                                    class="waves-effect tooltipped white-text"
@@ -42,7 +55,11 @@
                                        data-tooltip="View My Events">My Events</a>
                                 </li>
                             @endif
-                            <li><a class="white-text" href="{{url('/about-us')}}">About us</a></li>
+                            <li><a class="white-text tooltipped"
+                                   data-position="bottom"
+                                   data-delay="50"
+                                   data-tooltip="Info about the team"
+                                   href="{{url('/about-us')}}">About us</a></li>
                         </ul>
                     </div>
                     <div class="col l4 m6 right-align hide-on-small-only">
@@ -65,6 +82,7 @@
                                         {{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->first_name }}
                                     </div>
                                     <ul id="user-menu" class="dropdown-content col l4 m8">
+                                        <li><a href="{{ url('/user/my-events') }}">Show My Events</a></li>
                                         <li><a href="{{ url('/user/'.auth()->user()->id)}}">Profile</a></li>
                                         <li><a href="{{ url('/user/'.auth()->user()->id.'/edit') }}">Edit Profile</a></li>
                                         <li><a href="{{ url('/logout') }}">Logout</a></li>
@@ -76,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <ul class="side-nav" id="mobile-demo">
+            <ul class="side-nav" id="nav-mobile">
                 <li><a href="{{url('/home')}}">Home</a></li>
                 <li><a href="{{url('/event')}}">Events</a></li>
                 <li><a href="{{url('/event/create')}}">Create a new Event</a></li>
@@ -93,7 +111,10 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="{{url('/logout')}}">Logout</a></li>
+                        <li><a href="{{ url('/user/my-events') }}">Show My Events</a></li>
+                        <li><a href="{{ url('/user/'.auth()->user()->id)}}">Profile</a></li>
+                        <li><a href="{{ url('/user/'.auth()->user()->id.'/edit') }}">Edit Profile</a></li>
+                        <li><a href="{{ url('/logout') }}">Logout</a></li>
                     </div>
                 @endif
             </ul>

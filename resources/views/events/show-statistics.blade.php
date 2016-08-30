@@ -33,7 +33,7 @@
            data-delay="50"
            data-tooltip="Copy to clipboard">input</i>
     </span>
-    <hr>
+
     <div>
         <div class="row center">
             <div class="col s12 l4 m4  left">

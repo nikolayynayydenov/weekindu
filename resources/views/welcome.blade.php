@@ -21,14 +21,18 @@
                         <li><a href="{{ url('/register') }}" class="white-text">Register</a></li>
                     @endif
                 </ul>
-                <ul id="nav-mobile" class="side-nav">
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @endif
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="material-icons">menu</i></a>
+                <a data-activates="nav-mobile"
+                   class="button-collapse white-text">
+                    <i class="material-icons">menu</i>
+                </a>
             </div>
+
+            <ul id="nav-mobile" class="side-nav">
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
+                @endif
+            </ul>
         </nav>
         <div class="fullscreen-bg">
             <video loop muted autoplay  class="fullscreen-bg__video">
