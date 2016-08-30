@@ -9,7 +9,7 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>What is this?</h4>
-            <p>This is the place where all the public events appear.On every event card you can see the date of the event, who made it.Click on "MORE" to see all the information of the event.</p>
+            <p>This is the place where all the public events appear. On every event card you can see the date of the event, who made it. Click on "MORE" to see all the information of the event.</p>
         </div>
         <div class="modal-footer">
             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
@@ -33,6 +33,7 @@
                                                 <strong class="center light-green-text">{{ $event->title }}</strong>
                                                 <div class="divider"></div>
                                             </a>
+                                        </p>
                                     </div>
 
                                     <div class="row">
@@ -40,43 +41,53 @@
                                             <img src="/images/user-avatars/{{ $event->user->avatar }}"
                                                  alt="/images/user-avatars/default.png" class="circle" width="80">
                                         </div>
+
                                         <div class="col left s12 show-on-small hide-on-med-and-up">
-                                            <strong class="type-color" style="font-size: larger">{{$event->type}}</strong>
-                                            <p class="grey-text">{{ $event->user->first_name.' '.$event->user->last_name}}<br>
+                                            <strong class="type-color" style="font-size: larger">{{ $event->type }}</strong>
+                                            <p class="grey-text">
+                                                <a href="{{ url('/user/'.$event->user->id) }}">
+                                                    {{ $event->user->first_name.' '.$event->user->last_name}}
+                                                </a>
+                                                <div class="divider"></div>
                                                 {{$event->date}}
+                                                {{$event->time}}
                                             </p>
                                         </div>
+
                                         <div class="col s12 right show-on-small hide-on-med-and-up">
                                             <a href="{{ url('/event/'.$event->id) }}" class="btn orange">More</a>
                                         </div>
-
                                     </div>
                                     <div class="row">
                                         <div class="col left show-on-medium-and-up hide-on-small-only">
                                             <img src="/images/user-avatars/{{ $event->user->avatar }}"
                                                  alt="no avatar" class="circle" width="80">
                                         </div>
+
                                         <div class="col left show-on-medium-and-up hide-on-small-only">
-                                            <strong class="light-green-text" style="font-size: larger">{{$event->type}}</strong>
-                                            <p class="grey-text">{{ $event->user->first_name.' '.$event->user->last_name}}<br>
+                                            <strong class="type-color" style="font-size: larger">{{ $event->type }}</strong>
+                                            <p class="grey-text">
+                                                <a href="{{ url('/user/'.$event->user->id) }}">
+                                                    {{ $event->user->first_name.' '.$event->user->last_name}}
+                                                </a>
+                                                <div class="divider"></div>
                                                 {{$event->date}}
-                                                {{ $event->time }}
+                                                {{$event->time}}
                                             </p>
                                         </div>
+
                                         <div class="col right show-on-medium-and-up hide-on-small-only ">
                                             <a href="{{ url('/event/'.$event->id) }}" class="btn orange">More</a>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                     @endforeach
                 @endif
-                    <div class="center-align">
-                        <i>{{ $events->render() }}</i>
-                    </div>
+                <div class="center-align">
+                    <i>{{ $events->render() }}</i>
+                </div>
             </div>
         </div>
-
     </div>
 @endsection
