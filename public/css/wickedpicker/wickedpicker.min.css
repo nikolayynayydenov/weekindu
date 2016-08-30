@@ -83,8 +83,8 @@
 }
 @font-face {
     font-family: fontello;
-    src: url(../fonts/fontello.eot?52602240);
-    src: url(../fonts/fontello.eot?52602240#iefix) format("embedded-opentype"), url(../fonts/fontello.woff?52602240) format("woff"), url(../fonts/fontello.ttf?52602240) format("truetype"), url(../fonts/fontello.svg?52602240#fontello) format("svg");
+    src: url(/fonts/wickedpicker/fontello.eot?52602240);
+    src: url(/fonts/wickedpicker/fontello.eot?52602240#iefix) format("embedded-opentype"), url(/fonts/wickedpicker/fontello.woff?52602240) format("woff"), url(/fonts/wickedpicker/fontello.ttf?52602240) format("truetype"), url(/fonts/wickedpicker/fontello.svg?52602240#fontello) format("svg");
     font-weight: 400;
     font-style: normal
 }
