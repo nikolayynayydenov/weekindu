@@ -15,8 +15,8 @@
     }
     body{
 
-        background-image: url("/images/people.jpg");
-
+        /*background-image: url("/images/people.jpg");*/
+        background-color: #eeeeee;
 
     }
     .collection .collection-item{

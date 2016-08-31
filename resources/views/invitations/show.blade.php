@@ -165,7 +165,7 @@
 
                     @if(!empty($event->date))
                         that takes place on
-                        <strong class="light-green-text">{{ $event->date }}</strong>
+                        <strong class="light-green-text">{{ $event->date }}, {{$event->time}}</strong>
                     @endif
 
                     @if(!empty($event->location_string))

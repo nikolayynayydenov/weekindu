@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <style>
+        body{
+            background-color: #eeeeee;
+        }
         .change-email {
             display: none;
             position: inherit;

@@ -94,7 +94,7 @@
                     <div class="card-content white-text center">
                         <img src="/images/icons/emoticon.png">
                     </div>
-                    <div class="card-action center">
+                    <div class="card-action white-text center">
                         My profile
                     </div>
                 </div>

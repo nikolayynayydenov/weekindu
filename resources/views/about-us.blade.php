@@ -3,7 +3,7 @@
     <link href="/images/icons/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
  <style>
      body {
-         background-color: #ffffff;
+         background-color: #eeeeee;
      }
  </style>
 <body>

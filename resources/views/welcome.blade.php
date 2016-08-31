@@ -76,7 +76,7 @@
                         <div class="icon-block">
                             <h2 class="center light-green-text"><i class="material-icons">settings</i></h2>
                             <h5 class="center white-text">Many more</h5>
-                            <p class="light center white-text">Register now, and explore weekindu for free</p>
+                            <p class="light center white-text">Register now, and explore Weekindu for free</p>
                         </div>
                     </div>
                 </div>
@@ -138,8 +138,7 @@
                 <div class="row">
                     <div class="col s12 l6">
                         <div class="flow-text white-text">
-                            After your guests fill their invitations,
-                            you will be able to see what each person wants
+                            Know your guests taste!
                         </div>
                     </div>
                     <div class="col s12 l6 center">
@@ -154,7 +153,7 @@
                      <div class="col l6 s12">
                          <h5 class="white-text">Summary</h5>
                          <p class="white-text">
-                             We are a team of softuni students
+                             We are a team of SoftUni students.
                          </p>
                      </div>
                      <div class="col l3 s12">

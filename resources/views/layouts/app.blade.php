@@ -82,7 +82,7 @@
                                         {{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->first_name }}
                                     </div>
                                     <ul id="user-menu" class="dropdown-content col l4 m8">
-                                        <li><a href="{{ url('/user/my-events') }}">Show My Events</a></li>
+                                        <li><a href="{{ url('/user/my-events') }}">My Events</a></li>
                                         <li><a href="{{ url('/user/'.auth()->user()->id)}}">Profile</a></li>
                                         <li><a href="{{ url('/user/'.auth()->user()->id.'/edit') }}">Edit Profile</a></li>
                                         <li><a href="{{ url('/logout') }}">Logout</a></li>

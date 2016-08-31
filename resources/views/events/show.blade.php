@@ -19,7 +19,7 @@
         }
     </style>
     <div class="container custom-container">
-        <h4 class="well success-color white-text">{{ session()->get('message') }}</h4>
+        <h3 class="green white-text z-depth-5 center" style="border:none">{{ session()->get('message') }}</h3>
         <h2 class="center">{{ $event->title }}</h2>
         <p class="flow-text center" id="event-description">{{ $event->description }}</p>
 

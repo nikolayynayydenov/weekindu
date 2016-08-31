@@ -160,7 +160,7 @@
                     <table class="centered">
                         <thead>
                             <tr>
-                                <th data-field="name">Parameters</th>
+                                <th data-field="name">Parameter</th>
                                 <th data-field="quantity">Quantity</th>
                             </tr>
                         </thead>
