@@ -88,7 +88,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12 l4 center">
-                        <img border="5" src="/images/tutorial/slider.png">
+                        <img class="responsive-img" border="5" src="/images/tutorial/slider.png">
                     </div>
                     <div class="col s12 l8">
                         <div class="flow-text black-text">
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                     <div class="col s12 l6 center">
-                        <img border="5" src="/images/tutorial/invitation.png">
+                        <img class="responsive-img" border="5" src="/images/tutorial/invitation.png">
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12 l6 center">
-                        <img border="5" src="/images/tutorial/attendance.png">
+                        <img class="responsive-img" border="5" src="/images/tutorial/attendance.png">
                     </div>
                     <div class="col s12 l6 ">
                         <div class="flow-text black-text">
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                     <div class="col s12 l6 center">
-                        <img border="5" src="/images/tutorial/foods.png">
+                        <img class="responsive-img" border="5" src="/images/tutorial/foods.png">
                     </div>
                 </div>
             </div>

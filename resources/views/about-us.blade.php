@@ -10,7 +10,6 @@
 <div class="container">
     <div class="row center">
 <h1 class="orange-text center-align">Meet the team</h1>
-        <div class="divider"></div>
     </div>
         <div class="row center">
     <div class="col m4 s12 l4 center-align">
