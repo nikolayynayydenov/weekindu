@@ -74,15 +74,20 @@ function deleteMarkers() {
     markers = [];
 }
 
-$('#create-event-map-checkbox').change(function() {
-    let isChecked = $(this).is(':checked');
-    let googleMap = $('#google-map');
+let isMapShown = false;
 
-    if (isChecked) {
-        initMap();
-        googleMap.show();
-    } else {
-        googleMap.hide();
+$('#create-event-map-checkbox').change(function() {
+    if(!isMapShown) {
+        isMapShown = true;
+        let isChecked = $(this).is(':checked');
+        let googleMap = $('#google-map');
+
+        if (isChecked) {
+            initMap();
+            googleMap.show();
+        } else {
+            googleMap.hide();
+        }
     }
 });
 
