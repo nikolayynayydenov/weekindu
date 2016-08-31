@@ -7,6 +7,6 @@ class StringModifier
 {
     public static function convertToImagePath($str)
     {
-        return preg_replace('/\s/', '', strtolower($str)).'.jpg';
+        return preg_replace('/\s/', '-', strtolower($str)).'.jpg';
     }
 }
