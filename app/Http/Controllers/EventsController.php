@@ -125,7 +125,7 @@ class EventsController extends Controller
 
         if(!empty($data['dress-code'])) {
             $dressCodeImg = StringModifier::convertToImagePath($data['dress-code']);
-            $dressCodeImgExists = file_exists(public_path('images\create-event\type\\' . $dressCodeImg));
+            $dressCodeImgExists = file_exists(public_path('images\create-event\dress-code\\' . $dressCodeImg));
         }
         /*
          * Store into db
