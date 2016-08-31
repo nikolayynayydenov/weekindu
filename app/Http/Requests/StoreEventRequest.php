@@ -25,7 +25,7 @@ class StoreEventRequest extends Request
     {
         return [
             'title' => 'required|max:80|unique:events',
-            'date' => 'sometimes|max:255',
+            'date' => 'required|max:255',
             'description' => 'required',
             'is_public' => 'sometimes|in:on',
             'type' => 'sometimes|max:80',

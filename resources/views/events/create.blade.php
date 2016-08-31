@@ -81,7 +81,8 @@
                                                name="date"
                                                id="event-date"
                                                placeholder="Click to pick a date"
-                                               form="create-event-form">
+                                               form="create-event-form"
+                                               required>
                                         <label for="event-date">Date</label>
                                     </div>
 
