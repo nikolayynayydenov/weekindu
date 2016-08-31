@@ -103,7 +103,7 @@ class InvitationsController extends Controller
             }
 
             return redirect('/event/'.$event->id)
-                ->with('message', 'Your feedback for this event was sent. Thank you!');
+                ->with('message', 'Your information has been sent.Thank you!');
         }
     }
 

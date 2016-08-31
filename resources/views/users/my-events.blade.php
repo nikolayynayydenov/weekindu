@@ -42,11 +42,12 @@
             color: white;
         }
         body {
-            background: url("/images/girlscar.jpg") no-repeat center center fixed;
+        background-color: rgb(246,243,224)
+            /*background: url("/images/girlscar.jpg") no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
-            background-size: cover;
+            background-size: cover;*/
         }
         .container-for-events{
             background-color: rgba(255, 255,255,0.60);

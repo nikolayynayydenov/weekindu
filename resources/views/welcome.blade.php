@@ -49,7 +49,7 @@
                     <h5 class="header col s12 light white-text">Try for free the most advanced event manager around the web</h5>
                 </div>--}}<br>
                 <div class="row center">
-                    <a href="{{ url('/event') }}" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+                    <a href="{{ url('/login') }}" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
                 </div>
                 <br><br>
             </div>
@@ -92,7 +92,7 @@
                     </div>
                     <div class="col s12 l8">
                         <div class="flow-text black-text">
-                            Create an event fast and easy.
+                            Create events fast and easy.
                             Choose from a variety of parameters like food, drinks and music.
                             You can even make your own parameters
                         </div>

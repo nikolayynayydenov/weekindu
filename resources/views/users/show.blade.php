@@ -16,11 +16,11 @@
     body{
 
         /*background-image: url("/images/people.jpg");*/
-        background-color: #eeeeee;
+        background-color: rgb(246,243,224)
 
     }
     .collection .collection-item{
-        background: rgba(163,163,163,0.80);
+        background: rgba(163,163,163,0.99);
     }
 
 </style>
@@ -30,7 +30,7 @@
         <div class="col s12 m4 l3">
             <img class="materialboxed circle responsive-img" width="250" src="/images/user-avatars/{{$user->avatar}}">
 
-        <span id="names" class="white-text">
+        <span id="names" class="light-green-text">
         {{$user->first_name}}
         {{$user->last_name}}<br>
         @if(isset($user->name))
@@ -44,7 +44,7 @@
 
         @if(count($events))
             <div class="col s12 m8 l9">
-                <h5 class="row center white-text">Events</h5>
+                <h5 class="row center orange-text">Events</h5>
                 <ul class="collection">
                     @foreach($events as $event)
                         <li  class="collection-item avatar center">
@@ -57,7 +57,7 @@
                                     <i class="material-icons circle red tooltipped"
                                        data-position="bottom" data-delay="50" data-tooltip="Private">lock</i>
                                 @endif
-                                <span class="title event-title orange-text">{{$event->title}}</span>
+                                <span class="title event-title light-green-text">{{$event->title}}</span>
 
                                 <p class="white-text">{{$event->type}}<br>
 

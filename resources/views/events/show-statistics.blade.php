@@ -22,7 +22,7 @@
 
 <div class="container custom-container">
     <h4 class="primary-text-color">{{ session('message') }}</h4>
-    <span class="well center orange-text">Send this link to the people you'd like to invite:
+    <span class="well white z-depth-2 center orange-text">Send this link to the people you'd like to invite:
         <a href="{{ url('/invitation/'.$event->invitation_code) }}"
            id="inv-code">
             {{ url('/invitation/'.$event->invitation_code) }}
@@ -72,7 +72,7 @@
     <div>
         <div class="row center">
             <h4>
-                <a href="{{url('/event/'.$event->id )}}">
+                <a class="black-text" href="{{url('/event/'.$event->id )}}">
                     {{ $event->title }}
                 </a>
             </h4>

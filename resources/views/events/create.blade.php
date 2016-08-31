@@ -134,25 +134,27 @@
                             </div>
 
                             <div class="slider-item" id="dress-code">
-                                <h4>Dress Code</h4>
+                                <h4>Dress code</h4>
+                                <h5>Which dress code is the recommended one for your event?</h5>
                                 <div class="rows"></div>
                             </div>
 
                             <div class="slider-item" id="music">
-                                <h4>Which kinds of music can you offer?</h4>
-                                <h5>(select many)</h5>
+                                <h4>Music</h4>
+                                <h5>Which genres would be suitable for your event?</h5>
                                 <div class="rows"></div>
                             </div>
 
                             <div class="slider-item" id="food">
-                                <h4>What food do you offer?</h4>
-                                <h5>(select many)</h5>
+                                <h4>Food</h4>
+                                <h5>Which dishes can you provide?</h5>
                                 <div class="rows"></div>
                             </div>
 
                             <div class="slider-item" id="drinks">
-                                <h4>What drinks do you offer?</h4>
-                                <h5>(select many)</h5>
+                                <h4>Drinks</h4>
+                                <h5>Which drinks can you provide?</h5>
+
                                 <div class="rows"></div>
                             </div>
                             <div class="slider-item" id="location">
@@ -173,13 +175,13 @@
 
                                 <input type="checkbox"
                                        id="create-event-map-checkbox">
-                                <label for="create-event-map-checkbox" class="primary-text-color">Point on map</label>
+                                <label for="create-event-map-checkbox" class="primary-text-color">Point on map the exact location on the map</label>
 
                                 <div class="container-fluid" id="google-map" style="height:380px; display: none;"></div>
                             </div>
 
                             <div class="slider-item" id="extras">
-                                <h5>You want to offer something else? Type some questions for your guests as well as sample answers</h5>
+                                <h5>Want to get more information about your guests?Type some questions for your guests as well as sample answers</h5>
                                 <input  style="border-bottom: 1px solid #8BC34A;"
                                         class="extra-field"
                                        type="text"
