@@ -8,56 +8,44 @@ class Images
 {
     private static $avatarDefaultSize = 400;
     private static $defaultAvatar = 'default.png';
+    private static $avatarPath = 'user-avatars';
 
     private static $eventBackgroundDefaultSize = 1600;
     private static $defaultEventBackground= 'default.png';
+    private static $backgoundPath = 'event-backgrounds';
 
-    public static function storeAvatar($image) {
-        // store the path to a validated image in the database
-        if(is_string($image)){
-            $avatar = uniqid().'.'.'png';
+    public static function storeImage($image, $path)
+    {
+        switch ($path) {
+            case self::$avatarPath:
+                $defaultSize = self::$avatarDefaultSize;
+                $defaultImg = self::$defaultAvatar;
+                break;
 
-            $image = Image::make($image);
-            $image->fit(self::$avatarDefaultSize)
-                ->save(public_path().DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.
-                    'user-avatars'.DIRECTORY_SEPARATOR.$avatar);
+            case self::$backgoundPath:
+                $defaultSize = self::$eventBackgroundDefaultSize;
+                $defaultImg = self::$defaultEventBackground;
+                break;
+            
+            default:
+                return 'Unknown path: set as second parameter either '.self::$avatarPath.' or '.self::$backgoundPath;
         }
-        else if($image && $image->isValid()) {
-            // if the user has uploaded an image, store it
+        
+        if($image) {
+            if($image->isValid()) {
+                $extension = $image->getClientOriginalExtension();
+                $imageName = uniqid().'.'.$extension;
+                $path = 'images/'.$path.'/'.$imageName;
+                $image = Image::make($image);
+                $image->fit($defaultSize)
+                    ->save($path);
 
-            $extension = $image->getClientOriginalExtension();
-            $avatar = uniqid().'.'.$extension;
-
-            $image = Image::make($image);
-            $image->fit(self::$avatarDefaultSize)
-                ->save(public_path().DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.
-                    'user-avatars'.DIRECTORY_SEPARATOR.$avatar);
-
+                return $imageName;
+            } else {
+                dd('Invalid image');
+            }
         } else {
-            // if not, return the path to the default avatar
-            $avatar = self::$defaultAvatar;
+            return $defaultImg;
         }
-        return $avatar;
-    }
-
-    public static function storeEventBackground($image) {
-        // store the path to a validated image in the database
-
-        if($image && $image->isValid()) {
-            // if the user has uploaded an image, store it
-
-            $extension = $image->getClientOriginalExtension();
-            $avatar = uniqid().'.'.$extension;
-
-            $image = Image::make($image);
-            $image->fit(self::$eventBackgroundDefaultSize)
-                ->save(public_path().DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.
-                    'event-backgrounds'.DIRECTORY_SEPARATOR.$avatar);
-
-        } else {
-            // if not, return the path to the default avatar
-            $avatar = self::$defaultEventBackground;
-        }
-        return $avatar;
     }
 }

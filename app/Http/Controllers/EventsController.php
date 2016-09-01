@@ -109,11 +109,10 @@ class EventsController extends Controller
          * Store background photo if set:
          */
 
-        $backgroundPhoto = Images::storeEventBackground(
+        $backgroundPhoto = Images::storeImage(
             $request->hasFile('background_photo')
             ? $request->file('background_photo')
-            : false
-        );
+            : false, 'event-backgrounds');
 
         /*
          * Check if images exist:

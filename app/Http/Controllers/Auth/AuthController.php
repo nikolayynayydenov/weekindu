@@ -73,7 +73,8 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        $avatar = Images::storeAvatar(isset($data['avatar']) ? $data['avatar'] : false);
+        $avatar = Images::storeImage(!empty($data['avatar']) ?
+            $data['avatar'] : false, 'user-avatars');
 
         return User::create([
             'first_name' => trim($data['first_name']),
@@ -123,7 +124,6 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        //return view('events.show');
         return redirect($this->redirectTo);
     }
 

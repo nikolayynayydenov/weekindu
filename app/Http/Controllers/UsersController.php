@@ -68,16 +68,8 @@ class UsersController extends Controller
         $email = $data['email'];
         $password = $data['password'];
         $old_password = $data['old_password'];
-        $avatar = Images::storeAvatar(isset($data['avatar']) ? $data['avatar'] : false);
-
-        /* $this->validate($request,[
-             'first_name' => 'max:35',
-             'last_name' => 'max:35',
-             'name' => 'sometimes|max:20',
-             'email' => 'email|max:255|confirmed',
-             'password' => 'min:4|confirmed',
-             'avatar' => 'sometimes|image|max:1000',
-         ]);*/
+        $avatar = Images::storeImage($request->hasFile('avatar') ?
+            $request->file('avatar') : false, 'user-avatars');
 
         $validator = Validator::make($data, [
             'first_name' => 'max:35',
@@ -130,10 +122,7 @@ class UsersController extends Controller
             }
         }
 
-        if($avatar != 'default.png'){
-
-            $user->avatar = $avatar;
-        }
+        $user->avatar = $avatar;
         $user->save();
 
         return redirect('/user/'.$id.'/edit')
