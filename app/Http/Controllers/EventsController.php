@@ -111,20 +111,22 @@ class EventsController extends Controller
 
         $backgroundPhoto = Images::storeImage(
             $request->hasFile('background_photo')
-            ? $request->file('background_photo')
-            : false, 'event-backgrounds');
+                ? $request->file('background_photo')
+                : false, 'event-backgrounds');
 
         /*
          * Check if images exist:
          */
         if(!empty($data['type'])) {
             $typeImg = StringModifier::convertToImagePath($data['type']);
-            $typeImgExists = file_exists(public_path('images\create-event\type\\'.$typeImg));
+            $path = 'images'.DIRECTORY_SEPARATOR.'create-event'.DIRECTORY_SEPARATOR.'type'.DIRECTORY_SEPARATOR.$typeImg;
+            $typeImgExists = file_exists($path);
         }
 
         if(!empty($data['dress-code'])) {
             $dressCodeImg = StringModifier::convertToImagePath($data['dress-code']);
-            $dressCodeImgExists = file_exists(public_path('images\create-event\dress-code\\' . $dressCodeImg));
+            $path = 'images'.DIRECTORY_SEPARATOR.'create-event'.DIRECTORY_SEPARATOR.'dress-code'.DIRECTORY_SEPARATOR.$dressCodeImg;
+            $dressCodeImgExists = file_exists($path);
         }
         /*
          * Store into db
@@ -223,8 +225,6 @@ class EventsController extends Controller
         $event->dress_code_image_full_path =
             public_path('images\create-event\dress-code\\'.$event->dress_code_image);
 
-        //dd($event->dress_code_image_full_path);
-
         return view('events.show')
             ->with('event', $event)
             ->with('extras', $extras);
@@ -312,4 +312,4 @@ class EventsController extends Controller
             ->with('stats', $stats)
             ->with('guests', $invitations);
     }
-}
+}				

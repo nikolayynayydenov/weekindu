@@ -21,7 +21,7 @@ class CheckIfUserIsHostOfEvent
         
         if ($event = Event::find($eventId)) {
             $eventHostId = $event->host;
-            if ($eventHostId === $currentLoggedUserId) {
+            if ($eventHostId == $currentLoggedUserId) {
                 return $next($request);
             }
             
