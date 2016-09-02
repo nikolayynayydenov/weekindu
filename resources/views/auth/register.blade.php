@@ -124,15 +124,15 @@
         <div class="row">
             <div class="input-field col s12 m12 l12">
                 <i class="material-icons prefix">lock_outline</i>
-                <input type="password" name="password" pattern=".{8,}" required>
-                <label for="password">Password (at least 8 characters)</label>
+                <input type="password" name="password" pattern=".{5,}" required>
+                <label for="password">Password (at least 5 characters)</label>
             </div>
         </div>  
     
         <div class="row">
             <div class="input-field col s12 m12 l12">
                 <i class="material-icons prefix">lock_outline</i>
-                <input type="password" name="password_confirmation" pattern=".{8,}" required>
+                <input type="password" name="password_confirmation" pattern=".{5,}" required>
                 <label for="password_confirmation">Re-enter password</label>
             </div>
         </div>
