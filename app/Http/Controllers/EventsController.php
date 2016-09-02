@@ -222,8 +222,6 @@ class EventsController extends Controller
         }
 
         $event->dress_code_image_path ='/images/create-event/dress-code/'.$event->dress_code_image;
-        $event->dress_code_image_full_path =
-            public_path('images\create-event\dress-code\\'.$event->dress_code_image);
 
         return view('events.show')
             ->with('event', $event)

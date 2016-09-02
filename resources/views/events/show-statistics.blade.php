@@ -50,7 +50,9 @@
                     {{ method_field('delete') }}
                     {{ csrf_field() }}
 
-                    <a type="submit" class="waves-effect waves-light red btn"><i class="material-icons right">delete</i>Delete Event</a>
+                    <button type="submit" class="waves-effect waves-light red btn">
+                        <i class="material-icons right">delete</i>
+                        Delete Event</button>
                 </form>
             </div>
         </div>
