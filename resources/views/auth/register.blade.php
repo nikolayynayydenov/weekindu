@@ -67,12 +67,27 @@
 
         }
         .container{
-            width: 50%;
+            width: 60%;
         }
         #facebook{
             background-color: #3b5998;
         }
-        </style>
+        ::-webkit-input-placeholder { /* Chrome */
+            color: #FF9800;
+        }
+        :-ms-input-placeholder { /* IE 10+ */
+            color: #FF9800;
+        }
+        ::-moz-placeholder { /* Firefox 19+ */
+            color: #FF9800;
+            opacity: 1;
+        }
+        :-moz-placeholder { /* Firefox 4 - 18 */
+            color: #FF9800;
+            opacity: 1;
+        }
+
+    </style>
 <div class="center row container">
     <div class="card-panel">
         
@@ -94,46 +109,46 @@
         <div class="row">
             <div class="input-field col s12 l6">
                 <i class="material-icons prefix">perm_identity</i>
-                <input type="text" name="first_name" length="35" maxlength="35" required>
-                <label for="first_name" data-error="wrong" data-success="right">First name</label>
+                <input  placeholder="First Name" type="text" name="first_name" length="35" maxlength="35" required>
+
             </div>
 
             <div class="input-field col s12 l6">
                 <i class="material-icons prefix">perm_identity</i>
-                <input type="text" name="last_name" maxlength="35" length="35" required>
-                <label for="last_name">Last name</label>
+                <input placeholder="Last Name" type="text" name="last_name" maxlength="35" length="35" required>
+
             </div>
         </div>
     
         <div class="row">
             <div class="input-field col s12 m12 l12">
                 <i class="material-icons prefix">person_pin</i>
-                <input type="text" name="name" maxlength="20" length="20">
-                <label for="name">Nickname (optional)</label>
+                <input placeholder="Nickname(optional)" type="text" name="name" maxlength="20" length="20">
+
             </div>
         </div>
     
         <div class="row">
             <div class="input-field col s12 m12 l12">
                 <i class="material-icons prefix">email</i>
-                <input type="email" name="email" required>
-                <label for="email">E-mail</label>
+                <input placeholder="E-mail" type="email" name="email" required>
+
             </div>
         </div>
     
         <div class="row">
             <div class="input-field col s12 m12 l12">
                 <i class="material-icons prefix">lock_outline</i>
-                <input type="password" name="password" pattern=".{5,}" required>
-                <label for="password">Password (at least 5 characters)</label>
+                <input placeholder="Password" type="password" name="password" pattern=".{5,}" required>
+
             </div>
         </div>  
     
         <div class="row">
             <div class="input-field col s12 m12 l12">
                 <i class="material-icons prefix">lock_outline</i>
-                <input type="password" name="password_confirmation" pattern=".{5,}" required>
-                <label for="password_confirmation">Re-enter password</label>
+                <input placeholder="Re-enter password" type="password" name="password_confirmation" pattern=".{5,}" required>
+
             </div>
         </div>
         
@@ -156,9 +171,10 @@
         </div>
     
         {{csrf_field()}}
-        <div class="row center-align">
+        <div style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;" class="row center">
             <p>{!! app('captcha')->display(); !!}</p>
         </div>
+
 
         <br><br>
     
