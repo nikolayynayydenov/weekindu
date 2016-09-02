@@ -59,17 +59,8 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-
-        $first_name = $data['first_name'];
-        $last_name = $data['last_name'];
-        $name = $data['name'];
-        $password_email = $data['password_email'];
-        $email = $data['email'];
-        $password = $data['password'];
-        $old_password = $data['old_password'];
-        $avatar = Images::storeImage($request->hasFile('avatar') ?
-            $request->file('avatar') : false, 'user-avatars');
+        $user = User::find($id);
+        $data = $request->except('_token');
 
         $validator = Validator::make($data, [
             'first_name' => 'max:35',
@@ -80,14 +71,28 @@ class UsersController extends Controller
             'avatar' => 'sometimes|image|max:1000',
         ]);
 
-        $user = User::find($id);
-
-        if ($validator->fails()) {
-            if ($user->name != $name) {
+        if ($validator->fails() && $user->name != $data['name']) {
                 return redirect('user/' . $id . '/edit')
                     ->withErrors($validator)
                     ->withInput();
-            }
+        }
+
+        $first_name = $data['first_name'];
+        $last_name = $data['last_name'];
+        $name = $data['name'];
+        $password_email = $data['password_email'];
+        $email = $data['email'];
+        $password = $data['password'];
+        $old_password = $data['old_password'];
+        
+        /*
+         * Substitute old avatar with a new one
+         */
+        
+        if($request->hasFile('avatar')) {
+            $path = 'images'.DIRECTORY_SEPARATOR.'user-avatars'.DIRECTORY_SEPARATOR.$user->avatar;
+            Images::deleteImage($path, $user->avatar);
+            $avatar = Images::storeImage($request->file('avatar'), 'user-avatars');
         }
 
         if($email != null) {

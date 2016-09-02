@@ -12,6 +12,7 @@ use App\Helpers\StringModifier;
 use Crypt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 use Validator;
 
 
@@ -271,6 +272,8 @@ class EventsController extends Controller
     public function destroy($id)
     {
         $event = Event::find($id);
+        $path = 'images'.DIRECTORY_SEPARATOR.'event-backgrounds'.DIRECTORY_SEPARATOR.$event->background_photo;
+        Images::deleteImage($path, $event->background_photo);
         $event->delete();
 
         return redirect('/user/my-events');

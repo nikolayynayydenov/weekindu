@@ -6,25 +6,23 @@ use Intervention\Image\Facades\Image;
 
 class Images
 {
-    private static $avatarDefaultSize = 400;
-    private static $defaultAvatar = 'default.png';
-    private static $avatarPath = 'user-avatars';
+    public static $default = 'default.png';
+    
+    public static $avatarDefaultSize = 400;    
+    public static $avatarPath = 'user-avatars';
 
-    private static $eventBackgroundDefaultSize = 1600;
-    private static $defaultEventBackground= 'default.png';
-    private static $backgoundPath = 'event-backgrounds';
+    public static $eventBackgroundDefaultSize = 1600;
+    public static $backgoundPath = 'event-backgrounds';
 
     public static function storeImage($image, $path)
     {
         switch ($path) {
             case self::$avatarPath:
                 $defaultSize = self::$avatarDefaultSize;
-                $defaultImg = self::$defaultAvatar;
                 break;
 
             case self::$backgoundPath:
                 $defaultSize = self::$eventBackgroundDefaultSize;
-                $defaultImg = self::$defaultEventBackground;
                 break;
             
             default:
@@ -45,7 +43,15 @@ class Images
                 dd('Invalid image');
             }
         } else {
-            return $defaultImg;
+            return self::$default;
+        }
+    }
+
+    public static function deleteImage($path, $oldPhotoName)
+    {
+        $photoExists = file_exists($path);
+        if($photoExists && $oldPhotoName != Images::$default) {
+            unlink($path);
         }
     }
 }
