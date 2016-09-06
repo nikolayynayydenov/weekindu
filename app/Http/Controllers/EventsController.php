@@ -26,8 +26,8 @@ class EventsController extends Controller
          */
 
         $this->middleware('auth', ['except' => ['index', 'show']]);
-        $this->middleware('user_is_host_of_event', ['only' => ['edit', 'destroy', 'showStatistics']]);
         $this->middleware('event_exists', ['only' => ['show', 'showStatistics']]);
+        $this->middleware('user_is_host_of_event', ['only' => ['edit', 'destroy', 'showStatistics']]);
         $this->middleware('event_is_public', ['only' => ['show']]);
     }
     /**
@@ -40,9 +40,8 @@ class EventsController extends Controller
         if(Auth::check()){
             // the user is logged
             $userId = Auth::id();
-            $events =  Event::where('host', $userId) ->orWhere('is_public', true);
-        }
-        else{
+            $events =  Event::where('host', $userId)->orWhere('is_public', true);
+        } else {
             $events =  Event::where('is_public', true);
         }
 
