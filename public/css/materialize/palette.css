@@ -11,7 +11,7 @@
 
 /* Contextual colors: */
 
-/*.default-color {
+.default-color {
     background: #090909;
     border-color: #040404;
 }
@@ -19,24 +19,48 @@
 .primary-color {
     background: #1967be;
     border-color: #1862b5;
-}*/
+}
 
 .success-color {
-    background: #76ff03 ;
+    background: #8ac249 ;
     border-color: #76ff03 ;
 }
 
 .info-color {
-    background: #4a148c;
-    border-color: #4a148c;
+    background: #02a8f3;
+    border-color: #008fcf;
 }
 
 .warning-color {
-    background: #ff9100 ;
+    background: #fe9700 ;
     border-color: #ff9100 ;
 }
 
 .danger-color {
-    background: #f44336;
+    background: #f34235;
     border-color: #f44336 ;
+}
+
+.default-color-text {
+    color: #090909;
+}
+
+.primary-color-text {
+    color: #1967be;
+}
+
+.success-color-text {
+    color: #8ac249;
+}
+
+.info-color-text {
+    color: #02a8f3;
+}
+
+.warning-color-text {
+    color: #fe9700;
+}
+
+.danger-color-text {
+    color: #f34235;
 }

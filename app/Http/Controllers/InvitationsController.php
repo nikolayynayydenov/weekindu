@@ -15,8 +15,8 @@ class InvitationsController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('auth', ['only' => ['getGuestDetails', 'destroy']]);
-        //$this->middleware('user_is_host_of_event', ['only' => ['destroy']]);
+        $this->middleware('auth', ['only' => ['getGuestDetails', 'destroy']]);
+        $this->middleware('user_is_host_of_event', ['only' => ['destroy']]);
         $this->middleware('invitation_has_event', ['only' => ['show']]);
     }
 
@@ -102,8 +102,15 @@ class InvitationsController extends Controller
                 }
             }
 
-            return redirect('/event/'.$event->id)
-                ->with('message', 'Your information has been sent.Thank you!');
+            $responseMessage = 'Your information has been sent.Thank you!';
+
+            if($event->is_public) {
+                return redirect('/event/'.$event->id)
+                    ->with('message', $responseMessage);
+            } else {
+                session()->flash('successMessage', $responseMessage);
+                return view('message');
+            }
         }
     }
 
